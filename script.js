@@ -18,57 +18,75 @@ document.getElementById("mobile-work-count").textContent = String(projects.lengt
 document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ---------- Render projects ---------- */
+/* ---------- Render projects as editorial chapters ---------- */
 
-const CANVAS_BREAKS = {
-  2: `ESTILO / <span>FORMA</span> / CARÁCTER`,
-  3: `<span>Trabajo</span> Seleccionado`
-};
-
-const CANVAS_BREAK_ECHO = {
-  2: "ESTILO / FORMA / CARÁCTER",
-  3: "TRABAJO SELECCIONADO"
-};
+const CHAPTER_LABELS = [
+  "Editorial",
+  "Campaign",
+  "Personal",
+  "Commercial",
+  "E-commerce",
+  "Archive"
+];
 
 function renderProjects() {
-  const items = projects.map((project, index) => `
-    <article
-      class="project-item"
-      tabindex="0"
-      role="button"
-      data-project-id="${project.id}"
-      aria-label="Abrir proyecto ${project.title}"
-    >
-      <p class="project-kicker">Proyecto ${String(index + 1).padStart(2, "0")} — ${project.category}</p>
+  projectCanvas.innerHTML = projects.map((project, index) => {
+    const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
+    const number = String(index + 1).padStart(2, "0");
+    const layout = `chapter-layout-${(index % 4) + 1}`;
 
-      <div class="project-frame">
-        <div class="project-visual" style="--project-color: ${project.color}; --project-image: url('${project.image}')"></div>
-        <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
-        <span class="project-edge-label">${project.client} · ${project.year}</span>
-      </div>
+    return `
+      <article
+        class="project-chapter ${layout}"
+        tabindex="0"
+        role="button"
+        data-project-id="${project.id}"
+        aria-label="Abrir proyecto ${project.title}"
+      >
+        <header class="chapter-header">
+          <div class="chapter-number">PROJECT ${number}</div>
 
-      <div class="project-caption">
-        <h3>${project.title}</h3>
-        <p>${project.category}<br>${project.year}</p>
-      </div>
-    </article>
-  `);
+          <div class="chapter-heading">
+            <p class="chapter-label">${chapter}</p>
+            <h3>${project.title}</h3>
+          </div>
 
-  let markup = "";
+          <div class="chapter-meta">
+            <span>${project.category}</span>
+            <span>${project.client}</span>
+            <span>${project.year}</span>
+          </div>
+        </header>
 
-  for (let i = 0; i < items.length; i += 2) {
-    const pair = items.slice(i, i + 2).join("");
-    markup += `<div class="project-spread">${pair}</div>`;
+        <div class="chapter-stage">
+          <div class="chapter-image chapter-image-main">
+            <div
+              class="chapter-visual"
+              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
+            ></div>
+          </div>
 
-    const breakIndex = i / 2 + 1;
-    if (CANVAS_BREAKS[breakIndex]) {
-      markup += `<div class="canvas-break" data-echo="${CANVAS_BREAK_ECHO[breakIndex]}">${CANVAS_BREAKS[breakIndex]}</div>`;
-    }
-  }
+          <div class="chapter-image chapter-image-secondary">
+            <div
+              class="chapter-visual chapter-visual-secondary"
+              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
+            ></div>
+          </div>
 
-  projectCanvas.innerHTML = markup;
+          <div class="chapter-quote">
+            <span>${project.description}</span>
+          </div>
+        </div>
 
-  document.querySelectorAll(".project-item").forEach((item) => {
+        <footer class="chapter-footer">
+          <span>Ver proyecto completo</span>
+          <span>↗</span>
+        </footer>
+      </article>
+    `;
+  }).join("");
+
+  document.querySelectorAll(".project-chapter").forEach((item) => {
     item.addEventListener("click", () => openProject(item.dataset.projectId));
 
     item.addEventListener("keydown", (event) => {
@@ -187,7 +205,7 @@ mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 function bindCursorTargets() {
   if (!window.matchMedia("(pointer: fine)").matches || !cursor) return;
 
-  document.querySelectorAll("a, button, .project-item").forEach((element) => {
+  document.querySelectorAll("a, button, .project-chapter").forEach((element) => {
     element.addEventListener("mouseenter", () => cursor.classList.add("is-active"));
     element.addEventListener("mouseleave", () => cursor.classList.remove("is-active"));
   });

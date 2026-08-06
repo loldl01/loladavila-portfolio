@@ -378,13 +378,13 @@ button { font: inherit; }
   transform: translateY(0);
 }
 
-/* ---------- Work / project canvas ---------- */
+/* ---------- Work / project chapters ---------- */
 
 .layout-note {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 70px;
+  margin-bottom: 120px;
   padding-top: 14px;
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -396,165 +396,223 @@ button { font: inherit; }
 .project-canvas {
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: clamp(170px, 20vw, 330px);
 }
 
-/* Editorial index breaks — big ghosted type in normal flow between
-   spreads, with a duplicated offset layer for a double-exposure feel. */
-.canvas-break {
-  position: relative;
-  margin: 10px 0 10px;
-  color: var(--muted);
-  font-family: var(--serif);
-  font-size: clamp(34px, 5.2vw, 78px);
-  font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-}
-
-.canvas-break::before {
-  content: attr(data-echo);
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  z-index: -1;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--line);
-  white-space: nowrap;
-}
-
-.canvas-break span { color: var(--red); }
-
-/* A "spread" pairs two contrasting formats — one dominant image, one
-   accent block — inside a bordered, rounded panel, echoing the
-   photo + color-field pairings of the reference layout. */
-.project-spread {
-  display: grid;
-  grid-template-columns: 1.7fr 1fr;
-  gap: 28px;
-  align-items: start;
-  padding: 36px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-}
-
-.project-spread:nth-of-type(even) {
-  grid-template-columns: 1fr 1.7fr;
-}
-
-.project-spread:nth-of-type(even) .project-item:first-child { order: 2; }
-.project-spread:nth-of-type(even) .project-item:last-child { order: 1; }
-
-.project-item {
+.project-chapter {
   position: relative;
   cursor: pointer;
+  outline: none;
 }
 
-.project-kicker {
-  margin: 0 0 12px;
+.project-chapter:focus-visible {
+  outline: 1px solid var(--red);
+  outline-offset: 12px;
+}
+
+.chapter-header {
+  display: grid;
+  grid-template-columns: 0.45fr 1.35fr 0.75fr;
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 46px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chapter-number,
+.chapter-label,
+.chapter-meta,
+.chapter-footer {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.chapter-number {
+  color: var(--red);
+}
+
+.chapter-heading p {
+  margin: 0 0 10px;
   color: var(--muted);
-  font-size: 9px;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
 }
 
-.project-frame {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.project-visual {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(0deg, rgba(0,0,0,.12), rgba(0,0,0,0)),
-    var(--project-image);
-  background-size: cover;
-  background-position: center;
-  background-color: var(--project-color, #232323);
-  transform: scale(1);
-  transition: transform 0.9s var(--ease), filter 0.35s ease;
-}
-
-.project-number {
-  position: absolute;
-  z-index: 2;
-  left: 16px;
-  top: 14px;
-  color: var(--fg);
-  font-family: var(--serif);
-  font-size: 14px;
-  letter-spacing: -0.02em;
-}
-
-.project-edge-label {
-  position: absolute;
-  z-index: 2;
-  right: 14px;
-  bottom: 16px;
-  color: rgba(242, 240, 235, 0.7);
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-
-.project-caption {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.project-caption h3 {
+.chapter-heading h3 {
   margin: 0;
+  max-width: 900px;
   font-family: var(--display);
-  font-size: clamp(20px, 2vw, 32px);
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  font-size: clamp(54px, 10vw, 170px);
+  font-weight: 400;
+  line-height: 0.75;
+  letter-spacing: -0.075em;
   text-transform: uppercase;
 }
 
-.project-item:nth-child(even) .project-caption h3 {
+.project-chapter:nth-child(even) .chapter-heading h3 {
   font-family: var(--serif);
   font-weight: 600;
-  letter-spacing: -0.045em;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
   text-transform: none;
 }
 
-.project-caption p {
-  flex-shrink: 0;
-  margin: 0;
+.chapter-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   color: var(--muted);
-  font-size: 9px;
-  line-height: 1.4;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   text-align: right;
 }
 
-.project-item:hover .project-visual { transform: scale(1.045); }
-
-.project-canvas:hover .project-item:not(:hover) .project-visual {
-  filter: brightness(0.72);
+.chapter-stage {
+  position: relative;
+  min-height: clamp(760px, 88vw, 1180px);
 }
 
-/* Each spread pairs a dominant photo with a smaller accent frame —
-   aspect ratios vary spread to spread instead of a repeating grid. */
-.project-spread:nth-of-type(1) .project-item:nth-child(1) .project-frame { aspect-ratio: 16 / 11; }
-.project-spread:nth-of-type(1) .project-item:nth-child(2) .project-frame { aspect-ratio: 4 / 5; margin-top: 40px; }
+.chapter-image {
+  position: absolute;
+  overflow: hidden;
+  background: #151515;
+}
 
-.project-spread:nth-of-type(2) .project-item:nth-child(1) .project-frame { aspect-ratio: 3 / 4; margin-top: 30px; }
-.project-spread:nth-of-type(2) .project-item:nth-child(2) .project-frame { aspect-ratio: 16 / 10; }
+.chapter-visual {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,.08), rgba(0,0,0,0)),
+    var(--project-image);
+  background-color: var(--project-color, #232323);
+  background-position: center;
+  background-size: cover;
+  transform: scale(1);
+  transition:
+    transform 1.15s var(--ease),
+    filter 0.45s ease;
+}
 
-.project-spread:nth-of-type(3) .project-item:nth-child(1) .project-frame { aspect-ratio: 5 / 4; }
-.project-spread:nth-of-type(3) .project-item:nth-child(2) .project-frame { aspect-ratio: 1 / 1; margin-top: 50px; }
+.chapter-visual-secondary {
+  filter: saturate(0.82) contrast(1.04);
+  background-position: 72% center;
+}
 
-.project-spread:nth-of-type(4) .project-item:nth-child(1) .project-frame { aspect-ratio: 4 / 5; margin-top: 20px; }
-.project-spread:nth-of-type(4) .project-item:nth-child(2) .project-frame { aspect-ratio: 21 / 10; }
+.project-chapter:hover .chapter-image-main .chapter-visual {
+  transform: scale(1.035);
+}
+
+.project-chapter:hover .chapter-image-secondary .chapter-visual {
+  transform: scale(1.06);
+}
+
+.chapter-quote {
+  position: absolute;
+  z-index: 3;
+  max-width: 430px;
+  color: var(--fg);
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.2vw, 52px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.chapter-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.project-chapter:hover .chapter-footer {
+  color: var(--fg);
+}
+
+/* Four controlled chapter compositions.
+   New projects automatically repeat this rhythm. */
+
+.chapter-layout-1 .chapter-image-main {
+  left: 0;
+  top: 0;
+  width: 72%;
+  aspect-ratio: 16 / 10;
+}
+
+.chapter-layout-1 .chapter-image-secondary {
+  right: 2%;
+  bottom: 4%;
+  width: 28%;
+  aspect-ratio: 4 / 5;
+}
+
+.chapter-layout-1 .chapter-quote {
+  right: 4%;
+  top: 9%;
+  width: 30%;
+}
+
+.chapter-layout-2 .chapter-image-main {
+  right: 0;
+  top: 0;
+  width: 68%;
+  aspect-ratio: 4 / 3;
+}
+
+.chapter-layout-2 .chapter-image-secondary {
+  left: 5%;
+  bottom: 0;
+  width: 32%;
+  aspect-ratio: 3 / 4;
+}
+
+.chapter-layout-2 .chapter-quote {
+  left: 0;
+  top: 10%;
+  width: 28%;
+}
+
+.chapter-layout-3 .chapter-image-main {
+  left: 8%;
+  top: 0;
+  width: 84%;
+  aspect-ratio: 21 / 10;
+}
+
+.chapter-layout-3 .chapter-image-secondary {
+  left: 0;
+  bottom: 2%;
+  width: 26%;
+  aspect-ratio: 4 / 5;
+}
+
+.chapter-layout-3 .chapter-quote {
+  right: 1%;
+  bottom: 4%;
+  width: 35%;
+  text-align: right;
+}
+
+.chapter-layout-4 .chapter-image-main {
+  left: 0;
+  top: 0;
+  width: 58%;
+  aspect-ratio: 4 / 5;
+}
+
+.chapter-layout-4 .chapter-image-secondary {
+  right: 0;
+  top: 15%;
+  width: 38%;
+  aspect-ratio: 16 / 10;
+}
+
+.chapter-layout-4 .chapter-quote {
+  right: 4%;
+  bottom: 8%;
+  width: 35%;
+}
 
 /* ---------- Archive (draggable horizontal strip) ---------- */
 
@@ -870,24 +928,63 @@ button { font: inherit; }
 
   .layout-note { margin-top: -20px; }
 
-  .project-canvas { gap: 60px; }
 
-  .project-spread,
-  .project-spread:nth-of-type(even) {
+  .project-canvas {
+    gap: 150px;
+  }
+
+  .chapter-header {
     grid-template-columns: 1fr;
-    padding: 22px;
-    border-radius: 20px;
-    gap: 44px;
+    gap: 18px;
   }
 
-  .project-spread:nth-of-type(even) .project-item:first-child,
-  .project-spread:nth-of-type(even) .project-item:last-child {
-    order: initial;
+  .chapter-meta {
+    text-align: left;
   }
 
-  .project-spread .project-frame { margin-top: 0 !important; }
+  .chapter-stage {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 
-  .canvas-break { margin: 10px 0; }
+  .chapter-image,
+  .chapter-layout-1 .chapter-image-main,
+  .chapter-layout-1 .chapter-image-secondary,
+  .chapter-layout-2 .chapter-image-main,
+  .chapter-layout-2 .chapter-image-secondary,
+  .chapter-layout-3 .chapter-image-main,
+  .chapter-layout-3 .chapter-image-secondary,
+  .chapter-layout-4 .chapter-image-main,
+  .chapter-layout-4 .chapter-image-secondary {
+    position: relative;
+    inset: auto;
+    width: 100%;
+  }
+
+  .chapter-image-main {
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .chapter-image-secondary {
+    width: 72% !important;
+    margin-left: auto;
+    aspect-ratio: 4 / 5 !important;
+  }
+
+  .chapter-quote,
+  .chapter-layout-1 .chapter-quote,
+  .chapter-layout-2 .chapter-quote,
+  .chapter-layout-3 .chapter-quote,
+  .chapter-layout-4 .chapter-quote {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 640px;
+    margin: 22px 0 0;
+    text-align: left;
+  }
 
   .archive-section {
     grid-template-columns: 1fr;
@@ -932,12 +1029,18 @@ button { font: inherit; }
   .about-section,
   .contact-section { padding-top: 90px; padding-bottom: 90px; }
 
-  .project-caption h3 { font-size: clamp(24px, 9vw, 38px); }
-  .project-caption { flex-direction: column; align-items: flex-start; gap: 6px; }
-  .project-caption p { text-align: left; }
 
-  .project-edge-label { display: none; }
-  .project-spread { padding: 16px; border-radius: 16px; }
+  .chapter-heading h3 {
+    font-size: clamp(54px, 17vw, 90px);
+  }
+
+  .chapter-image-secondary {
+    width: 86% !important;
+  }
+
+  .chapter-footer {
+    margin-top: 22px;
+  }
 
   .archive-card { width: 78vw; height: 380px; }
 
