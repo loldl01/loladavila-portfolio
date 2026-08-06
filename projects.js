@@ -7,7 +7,7 @@ window.PORTFOLIO_PROJECTS = [
     year: "2026",
     client: "Editorial Independiente",
     description: "Una historia de moda monocromática construida alrededor del volumen, la sombra y el carácter.",
-    shortLine: "SHADOW / FORM / CHARACTER",
+    shortLine: "VOLUME / CUT / PROPORTION",
     color: "#282828",
     image: "assets/images/project-01.jpg",
     galleryColors: ["#171717", "#3c3c3c", "#221612", "#4a443e", "#171717", "#301510"]
@@ -20,7 +20,7 @@ window.PORTFOLIO_PROJECTS = [
     year: "2026",
     client: "Campaña de Moda",
     description: "Una exploración visual de silueta, proporción y sastrería contemporánea.",
-    shortLine: "VOLUME / CUT / PROPORTION",
+    shortLine: "SHAPE / MOVEMENT / BALANCE",
     color: "#3b2119",
     image: "assets/images/project-02.jpg",
     galleryColors: ["#3b2119", "#191919", "#5a5047", "#2d1711", "#4b4b4b", "#27100b"]

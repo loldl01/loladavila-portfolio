@@ -18,6 +18,36 @@ document.getElementById("mobile-work-count").textContent = String(projects.lengt
 document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
+
+/* ---------- NYC selected works ---------- */
+const nycProjectList = document.getElementById("nyc-project-list");
+const nycProjectCount = document.getElementById("nyc-project-count");
+
+function renderNycSelectedWorks() {
+  if (!nycProjectList) return;
+  if (nycProjectCount) {
+    nycProjectCount.textContent = `${String(projects.length).padStart(2, "0")} PROJECTS`;
+  }
+
+  nycProjectList.innerHTML = projects.map((project, index) => `
+    <button class="nyc-project-row" type="button" data-project-id="${project.id}" aria-label="Abrir proyecto ${project.title}">
+      <span class="nyc-project-number">${String(index + 1).padStart(2, "0")}</span>
+      <div class="nyc-project-copy">
+        <strong>${project.title}</strong>
+        <span>${project.shortLine || project.category}</span>
+      </div>
+      <figure class="nyc-project-thumb" aria-hidden="true">
+        <img src="${project.image}" alt="">
+      </figure>
+      <span class="nyc-project-arrow">↗</span>
+    </button>
+  `).join("");
+
+  nycProjectList.querySelectorAll(".nyc-project-row").forEach((row) => {
+    row.addEventListener("click", () => openProject(row.dataset.projectId));
+  });
+}
+
 /* ---------- Render projects as editorial chapters ---------- */
 
 const CHAPTER_LABELS = [
@@ -292,5 +322,6 @@ function bindArchiveDrag() {
 
 bindArchiveDrag();
 
+renderNycSelectedWorks();
 renderProjects();
 bindCursorTargets();

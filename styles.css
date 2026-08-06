@@ -4,15 +4,15 @@
    ========================================================= */
 
 :root {
-  --bg: #090909;
-  --fg: #f2f0eb;
-  --muted: #9f9b93;
-  --line: rgba(242, 240, 235, 0.18);
-  --red: #ff2a1a;
-  --display: "Space Grotesk", sans-serif;
-  --sans: "Space Grotesk", sans-serif;
-  --serif: "Instrument Serif", serif;
-  --mono: "Space Mono", monospace;
+  --bg: #070707;
+  --fg: #f2f2ed;
+  --muted: #8f918a;
+  --line: rgba(242, 242, 237, 0.18);
+  --red: #b7ff00;
+  --display: "Syne", sans-serif;
+  --sans: "Manrope", sans-serif;
+  --serif: "Barlow Condensed", sans-serif;
+  --mono: "IBM Plex Mono", monospace;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -1059,176 +1059,110 @@ button { font: inherit; }
 }
 
 
-/* =========================================================
-   CREATIVE STUDIO TYPOGRAPHY V11
-   Digital, direct, graphic — not fashion-magazine editorial
-   ========================================================= */
+:root { --acid:#b7ff00; --ink:#070707; --paper:#f2f2ed; }
 
-:root {
-  --studio-black: #090909;
-  --studio-white: #f2f0eb;
-  --studio-red: #ff2a1a;
+body { background:var(--ink); color:var(--paper); }
+.noise { opacity:.065; }
+
+.nyc-home { min-height:100svh; overflow:hidden; background:var(--ink); border-bottom:1px solid rgba(242,242,237,.2); }
+.nyc-home .hero-backdrop { z-index:1; }
+.nyc-home .hero-preview { opacity:0; filter:grayscale(.86) contrast(1.25) brightness(.56); transform:scale(1.04); }
+.nyc-home[data-active-preview="work"] .preview-work,
+.nyc-home[data-active-preview="archive"] .preview-archive,
+.nyc-home[data-active-preview="about"] .preview-about,
+.nyc-home[data-active-preview="contact"] .preview-contact { opacity:.72; transform:scale(1); }
+
+.nyc-grid { position:absolute; z-index:2; inset:0; background:linear-gradient(rgba(255,255,255,.027) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.027) 1px,transparent 1px); background-size:42px 42px; pointer-events:none; }
+.nyc-scan { position:absolute; z-index:3; inset:0; pointer-events:none; opacity:.16; background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(255,255,255,.04) 4px); }
+
+.nyc-topline { position:absolute; z-index:12; top:18px; left:22px; right:22px; display:grid; grid-template-columns:1fr auto 1fr; gap:20px; align-items:center; font-family:var(--mono); font-size:8px; letter-spacing:.11em; text-transform:uppercase; }
+.nyc-topline span:last-child { text-align:right; }
+
+.nyc-menu { position:absolute; z-index:14; top:18px; right:23%; width:min(430px,38vw); display:flex; justify-content:center; gap:28px; border:0; }
+.nyc-menu a { display:block; padding:0; border:0; font-family:var(--mono); font-size:9px; letter-spacing:.08em; }
+.nyc-menu a span { display:none; }
+.nyc-menu a strong { font-family:var(--mono); font-size:9px; font-weight:500; }
+.nyc-menu a:hover strong { color:var(--acid); }
+
+.nyc-hero-copy { position:absolute; z-index:8; left:4vw; top:14vh; width:54vw; }
+.nyc-role { margin:0 0 18px; color:var(--acid); font-family:var(--mono); font-size:11px; line-height:1.4; letter-spacing:.04em; }
+.nyc-name { margin:0; display:flex; flex-direction:column; font-family:var(--serif); font-size:clamp(118px,19vw,315px); font-weight:800; line-height:.62; letter-spacing:-.04em; text-transform:uppercase; }
+.nyc-name span { display:block; width:max-content; position:relative; }
+.nyc-name span::after { content:""; position:absolute; inset:0; background:repeating-linear-gradient(180deg,transparent 0 8px,rgba(7,7,7,.7) 8px 10px); mix-blend-mode:multiply; opacity:.42; pointer-events:none; }
+.nyc-manifesto { margin-top:34px; display:flex; flex-direction:column; font-family:var(--mono); font-size:10px; line-height:1.6; letter-spacing:.06em; }
+
+.nyc-portrait { position:absolute; z-index:6; right:5vw; top:13vh; width:min(38vw,590px); height:75vh; margin:0; overflow:hidden; filter:grayscale(1) contrast(1.18); }
+.nyc-portrait::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(7,7,7,.9),transparent 36%),linear-gradient(180deg,transparent 65%,rgba(7,7,7,.65)); }
+.nyc-portrait img { width:100%; height:100%; object-fit:cover; }
+
+.nyc-cross { position:absolute; z-index:10; color:var(--acid); font-family:var(--mono); font-size:42px; font-weight:300; }
+.nyc-cross-a { left:58%; top:38%; }
+.nyc-cross-b { right:5%; bottom:16%; }
+.nyc-code { position:absolute; z-index:10; left:30%; bottom:6%; font-family:var(--mono); font-size:8px; letter-spacing:.06em; }
+.nyc-status { position:absolute; z-index:12; left:22px; right:22px; bottom:18px; display:flex; justify-content:space-between; font-family:var(--mono); font-size:8px; letter-spacing:.1em; text-transform:uppercase; }
+.nyc-hidden-title { opacity:0; pointer-events:none; }
+
+.site-header { display:none; }
+
+.marquee { padding:9px 0; background:var(--acid); color:var(--ink); border:0; }
+.marquee-track { gap:24px; font-family:var(--mono); font-size:clamp(13px,1.35vw,20px); font-weight:600; letter-spacing:.01em; animation-duration:46s; }
+.marquee-track span::after { margin-left:24px; color:var(--ink); }
+.marquee-serif { font-family:var(--serif); font-style:normal; font-weight:700; text-transform:uppercase; color:var(--ink); }
+
+.nyc-selected { padding:100px 22px 120px; background:var(--ink); color:var(--paper); }
+.nyc-selected-head { display:flex; justify-content:space-between; gap:20px; padding-bottom:12px; border-bottom:1px solid rgba(242,242,237,.24); color:var(--acid); font-family:var(--mono); font-size:9px; letter-spacing:.09em; text-transform:uppercase; }
+.nyc-project-list { display:flex; flex-direction:column; }
+
+.nyc-project-row { width:100%; display:grid; grid-template-columns:54px 1fr minmax(180px,26vw) 28px; gap:24px; align-items:center; min-height:170px; padding:16px 0; border:0; border-bottom:1px solid rgba(242,242,237,.2); background:transparent; color:var(--paper); text-align:left; cursor:pointer; transition:background .2s ease,color .2s ease,padding-left .2s ease; }
+.nyc-project-row:hover { padding-left:14px; background:var(--acid); color:var(--ink); }
+.nyc-project-number { color:var(--acid); font-family:var(--mono); font-size:20px; }
+.nyc-project-row:hover .nyc-project-number { color:var(--ink); }
+.nyc-project-copy { display:flex; flex-direction:column; gap:12px; }
+.nyc-project-copy strong { font-family:var(--serif); font-size:clamp(42px,5.2vw,88px); font-weight:600; line-height:.8; letter-spacing:-.035em; text-transform:uppercase; }
+.nyc-project-copy span { font-family:var(--mono); font-size:9px; letter-spacing:.06em; text-transform:uppercase; }
+.nyc-project-thumb { height:138px; margin:0; overflow:hidden; filter:grayscale(.2) contrast(1.08); }
+.nyc-project-thumb img { width:100%; height:100%; object-fit:cover; }
+.nyc-project-arrow { font-size:20px; color:var(--acid); }
+.nyc-project-row:hover .nyc-project-arrow { color:var(--ink); }
+
+.section-intro h2,.archive-sticky h2,.about-layout h2,.contact-section h2,.viewer-header h2 { font-family:var(--display); }
+.chapter-heading h3,.project-chapter:nth-child(even) .chapter-heading h3,.archive-card { font-family:var(--serif); font-weight:700; line-height:.72; text-transform:uppercase; }
+.chapter-number,.chapter-label,.chapter-meta,.chapter-footer,.section-index,.layout-note,.archive-hint,.services span,.contact-footer { font-family:var(--mono); }
+.serif-display,.archive-serif,.viewer-serif { font-family:var(--display)!important; font-style:normal; font-weight:700!important; text-transform:uppercase!important; }
+
+.chapter-quote { max-width:500px; font-family:var(--mono); font-size:clamp(15px,1.7vw,26px); font-weight:600; line-height:.9; text-transform:uppercase; }
+.chapter-quote-line { display:block; width:fit-content; max-width:100%; padding:8px 11px; background:var(--acid); color:var(--ink); }
+
+.contact-section { background:var(--acid); color:var(--ink); }
+.contact-grid a { color:var(--ink); }
+
+.cursor { background:var(--acid); }
+.cursor.is-active { background:transparent; border-color:var(--acid); }
+
+@media (max-width:900px) {
+  .nyc-topline { grid-template-columns:1fr 1fr; }
+  .nyc-topline span:nth-child(2) { display:none; }
+  .nyc-menu { left:16px; right:16px; top:56px; width:auto; justify-content:space-between; }
+  .nyc-hero-copy { left:16px; top:17vh; width:70vw; }
+  .nyc-name { font-size:clamp(100px,24vw,220px); }
+  .nyc-portrait { right:-6vw; width:54vw; }
+  .nyc-project-row { grid-template-columns:44px 1fr 170px; }
+  .nyc-project-arrow { display:none; }
 }
 
-/* Main voice: contemporary digital grotesk */
-body,
-.desktop-nav,
-.mobile-menu nav a,
-.hero-navigation a strong,
-.chapter-heading h3,
-.section-intro h2,
-.archive-sticky h2,
-.about-layout h2,
-.contact-section h2,
-.viewer-header h2,
-.archive-card {
-  font-family: var(--display);
-}
-
-/* Remove the book-editorial feeling from project titles */
-.project-chapter:nth-child(even) .chapter-heading h3 {
-  font-family: var(--display);
-  font-weight: 600;
-  line-height: .74;
-  letter-spacing: -.075em;
-  text-transform: uppercase;
-}
-
-/* Serif becomes a rare accent only */
-.serif-display,
-.archive-serif,
-.viewer-serif,
-.marquee-serif {
-  font-family: var(--serif);
-  font-weight: 400;
-  letter-spacing: -.045em;
-}
-
-/* Keep accent words compact and modern */
-.serif-display {
-  display: inline-block;
-  font-style: italic;
-  line-height: .86;
-}
-
-/* Project descriptions become graphic signals */
-.chapter-quote {
-  max-width: 470px;
-  color: var(--fg);
-  font-family: var(--mono);
-  font-size: clamp(15px, 1.8vw, 27px);
-  font-weight: 700;
-  line-height: .92;
-  letter-spacing: -.045em;
-  text-transform: uppercase;
-}
-
-.chapter-quote-line {
-  display: block;
-  padding: 9px 11px;
-  background: var(--red);
-  color: #090909;
-  width: fit-content;
-  max-width: 100%;
-}
-
-/* More digital hierarchy */
-.chapter-label,
-.chapter-number,
-.chapter-meta,
-.chapter-footer,
-.section-index,
-.layout-note,
-.archive-hint,
-.services span,
-.contact-footer {
-  font-family: var(--mono);
-}
-
-/* Cleaner section accents */
-.section-intro h2,
-.archive-sticky h2,
-.about-layout h2,
-.contact-section h2 {
-  line-height: .75;
-}
-
-/* Marquee: readable, several items visible at once */
-.marquee {
-  padding: 10px 0;
-}
-
-.marquee-track {
-  gap: 26px;
-  font-family: var(--display);
-  font-size: clamp(14px, 1.55vw, 23px);
-  font-weight: 600;
-  letter-spacing: -.02em;
-  animation-duration: 44s;
-}
-
-.marquee-track span::after {
-  margin-left: 26px;
-}
-
-/* Archive loses the romantic serif-card feeling */
-.archive-card {
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.archive-serif {
-  font-family: var(--display);
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: -.05em;
-}
-
-/* Contact stays bold but not magazine-like */
-.contact-section h2 .serif-display {
-  font-family: var(--display);
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: -.075em;
-  text-transform: uppercase;
-}
-
-/* Viewer title remains one graphic family */
-.viewer-header .viewer-serif {
-  font-family: var(--display);
-  font-style: normal;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-/* Cursor remains red */
-.cursor {
-  background: var(--studio-red);
-}
-
-.cursor.is-active {
-  background: transparent;
-  border-color: var(--studio-red);
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .chapter-quote {
-    font-size: clamp(14px, 3.2vw, 22px);
-  }
-}
-
-@media (max-width: 600px) {
-  .chapter-quote-line {
-    padding: 7px 9px;
-  }
-
-  .marquee-track {
-    font-size: 13px;
-    gap: 20px;
-  }
-
-  .marquee-track span::after {
-    margin-left: 20px;
-  }
+@media (max-width:600px) {
+  .nyc-topline { left:12px; right:12px; }
+  .nyc-menu { left:12px; right:12px; gap:12px; }
+  .nyc-menu a strong { font-size:8px; }
+  .nyc-hero-copy { left:12px; width:84vw; }
+  .nyc-name { font-size:31vw; }
+  .nyc-portrait { top:42%; right:-20%; width:82vw; height:48vh; opacity:.7; }
+  .nyc-code,.nyc-cross-b,.nyc-status span:first-child { display:none; }
+  .nyc-status { left:12px; right:12px; justify-content:flex-end; }
+  .nyc-selected { padding-left:12px; padding-right:12px; }
+  .nyc-project-row { grid-template-columns:30px 1fr 92px; min-height:116px; gap:10px; }
+  .nyc-project-number { font-size:14px; }
+  .nyc-project-copy strong { font-size:10vw; }
+  .nyc-project-copy span { font-size:7px; }
+  .nyc-project-thumb { height:90px; }
 }
