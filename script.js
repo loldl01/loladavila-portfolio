@@ -214,7 +214,7 @@ document.addEventListener("keydown", (event) => {
 
 /* ---------- Hero preview + parallax ---------- */
 
-document.querySelectorAll("[data-preview]").forEach((link) => {
+document.querySelectorAll(".hero-navigation a").forEach((link) => {
   const preview = link.dataset.preview;
 
   link.addEventListener("mouseenter", () => {
@@ -232,12 +232,12 @@ window.addEventListener("scroll", () => {
 
   if (heroWords[0]) {
     heroWords[0].style.transform =
-      `translate3d(${-progress * 3}vw, ${-progress * 2}vh, 0)`;
+      `translate3d(${-progress * 2}vw, ${-progress * 1.5}vh, 0)`;
   }
 
   if (heroWords[1]) {
     heroWords[1].style.transform =
-      `translate3d(${progress * 4}vw, ${progress * 1.5}vh, 0)`;
+      `translate3d(${progress * 2}vw, ${progress * 1.5}vh, 0)`;
   }
 }, { passive: true });
 

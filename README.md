@@ -1,26 +1,26 @@
-# Lola Davila — Fashion Menu V9
+# Lola Davila — Image Builder Mockup V10
 
-Rediseño completo del inicio sobre los archivos entregados por Lola.
+Esta versión convierte el mockup aprobado en una página funcional.
 
-## Qué se corrigió
+## Dirección visual
 
-- Menú con letras mucho más pequeñas.
-- Tipografía limpia y contemporánea.
-- Se eliminó la sensación de editorial de libros.
-- Se eliminaron los cuadros negros detrás de los textos.
-- Fondo negro conservado, pero con profundidad mediante luces suaves.
-- Imagen de fondo al pasar por cada opción.
-- LOLA DAVILA sigue siendo protagonista, pero con una escala más controlada.
-- Franja móvil más pequeña y legible.
-- Cursor rojo conservado.
-- Se eliminó la transición gigante con el número 13.
+- Fondo negro con textura y profundidad sutil.
+- `I BUILD` en grotesk contemporánea.
+- `IMAGES` en serif editorial refinada.
+- Menú pequeño, abierto y sin cajas negras.
+- Al pasar por cada opción, una fotografía ocupa toda la pantalla.
+- Cursor rojo.
+- Paleta negro, marfil y rojo.
+- Franja móvil más pequeña para leer varias especialidades al mismo tiempo.
+- Sin tipografías punk, de terror o de editorial de libros.
+- Se mantiene el resto del portafolio para seguir trabajando después.
 
-## Reemplaza en GitHub
+## Archivos para GitHub
 
-- index.html
-- styles.css
-- script.js
-- projects.js
-- README.md
+- `index.html`
+- `styles.css`
+- `script.js`
+- `projects.js`
+- `README.md`
 
 Conserva `assets/images/`.
