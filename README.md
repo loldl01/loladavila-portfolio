@@ -1,26 +1,34 @@
-# Lola Davila — Image Builder Mockup V10
+# Lola Davila — Fashion Portfolio | Capítulos editoriales
 
-Esta versión convierte el mockup aprobado en una página funcional.
+Esta versión toma los archivos base entregados por Lola y reconstruye exclusivamente
+la sección de proyectos como una secuencia de capítulos editoriales.
 
-## Dirección visual
+## Qué cambió
 
-- Fondo negro con textura y profundidad sutil.
-- `I BUILD` en grotesk contemporánea.
-- `IMAGES` en serif editorial refinada.
-- Menú pequeño, abierto y sin cajas negras.
-- Al pasar por cada opción, una fotografía ocupa toda la pantalla.
-- Cursor rojo.
-- Paleta negro, marfil y rojo.
-- Franja móvil más pequeña para leer varias especialidades al mismo tiempo.
-- Sin tipografías punk, de terror o de editorial de libros.
-- Se mantiene el resto del portafolio para seguir trabajando después.
+- Cada proyecto ahora es un capítulo de gran formato.
+- Los títulos tienen mucho más aire y jerarquía.
+- Cada capítulo combina una imagen principal, una imagen secundaria y una frase.
+- Hay cuatro composiciones controladas que se repiten automáticamente al añadir proyectos.
+- Ya no se muestran tarjetas dentro de cajas ni spreads con bordes redondeados.
+- Se mantiene el hero, el menú, el marquee, el archivo arrastrable, el cursor rojo,
+  la sección Sobre mí y Contacto.
+- El menú continúa usando una sola tipografía.
 
-## Archivos para GitHub
+## Archivos modificados
 
 - `index.html`
 - `styles.css`
 - `script.js`
-- `projects.js`
 - `README.md`
 
-Conserva `assets/images/`.
+`projects.js` conserva los mismos datos y el mismo sistema de orden.
+
+## Agregar proyectos
+
+Añade un nuevo objeto en `projects.js`. La web asignará automáticamente una de las
+cuatro composiciones de capítulo según su posición.
+
+## Publicación
+
+Reemplaza los cinco archivos en GitHub. No borres tu carpeta `assets/images/`.
+Cloudflare volverá a publicar automáticamente.

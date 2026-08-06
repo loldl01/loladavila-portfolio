@@ -29,60 +29,15 @@ const CHAPTER_LABELS = [
   "Archive"
 ];
 
-
-const GOU_NOTES = [
-  "IMAGE / ATTITUDE / FORM",
-  "MOVEMENT BUILDS CHARACTER",
-  "THE DETAIL CHANGES EVERYTHING",
-  "STYLE BECOMES LANGUAGE",
-  "PERSONAL VISUAL SYSTEM",
-  "STYLING CREATES DESIRE",
-  "LOOK AGAIN",
-  "IMAGE FIRST"
-];
-
-function gouTitle(title, index) {
-  const words = title.trim().split(/\s+/);
-  const first = words.slice(0, -1).join(" ");
-  const last = words.at(-1);
-
-  if (words.length === 1) {
-    return `<span class="gou-title-serif">${last}</span>`;
-  }
-
-  const patterns = [
-    `
-      <span class="gou-title-sans">${first}</span>
-      <span class="gou-title-serif gou-shift-right">${last}</span>
-    `,
-    `
-      <span class="gou-title-serif">${first}</span>
-      <span class="gou-title-outline gou-shift-right">${last}</span>
-    `,
-    `
-      <span class="gou-title-condensed">${first}</span>
-      <span class="gou-title-sans gou-shift-right">${last}</span>
-    `,
-    `
-      <span class="gou-title-outline">${first}</span>
-      <span class="gou-title-serif">${last}</span>
-    `
-  ];
-
-  return patterns[index % patterns.length];
-}
-
 function renderProjects() {
   projectCanvas.innerHTML = projects.map((project, index) => {
     const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
     const number = String(index + 1).padStart(2, "0");
     const layout = `chapter-layout-${(index % 4) + 1}`;
-    const titleMarkup = gouTitle(project.title, index);
-    const posterNote = GOU_NOTES[index] || "";
 
     return `
       <article
-        class="project-chapter ${layout} gou-chapter"
+        class="project-chapter ${layout}"
         tabindex="0"
         role="button"
         data-project-id="${project.id}"
@@ -93,7 +48,7 @@ function renderProjects() {
 
           <div class="chapter-heading">
             <p class="chapter-label">${chapter}</p>
-            <h3 class="gou-chapter-title">${titleMarkup}</h3>
+            <h3>${project.title}</h3>
           </div>
 
           <div class="chapter-meta">
@@ -120,15 +75,6 @@ function renderProjects() {
 
           <div class="chapter-quote">
             <span>${project.description}</span>
-          </div>
-
-          ${posterNote ? `
-            <div class="gou-poster-note" aria-hidden="true">${posterNote}</div>
-          ` : ""}
-
-          <div class="gou-index-tag gou13-index-tag" aria-hidden="true">
-            <strong>${String(index + 1).padStart(2, "0")}</strong>
-            <span>${project.year}</span>
           </div>
         </div>
 
@@ -230,15 +176,8 @@ window.addEventListener("scroll", () => {
   const scrollY = Math.min(window.scrollY, window.innerHeight);
   const progress = scrollY / window.innerHeight;
 
-  if (heroWords[0]) {
-    heroWords[0].style.transform =
-      `translate3d(${-progress * 2}vw, ${-progress * 1.5}vh, 0)`;
-  }
-
-  if (heroWords[1]) {
-    heroWords[1].style.transform =
-      `translate3d(${progress * 2}vw, ${progress * 1.5}vh, 0)`;
-  }
+  heroWords[0].style.transform = `translate3d(${-progress * 10}vw, ${-progress * 8}vh, 0)`;
+  heroWords[1].style.transform = `translate3d(${progress * 12}vw, ${progress * 3}vh, 0)`;
 }, { passive: true });
 
 /* ---------- Mobile menu ---------- */

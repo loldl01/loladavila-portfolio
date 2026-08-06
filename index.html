@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Inter+Tight:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
@@ -20,7 +20,8 @@
 <body>
   <div class="cursor" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
-<header class="site-header">
+
+  <header class="site-header">
     <nav class="desktop-nav" aria-label="Navegación principal">
       <a href="#work">Trabajo <sup id="work-count">00</sup></a>
       <a href="#archive">Archivo</a>
@@ -45,7 +46,7 @@
   </aside>
 
   <main>
-    <section id="home" class="hero image-builder-home">
+    <section id="home" class="hero">
       <div class="hero-backdrop" aria-hidden="true">
         <div class="hero-preview preview-work"></div>
         <div class="hero-preview preview-archive"></div>
@@ -53,58 +54,33 @@
         <div class="hero-preview preview-contact"></div>
       </div>
 
-      <div class="image-builder-overlay" aria-hidden="true"></div>
-
-      <div class="image-builder-topline">
-        <span>LOLA DAVILA</span>
-        <span>ECUADOR</span>
-        <span>2026</span>
-      </div>
-
-      <div class="image-builder-copy">
-        <p>FASHION STYLING · CREATIVE DIRECTION</p>
-
-        <h1>
-          <span class="image-builder-sans">I BUILD</span>
-          <span class="image-builder-serif">IMAGES</span>
-        </h1>
-      </div>
-
-      <nav class="hero-navigation image-builder-menu" aria-label="Navegación principal destacada">
+      <div class="hero-navigation">
         <a href="#work" data-preview="work">
           <span>01</span>
-          <strong>WORK</strong>
+          <strong>Trabajo Seleccionado</strong>
         </a>
-
         <a href="#archive" data-preview="archive">
           <span>02</span>
-          <strong>ARCHIVE</strong>
+          <strong>Archivo Visual</strong>
         </a>
-
         <a href="#about" data-preview="about">
           <span>03</span>
-          <strong>ABOUT</strong>
+          <strong>Sobre Lola</strong>
         </a>
-
         <a href="#contact" data-preview="contact">
           <span>04</span>
-          <strong>CONTACT</strong>
+          <strong>Contactar</strong>
         </a>
-      </nav>
-
-      <div class="image-builder-description">
-        Styling, image direction and visual production for fashion,
-        campaigns and e-commerce.
       </div>
 
-      <div class="image-builder-status">
-        <span>AVAILABLE FOR SELECTED PROJECTS</span>
-        <span>SCROLL TO EXPLORE ↓</span>
-      </div>
-
-      <div class="hero-title image-builder-hidden-title" aria-hidden="true">
+      <div class="hero-title" aria-label="Lola Davila">
         <span class="hero-word hero-word-lola">LOLA</span>
         <span class="hero-word hero-word-davila">DAVILA</span>
+      </div>
+
+      <div class="hero-meta">
+        <p>Estilista de Moda · Dirección Creativa · Ecuador</p>
+        <p>Desliza para explorar ↓</p>
       </div>
     </section>
 
@@ -124,7 +100,8 @@
         <span class="marquee-serif">Producción</span>
       </div>
     </div>
-<section id="work" class="work-section">
+
+    <section id="work" class="work-section">
       <div class="section-intro reveal">
         <p class="section-index">01 — Trabajo Seleccionado</p>
 
