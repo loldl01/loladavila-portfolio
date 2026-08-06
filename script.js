@@ -18,57 +18,75 @@ document.getElementById("mobile-work-count").textContent = String(projects.lengt
 document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ---------- Render projects ---------- */
+/* ---------- Render projects as editorial chapters ---------- */
 
-const CANVAS_BREAKS = {
-  2: `ESTILO / <span>FORMA</span> / CARÁCTER`,
-  3: `<span>Trabajo</span> Seleccionado`
-};
-
-const CANVAS_BREAK_ECHO = {
-  2: "ESTILO / FORMA / CARÁCTER",
-  3: "TRABAJO SELECCIONADO"
-};
+const CHAPTER_LABELS = [
+  "Editorial",
+  "Campaign",
+  "Personal",
+  "Commercial",
+  "E-commerce",
+  "Archive"
+];
 
 function renderProjects() {
-  const items = projects.map((project, index) => `
-    <article
-      class="project-item"
-      tabindex="0"
-      role="button"
-      data-project-id="${project.id}"
-      aria-label="Abrir proyecto ${project.title}"
-    >
-      <p class="project-kicker">Proyecto ${String(index + 1).padStart(2, "0")} — ${project.category}</p>
+  projectCanvas.innerHTML = projects.map((project, index) => {
+    const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
+    const number = String(index + 1).padStart(2, "0");
+    const layout = `chapter-layout-${(index % 4) + 1}`;
 
-      <div class="project-frame">
-        <div class="project-visual" style="--project-color: ${project.color}; --project-image: url('${project.image}')"></div>
-        <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
-        <span class="project-edge-label">${project.client} · ${project.year}</span>
-      </div>
+    return `
+      <article
+        class="project-chapter ${layout}"
+        tabindex="0"
+        role="button"
+        data-project-id="${project.id}"
+        aria-label="Abrir proyecto ${project.title}"
+      >
+        <header class="chapter-header">
+          <div class="chapter-number">PROJECT ${number}</div>
 
-      <div class="project-caption">
-        <h3>${project.title}</h3>
-        <p>${project.category}<br>${project.year}</p>
-      </div>
-    </article>
-  `);
+          <div class="chapter-heading">
+            <p class="chapter-label">${chapter}</p>
+            <h3>${project.title}</h3>
+          </div>
 
-  let markup = "";
+          <div class="chapter-meta">
+            <span>${project.category}</span>
+            <span>${project.client}</span>
+            <span>${project.year}</span>
+          </div>
+        </header>
 
-  for (let i = 0; i < items.length; i += 2) {
-    const pair = items.slice(i, i + 2).join("");
-    markup += `<div class="project-spread">${pair}</div>`;
+        <div class="chapter-stage">
+          <div class="chapter-image chapter-image-main">
+            <div
+              class="chapter-visual"
+              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
+            ></div>
+          </div>
 
-    const breakIndex = i / 2 + 1;
-    if (CANVAS_BREAKS[breakIndex]) {
-      markup += `<div class="canvas-break" data-echo="${CANVAS_BREAK_ECHO[breakIndex]}">${CANVAS_BREAKS[breakIndex]}</div>`;
-    }
-  }
+          <div class="chapter-image chapter-image-secondary">
+            <div
+              class="chapter-visual chapter-visual-secondary"
+              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
+            ></div>
+          </div>
 
-  projectCanvas.innerHTML = markup;
+          <div class="chapter-quote">
+            <span>${project.description}</span>
+          </div>
+        </div>
 
-  document.querySelectorAll(".project-item").forEach((item) => {
+        <footer class="chapter-footer">
+          <span>Ver proyecto completo</span>
+          <span>↗</span>
+        </footer>
+      </article>
+    `;
+  }).join("");
+
+  document.querySelectorAll(".project-chapter").forEach((item) => {
     item.addEventListener("click", () => openProject(item.dataset.projectId));
 
     item.addEventListener("keydown", (event) => {
@@ -85,94 +103,46 @@ function renderProjects() {
 /* ---------- Project viewer ---------- */
 
 function openProject(id) {
-  const projectIndex = projects.findIndex((item) => item.id === id);
-  const project = projects[projectIndex];
+  const project = projects.find((item) => item.id === id);
   if (!project) return;
 
   const titleWords = project.title.split(" ");
-  const lastWord = titleWords.pop();
-  const firstWords = titleWords.join(" ");
-
-  const gallery = Array.isArray(project.gallery) && project.gallery.length
-    ? project.gallery
-    : [project.image];
-
-  const keywords = Array.isArray(project.keywords) && project.keywords.length
-    ? project.keywords
-    : ["Imagen", "Carácter", "Movimiento"];
-
-  const nextProject = projects[(projectIndex + 1) % projects.length];
-
-  const galleryMarkup = gallery.map((src, index) => `
-    <figure class="v2-shot v2-shot-${(index % 5) + 1}">
-      <div class="v2-shot-frame">
-        <img src="${src}" alt="${project.title} — imagen ${index + 1}" loading="${index === 0 ? "eager" : "lazy"}">
-      </div>
-      <figcaption>${String(index + 1).padStart(2, "0")} / ${String(gallery.length).padStart(2, "0")}</figcaption>
-    </figure>
-  `).join("");
+  const titleMarkup =
+    titleWords.length > 1
+      ? `${titleWords.slice(0, -1).join(" ")} <span class="viewer-serif">${titleWords.at(-1)}</span>`
+      : project.title;
 
   viewerContent.innerHTML = `
-    <article class="v2-project">
-      <header class="v2-hero">
-        <p class="v2-project-number">PROJECT ${String(projectIndex + 1).padStart(2, "0")}</p>
+    <div class="viewer-header">
+      <h2>${titleMarkup}</h2>
 
-        <h2>
-          ${firstWords ? `<span class="v2-title-sans">${firstWords}</span>` : ""}
-          <span class="v2-title-serif">${lastWord}</span>
-        </h2>
-
-        <div class="v2-meta">
-          <span>${project.category}</span>
-          <span>${project.client}</span>
-          <span>${project.year}</span>
-        </div>
-      </header>
-
-      <section class="v2-cover">
-        <img src="${project.image}" alt="${project.title}" loading="eager">
-      </section>
-
-      <section class="v2-intro">
+      <div>
         <p>${project.description}</p>
+        <p>${project.category} · ${project.year}<br>${project.client}</p>
+      </div>
+    </div>
 
-        <div class="v2-keywords">
-          ${keywords.map((word) => `<span>${word}</span>`).join("")}
+    <div class="viewer-gallery">
+      ${project.galleryColors.map((color, index) => `
+        <div class="viewer-image" style="--image-color: ${color}">
+          IMAGEN ${String(index + 1).padStart(2, "0")}
         </div>
-      </section>
+      `).join("")}
+    </div>
 
-      <section class="v2-story">
-        ${galleryMarkup}
-      </section>
-
-      <section class="v2-credits">
-        <div><span>Rol</span><strong>${project.category}</strong></div>
-        <div><span>Cliente</span><strong>${project.client}</strong></div>
-        <div><span>Año</span><strong>${project.year}</strong></div>
-        <div><span>Styling</span><strong>Lola Davila</strong></div>
-      </section>
-
-      <button class="v2-next" type="button" data-next-project="${nextProject.id}">
-        <span>Siguiente proyecto</span>
-        <strong>${nextProject.title}</strong>
-        <span aria-hidden="true">↘</span>
-      </button>
-    </article>
+    <div class="viewer-credits">
+      <span>Estilismo — Lola Davila</span>
+      <span>Cliente — ${project.client}</span>
+      <span>Año — ${project.year}</span>
+    </div>
   `;
-
-  const nextButton = viewerContent.querySelector(".v2-next");
-  nextButton?.addEventListener("click", () => openProject(nextButton.dataset.nextProject));
-
-  document.getElementById("viewer-current").textContent =
-    String(projectIndex + 1).padStart(2, "0");
-  document.getElementById("viewer-total").textContent =
-    String(projects.length).padStart(2, "0");
 
   projectViewer.classList.add("is-open");
   projectViewer.setAttribute("aria-hidden", "false");
   body.classList.add("viewer-open");
   projectViewer.scrollTop = 0;
 }
+
 function closeProject() {
   projectViewer.classList.remove("is-open");
   projectViewer.setAttribute("aria-hidden", "true");
@@ -210,21 +180,6 @@ window.addEventListener("scroll", () => {
   heroWords[1].style.transform = `translate3d(${progress * 12}vw, ${progress * 3}vh, 0)`;
 }, { passive: true });
 
-
-/* ---------- V2 project depth ---------- */
-
-projectViewer.addEventListener("scroll", () => {
-  projectViewer.querySelectorAll(".v2-shot img").forEach((image) => {
-    const frame = image.parentElement;
-    const rect = frame.getBoundingClientRect();
-    const center = rect.top + rect.height / 2;
-    const viewportCenter = window.innerHeight / 2;
-    const offset = (center - viewportCenter) * -0.025;
-
-    image.style.transform = `translate3d(0, ${offset}px, 0) scale(1.05)`;
-  });
-}, { passive: true });
-
 /* ---------- Mobile menu ---------- */
 
 function openMenu() {
@@ -250,7 +205,7 @@ mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 function bindCursorTargets() {
   if (!window.matchMedia("(pointer: fine)").matches || !cursor) return;
 
-  document.querySelectorAll("a, button, .project-item").forEach((element) => {
+  document.querySelectorAll("a, button, .project-chapter").forEach((element) => {
     element.addEventListener("mouseenter", () => cursor.classList.add("is-active"));
     element.addEventListener("mouseleave", () => cursor.classList.remove("is-active"));
   });

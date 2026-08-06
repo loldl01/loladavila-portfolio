@@ -9,8 +9,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una historia de moda monocromática construida alrededor del volumen, la sombra y el carácter.",
     color: "#282828",
     image: "assets/images/project-01.jpg",
-    gallery: ["assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg"],
-    keywords: ["Sombra", "Volumen", "Carácter"]
+    galleryColors: ["#171717", "#3c3c3c", "#221612", "#4a443e", "#171717", "#301510"]
   },
   {
     id: "new-volume",
@@ -22,8 +21,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una exploración visual de silueta, proporción y sastrería contemporánea.",
     color: "#3b2119",
     image: "assets/images/project-02.jpg",
-    gallery: ["assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg"],
-    keywords: ["Silueta", "Proporción", "Estructura"]
+    galleryColors: ["#3b2119", "#191919", "#5a5047", "#2d1711", "#4b4b4b", "#27100b"]
   },
   {
     id: "electric-blue",
@@ -35,8 +33,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una serie de imágenes de alta energía que combina color gráfico y estilismo directo.",
     color: "#1c2c49",
     image: "assets/images/project-03.jpg",
-    gallery: ["assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg"],
-    keywords: ["Color", "Energía", "Ritmo"]
+    galleryColors: ["#18233a", "#2d456e", "#1a1a1a", "#596777", "#132037", "#202020"]
   },
   {
     id: "after-hours",
@@ -48,8 +45,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Sastrería nocturna, tensión cinematográfica y glamour discreto.",
     color: "#211619",
     image: "assets/images/project-04.jpg",
-    gallery: ["assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg"],
-    keywords: ["Noche", "Tensión", "Sastrería"]
+    galleryColors: ["#120d0f", "#32191e", "#242424", "#4b3036", "#151515", "#2d1419"]
   },
   {
     id: "soft-structure",
@@ -61,8 +57,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una historia de producto refinada que equilibra suavidad, forma y claridad comercial.",
     color: "#5a544b",
     image: "assets/images/project-05.jpg",
-    gallery: ["assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg"],
-    keywords: ["Suavidad", "Forma", "Claridad"]
+    galleryColors: ["#4f4941", "#262626", "#867d70", "#3b3732", "#181818", "#625a50"]
   },
   {
     id: "red-signal",
@@ -74,8 +69,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Un lenguaje de campaña audaz definido por contraste, repetición y acentos rojos.",
     color: "#49120b",
     image: "assets/images/project-06.jpg",
-    gallery: ["assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg"],
-    keywords: ["Contraste", "Repetición", "Impacto"]
+    galleryColors: ["#360b07", "#171717", "#6c1a10", "#3b302e", "#1e0805", "#4c1710"]
   },
   {
     id: "summer-line",
@@ -87,8 +81,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Siluetas livianas y luz saturada con un ritmo sin esfuerzo.",
     color: "#6f5b45",
     image: "assets/images/project-07.jpg",
-    gallery: ["assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg"],
-    keywords: ["Luz", "Movimiento", "Ligereza"]
+    galleryColors: ["#6f5b45", "#b0a18c", "#29231e", "#7b6a57", "#3a332d", "#94826c"]
   },
   {
     id: "studio-forms",
@@ -100,7 +93,6 @@ window.PORTFOLIO_PROJECTS = [
     description: "Un sistema de estudio enfocado en estilismo consistente, silueta y narrativa de producto.",
     color: "#2f2f2f",
     image: "assets/images/project-08.jpg",
-    gallery: ["assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg"],
-    keywords: ["Sistema", "Consistencia", "Producto"]
+    galleryColors: ["#202020", "#424242", "#161616", "#5a5a5a", "#262626", "#373737"]
   }
 ];
