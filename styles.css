@@ -2430,166 +2430,372 @@ body {
 
 
 /* =========================================================
-   SELECTED WORK MENU — added from the approved reference
+   FASHION MENU V9
+   Smaller, cleaner, less book-editorial, no black text boxes
    ========================================================= */
 
-.selected-work-menu {
-  position: relative;
-  z-index: 5;
-  padding: 92px 16px 86px;
-  background: #090909;
-  color: #f2f0eb;
-  border-top: 1px solid rgba(242, 240, 235, .18);
-  border-bottom: 1px solid rgba(242, 240, 235, .18);
+:root {
+  --fashion-font: "Space Grotesk", sans-serif;
+  --fashion-black: #080808;
+  --fashion-white: #f1efe9;
+  --fashion-red: #ff2a1a;
+  --fashion-grey: #8f8f8f;
 }
 
-.selected-work-menu-head {
-  display: flex;
+body {
+  background: var(--fashion-black);
+  color: var(--fashion-white);
+}
+
+/* Hide the old fixed editorial labels from this version */
+.gou-page-labels {
+  display: none !important;
+}
+
+/* Hero */
+.fashion-home {
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--fashion-black);
+  color: var(--fashion-white);
+  border-bottom: 1px solid rgba(241,239,233,.16);
+}
+
+.fashion-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fashion-orbit {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: .14;
+}
+
+.fashion-orbit-a {
+  width: 46vw;
+  height: 46vw;
+  left: -12vw;
+  top: -18vw;
+  background: var(--fashion-red);
+}
+
+.fashion-orbit-b {
+  width: 34vw;
+  height: 34vw;
+  right: -8vw;
+  bottom: -12vw;
+  background: #4539ff;
+  opacity: .08;
+}
+
+.fashion-home .hero-backdrop {
+  z-index: 1;
+}
+
+.fashion-home .hero-preview {
+  opacity: 0;
+  transform: scale(1.03);
+  filter: grayscale(.22) contrast(1.08) brightness(.68);
+}
+
+.fashion-home[data-active-preview="work"] .preview-work,
+.fashion-home[data-active-preview="archive"] .preview-archive,
+.fashion-home[data-active-preview="about"] .preview-about,
+.fashion-home[data-active-preview="contact"] .preview-contact {
+  opacity: .66;
+  transform: scale(1);
+}
+
+.fashion-home[data-active-preview] .fashion-title,
+.fashion-home[data-active-preview] .fashion-copy {
+  opacity: .2;
+}
+
+.fashion-topline {
+  position: absolute;
+  z-index: 8;
+  left: 24px;
+  right: 24px;
+  top: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 0 0 15px;
-  border-bottom: 1px solid rgba(242, 240, 235, .28);
-  font-family: var(--sans);
+  font-family: var(--fashion-font);
   font-size: 9px;
   font-weight: 600;
   letter-spacing: .11em;
   text-transform: uppercase;
 }
 
-.selected-work-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.selected-work-row {
-  width: 100%;
-  min-height: 108px;
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1.7fr) minmax(180px, .8fr) 70px;
-  gap: 28px;
-  align-items: center;
-  padding: 10px 16px 10px 0;
-  border: 0;
-  border-bottom: 1px solid rgba(242, 240, 235, .22);
-  background: transparent;
-  color: #f2f0eb;
-  text-align: left;
-  cursor: pointer;
-  transition:
-    background .23s ease,
-    color .23s ease,
-    padding-left .23s ease;
-}
-
-.selected-work-row:hover,
-.selected-work-row:focus-visible {
-  padding-left: 16px;
-  background: var(--red);
-  color: #090909;
-  outline: none;
-}
-
-.selected-work-number,
-.selected-work-category,
-.selected-work-year {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.selected-work-title {
-  min-width: 0;
-  overflow: hidden;
-  font-family: var(--display);
-  font-size: clamp(46px, 6.5vw, 104px);
-  font-weight: 400;
-  line-height: .78;
-  letter-spacing: -.075em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.selected-work-year {
+.fashion-topline span:last-child {
   text-align: right;
 }
 
-/* =========================================================
-   SMALLER MOVING TYPOGRAPHY
-   Several services remain visible at the same time
-   ========================================================= */
+.fashion-title {
+  position: absolute;
+  z-index: 4;
+  left: 20px;
+  bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fashion-font);
+  font-size: clamp(88px, 15vw, 245px);
+  font-weight: 600;
+  line-height: .72;
+  letter-spacing: -.085em;
+  text-transform: uppercase;
+  transition: opacity .35s ease;
+}
 
+.fashion-title span:last-child {
+  margin-left: 9vw;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--fashion-white);
+}
+
+.fashion-menu {
+  position: absolute;
+  z-index: 10;
+  top: 104px;
+  right: 24px;
+  width: min(360px, 32vw);
+  border-top: 1px solid rgba(241,239,233,.25);
+}
+
+.fashion-menu a {
+  display: grid;
+  grid-template-columns: 34px 1fr 20px;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(241,239,233,.25);
+  color: var(--fashion-white);
+  font-family: var(--fashion-font);
+  transition:
+    color .22s ease,
+    padding-left .22s ease,
+    border-color .22s ease;
+}
+
+.fashion-menu a:hover {
+  padding-left: 8px;
+  color: var(--fashion-red);
+  border-color: var(--fashion-red);
+}
+
+.fashion-menu-number {
+  color: var(--fashion-grey);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+.fashion-menu strong {
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+
+.fashion-menu-arrow {
+  text-align: right;
+  font-size: 14px;
+  transition: transform .22s ease;
+}
+
+.fashion-menu a:hover .fashion-menu-arrow {
+  transform: translate(3px, -3px);
+}
+
+.fashion-copy {
+  position: absolute;
+  z-index: 8;
+  left: 24px;
+  top: 118px;
+  width: min(360px, 30vw);
+  transition: opacity .35s ease;
+}
+
+.fashion-copy p {
+  margin: 0;
+  font-family: var(--fashion-font);
+  font-size: clamp(17px, 1.65vw, 26px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.03em;
+}
+
+.fashion-status {
+  position: absolute;
+  z-index: 8;
+  left: 24px;
+  right: 24px;
+  bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--fashion-font);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.fashion-hidden-brand {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* No black boxes behind any hero text */
+.fashion-menu a,
+.fashion-title,
+.fashion-copy,
+.fashion-topline {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+
+/* Smaller, cleaner marquee */
 .marquee {
-  padding: 11px 0 !important;
+  padding: 10px 0 !important;
+  background: var(--fashion-red) !important;
+  color: #090909 !important;
+  border: 0 !important;
 }
 
 .marquee-track {
-  gap: 26px !important;
-  font-size: clamp(15px, 1.65vw, 25px) !important;
-  letter-spacing: -.025em !important;
-  animation-duration: 42s !important;
+  gap: 24px !important;
+  font-family: var(--fashion-font) !important;
+  font-size: clamp(14px, 1.5vw, 22px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.02em !important;
+  animation-duration: 44s !important;
 }
 
 .marquee-track span::after {
-  margin-left: 26px !important;
+  margin-left: 24px !important;
+  color: #090909 !important;
 }
 
-/* Keep the expressive serif, but at a readable scale */
 .marquee-serif {
-  line-height: 1 !important;
+  font-family: var(--fashion-font) !important;
+  font-style: italic;
+  font-weight: 500 !important;
+  color: #090909 !important;
 }
 
-/* Responsive selected-work menu */
+/* Clean up old Gougou hero remnants */
+.gou13-home,
+.gou13-topline,
+.gou13-word,
+.gou13-photo,
+.gou13-copy,
+.gou13-stamp,
+.gou13-red-note,
+.gou13-navigation,
+.gou13-meta,
+.gou13-transition {
+  display: none !important;
+}
+
+/* Keep site header understated */
+.site-header {
+  height: 60px;
+  padding: 0 24px;
+}
+
+.desktop-nav {
+  gap: 20px;
+  font-size: 10px;
+}
+
+/* Cursor stays red */
+.cursor {
+  background: var(--fashion-red) !important;
+}
+
+.cursor.is-active {
+  background: transparent !important;
+  border-color: var(--fashion-red) !important;
+  box-shadow: none !important;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
-  .selected-work-row {
-    grid-template-columns: 42px minmax(0, 1fr) 62px;
-    min-height: 90px;
-    gap: 16px;
+  .fashion-topline {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .selected-work-category {
+  .fashion-topline span:nth-child(2) {
     display: none;
   }
 
-  .selected-work-title {
-    font-size: clamp(38px, 8vw, 72px);
+  .fashion-menu {
+    left: 16px;
+    right: 16px;
+    top: 86px;
+    width: auto;
+  }
+
+  .fashion-copy {
+    top: 330px;
+    left: 16px;
+    width: min(72vw, 440px);
+  }
+
+  .fashion-title {
+    left: 14px;
+    bottom: 72px;
+    font-size: clamp(72px, 18vw, 160px);
   }
 }
 
 @media (max-width: 600px) {
-  .selected-work-menu {
-    padding: 72px 12px 70px;
+  .fashion-topline {
+    left: 12px;
+    right: 12px;
   }
 
-  .selected-work-row {
-    grid-template-columns: 30px minmax(0, 1fr) 42px;
-    min-height: 72px;
-    gap: 9px;
-    padding-right: 4px;
+  .fashion-menu {
+    left: 12px;
+    right: 12px;
   }
 
-  .selected-work-title {
-    font-size: clamp(29px, 9.5vw, 48px);
+  .fashion-menu a {
+    padding: 10px 0;
   }
 
-  .selected-work-number,
-  .selected-work-year {
-    font-size: 7px;
+  .fashion-menu strong {
+    font-size: 17px;
   }
 
-  .marquee {
-    padding: 9px 0 !important;
+  .fashion-copy {
+    top: 304px;
+    left: 12px;
+    width: 78vw;
   }
 
-  .marquee-track {
-    gap: 20px !important;
-    font-size: 14px !important;
+  .fashion-copy p {
+    font-size: 16px;
   }
 
-  .marquee-track span::after {
-    margin-left: 20px !important;
+  .fashion-title {
+    left: 10px;
+    bottom: 74px;
+    font-size: 23vw;
+  }
+
+  .fashion-title span:last-child {
+    margin-left: 0;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .fashion-status {
+    left: 12px;
+    right: 12px;
   }
 }

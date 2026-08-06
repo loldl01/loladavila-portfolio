@@ -1,27 +1,26 @@
-# Lola Davila — Menú de proyectos V8
+# Lola Davila — Fashion Menu V9
 
-Esta versión trabaja directamente sobre los cinco archivos entregados por Lola.
+Rediseño completo del inicio sobre los archivos entregados por Lola.
 
-## Correcciones realizadas
+## Qué se corrigió
 
-- Se añadió un menú negro de `SELECTED WORK` con todos los proyectos.
-- Cada fila muestra:
-  - número;
-  - nombre;
-  - categoría;
-  - año.
-- Al pasar el cursor, toda la fila se vuelve roja.
-- Al hacer clic, se abre el proyecto correspondiente.
-- La franja móvil de servicios ahora usa letras más pequeñas.
-- Se pueden leer varias especialidades al mismo tiempo mientras se desplazan.
-- El cursor rojo y el resto de la composición actual se mantienen.
+- Menú con letras mucho más pequeñas.
+- Tipografía limpia y contemporánea.
+- Se eliminó la sensación de editorial de libros.
+- Se eliminaron los cuadros negros detrás de los textos.
+- Fondo negro conservado, pero con profundidad mediante luces suaves.
+- Imagen de fondo al pasar por cada opción.
+- LOLA DAVILA sigue siendo protagonista, pero con una escala más controlada.
+- Franja móvil más pequeña y legible.
+- Cursor rojo conservado.
+- Se eliminó la transición gigante con el número 13.
 
-## Archivos que debes reemplazar
+## Reemplaza en GitHub
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `projects.js`
-- `README.md`
+- index.html
+- styles.css
+- script.js
+- projects.js
+- README.md
 
-Conserva la carpeta `assets/images/`.
+Conserva `assets/images/`.

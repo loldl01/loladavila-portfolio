@@ -18,60 +18,6 @@ document.getElementById("mobile-work-count").textContent = String(projects.lengt
 document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
-
-/* ---------- Selected work menu ---------- */
-
-const selectedWorkList = document.getElementById("selected-work-list");
-const selectedWorkTotal = document.getElementById("selected-work-total");
-
-function renderSelectedWorkMenu() {
-  if (!selectedWorkList) return;
-
-  if (selectedWorkTotal) {
-    selectedWorkTotal.textContent =
-      `${String(projects.length).padStart(2, "0")} PROJECTS`;
-  }
-
-  selectedWorkList.innerHTML = projects.map((project, index) => `
-    <button
-      class="selected-work-row"
-      type="button"
-      data-project-id="${project.id}"
-      aria-label="Abrir proyecto ${project.title}"
-    >
-      <span class="selected-work-number">
-        ${String(index + 1).padStart(2, "0")}
-      </span>
-
-      <strong class="selected-work-title">
-        ${project.title}
-      </strong>
-
-      <span class="selected-work-category">
-        ${project.category}
-      </span>
-
-      <span class="selected-work-year">
-        ${project.year}
-      </span>
-    </button>
-  `).join("");
-
-  selectedWorkList.querySelectorAll(".selected-work-row").forEach((row) => {
-    row.addEventListener("click", () => {
-      openProject(row.dataset.projectId);
-    });
-
-    row.addEventListener("mouseenter", () => {
-      cursor?.classList.add("is-active");
-    });
-
-    row.addEventListener("mouseleave", () => {
-      cursor?.classList.remove("is-active");
-    });
-  });
-}
-
 /* ---------- Render projects as editorial chapters ---------- */
 
 const CHAPTER_LABELS = [
@@ -268,7 +214,7 @@ document.addEventListener("keydown", (event) => {
 
 /* ---------- Hero preview + parallax ---------- */
 
-document.querySelectorAll(".hero-navigation a").forEach((link) => {
+document.querySelectorAll("[data-preview]").forEach((link) => {
   const preview = link.dataset.preview;
 
   link.addEventListener("mouseenter", () => {
@@ -284,8 +230,15 @@ window.addEventListener("scroll", () => {
   const scrollY = Math.min(window.scrollY, window.innerHeight);
   const progress = scrollY / window.innerHeight;
 
-  heroWords[0].style.transform = `translate3d(${-progress * 10}vw, ${-progress * 8}vh, 0)`;
-  heroWords[1].style.transform = `translate3d(${progress * 12}vw, ${progress * 3}vh, 0)`;
+  if (heroWords[0]) {
+    heroWords[0].style.transform =
+      `translate3d(${-progress * 3}vw, ${-progress * 2}vh, 0)`;
+  }
+
+  if (heroWords[1]) {
+    heroWords[1].style.transform =
+      `translate3d(${progress * 4}vw, ${progress * 1.5}vh, 0)`;
+  }
 }, { passive: true });
 
 /* ---------- Mobile menu ---------- */
@@ -400,6 +353,5 @@ function bindArchiveDrag() {
 
 bindArchiveDrag();
 
-renderSelectedWorkMenu();
 renderProjects();
 bindCursorTargets();
