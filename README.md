@@ -1,34 +1,25 @@
-# Lola Davila — Fashion Portfolio | Capítulos editoriales
+# Lola Davila — Capítulos editoriales | Tipografía V2
 
-Esta versión toma los archivos base entregados por Lola y reconstruye exclusivamente
-la sección de proyectos como una secuencia de capítulos editoriales.
+Esta versión conserva la estructura de capítulos editoriales y añade dos nuevas voces tipográficas:
 
-## Qué cambió
+- **Shrikhand:** serif display retro, gruesa y expresiva.
+- **Permanent Marker:** lettering gestual para anotaciones rojas.
 
-- Cada proyecto ahora es un capítulo de gran formato.
-- Los títulos tienen mucho más aire y jerarquía.
-- Cada capítulo combina una imagen principal, una imagen secundaria y una frase.
-- Hay cuatro composiciones controladas que se repiten automáticamente al añadir proyectos.
-- Ya no se muestran tarjetas dentro de cajas ni spreads con bordes redondeados.
-- Se mantiene el hero, el menú, el marquee, el archivo arrastrable, el cursor rojo,
-  la sección Sobre mí y Contacto.
-- El menú continúa usando una sola tipografía.
+## Dónde se usan
 
-## Archivos modificados
+- El menú continúa con una sola tipografía sans.
+- `LOLA DAVILA` no cambia.
+- Los títulos de proyectos mezclan sans, serif y retro.
+- Algunas palabras editoriales usan la nueva serif retro.
+- Solo ciertos capítulos llevan anotaciones manuscritas rojas para no saturar la web.
+- El marquee y algunas palabras de Archivo también reciben el acento retro.
+
+## Archivos que debes reemplazar
 
 - `index.html`
 - `styles.css`
 - `script.js`
+- `projects.js`
 - `README.md`
 
-`projects.js` conserva los mismos datos y el mismo sistema de orden.
-
-## Agregar proyectos
-
-Añade un nuevo objeto en `projects.js`. La web asignará automáticamente una de las
-cuatro composiciones de capítulo según su posición.
-
-## Publicación
-
-Reemplaza los cinco archivos en GitHub. No borres tu carpeta `assets/images/`.
-Cloudflare volverá a publicar automáticamente.
+No borres la carpeta `assets/images/`.

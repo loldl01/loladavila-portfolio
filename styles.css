@@ -12,6 +12,8 @@
   --display: "Archivo Black", sans-serif;
   --sans: "DM Sans", sans-serif;
   --serif: "Fraunces", serif;
+  --retro: "Shrikhand", serif;
+  --hand: "Permanent Marker", cursive;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -352,9 +354,10 @@ button { font: inherit; }
 }
 
 .serif-display {
-  font-family: var(--serif);
-  font-weight: 600;
-  letter-spacing: -0.07em;
+  font-family: var(--retro);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
   text-transform: none;
 }
 
@@ -440,21 +443,52 @@ button { font: inherit; }
 
 .chapter-heading h3 {
   margin: 0;
-  max-width: 900px;
-  font-family: var(--display);
+  max-width: 980px;
   font-size: clamp(54px, 10vw, 170px);
   font-weight: 400;
   line-height: 0.75;
   letter-spacing: -0.075em;
+}
+
+.chapter-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chapter-title > span {
+  display: block;
+}
+
+.title-sans {
+  font-family: var(--display);
+  letter-spacing: -0.08em;
+  line-height: 0.74;
   text-transform: uppercase;
 }
 
-.project-chapter:nth-child(even) .chapter-heading h3 {
+.title-serif {
   font-family: var(--serif);
   font-weight: 600;
-  line-height: 0.82;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.065em;
+  line-height: 0.8;
   text-transform: none;
+}
+
+.title-retro {
+  font-family: var(--retro);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.82;
+  text-transform: none;
+}
+
+.project-chapter:nth-child(3n + 1) .title-retro {
+  margin-left: clamp(20px, 7vw, 120px);
+}
+
+.project-chapter:nth-child(3n + 2) .title-sans:last-child {
+  margin-left: clamp(25px, 9vw, 150px);
 }
 
 .chapter-meta {
@@ -514,6 +548,47 @@ button { font: inherit; }
   font-weight: 600;
   line-height: 0.98;
   letter-spacing: -0.045em;
+}
+
+
+.chapter-handwriting {
+  position: absolute;
+  z-index: 5;
+  max-width: min(520px, 46vw);
+  color: var(--red);
+  font-family: var(--hand);
+  font-size: clamp(32px, 6vw, 92px);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  text-transform: none;
+  transform: rotate(-7deg);
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+
+.chapter-layout-1 .chapter-handwriting {
+  left: 8%;
+  bottom: 8%;
+}
+
+.chapter-layout-2 .chapter-handwriting {
+  right: 5%;
+  bottom: 5%;
+  text-align: right;
+  transform: rotate(5deg);
+}
+
+.chapter-layout-3 .chapter-handwriting {
+  left: 24%;
+  top: 42%;
+  transform: rotate(-5deg);
+}
+
+.chapter-layout-4 .chapter-handwriting {
+  right: 6%;
+  top: 5%;
+  text-align: right;
+  transform: rotate(6deg);
 }
 
 .chapter-footer {
@@ -1054,5 +1129,42 @@ button { font: inherit; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* Expressive type accents inspired by the new references */
+.marquee-serif {
+  font-family: var(--retro);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.archive-serif {
+  font-family: var(--retro);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 900px) {
+  .chapter-handwriting {
+    position: relative;
+    inset: auto !important;
+    max-width: 100%;
+    margin: 24px 0 0;
+    font-size: clamp(34px, 10vw, 68px);
+    text-align: left !important;
+    transform: rotate(-3deg) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .chapter-title {
+    font-size: inherit;
+  }
+
+  .project-chapter:nth-child(3n + 1) .title-retro,
+  .project-chapter:nth-child(3n + 2) .title-sans:last-child {
+    margin-left: 0;
   }
 }

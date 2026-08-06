@@ -29,11 +29,55 @@ const CHAPTER_LABELS = [
   "Archive"
 ];
 
+
+const HANDWRITTEN_NOTES = [
+  "image becomes character",
+  "movement / texture / attitude",
+  "",
+  "personal visual language",
+  "",
+  "style creates desire",
+  "",
+  "built through detail"
+];
+
+function formatChapterTitle(title, index) {
+  const words = title.trim().split(/\s+/);
+
+  if (words.length === 1) {
+    return `<span class="title-retro">${words[0]}</span>`;
+  }
+
+  const first = words.slice(0, -1).join(" ");
+  const last = words.at(-1);
+
+  if (index % 3 === 0) {
+    return `
+      <span class="title-sans">${first}</span>
+      <span class="title-retro">${last}</span>
+    `;
+  }
+
+  if (index % 3 === 1) {
+    return `
+      <span class="title-retro">${first}</span>
+      <span class="title-sans">${last}</span>
+    `;
+  }
+
+  return `
+    <span class="title-sans">${first}</span>
+    <span class="title-serif">${last}</span>
+  `;
+}
+
 function renderProjects() {
   projectCanvas.innerHTML = projects.map((project, index) => {
     const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
     const number = String(index + 1).padStart(2, "0");
     const layout = `chapter-layout-${(index % 4) + 1}`;
+    const titleMarkup = formatChapterTitle(project.title, index);
+    const handwrittenNote = HANDWRITTEN_NOTES[index] || "";
 
     return `
       <article
@@ -48,7 +92,7 @@ function renderProjects() {
 
           <div class="chapter-heading">
             <p class="chapter-label">${chapter}</p>
-            <h3>${project.title}</h3>
+            <h3 class="chapter-title">${titleMarkup}</h3>
           </div>
 
           <div class="chapter-meta">
@@ -76,6 +120,12 @@ function renderProjects() {
           <div class="chapter-quote">
             <span>${project.description}</span>
           </div>
+
+          ${handwrittenNote ? `
+            <div class="chapter-handwriting" aria-hidden="true">
+              ${handwrittenNote}
+            </div>
+          ` : ""}
         </div>
 
         <footer class="chapter-footer">
