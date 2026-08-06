@@ -19,7 +19,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 function renderProjects() {
   projectCanvas.innerHTML = projects.map((project, index) => `
     <article
-      class="project-item"
+      class="project-item layout-${(index % 6) + 1}"
       tabindex="0"
       role="button"
       data-project-id="${project.id}"
