@@ -1,25 +1,25 @@
-# Lola Davila — Capítulos editoriales | Tipografía V2
+# Lola Davila — Cyberpunk / Punk V3
 
-Esta versión conserva la estructura de capítulos editoriales y añade dos nuevas voces tipográficas:
+Esta versión conserva la estructura de capítulos editoriales y cambia el lenguaje visual hacia una estética punk y cyberpunk.
 
-- **Shrikhand:** serif display retro, gruesa y expresiva.
-- **Permanent Marker:** lettering gestual para anotaciones rojas.
+## Cambios
 
-## Dónde se usan
+- Tipografía glitch.
+- Títulos geométricos con Syne.
+- Etiquetas técnicas con IBM Plex Mono.
+- Acentos rojo, cyan y verde ácido.
+- Scanlines y micro-glitches.
+- Cortes diagonales en imágenes.
+- Etiquetas de sistema.
+- El menú sigue usando una sola tipografía.
+- Se mantiene el tamaño y movimiento de LOLA DAVILA.
 
-- El menú continúa con una sola tipografía sans.
-- `LOLA DAVILA` no cambia.
-- Los títulos de proyectos mezclan sans, serif y retro.
-- Algunas palabras editoriales usan la nueva serif retro.
-- Solo ciertos capítulos llevan anotaciones manuscritas rojas para no saturar la web.
-- El marquee y algunas palabras de Archivo también reciben el acento retro.
+## Reemplaza
 
-## Archivos que debes reemplazar
+- index.html
+- styles.css
+- script.js
+- projects.js
+- README.md
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `projects.js`
-- `README.md`
-
-No borres la carpeta `assets/images/`.
+No borres `assets/images/`.

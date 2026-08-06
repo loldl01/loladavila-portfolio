@@ -31,42 +31,49 @@ const CHAPTER_LABELS = [
 
 
 const HANDWRITTEN_NOTES = [
-  "image becomes character",
-  "movement / texture / attitude",
+  "RAW IMAGE SYSTEM",
+  "NO SAFE MODE",
   "",
-  "personal visual language",
+  "VISUAL SIGNAL / 03",
   "",
-  "style creates desire",
+  "STYLE IS RESISTANCE",
   "",
-  "built through detail"
+  "RECODE THE IMAGE"
 ];
 
 function formatChapterTitle(title, index) {
   const words = title.trim().split(/\s+/);
 
   if (words.length === 1) {
-    return `<span class="title-retro">${words[0]}</span>`;
+    return `<span class="title-glitch" data-text="${words[0]}">${words[0]}</span>`;
   }
 
   const first = words.slice(0, -1).join(" ");
   const last = words.at(-1);
 
-  if (index % 3 === 0) {
+  if (index % 4 === 0) {
     return `
       <span class="title-sans">${first}</span>
-      <span class="title-retro">${last}</span>
+      <span class="title-glitch" data-text="${last}">${last}</span>
     `;
   }
 
-  if (index % 3 === 1) {
+  if (index % 4 === 1) {
     return `
-      <span class="title-retro">${first}</span>
+      <span class="title-outline">${first}</span>
       <span class="title-sans">${last}</span>
     `;
   }
 
+  if (index % 4 === 2) {
+    return `
+      <span class="title-sans">${first}</span>
+      <span class="title-mono">/${last}</span>
+    `;
+  }
+
   return `
-    <span class="title-sans">${first}</span>
+    <span class="title-glitch" data-text="${first}">${first}</span>
     <span class="title-serif">${last}</span>
   `;
 }
@@ -126,6 +133,11 @@ function renderProjects() {
               ${handwrittenNote}
             </div>
           ` : ""}
+
+          <div class="chapter-system-label" aria-hidden="true">
+            <span>IMG_SYS_${String(index + 1).padStart(2, "0")}</span>
+            <span>STATUS: ACTIVE</span>
+          </div>
         </div>
 
         <footer class="chapter-footer">

@@ -12,8 +12,9 @@
   --display: "Archivo Black", sans-serif;
   --sans: "DM Sans", sans-serif;
   --serif: "Fraunces", serif;
-  --retro: "Shrikhand", serif;
-  --hand: "Permanent Marker", cursive;
+  --retro: "Syne", sans-serif;
+  --hand: "IBM Plex Mono", monospace;
+  --glitch: "Rubik Glitch", system-ui;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -1166,5 +1167,319 @@ button { font: inherit; }
   .project-chapter:nth-child(3n + 1) .title-retro,
   .project-chapter:nth-child(3n + 2) .title-sans:last-child {
     margin-left: 0;
+  }
+}
+
+
+/* =========================================================
+   CYBERPUNK / PUNK VISUAL SYSTEM
+   ========================================================= */
+
+:root {
+  --cyan: #00e5ff;
+  --acid: #d8ff00;
+}
+
+.scanlines {
+  position: fixed;
+  z-index: 201;
+  inset: 0;
+  pointer-events: none;
+  opacity: .12;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 3px,
+      rgba(255,255,255,.045) 4px
+    );
+  mix-blend-mode: overlay;
+}
+
+.signal-corners {
+  position: fixed;
+  z-index: 202;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  color: rgba(255,255,255,.42);
+  font-family: var(--hand);
+  font-size: 8px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+
+.hero::after {
+  content: "NO SAFE MODE / IMAGE SYSTEM ONLINE";
+  position: absolute;
+  z-index: 9;
+  left: 24px;
+  bottom: 18px;
+  color: var(--red);
+  font-family: var(--hand);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  text-shadow:
+    4px 0 0 rgba(255,42,26,.35),
+    -4px 0 0 rgba(0,229,255,.18);
+}
+
+.hero-navigation a:hover {
+  background: var(--red);
+  color: #111;
+}
+
+.hero-navigation a:hover span {
+  color: #111;
+}
+
+.marquee {
+  border-top: 1px solid var(--red);
+}
+
+.marquee-track {
+  font-family: var(--retro);
+  font-weight: 800;
+}
+
+.marquee-serif {
+  font-family: var(--glitch);
+  font-weight: 400;
+  color: var(--red);
+}
+
+.serif-display {
+  font-family: var(--retro);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: .9;
+  text-transform: uppercase;
+}
+
+.title-sans {
+  font-family: var(--retro);
+  font-weight: 800;
+  letter-spacing: -0.085em;
+  line-height: .72;
+  text-transform: uppercase;
+}
+
+.title-serif {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: .8;
+  text-transform: none;
+}
+
+.title-glitch {
+  position: relative;
+  font-family: var(--glitch);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: .78;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-shadow:
+    3px 0 0 rgba(255, 42, 26, .9),
+    -3px 0 0 rgba(0, 229, 255, .75);
+}
+
+.title-outline {
+  font-family: var(--retro);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: .74;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--fg);
+}
+
+.title-mono {
+  font-family: var(--hand);
+  font-size: .72em;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: .8;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.project-chapter {
+  border-top: 1px solid rgba(255,42,26,.42);
+  padding-top: 18px;
+}
+
+.project-chapter::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 84px;
+  height: 3px;
+  background: var(--red);
+  box-shadow: 90px 0 0 var(--cyan);
+}
+
+.chapter-number {
+  font-family: var(--hand);
+  color: var(--acid);
+}
+
+.chapter-label,
+.chapter-meta {
+  font-family: var(--hand);
+}
+
+.chapter-image {
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 97% 100%, 0 100%);
+}
+
+.chapter-image::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(0,229,255,.16);
+}
+
+.chapter-image-main::before {
+  content: "VISUAL FEED";
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  left: 12px;
+  color: var(--acid);
+  font-family: var(--hand);
+  font-size: 8px;
+  letter-spacing: .14em;
+}
+
+.chapter-handwriting {
+  font-family: var(--hand);
+  font-size: clamp(18px, 2.7vw, 42px);
+  font-weight: 600;
+  line-height: .9;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+.chapter-handwriting::before {
+  content: "// ";
+  color: var(--cyan);
+}
+
+.chapter-system-label {
+  position: absolute;
+  z-index: 8;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 18px;
+  padding: 8px 10px;
+  background: #090909;
+  color: var(--cyan);
+  border-top: 1px solid var(--cyan);
+  border-left: 1px solid var(--cyan);
+  font-family: var(--hand);
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.chapter-quote {
+  font-family: var(--retro);
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 2px 0 0 var(--red);
+}
+
+.chapter-footer {
+  font-family: var(--hand);
+}
+
+.archive-card {
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow:
+    10px 10px 0 rgba(255,42,26,.16),
+    -6px -6px 0 rgba(0,229,255,.08);
+}
+
+.archive-serif {
+  font-family: var(--glitch);
+  color: var(--red);
+}
+
+.services span {
+  font-family: var(--hand);
+  border-color: rgba(0,229,255,.3);
+}
+
+.contact-section {
+  background:
+    linear-gradient(135deg, var(--red) 0 64%, #111 64% 67%, var(--acid) 67% 100%);
+}
+
+.contact-section h2 {
+  color: #111;
+  text-shadow: 4px 4px 0 rgba(255,255,255,.2);
+}
+
+.contact-grid a {
+  font-family: var(--hand);
+}
+
+.cursor.is-active {
+  border-color: var(--cyan);
+  box-shadow:
+    0 0 0 2px rgba(255,42,26,.5),
+    0 0 18px rgba(0,229,255,.35);
+}
+
+@keyframes micro-glitch {
+  0%, 92%, 100% { transform: translate(0); }
+  93% { transform: translate(-2px, 1px); }
+  95% { transform: translate(2px, -1px); }
+  97% { transform: translate(-1px, 0); }
+}
+
+.title-glitch,
+.archive-serif {
+  animation: micro-glitch 3.2s steps(1, end) infinite;
+}
+
+@media (max-width: 900px) {
+  .chapter-system-label {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: max-content;
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero::after,
+  .signal-corners {
+    display: none;
+  }
+
+  .title-outline {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .chapter-system-label {
+    gap: 10px;
+    font-size: 7px;
   }
 }
