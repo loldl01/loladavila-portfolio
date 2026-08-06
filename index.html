@@ -23,25 +23,25 @@
 
   <header class="site-header">
     <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="#work">WORK <sup id="work-count">00</sup></a>
-      <a href="#archive" class="nav-serif">Archive</a>
-      <a href="#about">ABOUT</a>
-      <a href="#contact" class="nav-serif nav-lowercase">contact</a>
+      <a href="#work">Work <sup id="work-count">00</sup></a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      INDEX
+      Index
     </button>
   </header>
 
   <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
-    <button class="mobile-menu-close" type="button">CLOSE</button>
+    <button class="mobile-menu-close" type="button">Close</button>
 
     <nav>
-      <a href="#work">WORK <sup id="mobile-work-count">00</sup></a>
-      <a href="#archive" class="menu-serif">Archive</a>
-      <a href="#about">ABOUT</a>
-      <a href="#contact" class="menu-serif menu-lowercase">contact</a>
+      <a href="#work">Work <sup id="mobile-work-count">00</sup></a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </aside>
 
@@ -57,19 +57,19 @@
       <div class="hero-navigation">
         <a href="#work" data-preview="work">
           <span>01</span>
-          <strong>SELECTED WORK</strong>
+          <strong>Selected Work</strong>
         </a>
         <a href="#archive" data-preview="archive">
           <span>02</span>
-          <strong class="serif-label">Visual Archive</strong>
+          <strong>Visual Archive</strong>
         </a>
         <a href="#about" data-preview="about">
           <span>03</span>
-          <strong>ABOUT LOLA</strong>
+          <strong>About Lola</strong>
         </a>
         <a href="#contact" data-preview="contact">
           <span>04</span>
-          <strong class="serif-label lowercase">get in touch</strong>
+          <strong>Get in Touch</strong>
         </a>
       </div>
 
@@ -84,9 +84,26 @@
       </div>
     </section>
 
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Fashion Styling</span>
+        <span class="marquee-serif">Creative Direction</span>
+        <span>Wardrobe Styling</span>
+        <span class="marquee-serif">E-commerce</span>
+        <span>Editorial</span>
+        <span class="marquee-serif">Production</span>
+        <span>Fashion Styling</span>
+        <span class="marquee-serif">Creative Direction</span>
+        <span>Wardrobe Styling</span>
+        <span class="marquee-serif">E-commerce</span>
+        <span>Editorial</span>
+        <span class="marquee-serif">Production</span>
+      </div>
+    </div>
+
     <section id="work" class="work-section">
-      <div class="section-intro">
-        <p class="section-index">01 — SELECTED WORK</p>
+      <div class="section-intro reveal">
+        <p class="section-index">01 — Selected Work</p>
 
         <h2>
           AN <span class="serif-display">Editorial</span><br>
@@ -99,17 +116,17 @@
         </p>
       </div>
 
-      <div class="gou-layout-note">
-        <span>MOVE / CLICK / EXPLORE</span>
-        <span>08 PROJECTS — 01 ARCHIVE</span>
+      <div class="layout-note reveal">
+        <span>Move / Click / Explore</span>
+        <span id="project-total">08 Projects</span>
       </div>
 
-      <div id="project-canvas" class="project-canvas gou-canvas" aria-live="polite"></div>
+      <div id="project-canvas" class="project-canvas" aria-live="polite"></div>
     </section>
 
     <section id="archive" class="archive-section">
-      <div class="archive-sticky">
-        <p class="section-index">02 — ARCHIVE</p>
+      <div class="archive-sticky reveal">
+        <p class="section-index">02 — Archive</p>
 
         <h2>
           PROCESS,<br>
@@ -121,30 +138,34 @@
           An evolving collection of references, styling tests, notes,
           polaroids and images that live between the final projects.
         </p>
+
+        <span class="archive-hint">Drag to explore →</span>
       </div>
 
       <div class="archive-strip" aria-label="Archivo visual">
-        <div class="archive-card archive-card-1">MOODBOARD</div>
-        <div class="archive-card archive-card-2 archive-serif">Fitting</div>
-        <div class="archive-card archive-card-3">BACKSTAGE</div>
-        <div class="archive-card archive-card-4 archive-serif">Polaroid</div>
-        <div class="archive-card archive-card-5">DETAIL</div>
-        <div class="archive-card archive-card-6 archive-serif">Notes</div>
+        <div class="archive-track">
+          <div class="archive-card archive-card-1">MOODBOARD</div>
+          <div class="archive-card archive-card-2 archive-serif">Fitting</div>
+          <div class="archive-card archive-card-3">BACKSTAGE</div>
+          <div class="archive-card archive-card-4 archive-serif">Polaroid</div>
+          <div class="archive-card archive-card-5">DETAIL</div>
+          <div class="archive-card archive-card-6 archive-serif">Notes</div>
+        </div>
       </div>
     </section>
 
     <section id="about" class="about-section">
-      <p class="section-index">03 — ABOUT</p>
+      <p class="section-index reveal">03 — About</p>
 
       <div class="about-layout">
-        <h2>
+        <h2 class="reveal">
           I STYLE<br>
           <span class="serif-display">Characters,</span><br>
           NOT JUST<br>
           CLOTHES.
         </h2>
 
-        <div class="about-copy">
+        <div class="about-copy reveal">
           <p class="about-lead">
             I’m Lola Davila, a fashion stylist and creative producer with experience
             building visual stories for e-commerce, campaigns and editorial projects.
@@ -168,7 +189,7 @@
     </section>
 
     <section id="contact" class="contact-section">
-      <p class="section-index">04 — CONTACT</p>
+      <p class="section-index">04 — Contact</p>
 
       <h2>
         LET'S CREATE<br>
@@ -176,9 +197,9 @@
       </h2>
 
       <div class="contact-grid">
-        <a href="mailto:hello@loladavilaenlinea.com">EMAIL ↗</a>
-        <a href="#" target="_blank" rel="noreferrer">INSTAGRAM ↗</a>
-        <a href="#" target="_blank" rel="noreferrer">LINKEDIN ↗</a>
+        <a href="mailto:hello@loladavilaenlinea.com">Email ↗</a>
+        <a href="#" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
       </div>
 
       <div class="contact-footer">
@@ -189,7 +210,7 @@
   </main>
 
   <section id="project-viewer" class="project-viewer" aria-hidden="true">
-    <button class="viewer-close" type="button">CLOSE</button>
+    <button class="viewer-close" type="button">Close</button>
     <div id="viewer-content" class="viewer-content"></div>
   </section>
 </body>

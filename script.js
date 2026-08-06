@@ -11,15 +11,19 @@ const cursor = document.querySelector(".cursor");
 const menuButton = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileMenuClose = document.querySelector(".mobile-menu-close");
+const archiveStrip = document.querySelector(".archive-strip");
 
 document.getElementById("work-count").textContent = String(projects.length).padStart(2, "0");
 document.getElementById("mobile-work-count").textContent = String(projects.length).padStart(2, "0");
+document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Projects`;
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ---------- Render projects ---------- */
 
 function renderProjects() {
   projectCanvas.innerHTML = projects.map((project, index) => `
     <article
-      class="project-item layout-${(index % 6) + 1}"
+      class="project-item"
       tabindex="0"
       role="button"
       data-project-id="${project.id}"
@@ -49,6 +53,8 @@ function renderProjects() {
 
   bindCursorTargets();
 }
+
+/* ---------- Project viewer ---------- */
 
 function openProject(id) {
   const project = projects.find((item) => item.id === id);
@@ -106,6 +112,8 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+/* ---------- Hero preview + parallax ---------- */
+
 document.querySelectorAll(".hero-navigation a").forEach((link) => {
   const preview = link.dataset.preview;
 
@@ -124,7 +132,9 @@ window.addEventListener("scroll", () => {
 
   heroWords[0].style.transform = `translate3d(${-progress * 10}vw, ${-progress * 8}vh, 0)`;
   heroWords[1].style.transform = `translate3d(${progress * 12}vw, ${progress * 3}vh, 0)`;
-});
+}, { passive: true });
+
+/* ---------- Mobile menu ---------- */
 
 function openMenu() {
   mobileMenu.classList.add("is-open");
@@ -144,6 +154,8 @@ menuButton.addEventListener("click", openMenu);
 mobileMenuClose.addEventListener("click", closeMenu);
 mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
+/* ---------- Custom cursor (with inertia) ---------- */
+
 function bindCursorTargets() {
   if (!window.matchMedia("(pointer: fine)").matches || !cursor) return;
 
@@ -154,11 +166,85 @@ function bindCursorTargets() {
 }
 
 if (window.matchMedia("(pointer: fine)").matches && cursor) {
+  const pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  const trail = { x: pointer.x, y: pointer.y };
+
   window.addEventListener("mousemove", (event) => {
-    cursor.style.left = `${event.clientX}px`;
-    cursor.style.top = `${event.clientY}px`;
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
   });
+
+  function followCursor() {
+    trail.x += (pointer.x - trail.x) * 0.18;
+    trail.y += (pointer.y - trail.y) * 0.18;
+
+    cursor.style.left = `${trail.x}px`;
+    cursor.style.top = `${trail.y}px`;
+
+    requestAnimationFrame(followCursor);
+  }
+
+  requestAnimationFrame(followCursor);
 }
+
+/* ---------- Scroll reveal ---------- */
+
+const revealTargets = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window && revealTargets.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: "0px 0px -60px 0px" });
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+}
+
+/* ---------- Draggable archive strip ---------- */
+
+function bindArchiveDrag() {
+  if (!archiveStrip) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollStart = 0;
+
+  archiveStrip.addEventListener("mousedown", (event) => {
+    isDown = true;
+    archiveStrip.classList.add("is-dragging");
+    startX = event.pageX;
+    scrollStart = archiveStrip.scrollLeft;
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDown = false;
+    archiveStrip.classList.remove("is-dragging");
+  });
+
+  window.addEventListener("mousemove", (event) => {
+    if (!isDown) return;
+    event.preventDefault();
+    archiveStrip.scrollLeft = scrollStart - (event.pageX - startX);
+  });
+
+  archiveStrip.addEventListener(
+    "wheel",
+    (event) => {
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+      event.preventDefault();
+      archiveStrip.scrollLeft += event.deltaY;
+    },
+    { passive: false }
+  );
+}
+
+bindArchiveDrag();
 
 renderProjects();
 bindCursorTargets();
