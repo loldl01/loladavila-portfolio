@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
@@ -18,20 +18,15 @@
 </head>
 
 <body>
-  <div class="cursor" aria-hidden="true">
-    <span class="cursor-label"></span>
-  </div>
-
+  <div class="cursor" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="site-name" href="#home">LOLA DAVILA</a>
-
     <nav class="desktop-nav" aria-label="Navegación principal">
       <a href="#work">WORK <sup id="work-count">00</sup></a>
-      <a href="#archive">ARCHIVE</a>
+      <a href="#archive" class="nav-serif">Archive</a>
       <a href="#about">ABOUT</a>
-      <a href="#contact">CONTACT</a>
+      <a href="#contact" class="nav-serif nav-lowercase">contact</a>
     </nav>
 
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
@@ -44,18 +39,19 @@
 
     <nav>
       <a href="#work">WORK <sup id="mobile-work-count">00</sup></a>
-      <a href="#archive">ARCHIVE</a>
+      <a href="#archive" class="menu-serif">Archive</a>
       <a href="#about">ABOUT</a>
-      <a href="#contact">CONTACT</a>
+      <a href="#contact" class="menu-serif menu-lowercase">contact</a>
     </nav>
   </aside>
 
   <main>
     <section id="home" class="hero">
       <div class="hero-backdrop" aria-hidden="true">
-        <div class="hero-frame hero-frame-a"></div>
-        <div class="hero-frame hero-frame-b"></div>
-        <div class="hero-frame hero-frame-c"></div>
+        <div class="hero-preview preview-work"></div>
+        <div class="hero-preview preview-archive"></div>
+        <div class="hero-preview preview-about"></div>
+        <div class="hero-preview preview-contact"></div>
       </div>
 
       <div class="hero-navigation">
@@ -65,7 +61,7 @@
         </a>
         <a href="#archive" data-preview="archive">
           <span>02</span>
-          <strong>VISUAL ARCHIVE</strong>
+          <strong class="serif-label">Visual Archive</strong>
         </a>
         <a href="#about" data-preview="about">
           <span>03</span>
@@ -73,7 +69,7 @@
         </a>
         <a href="#contact" data-preview="contact">
           <span>04</span>
-          <strong>GET IN TOUCH</strong>
+          <strong class="serif-label lowercase">get in touch</strong>
         </a>
       </div>
 
@@ -91,7 +87,12 @@
     <section id="work" class="work-section">
       <div class="section-intro">
         <p class="section-index">01 — SELECTED WORK</p>
-        <h2>AN EDITORIAL<br>IMAGE ARCHIVE</h2>
+
+        <h2>
+          AN <span class="serif-display">Editorial</span><br>
+          IMAGE ARCHIVE
+        </h2>
+
         <p class="section-description">
           Campaigns, editorials and e-commerce stories styled through proportion,
           texture, character and visual tension.
@@ -104,7 +105,13 @@
     <section id="archive" class="archive-section">
       <div class="archive-sticky">
         <p class="section-index">02 — ARCHIVE</p>
-        <h2>PROCESS,<br>FITTINGS,<br>BACKSTAGE.</h2>
+
+        <h2>
+          PROCESS,<br>
+          <span class="serif-display">Fittings,</span><br>
+          BACKSTAGE.
+        </h2>
+
         <p>
           An evolving collection of references, styling tests, notes,
           polaroids and images that live between the final projects.
@@ -113,11 +120,11 @@
 
       <div class="archive-strip" aria-label="Archivo visual">
         <div class="archive-card archive-card-1">MOODBOARD</div>
-        <div class="archive-card archive-card-2">FITTING</div>
+        <div class="archive-card archive-card-2 archive-serif">Fitting</div>
         <div class="archive-card archive-card-3">BACKSTAGE</div>
-        <div class="archive-card archive-card-4">POLAROID</div>
+        <div class="archive-card archive-card-4 archive-serif">Polaroid</div>
         <div class="archive-card archive-card-5">DETAIL</div>
-        <div class="archive-card archive-card-6">NOTES</div>
+        <div class="archive-card archive-card-6 archive-serif">Notes</div>
       </div>
     </section>
 
@@ -125,7 +132,12 @@
       <p class="section-index">03 — ABOUT</p>
 
       <div class="about-layout">
-        <h2>I STYLE<br>CHARACTERS,<br>NOT JUST<br>CLOTHES.</h2>
+        <h2>
+          I STYLE<br>
+          <span class="serif-display">Characters,</span><br>
+          NOT JUST<br>
+          CLOTHES.
+        </h2>
 
         <div class="about-copy">
           <p class="about-lead">
@@ -153,7 +165,10 @@
     <section id="contact" class="contact-section">
       <p class="section-index">04 — CONTACT</p>
 
-      <h2>LET'S CREATE<br>A NEW IMAGE.</h2>
+      <h2>
+        LET'S CREATE<br>
+        A <span class="serif-display dark-serif">New Image.</span>
+      </h2>
 
       <div class="contact-grid">
         <a href="mailto:hello@loladavilaenlinea.com">EMAIL ↗</a>

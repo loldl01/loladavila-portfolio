@@ -1,70 +1,35 @@
-# Lola Davila — Fashion Portfolio V03
+# Lola Davila Fashion Portfolio — V04
 
-Esta versión incluye:
+Cambios principales:
 
-- Fondo negro
-- Tipografía estilo C
-- Cursor rojo
-- Nombre gigante con movimiento al hacer scroll
-- Navegación visible desde el inicio
-- Galería libre e irregular
-- Apertura real de proyectos en pantalla completa
-- Sistema fácil para cambiar el orden de los proyectos
-- Secciones Work, Archive, About y Contact
-- Versión responsive para móvil
+- Se eliminó el nombre pequeño de la esquina superior izquierda.
+- El cursor rojo ya no muestra la palabra OPEN.
+- El menú inicial activa fondos visuales distintos al pasar el cursor.
+- Se añadió una serif display con carácter editorial.
+- Se mezclan tipografías en títulos, menú, archivo y proyectos.
+- Se mantiene el nombre grande y su movimiento.
+- Se conserva la composición irregular de las imágenes.
 
-## Archivos
+## Archivos a reemplazar en GitHub
 
-- `index.html`: estructura del sitio
-- `styles.css`: diseño y layout
-- `projects.js`: contenido y orden de los proyectos
-- `script.js`: interacciones, cursor, menú y visor de proyectos
+- index.html
+- styles.css
+- script.js
+- projects.js
+- README.md
 
-## Cómo cambiar el orden
+Cloudflare volverá a publicar automáticamente.
 
-Abre `projects.js`.
+## Imágenes del menú
 
-Cada proyecto tiene:
+Por ahora los fondos del menú son composiciones provisionales.
 
-```js
-order: 1
+Más adelante se pueden reemplazar por imágenes reales con CSS, por ejemplo:
+
+```css
+.preview-work {
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,.2), rgba(0,0,0,.75)),
+    url("assets/images/menu-work.jpg");
+}
 ```
-
-Cambia esos números. El proyecto con `order: 1` aparece primero.
-
-## Cómo añadir un proyecto
-
-Copia uno de los bloques dentro de `projects.js`, pégalo al final y cambia:
-
-- `id`
-- `order`
-- `title`
-- `category`
-- `year`
-- `client`
-- `description`
-- `color`
-
-## Cómo subir imágenes reales
-
-Esta versión usa colores provisionales para que puedas probar el diseño sin tener imágenes todavía.
-
-En la siguiente etapa podemos reemplazar cada bloque de color por archivos reales como:
-
-```text
-assets/images/editorial-noir/cover.jpg
-assets/images/editorial-noir/01.jpg
-assets/images/editorial-noir/02.jpg
-```
-
-## Publicación
-
-Reemplaza en GitHub estos archivos:
-
-- `index.html`
-- `styles.css`
-- `projects.js`
-- `script.js`
-- `README.md`
-
-Cloudflare publicará la actualización automáticamente.

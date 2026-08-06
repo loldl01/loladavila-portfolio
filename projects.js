@@ -1,12 +1,3 @@
-/*
-  AQUÍ CAMBIAS EL ORDEN Y EL CONTENIDO DE TUS PROYECTOS.
-
-  - Para cambiar el orden: modifica "order".
-  - Para añadir un proyecto: copia un bloque completo y cambia sus datos.
-  - Para eliminarlo: borra su bloque.
-  - Más adelante puedes reemplazar los colores por imágenes reales.
-*/
-
 window.PORTFOLIO_PROJECTS = [
   {
     id: "editorial-noir",

@@ -8,7 +8,6 @@ const projectViewer = document.getElementById("project-viewer");
 const viewerContent = document.getElementById("viewer-content");
 const viewerClose = document.querySelector(".viewer-close");
 const cursor = document.querySelector(".cursor");
-const cursorLabel = document.querySelector(".cursor-label");
 const menuButton = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileMenuClose = document.querySelector(".mobile-menu-close");
@@ -24,7 +23,6 @@ function renderProjects() {
       tabindex="0"
       role="button"
       data-project-id="${project.id}"
-      data-cursor="OPEN"
       aria-label="Abrir proyecto ${project.title}"
     >
       <div class="project-visual" style="--project-color: ${project.color}">
@@ -56,9 +54,15 @@ function openProject(id) {
   const project = projects.find((item) => item.id === id);
   if (!project) return;
 
+  const titleWords = project.title.split(" ");
+  const titleMarkup =
+    titleWords.length > 1
+      ? `${titleWords.slice(0, -1).join(" ")} <span class="viewer-serif">${titleWords.at(-1)}</span>`
+      : project.title;
+
   viewerContent.innerHTML = `
     <div class="viewer-header">
-      <h2>${project.title}</h2>
+      <h2>${titleMarkup}</h2>
 
       <div>
         <p>${project.description}</p>
@@ -106,11 +110,11 @@ document.querySelectorAll(".hero-navigation a").forEach((link) => {
   const preview = link.dataset.preview;
 
   link.addEventListener("mouseenter", () => {
-    hero.className = `hero preview-${preview}`;
+    hero.dataset.activePreview = preview;
   });
 
   link.addEventListener("mouseleave", () => {
-    hero.className = "hero";
+    hero.removeAttribute("data-active-preview");
   });
 });
 
@@ -143,16 +147,9 @@ mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 function bindCursorTargets() {
   if (!window.matchMedia("(pointer: fine)").matches || !cursor) return;
 
-  document.querySelectorAll("a, button, [data-cursor]").forEach((element) => {
-    element.addEventListener("mouseenter", () => {
-      cursor.classList.add("is-active");
-      cursorLabel.textContent = element.dataset.cursor || "";
-    });
-
-    element.addEventListener("mouseleave", () => {
-      cursor.classList.remove("is-active");
-      cursorLabel.textContent = "";
-    });
+  document.querySelectorAll("a, button, .project-item").forEach((element) => {
+    element.addEventListener("mouseenter", () => cursor.classList.add("is-active"));
+    element.addEventListener("mouseleave", () => cursor.classList.remove("is-active"));
   });
 }
 
