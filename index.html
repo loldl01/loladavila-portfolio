@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&family=Shrikhand&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
@@ -20,10 +20,6 @@
 <body>
   <div class="cursor" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
-  <div class="gou-page-labels" aria-hidden="true">
-    <span>FASHION / IMAGE / DIRECTION</span>
-    <span>PORTFOLIO 2026</span>
-  </div>
 
   <header class="site-header">
     <nav class="desktop-nav" aria-label="Navegación principal">
@@ -50,7 +46,7 @@
   </aside>
 
   <main>
-    <section id="home" class="hero gou13-home">
+    <section id="home" class="hero petr-home">
       <div class="hero-backdrop" aria-hidden="true">
         <div class="hero-preview preview-work"></div>
         <div class="hero-preview preview-archive"></div>
@@ -58,52 +54,61 @@
         <div class="hero-preview preview-contact"></div>
       </div>
 
-      <div class="gou13-topline">
+      <div class="petr-topline">
         <span>LOLA DAVILA</span>
         <span>FASHION STYLING / CREATIVE DIRECTION</span>
-        <span>2026</span>
+        <span>ECUADOR — 2026</span>
       </div>
 
-      <div class="gou13-word gou13-word-a">LOLA</div>
-      <div class="gou13-word gou13-word-b">DAVILA</div>
-      <div class="gou13-word gou13-word-c">STYLIST</div>
+      <div class="petr-index">
+        <a href="#work" data-preview="work">
+          <span class="petr-index-number">01</span>
+          <strong>WORK</strong>
+          <span class="petr-index-meta">SELECTED PROJECTS</span>
+        </a>
 
-      <figure class="gou13-photo gou13-photo-a" aria-hidden="true">
-        <img src="assets/images/project-01.jpg" alt="">
-      </figure>
+        <a href="#archive" data-preview="archive">
+          <span class="petr-index-number">02</span>
+          <strong>ARCHIVE</strong>
+          <span class="petr-index-meta">PROCESS / NOTES / TESTS</span>
+        </a>
 
-      <figure class="gou13-photo gou13-photo-b" aria-hidden="true">
-        <img src="assets/images/project-03.jpg" alt="">
-      </figure>
+        <a href="#about" data-preview="about">
+          <span class="petr-index-number">03</span>
+          <strong>ABOUT</strong>
+          <span class="petr-index-meta">PROFILE / SERVICES</span>
+        </a>
 
-      <figure class="gou13-photo gou13-photo-c" aria-hidden="true">
-        <img src="assets/images/project-06.jpg" alt="">
-      </figure>
-
-      <div class="gou13-copy">
-        <p>
-          I build visual stories through styling, proportion,
-          character and image direction.
-        </p>
+        <a href="#contact" data-preview="contact">
+          <span class="petr-index-number">04</span>
+          <strong>CONTACT</strong>
+          <span class="petr-index-meta">EMAIL / SOCIAL</span>
+        </a>
       </div>
 
-      <div class="gou13-stamp">LD / 13</div>
-      <div class="gou13-red-note">image is the message</div>
-
-      <div class="hero-navigation gou13-navigation">
-        <a href="#work" data-preview="work"><span>01</span><strong>WORK</strong></a>
-        <a href="#archive" data-preview="archive"><span>02</span><strong>ARCHIVE</strong></a>
-        <a href="#about" data-preview="about"><span>03</span><strong>ABOUT</strong></a>
-        <a href="#contact" data-preview="contact"><span>04</span><strong>CONTACT</strong></a>
+      <div class="petr-preview-window" aria-hidden="true">
+        <figure class="petr-preview petr-preview-work">
+          <img src="assets/images/menu-work.jpg" alt="">
+        </figure>
+        <figure class="petr-preview petr-preview-archive">
+          <img src="assets/images/menu-archive.jpg" alt="">
+        </figure>
+        <figure class="petr-preview petr-preview-about">
+          <img src="assets/images/menu-about.jpg" alt="">
+        </figure>
+        <figure class="petr-preview petr-preview-contact">
+          <img src="assets/images/menu-contact.jpg" alt="">
+        </figure>
       </div>
 
-      <div class="hero-title gou13-hidden-brand" aria-label="Lola Davila">
+      <div class="hero-title petr-title" aria-label="Lola Davila">
         <span class="hero-word hero-word-lola">LOLA</span>
         <span class="hero-word hero-word-davila">DAVILA</span>
       </div>
 
-      <div class="hero-meta gou13-meta">
-        <p>Scroll to explore ↓</p>
+      <div class="petr-status">
+        <span>AVAILABLE FOR SELECTED PROJECTS</span>
+        <span>SCROLL ↓</span>
       </div>
     </section>
 
@@ -124,13 +129,13 @@
       </div>
     </div>
 
-    <section class="gou13-transition" aria-hidden="true">
-      <div class="gou13-transition-number">13</div>
-      <div class="gou13-transition-copy">
-        <span>SELECTED</span>
-        <span class="gou13-transition-serif">WORKS</span>
-        <span>2024—26</span>
+    <section class="petr-project-index" aria-label="Índice de proyectos">
+      <div class="petr-project-index-head">
+        <span>SELECTED WORK</span>
+        <span id="petr-project-total">08 PROJECTS</span>
       </div>
+
+      <div id="petr-project-list" class="petr-project-list"></div>
     </section>
 
     <section id="work" class="work-section">
