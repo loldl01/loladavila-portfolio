@@ -9,7 +9,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una historia de moda monocromática construida alrededor del volumen, la sombra y el carácter.",
     color: "#282828",
     image: "assets/images/project-01.jpg",
-    gallery: ["assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg"],
+    gallery: ["assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg"],
     keywords: ["Sombra", "Volumen", "Carácter"]
   },
   {
@@ -22,7 +22,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una exploración visual de silueta, proporción y sastrería contemporánea.",
     color: "#3b2119",
     image: "assets/images/project-02.jpg",
-    gallery: ["assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg"],
+    gallery: ["assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg"],
     keywords: ["Silueta", "Proporción", "Estructura"]
   },
   {
@@ -35,7 +35,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una serie de imágenes de alta energía que combina color gráfico y estilismo directo.",
     color: "#1c2c49",
     image: "assets/images/project-03.jpg",
-    gallery: ["assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg"],
+    gallery: ["assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg"],
     keywords: ["Color", "Energía", "Ritmo"]
   },
   {
@@ -48,7 +48,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Sastrería nocturna, tensión cinematográfica y glamour discreto.",
     color: "#211619",
     image: "assets/images/project-04.jpg",
-    gallery: ["assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg"],
+    gallery: ["assets/images/project-04.jpg", "assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg"],
     keywords: ["Noche", "Tensión", "Sastrería"]
   },
   {
@@ -61,7 +61,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Una historia de producto refinada que equilibra suavidad, forma y claridad comercial.",
     color: "#5a544b",
     image: "assets/images/project-05.jpg",
-    gallery: ["assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg"],
+    gallery: ["assets/images/project-05.jpg", "assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg"],
     keywords: ["Suavidad", "Forma", "Claridad"]
   },
   {
@@ -74,7 +74,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Un lenguaje de campaña audaz definido por contraste, repetición y acentos rojos.",
     color: "#49120b",
     image: "assets/images/project-06.jpg",
-    gallery: ["assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg"],
+    gallery: ["assets/images/project-06.jpg", "assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg"],
     keywords: ["Contraste", "Repetición", "Impacto"]
   },
   {
@@ -87,7 +87,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Siluetas livianas y luz saturada con un ritmo sin esfuerzo.",
     color: "#6f5b45",
     image: "assets/images/project-07.jpg",
-    gallery: ["assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg"],
+    gallery: ["assets/images/project-07.jpg", "assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg"],
     keywords: ["Luz", "Movimiento", "Ligereza"]
   },
   {
@@ -100,7 +100,7 @@ window.PORTFOLIO_PROJECTS = [
     description: "Un sistema de estudio enfocado en estilismo consistente, silueta y narrativa de producto.",
     color: "#2f2f2f",
     image: "assets/images/project-08.jpg",
-    gallery: ["assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg", "assets/images/project-05.jpg"],
+    gallery: ["assets/images/project-08.jpg", "assets/images/project-01.jpg", "assets/images/project-02.jpg", "assets/images/project-03.jpg", "assets/images/project-04.jpg"],
     keywords: ["Sistema", "Consistencia", "Producto"]
   }
 ];
