@@ -3,127 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lola Davila — Style Test</title>
+  <meta name="description" content="Portafolio de fashion styling de Lola Davila.">
+  <meta name="theme-color" content="#090909">
+
+  <title>Lola Davila — Fashion Styling</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
+  <script src="projects.js" defer></script>
   <script src="script.js" defer></script>
 </head>
-<body data-style="a">
-  <div class="cursor" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <a href="#top" class="logo">LOLA DAVILA</a>
-    <button class="menu-toggle" aria-expanded="false">INDEX</button>
+<body>
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor-label"></span>
+  </div>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-name" href="#home">LOLA DAVILA</a>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#work">WORK <sup id="work-count">00</sup></a>
+      <a href="#archive">ARCHIVE</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      INDEX
+    </button>
   </header>
 
-  <aside class="style-panel">
-    <p>PRUEBA DE ESTILO</p>
-    <div class="style-buttons" role="group" aria-label="Cambiar estilo tipográfico">
-      <button data-set-style="a" class="active">A</button>
-      <button data-set-style="b">B</button>
-      <button data-set-style="c">C</button>
-    </div>
-    <small>Cambia entre A, B y C para comparar tipografías y personalidad.</small>
+  <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu-close" type="button">CLOSE</button>
+
+    <nav>
+      <a href="#work">WORK <sup id="mobile-work-count">00</sup></a>
+      <a href="#archive">ARCHIVE</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
   </aside>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-image">
-        <div class="image-placeholder">TU FOTO PRINCIPAL</div>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-backdrop" aria-hidden="true">
+        <div class="hero-frame hero-frame-a"></div>
+        <div class="hero-frame hero-frame-b"></div>
+        <div class="hero-frame hero-frame-c"></div>
       </div>
 
-      <div class="hero-text">
-        <p class="kicker">Fashion Stylist · Creative Direction · Ecuador</p>
-        <h1>
-          <span>LOLA</span>
-          <span>DAVILA</span>
-        </h1>
-        <p class="intro">Styling fashion stories through image, character and visual tension.</p>
+      <div class="hero-navigation">
+        <a href="#work" data-preview="work">
+          <span>01</span>
+          <strong>SELECTED WORK</strong>
+        </a>
+        <a href="#archive" data-preview="archive">
+          <span>02</span>
+          <strong>VISUAL ARCHIVE</strong>
+        </a>
+        <a href="#about" data-preview="about">
+          <span>03</span>
+          <strong>ABOUT LOLA</strong>
+        </a>
+        <a href="#contact" data-preview="contact">
+          <span>04</span>
+          <strong>GET IN TOUCH</strong>
+        </a>
       </div>
 
-      <div class="scroll-note">SCROLL TO ENTER ↓</div>
+      <div class="hero-title" aria-label="Lola Davila">
+        <span class="hero-word hero-word-lola">LOLA</span>
+        <span class="hero-word hero-word-davila">DAVILA</span>
+      </div>
+
+      <div class="hero-meta">
+        <p>Fashion Stylist · Creative Direction · Ecuador</p>
+        <p>Scroll to explore ↓</p>
+      </div>
     </section>
 
-    <section class="manifesto">
-      <p class="section-number">01 — ABOUT</p>
-      <h2>I CREATE IMAGES THAT FEEL LIKE A SCENE, NOT A PRODUCT.</h2>
-      <div class="manifesto-copy">
-        <p>
-          Fashion stylist and creative producer with experience building visual narratives
-          for e-commerce, campaigns and editorial projects.
+    <section id="work" class="work-section">
+      <div class="section-intro">
+        <p class="section-index">01 — SELECTED WORK</p>
+        <h2>AN EDITORIAL<br>IMAGE ARCHIVE</h2>
+        <p class="section-description">
+          Campaigns, editorials and e-commerce stories styled through proportion,
+          texture, character and visual tension.
         </p>
+      </div>
+
+      <div id="project-canvas" class="project-canvas" aria-live="polite"></div>
+    </section>
+
+    <section id="archive" class="archive-section">
+      <div class="archive-sticky">
+        <p class="section-index">02 — ARCHIVE</p>
+        <h2>PROCESS,<br>FITTINGS,<br>BACKSTAGE.</h2>
         <p>
-          My work explores proportion, texture, character and cultural references,
-          transforming clothing into a complete visual world.
+          An evolving collection of references, styling tests, notes,
+          polaroids and images that live between the final projects.
         </p>
       </div>
-    </section>
 
-    <section class="work">
-      <div class="work-heading">
-        <p>02 — SELECTED WORK</p>
-        <h2>AN IMAGE ARCHIVE</h2>
-      </div>
-
-      <div class="gallery">
-        <article class="project project-large">
-          <div class="project-image">PROJECT 01</div>
-          <div class="project-meta">
-            <h3>Editorial Story</h3>
-            <p>Fashion Styling · 2026</p>
-          </div>
-        </article>
-
-        <article class="project project-tall">
-          <div class="project-image">PROJECT 02</div>
-          <div class="project-meta">
-            <h3>Campaign</h3>
-            <p>Wardrobe Styling · 2025</p>
-          </div>
-        </article>
-
-        <article class="project project-wide">
-          <div class="project-image">PROJECT 03</div>
-          <div class="project-meta">
-            <h3>E-commerce Direction</h3>
-            <p>Styling & Production · 2025</p>
-          </div>
-        </article>
+      <div class="archive-strip" aria-label="Archivo visual">
+        <div class="archive-card archive-card-1">MOODBOARD</div>
+        <div class="archive-card archive-card-2">FITTING</div>
+        <div class="archive-card archive-card-3">BACKSTAGE</div>
+        <div class="archive-card archive-card-4">POLAROID</div>
+        <div class="archive-card archive-card-5">DETAIL</div>
+        <div class="archive-card archive-card-6">NOTES</div>
       </div>
     </section>
 
-    <section class="archive">
-      <p>03 — ARCHIVE</p>
-      <div class="archive-track">
-        <span>MOODBOARDS</span>
-        <span>POLAROIDS</span>
-        <span>BACKSTAGE</span>
-        <span>FITTINGS</span>
-        <span>NOTES</span>
+    <section id="about" class="about-section">
+      <p class="section-index">03 — ABOUT</p>
+
+      <div class="about-layout">
+        <h2>I STYLE<br>CHARACTERS,<br>NOT JUST<br>CLOTHES.</h2>
+
+        <div class="about-copy">
+          <p class="about-lead">
+            I’m Lola Davila, a fashion stylist and creative producer with experience
+            building visual stories for e-commerce, campaigns and editorial projects.
+          </p>
+
+          <p>
+            My work combines styling, production and visual direction. I’m interested
+            in how clothing changes a character, how an image creates desire, and how
+            every detail contributes to the final narrative.
+          </p>
+
+          <div class="services">
+            <span>Fashion Styling</span>
+            <span>Wardrobe Styling</span>
+            <span>Creative Direction</span>
+            <span>E-commerce Styling</span>
+            <span>Production Coordination</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="contact">
-      <p>04 — CONTACT</p>
+    <section id="contact" class="contact-section">
+      <p class="section-index">04 — CONTACT</p>
+
       <h2>LET'S CREATE<br>A NEW IMAGE.</h2>
-      <div class="contact-links">
-        <a href="mailto:hello@loladavilaenlinea.com">EMAIL</a>
-        <a href="#">INSTAGRAM</a>
-        <a href="#">LINKEDIN</a>
+
+      <div class="contact-grid">
+        <a href="mailto:hello@loladavilaenlinea.com">EMAIL ↗</a>
+        <a href="#" target="_blank" rel="noreferrer">INSTAGRAM ↗</a>
+        <a href="#" target="_blank" rel="noreferrer">LINKEDIN ↗</a>
+      </div>
+
+      <div class="contact-footer">
+        <span>Guayaquil, Ecuador</span>
+        <span>© <span id="year"></span> Lola Davila</span>
       </div>
     </section>
   </main>
 
-  <div class="full-menu" aria-hidden="true">
-    <button class="close-menu">CLOSE</button>
-    <nav>
-      <a href="#top">HOME</a>
-      <a href=".work">WORK</a>
-      <a href=".manifesto">ABOUT</a>
-      <a href=".contact">CONTACT</a>
-    </nav>
-  </div>
+  <section id="project-viewer" class="project-viewer" aria-hidden="true">
+    <button class="viewer-close" type="button">CLOSE</button>
+    <div id="viewer-content" class="viewer-content"></div>
+  </section>
 </body>
 </html>
