@@ -18,6 +18,60 @@ document.getElementById("mobile-work-count").textContent = String(projects.lengt
 document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
+
+/* ---------- Selected work menu ---------- */
+
+const selectedWorkList = document.getElementById("selected-work-list");
+const selectedWorkTotal = document.getElementById("selected-work-total");
+
+function renderSelectedWorkMenu() {
+  if (!selectedWorkList) return;
+
+  if (selectedWorkTotal) {
+    selectedWorkTotal.textContent =
+      `${String(projects.length).padStart(2, "0")} PROJECTS`;
+  }
+
+  selectedWorkList.innerHTML = projects.map((project, index) => `
+    <button
+      class="selected-work-row"
+      type="button"
+      data-project-id="${project.id}"
+      aria-label="Abrir proyecto ${project.title}"
+    >
+      <span class="selected-work-number">
+        ${String(index + 1).padStart(2, "0")}
+      </span>
+
+      <strong class="selected-work-title">
+        ${project.title}
+      </strong>
+
+      <span class="selected-work-category">
+        ${project.category}
+      </span>
+
+      <span class="selected-work-year">
+        ${project.year}
+      </span>
+    </button>
+  `).join("");
+
+  selectedWorkList.querySelectorAll(".selected-work-row").forEach((row) => {
+    row.addEventListener("click", () => {
+      openProject(row.dataset.projectId);
+    });
+
+    row.addEventListener("mouseenter", () => {
+      cursor?.classList.add("is-active");
+    });
+
+    row.addEventListener("mouseleave", () => {
+      cursor?.classList.remove("is-active");
+    });
+  });
+}
+
 /* ---------- Render projects as editorial chapters ---------- */
 
 const CHAPTER_LABELS = [
@@ -346,5 +400,6 @@ function bindArchiveDrag() {
 
 bindArchiveDrag();
 
+renderSelectedWorkMenu();
 renderProjects();
 bindCursorTargets();

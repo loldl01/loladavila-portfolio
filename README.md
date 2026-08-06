@@ -1,25 +1,27 @@
-# Lola Davila — Gougou 13 Inspired V7
+# Lola Davila — Menú de proyectos V8
 
-Esta versión toma como referencia la lógica visual de una página editorial numerada:
+Esta versión trabaja directamente sobre los cinco archivos entregados por Lola.
 
-- números de página gigantes;
-- tipografía a escala extrema;
-- nombres y palabras superpuestas;
-- imágenes flotando sobre la tipografía;
-- fondo crema, negro y rojo;
-- navegación pequeña;
-- transición de página con el número 13;
-- capítulos editoriales con una composición más física y rotada;
-- cursor rojo.
+## Correcciones realizadas
 
-No copia código, recursos ni la composición exacta de otro sitio. Usa la identidad y los proyectos de Lola Davila.
+- Se añadió un menú negro de `SELECTED WORK` con todos los proyectos.
+- Cada fila muestra:
+  - número;
+  - nombre;
+  - categoría;
+  - año.
+- Al pasar el cursor, toda la fila se vuelve roja.
+- Al hacer clic, se abre el proyecto correspondiente.
+- La franja móvil de servicios ahora usa letras más pequeñas.
+- Se pueden leer varias especialidades al mismo tiempo mientras se desplazan.
+- El cursor rojo y el resto de la composición actual se mantienen.
 
 ## Archivos que debes reemplazar
 
-- index.html
-- styles.css
-- script.js
-- projects.js
-- README.md
+- `index.html`
+- `styles.css`
+- `script.js`
+- `projects.js`
+- `README.md`
 
-Conserva `assets/images/`.
+Conserva la carpeta `assets/images/`.

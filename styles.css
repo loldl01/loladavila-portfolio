@@ -2427,3 +2427,169 @@ body {
     font-size: 21vw;
   }
 }
+
+
+/* =========================================================
+   SELECTED WORK MENU — added from the approved reference
+   ========================================================= */
+
+.selected-work-menu {
+  position: relative;
+  z-index: 5;
+  padding: 92px 16px 86px;
+  background: #090909;
+  color: #f2f0eb;
+  border-top: 1px solid rgba(242, 240, 235, .18);
+  border-bottom: 1px solid rgba(242, 240, 235, .18);
+}
+
+.selected-work-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 0 15px;
+  border-bottom: 1px solid rgba(242, 240, 235, .28);
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.selected-work-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-work-row {
+  width: 100%;
+  min-height: 108px;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1.7fr) minmax(180px, .8fr) 70px;
+  gap: 28px;
+  align-items: center;
+  padding: 10px 16px 10px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(242, 240, 235, .22);
+  background: transparent;
+  color: #f2f0eb;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background .23s ease,
+    color .23s ease,
+    padding-left .23s ease;
+}
+
+.selected-work-row:hover,
+.selected-work-row:focus-visible {
+  padding-left: 16px;
+  background: var(--red);
+  color: #090909;
+  outline: none;
+}
+
+.selected-work-number,
+.selected-work-category,
+.selected-work-year {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.selected-work-title {
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--display);
+  font-size: clamp(46px, 6.5vw, 104px);
+  font-weight: 400;
+  line-height: .78;
+  letter-spacing: -.075em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.selected-work-year {
+  text-align: right;
+}
+
+/* =========================================================
+   SMALLER MOVING TYPOGRAPHY
+   Several services remain visible at the same time
+   ========================================================= */
+
+.marquee {
+  padding: 11px 0 !important;
+}
+
+.marquee-track {
+  gap: 26px !important;
+  font-size: clamp(15px, 1.65vw, 25px) !important;
+  letter-spacing: -.025em !important;
+  animation-duration: 42s !important;
+}
+
+.marquee-track span::after {
+  margin-left: 26px !important;
+}
+
+/* Keep the expressive serif, but at a readable scale */
+.marquee-serif {
+  line-height: 1 !important;
+}
+
+/* Responsive selected-work menu */
+@media (max-width: 900px) {
+  .selected-work-row {
+    grid-template-columns: 42px minmax(0, 1fr) 62px;
+    min-height: 90px;
+    gap: 16px;
+  }
+
+  .selected-work-category {
+    display: none;
+  }
+
+  .selected-work-title {
+    font-size: clamp(38px, 8vw, 72px);
+  }
+}
+
+@media (max-width: 600px) {
+  .selected-work-menu {
+    padding: 72px 12px 70px;
+  }
+
+  .selected-work-row {
+    grid-template-columns: 30px minmax(0, 1fr) 42px;
+    min-height: 72px;
+    gap: 9px;
+    padding-right: 4px;
+  }
+
+  .selected-work-title {
+    font-size: clamp(29px, 9.5vw, 48px);
+  }
+
+  .selected-work-number,
+  .selected-work-year {
+    font-size: 7px;
+  }
+
+  .marquee {
+    padding: 9px 0 !important;
+  }
+
+  .marquee-track {
+    gap: 20px !important;
+    font-size: 14px !important;
+  }
+
+  .marquee-track span::after {
+    margin-left: 20px !important;
+  }
+}
