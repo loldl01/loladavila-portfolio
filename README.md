@@ -1,20 +1,26 @@
-# Lola Davila — Cyberpunk / Punk V3
+# Lola Davila — Signal Collage V4
 
-Esta versión conserva la estructura de capítulos editoriales y cambia el lenguaje visual hacia una estética punk y cyberpunk.
+Esta versión conserva la estructura de capítulos editoriales, pero cambia la dirección visual hacia un collage gráfico, denso y colorido.
 
-## Cambios
+## Inspiración aplicada
 
-- Tipografía glitch.
-- Títulos geométricos con Syne.
-- Etiquetas técnicas con IBM Plex Mono.
-- Acentos rojo, cyan y verde ácido.
-- Scanlines y micro-glitches.
-- Cortes diagonales en imágenes.
-- Etiquetas de sistema.
-- El menú sigue usando una sola tipografía.
-- Se mantiene el tamaño y movimiento de LOLA DAVILA.
+- Impacto inmediato mediante muchas piezas visuales simultáneas.
+- Capas de imágenes, posters, stickers y etiquetas.
+- Colores neón y contrastes fuertes.
+- Tipografía gráfica y comunicación directa.
+- Caos visual controlado en lugar de una cuadrícula limpia.
 
-## Reemplaza
+## Se mantiene
+
+- Menú con una sola tipografía.
+- LOLA DAVILA grande y en movimiento.
+- Cursor personalizado.
+- Capítulos editoriales.
+- Archivo arrastrable.
+- About y Contact.
+- Sistema de proyectos en `projects.js`.
+
+## Archivos que debes reemplazar
 
 - index.html
 - styles.css

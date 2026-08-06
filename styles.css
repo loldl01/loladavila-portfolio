@@ -1483,3 +1483,513 @@ button { font: inherit; }
     font-size: 7px;
   }
 }
+
+
+/* =========================================================
+   SIGNAL-INSPIRED COLLAGE SYSTEM
+   Dense, colorful, poster-like, deliberately energetic
+   ========================================================= */
+
+:root {
+  --signal-pink: #ff3cac;
+  --signal-orange: #ff5c00;
+  --signal-blue: #2457ff;
+  --signal-yellow: #f5ff00;
+  --signal-green: #22ff78;
+}
+
+.scanlines {
+  opacity: .055;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,60,172,.12), transparent 25%),
+    radial-gradient(circle at 80% 65%, rgba(36,87,255,.16), transparent 28%),
+    #080808;
+}
+
+.signal-collage {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.signal-card {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid var(--fg);
+  background: #111;
+  box-shadow: 12px 12px 0 rgba(0,0,0,.7);
+  transform: rotate(var(--rotation, 0deg));
+  transition: transform .45s var(--ease), opacity .4s ease;
+}
+
+.signal-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(1.25) contrast(1.08);
+}
+
+.signal-card figcaption {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 7px;
+  color: #fff;
+  font-family: var(--hand);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.signal-card-1 {
+  --rotation: -6deg;
+  left: 4%;
+  top: 15%;
+  width: min(21vw, 280px);
+  aspect-ratio: 4 / 5;
+}
+
+.signal-card-2 {
+  --rotation: 4deg;
+  right: 8%;
+  top: 36%;
+  width: min(24vw, 330px);
+  aspect-ratio: 16 / 11;
+}
+
+.signal-card-3 {
+  --rotation: -2deg;
+  left: 38%;
+  top: 7%;
+  width: min(17vw, 230px);
+  aspect-ratio: 1 / 1;
+}
+
+.signal-poster {
+  position: absolute;
+  z-index: 2;
+  padding: 10px 12px;
+  color: #111;
+  font-family: var(--retro);
+  font-weight: 800;
+  line-height: .78;
+  letter-spacing: -.07em;
+  text-transform: uppercase;
+  border: 2px solid #111;
+  box-shadow: 7px 7px 0 #111;
+  transform: rotate(var(--rotation, 0deg));
+  transition: transform .45s var(--ease);
+}
+
+.signal-poster-a {
+  --rotation: 7deg;
+  right: 17%;
+  top: 13%;
+  background: var(--signal-yellow);
+  font-size: clamp(24px, 4vw, 64px);
+}
+
+.signal-poster-b {
+  --rotation: -8deg;
+  left: 26%;
+  bottom: 17%;
+  background: var(--signal-pink);
+  font-size: clamp(26px, 5vw, 72px);
+}
+
+.signal-sticker {
+  position: absolute;
+  right: 3%;
+  bottom: 7%;
+  padding: 8px 12px;
+  background: var(--signal-blue);
+  color: white;
+  font-family: var(--hand);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  transform: rotate(-2deg);
+}
+
+.hero-title {
+  z-index: 7;
+  mix-blend-mode: difference;
+  text-shadow: none;
+}
+
+.hero-navigation,
+.hero-meta {
+  z-index: 10;
+}
+
+.hero-navigation a {
+  background: rgba(8,8,8,.7);
+  backdrop-filter: blur(6px);
+}
+
+.hero-navigation a:hover {
+  background: var(--signal-yellow);
+  color: #111;
+}
+
+.hero::after {
+  content: "GRAPHIC ENERGY / VISUAL SIGNAL / LOLA DAVILA";
+  color: var(--signal-green);
+}
+
+.marquee {
+  background: var(--signal-orange);
+  color: #111;
+  border: 0;
+}
+
+.marquee-track {
+  font-family: var(--retro);
+  font-weight: 800;
+}
+
+.marquee-track span::after {
+  color: var(--signal-blue);
+}
+
+.marquee-serif {
+  font-family: var(--glitch);
+  color: #111;
+}
+
+.work-section {
+  background:
+    linear-gradient(180deg, #080808 0 88%, #111 100%);
+}
+
+.section-intro h2 {
+  max-width: 1100px;
+}
+
+.section-intro h2 .serif-display {
+  display: inline-block;
+  padding: 0 .08em;
+  background: var(--signal-yellow);
+  color: #111;
+  transform: rotate(-2deg);
+}
+
+.project-chapter {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.project-chapter::before {
+  display: none;
+}
+
+.chapter-header {
+  position: relative;
+  z-index: 10;
+  padding: 18px;
+  background: var(--fg);
+  color: #111;
+  border: 0;
+  transform: rotate(var(--header-rotation, -1deg));
+}
+
+.project-chapter:nth-child(even) .chapter-header {
+  --header-rotation: 1deg;
+  background: var(--signal-yellow);
+}
+
+.project-chapter:nth-child(3n) .chapter-header {
+  background: var(--signal-pink);
+}
+
+.chapter-number,
+.chapter-label,
+.chapter-meta {
+  color: #111;
+}
+
+.chapter-heading h3 {
+  color: #111;
+}
+
+.title-glitch {
+  color: #111;
+  text-shadow:
+    3px 0 0 var(--signal-blue),
+    -3px 0 0 var(--signal-green);
+}
+
+.title-outline {
+  -webkit-text-stroke-color: #111;
+}
+
+.title-mono {
+  color: var(--signal-blue);
+}
+
+.signal-stage {
+  min-height: clamp(800px, 92vw, 1240px);
+  margin-top: -14px;
+}
+
+.chapter-image {
+  border: 2px solid var(--fg);
+  clip-path: none;
+  box-shadow: 14px 14px 0 rgba(0,0,0,.62);
+}
+
+.chapter-image::after {
+  border: 0;
+}
+
+.chapter-image-main::before {
+  content: "SIGNAL / IMAGE / FEED";
+  color: var(--signal-yellow);
+}
+
+.chapter-image-secondary {
+  border-color: var(--signal-pink);
+}
+
+.chapter-quote {
+  padding: 10px 12px;
+  background: var(--signal-blue);
+  color: white;
+  font-family: var(--retro);
+  font-size: clamp(24px, 3vw, 48px);
+  line-height: .9;
+  text-shadow: none;
+  transform: rotate(-2deg);
+}
+
+.chapter-handwriting {
+  padding: 7px 10px;
+  background: var(--signal-yellow);
+  color: #111;
+  font-family: var(--hand);
+  font-size: clamp(16px, 2vw, 30px);
+  transform: rotate(3deg);
+}
+
+.chapter-handwriting::before {
+  color: var(--signal-pink);
+}
+
+.chapter-system-label {
+  background: var(--signal-green);
+  color: #111;
+  border: 0;
+  box-shadow: 6px 6px 0 #111;
+}
+
+.signal-fragment {
+  position: absolute;
+  z-index: 9;
+  padding: 7px 10px;
+  font-family: var(--hand);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border: 1px solid #111;
+}
+
+.signal-fragment-a {
+  left: 1%;
+  top: 7%;
+  background: var(--signal-pink);
+  color: #111;
+  transform: rotate(-6deg);
+}
+
+.signal-fragment-b {
+  right: 3%;
+  top: 25%;
+  background: var(--signal-yellow);
+  color: #111;
+  transform: rotate(5deg);
+}
+
+.signal-mini-poster {
+  position: absolute;
+  z-index: 10;
+  left: 3%;
+  bottom: 3%;
+  width: min(240px, 25vw);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--signal-orange);
+  color: #111;
+  border: 2px solid #111;
+  box-shadow: 7px 7px 0 #111;
+  transform: rotate(-4deg);
+}
+
+.signal-mini-poster span {
+  font-family: var(--hand);
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+
+.signal-mini-poster strong {
+  font-family: var(--retro);
+  font-size: clamp(18px, 2vw, 30px);
+  line-height: .9;
+  letter-spacing: -.05em;
+  text-transform: uppercase;
+}
+
+.chapter-footer {
+  padding: 12px;
+  background: var(--fg);
+  color: #111;
+  border: 0;
+}
+
+.chapter-footer span:last-child {
+  color: var(--signal-blue);
+}
+
+.archive-section {
+  background:
+    linear-gradient(120deg, #080808 0 65%, rgba(36,87,255,.18) 65% 100%);
+}
+
+.archive-card {
+  border: 2px solid var(--fg);
+  box-shadow: 10px 10px 0 rgba(0,0,0,.68);
+}
+
+.archive-card-1 { background: var(--signal-pink); color: #111; }
+.archive-card-2 { background: var(--signal-yellow); color: #111; }
+.archive-card-3 { background: var(--signal-blue); }
+.archive-card-4 { background: var(--signal-green); color: #111; }
+.archive-card-5 { background: var(--signal-orange); color: #111; }
+.archive-card-6 { background: #f1efe9; color: #111; }
+
+.archive-serif {
+  color: inherit;
+  font-family: var(--glitch);
+}
+
+.about-section .serif-display {
+  color: var(--signal-pink);
+}
+
+.services span:nth-child(3n + 1) {
+  background: var(--signal-yellow);
+  color: #111;
+  border-color: #111;
+}
+
+.services span:nth-child(3n + 2) {
+  background: var(--signal-blue);
+  color: white;
+}
+
+.services span:nth-child(3n) {
+  background: var(--signal-pink);
+  color: #111;
+}
+
+.contact-section {
+  background:
+    linear-gradient(135deg,
+      var(--signal-yellow) 0 38%,
+      var(--signal-pink) 38% 68%,
+      var(--signal-blue) 68% 100%
+    );
+}
+
+.contact-section h2 {
+  text-shadow: none;
+}
+
+.contact-grid a {
+  padding: 7px 10px;
+  background: #111;
+  color: white;
+  border: 0;
+}
+
+.cursor.is-active {
+  border-color: var(--signal-yellow);
+  box-shadow:
+    0 0 0 3px var(--signal-pink),
+    0 0 22px rgba(36,87,255,.5);
+}
+
+@media (max-width: 900px) {
+  .signal-card-3,
+  .signal-poster-b {
+    display: none;
+  }
+
+  .signal-card-1 {
+    width: 34vw;
+  }
+
+  .signal-card-2 {
+    width: 38vw;
+  }
+
+  .signal-stage {
+    min-height: auto;
+  }
+
+  .signal-fragment,
+  .signal-mini-poster {
+    position: relative;
+    inset: auto;
+    width: max-content;
+    max-width: 90%;
+    margin: 14px 0;
+    transform: rotate(-1deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .signal-card {
+    opacity: .62;
+  }
+
+  .signal-card-1 {
+    left: -6%;
+    top: 27%;
+    width: 48vw;
+  }
+
+  .signal-card-2 {
+    right: -8%;
+    top: 42%;
+    width: 54vw;
+  }
+
+  .signal-poster-a {
+    right: 2%;
+    top: 17%;
+  }
+
+  .signal-sticker {
+    display: none;
+  }
+
+  .chapter-header {
+    padding: 12px;
+  }
+
+  .signal-mini-poster {
+    width: 80%;
+  }
+}

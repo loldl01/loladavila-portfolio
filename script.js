@@ -109,7 +109,14 @@ function renderProjects() {
           </div>
         </header>
 
-        <div class="chapter-stage">
+        <div class="chapter-stage signal-stage">
+          <div class="signal-fragment signal-fragment-a" aria-hidden="true">
+            ${String(index + 1).padStart(2, "0")} / LOLA DAVILA
+          </div>
+          <div class="signal-fragment signal-fragment-b" aria-hidden="true">
+            ${project.category}
+          </div>
+
           <div class="chapter-image chapter-image-main">
             <div
               class="chapter-visual"
@@ -138,6 +145,11 @@ function renderProjects() {
             <span>IMG_SYS_${String(index + 1).padStart(2, "0")}</span>
             <span>STATUS: ACTIVE</span>
           </div>
+
+          <div class="signal-mini-poster" aria-hidden="true">
+            <span>${project.year}</span>
+            <strong>${project.client}</strong>
+          </div>
         </div>
 
         <footer class="chapter-footer">
@@ -160,6 +172,30 @@ function renderProjects() {
   });
 
   bindCursorTargets();
+}
+
+
+/* ---------- Signal collage movement ---------- */
+
+const signalCards = document.querySelectorAll(".signal-card, .signal-poster");
+
+if (window.matchMedia("(pointer: fine)").matches) {
+  hero.addEventListener("mousemove", (event) => {
+    const x = (event.clientX / window.innerWidth - 0.5);
+    const y = (event.clientY / window.innerHeight - 0.5);
+
+    signalCards.forEach((card, index) => {
+      const strength = (index + 1) * 5;
+      card.style.transform =
+        `translate3d(${x * strength}px, ${y * strength}px, 0) rotate(var(--rotation, 0deg))`;
+    });
+  });
+
+  hero.addEventListener("mouseleave", () => {
+    signalCards.forEach((card) => {
+      card.style.transform = `translate3d(0, 0, 0) rotate(var(--rotation, 0deg))`;
+    });
+  });
 }
 
 /* ---------- Project viewer ---------- */
