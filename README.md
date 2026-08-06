@@ -1,19 +1,20 @@
-# Lola Davila — Gougou Close V6
+# Lola Davila — Cyberpunk / Punk V3
 
-Esta versión rehace el hero y la transición hacia proyectos para acercarse mucho más a una experiencia tipográfica editorial:
+Esta versión conserva la estructura de capítulos editoriales y cambia el lenguaje visual hacia una estética punk y cyberpunk.
 
-- fondo crema;
-- frases gigantes que ocupan la pantalla;
-- combinación de sans pesada y serif retro;
-- imágenes superpuestas sobre la tipografía;
-- rojo como acento;
-- navegación pequeña;
-- transición tipográfica a pantalla completa;
-- capítulos con imágenes superpuestas y títulos variables;
-- menú con una sola tipografía;
-- cursor rojo.
+## Cambios
 
-## Reemplaza en GitHub
+- Tipografía glitch.
+- Títulos geométricos con Syne.
+- Etiquetas técnicas con IBM Plex Mono.
+- Acentos rojo, cyan y verde ácido.
+- Scanlines y micro-glitches.
+- Cortes diagonales en imágenes.
+- Etiquetas de sistema.
+- El menú sigue usando una sola tipografía.
+- Se mantiene el tamaño y movimiento de LOLA DAVILA.
+
+## Reemplaza
 
 - index.html
 - styles.css
@@ -21,4 +22,4 @@ Esta versión rehace el hero y la transición hacia proyectos para acercarse muc
 - projects.js
 - README.md
 
-Conserva `assets/images/`.
+No borres `assets/images/`.

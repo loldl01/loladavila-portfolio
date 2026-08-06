@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&family=Shrikhand&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&family=IBM+Plex+Mono:wght@400;500;600&family=Rubik+Glitch&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
@@ -20,9 +20,10 @@
 <body>
   <div class="cursor" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
-  <div class="gou-page-labels" aria-hidden="true">
-    <span>FASHION / IMAGE / DIRECTION</span>
-    <span>PORTFOLIO 2026</span>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="signal-corners" aria-hidden="true">
+    <span>LD_01</span>
+    <span>EC / 2026</span>
   </div>
 
   <header class="site-header">
@@ -50,7 +51,7 @@
   </aside>
 
   <main>
-    <section id="home" class="hero gou-home">
+    <section id="home" class="hero">
       <div class="hero-backdrop" aria-hidden="true">
         <div class="hero-preview preview-work"></div>
         <div class="hero-preview preview-archive"></div>
@@ -58,66 +59,33 @@
         <div class="hero-preview preview-contact"></div>
       </div>
 
-      <div class="gou-hero-grid" aria-hidden="true">
-        <span>PORTFOLIO / 2026</span>
-        <span>ECUADOR — AVAILABLE WORLDWIDE</span>
-      </div>
-
-      <div class="gou-intro-copy">
-        <p class="gou-kicker">FASHION STYLING · CREATIVE DIRECTION</p>
-
-        <h1 class="gou-statement">
-          <span class="gou-line gou-line-serif">I'M LOLA,</span>
-          <span class="gou-line gou-line-sans">A FASHION</span>
-          <span class="gou-line gou-line-serif gou-line-offset">STYLIST</span>
-          <span class="gou-line gou-line-sans">BUILDING</span>
-          <span class="gou-line gou-line-serif gou-line-red">IMAGES.</span>
-        </h1>
-      </div>
-
-      <div class="gou-hero-collage" aria-hidden="true">
-        <figure class="gou-hero-image gou-hero-image-a">
-          <img src="assets/images/project-01.jpg" alt="">
-        </figure>
-
-        <figure class="gou-hero-image gou-hero-image-b">
-          <img src="assets/images/project-03.jpg" alt="">
-        </figure>
-
-        <figure class="gou-hero-image gou-hero-image-c">
-          <img src="assets/images/project-06.jpg" alt="">
-        </figure>
-
-        <span class="gou-hand-note">image becomes character</span>
-        <span class="gou-index-stamp">LD / 01</span>
-      </div>
-
-      <div class="hero-navigation gou-hero-navigation">
+      <div class="hero-navigation">
         <a href="#work" data-preview="work">
           <span>01</span>
-          <strong>WORK</strong>
+          <strong>Trabajo Seleccionado</strong>
         </a>
         <a href="#archive" data-preview="archive">
           <span>02</span>
-          <strong>ARCHIVE</strong>
+          <strong>Archivo Visual</strong>
         </a>
         <a href="#about" data-preview="about">
           <span>03</span>
-          <strong>ABOUT</strong>
+          <strong>Sobre Lola</strong>
         </a>
         <a href="#contact" data-preview="contact">
           <span>04</span>
-          <strong>CONTACT</strong>
+          <strong>Contactar</strong>
         </a>
       </div>
 
-      <div class="hero-title gou-hidden-brand" aria-label="Lola Davila">
+      <div class="hero-title" aria-label="Lola Davila">
         <span class="hero-word hero-word-lola">LOLA</span>
         <span class="hero-word hero-word-davila">DAVILA</span>
       </div>
 
-      <div class="hero-meta gou-hero-meta">
-        <p>Scroll to explore ↓</p>
+      <div class="hero-meta">
+        <p>Estilista de Moda · Dirección Creativa · Ecuador</p>
+        <p>Desliza para explorar ↓</p>
       </div>
     </section>
 
@@ -137,12 +105,6 @@
         <span class="marquee-serif">Producción</span>
       </div>
     </div>
-
-    <section class="gou-type-transition" aria-hidden="true">
-      <span>SELECTED</span>
-      <span class="gou-transition-serif">WORKS</span>
-      <span>2024—26</span>
-    </section>
 
     <section id="work" class="work-section">
       <div class="section-intro reveal">
