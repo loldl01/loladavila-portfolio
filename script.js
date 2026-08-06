@@ -25,13 +25,13 @@ function renderProjects() {
       data-project-id="${project.id}"
       aria-label="Abrir proyecto ${project.title}"
     >
-      <div class="project-visual" style="--project-color: ${project.color}; --project-image: url(\'${project.image}\')">
-        <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
+      <div class="project-visual" style="--project-color: ${project.color}; --project-image: url('${project.image}')"></div>
 
-        <div class="project-title">
-          <h3>${project.title}</h3>
-          <p>${project.category}<br>${project.year}</p>
-        </div>
+      <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
+
+      <div class="project-title">
+        <h3>${project.title}</h3>
+        <p>${project.category}<br>${project.year}</p>
       </div>
     </article>
   `).join("");

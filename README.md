@@ -1,28 +1,17 @@
-# Lola Davila Fashion Portfolio — V06
+# Lola Davila Fashion Portfolio — V07
 
-Esta versión corrige los errores visuales de V05:
+Corrección principal:
 
-- Los títulos ya no quedan cortados.
-- El menú completo permanece visible.
-- El cursor expandido es más pequeño.
-- Las imágenes sí cambiaron de lugar: ahora tienen una distribución nueva.
-- Los proyectos usan proporciones y posiciones distintas.
-- Los textos gigantes del fondo ya no invaden la composición.
-- Las imágenes del menú cubren toda la pantalla.
-- Se eliminaron reglas CSS contradictorias acumuladas.
+- Los títulos de los proyectos ya no están dentro del contenedor de imagen.
+- Por eso ahora pueden salir por debajo de la foto sin quedar cortados.
+- El menú completo usa una sola tipografía.
+- Se aumentó el espacio inferior de cada proyecto para evitar superposición.
+- Se mantuvieron las imágenes, posiciones y fondos de la V06.
 
-## Qué subir a GitHub
+## Reemplaza en GitHub
 
-Reemplaza:
-
-- index.html
-- styles.css
-- projects.js
 - script.js
+- styles.css
 - README.md
 
-Mantén y vuelve a subir:
-
-- assets/images/
-
-La carpeta de imágenes sigue siendo necesaria para los fondos del menú y las portadas provisionales.
+Los demás archivos pueden quedarse igual, aunque también puedes subir el paquete completo.
