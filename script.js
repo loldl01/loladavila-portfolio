@@ -101,58 +101,75 @@ function openProject(id) {
     ? project.keywords
     : ["Imagen", "Carácter", "Movimiento"];
 
+  const galleryMarkup = gallery.map((src, index) => {
+    const layoutClass = `viewer-shot-${(index % 6) + 1}`;
+    const alt = `${project.title} — imagen ${index + 1}`;
+
+    return `
+      <figure class="viewer-shot ${layoutClass}">
+        <div class="viewer-shot-frame">
+          <img src="${src}" alt="${alt}" loading="${index === 0 ? "eager" : "lazy"}">
+        </div>
+        <figcaption>${String(index + 1).padStart(2, "0")} / ${String(gallery.length).padStart(2, "0")}</figcaption>
+      </figure>
+    `;
+  }).join("");
+
   const nextProject = projects[(projectIndex + 1) % projects.length];
 
-  const galleryMarkup = gallery.map((src, index) => `
-    <figure class="v2-shot v2-shot-${(index % 5) + 1}">
-      <div class="v2-shot-frame">
-        <img src="${src}" alt="${project.title} — imagen ${index + 1}" loading="${index === 0 ? "eager" : "lazy"}">
-      </div>
-      <figcaption>${String(index + 1).padStart(2, "0")} / ${String(gallery.length).padStart(2, "0")}</figcaption>
-    </figure>
-  `).join("");
-
   viewerContent.innerHTML = `
-    <article class="v2-project">
-      <header class="v2-hero">
-        <p class="v2-project-number">PROJECT ${String(projectIndex + 1).padStart(2, "0")}</p>
+    <article class="viewer-project">
+      <header class="viewer-hero">
+        <div class="viewer-hero-index">PROJECT ${String(projectIndex + 1).padStart(2, "0")}</div>
 
         <h2>
-          ${firstWords ? `<span class="v2-title-sans">${firstWords}</span>` : ""}
-          <span class="v2-title-serif">${lastWord}</span>
+          ${firstWords ? `<span class="viewer-title-sans">${firstWords}</span>` : ""}
+          <span class="viewer-title-serif">${lastWord}</span>
         </h2>
 
-        <div class="v2-meta">
+        <div class="viewer-hero-meta">
           <span>${project.category}</span>
           <span>${project.client}</span>
           <span>${project.year}</span>
         </div>
       </header>
 
-      <section class="v2-cover">
+      <section class="viewer-cover">
         <img src="${project.image}" alt="${project.title}" loading="eager">
       </section>
 
-      <section class="v2-intro">
+      <section class="viewer-intro">
         <p>${project.description}</p>
 
-        <div class="v2-keywords">
+        <div class="viewer-keywords" aria-label="Conceptos del proyecto">
           ${keywords.map((word) => `<span>${word}</span>`).join("")}
         </div>
       </section>
 
-      <section class="v2-story">
+      <section class="viewer-story">
         ${galleryMarkup}
       </section>
 
-      <section class="v2-credits">
-        <div><span>Rol</span><strong>${project.category}</strong></div>
-        <div><span>Cliente</span><strong>${project.client}</strong></div>
-        <div><span>Año</span><strong>${project.year}</strong></div>
-        <div><span>Styling</span><strong>Lola Davila</strong></div>
+      <section class="viewer-credits">
+        <div>
+          <span>Rol</span>
+          <strong>${project.category}</strong>
+        </div>
+        <div>
+          <span>Cliente</span>
+          <strong>${project.client}</strong>
+        </div>
+        <div>
+          <span>Año</span>
+          <strong>${project.year}</strong>
+        </div>
+        <div>
+          <span>Dirección / Styling</span>
+          <strong>Lola Davila</strong>
+        </div>
       </section>
 
-      <button class="v2-next" type="button" data-next-project="${nextProject.id}">
+      <button class="viewer-next" type="button" data-next-project="${nextProject.id}">
         <span>Siguiente proyecto</span>
         <strong>${nextProject.title}</strong>
         <span aria-hidden="true">↘</span>
@@ -160,12 +177,12 @@ function openProject(id) {
     </article>
   `;
 
-  const nextButton = viewerContent.querySelector(".v2-next");
+  const nextButton = viewerContent.querySelector(".viewer-next");
   nextButton?.addEventListener("click", () => openProject(nextButton.dataset.nextProject));
 
-  document.getElementById("viewer-current").textContent =
+  document.getElementById("viewer-progress-number").textContent =
     String(projectIndex + 1).padStart(2, "0");
-  document.getElementById("viewer-total").textContent =
+  document.getElementById("viewer-progress-total").textContent =
     String(projects.length).padStart(2, "0");
 
   projectViewer.classList.add("is-open");
@@ -211,17 +228,17 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 
 
-/* ---------- V2 project depth ---------- */
+/* ---------- Project viewer image depth ---------- */
 
 projectViewer.addEventListener("scroll", () => {
-  projectViewer.querySelectorAll(".v2-shot img").forEach((image) => {
-    const frame = image.parentElement;
-    const rect = frame.getBoundingClientRect();
-    const center = rect.top + rect.height / 2;
+  const shots = projectViewer.querySelectorAll(".viewer-shot img");
+  shots.forEach((image) => {
+    const rect = image.parentElement.getBoundingClientRect();
     const viewportCenter = window.innerHeight / 2;
-    const offset = (center - viewportCenter) * -0.025;
+    const imageCenter = rect.top + rect.height / 2;
+    const offset = (imageCenter - viewportCenter) * -0.035;
 
-    image.style.transform = `translate3d(0, ${offset}px, 0) scale(1.05)`;
+    image.style.transform = `translate3d(0, ${offset}px, 0) scale(1.06)`;
   });
 }, { passive: true });
 

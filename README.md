@@ -1,41 +1,47 @@
-# Lola Davila — Portafolio V2
+# Lola Davila — Portafolio Editorial Inmersivo
 
-Esta versión conserva la página principal actual y rediseña desde cero la experiencia al abrir cada proyecto.
+Esta versión transforma la apertura de cada proyecto en una experiencia editorial completa.
 
-## Qué incluye
+## Qué cambia
 
-- Entrada a pantalla completa.
-- Título enorme con mezcla de sans y serif.
-- Portada de pantalla completa.
-- Texto editorial y palabras clave.
-- Cinco momentos fotográficos con tamaños distintos.
-- Movimiento suave de imágenes durante el scroll.
-- Créditos.
-- Navegación al siguiente proyecto.
-- Menú principal con una sola tipografía.
+- Al hacer clic en un proyecto, se abre una página inmersiva a pantalla completa.
+- El proyecto comienza con un título enorme mezclando sans y serif.
+- Después aparece una portada de pantalla completa.
+- Incluye una introducción editorial, conceptos clave y seis momentos fotográficos.
+- Las imágenes se mueven suavemente al hacer scroll para crear profundidad.
+- Al final aparecen créditos y un enlace visual al siguiente proyecto.
+- El menú principal continúa usando una sola tipografía.
+- La estructura principal, el hero, el marquee, Archivo, Sobre mí y Contacto se mantienen.
 
-## Imágenes
+## Archivos
 
-Cada proyecto usa:
+- `index.html`
+- `styles.css`
+- `script.js`
+- `projects.js`
+- `README.md`
+
+## Imágenes reales
+
+Cada proyecto ahora acepta:
 
 ```js
 gallery: [
-  "assets/images/proyecto/01.jpg",
-  "assets/images/proyecto/02.jpg",
-  "assets/images/proyecto/03.jpg"
+  "assets/images/mi-proyecto/01.jpg",
+  "assets/images/mi-proyecto/02.jpg",
+  "assets/images/mi-proyecto/03.jpg"
 ]
 ```
 
-La versión actual reutiliza temporalmente las portadas existentes.
+También puedes añadir:
+
+```js
+keywords: ["Movimiento", "Textura", "Carácter"]
+```
+
+La versión actual reutiliza temporalmente las imágenes de portada existentes para mostrar el recorrido.
 
 ## Publicación
 
-Reemplaza estos cinco archivos en GitHub:
-
-- index.html
-- styles.css
-- script.js
-- projects.js
-- README.md
-
-Conserva `assets/images/`.
+Reemplaza los cinco archivos en GitHub. Conserva `assets/images/`.
+Cloudflare detectará el cambio y publicará automáticamente.
