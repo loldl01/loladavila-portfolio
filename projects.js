@@ -8,6 +8,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Independent Editorial",
     description: "A monochromatic fashion story built around volume, shadow and character.",
     color: "#282828",
+    image: "assets/images/project-01.jpg",
     galleryColors: ["#171717", "#3c3c3c", "#221612", "#4a443e", "#171717", "#301510"]
   },
   {
@@ -19,6 +20,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Fashion Campaign",
     description: "A visual exploration of silhouette, proportion and contemporary tailoring.",
     color: "#3b2119",
+    image: "assets/images/project-02.jpg",
     galleryColors: ["#3b2119", "#191919", "#5a5047", "#2d1711", "#4b4b4b", "#27100b"]
   },
   {
@@ -30,6 +32,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Digital Campaign",
     description: "A high-energy image series combining graphic color and direct styling.",
     color: "#1c2c49",
+    image: "assets/images/project-03.jpg",
     galleryColors: ["#18233a", "#2d456e", "#1a1a1a", "#596777", "#132037", "#202020"]
   },
   {
@@ -41,6 +44,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Editorial",
     description: "Nighttime tailoring, cinematic tension and understated glamour.",
     color: "#211619",
+    image: "assets/images/project-04.jpg",
     galleryColors: ["#120d0f", "#32191e", "#242424", "#4b3036", "#151515", "#2d1419"]
   },
   {
@@ -52,6 +56,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Retail",
     description: "A refined product story balancing softness, shape and commercial clarity.",
     color: "#5a544b",
+    image: "assets/images/project-05.jpg",
     galleryColors: ["#4f4941", "#262626", "#867d70", "#3b3732", "#181818", "#625a50"]
   },
   {
@@ -63,6 +68,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Fashion Brand",
     description: "A bold campaign language shaped by contrast, repetition and red accents.",
     color: "#49120b",
+    image: "assets/images/project-06.jpg",
     galleryColors: ["#360b07", "#171717", "#6c1a10", "#3b302e", "#1e0805", "#4c1710"]
   },
   {
@@ -74,6 +80,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Commercial Editorial",
     description: "Lightweight silhouettes and saturated light with an effortless rhythm.",
     color: "#6f5b45",
+    image: "assets/images/project-07.jpg",
     galleryColors: ["#6f5b45", "#b0a18c", "#29231e", "#7b6a57", "#3a332d", "#94826c"]
   },
   {
@@ -85,6 +92,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Retail Studio",
     description: "A studio system focused on consistent styling, silhouette and product storytelling.",
     color: "#2f2f2f",
+    image: "assets/images/project-08.jpg",
     galleryColors: ["#202020", "#424242", "#161616", "#5a5a5a", "#262626", "#373737"]
   }
 ];

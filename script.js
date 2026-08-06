@@ -25,7 +25,7 @@ function renderProjects() {
       data-project-id="${project.id}"
       aria-label="Abrir proyecto ${project.title}"
     >
-      <div class="project-visual" style="--project-color: ${project.color}">
+      <div class="project-visual" style="--project-color: ${project.color}; --project-image: url(\'${project.image}\')">
         <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
 
         <div class="project-title">

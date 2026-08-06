@@ -1,35 +1,27 @@
-# Lola Davila Fashion Portfolio — V04
+# Lola Davila Fashion Portfolio — V05
 
-Cambios principales:
+Cambios de esta versión:
 
-- Se eliminó el nombre pequeño de la esquina superior izquierda.
-- El cursor rojo ya no muestra la palabra OPEN.
-- El menú inicial activa fondos visuales distintos al pasar el cursor.
-- Se añadió una serif display con carácter editorial.
-- Se mezclan tipografías en títulos, menú, archivo y proyectos.
-- Se mantiene el nombre grande y su movimiento.
-- Se conserva la composición irregular de las imágenes.
+- El área de proyectos es más libre, superpuesta, rotada y expresiva.
+- Se añadieron imágenes JPG provisionales reales a todos los proyectos.
+- El menú inicial ahora muestra una imagen distinta detrás de cada opción.
+- Ya no se usan únicamente luces o degradados como vista previa.
+- Se conserva la mezcla de tipografía sans pesada + serif editorial.
+- Se conserva el cursor rojo sin texto.
+- Se conserva el nombre gigante y su movimiento.
 
-## Archivos a reemplazar en GitHub
+## Archivos que debes subir
+
+Reemplaza:
 
 - index.html
 - styles.css
-- script.js
 - projects.js
+- script.js
 - README.md
 
-Cloudflare volverá a publicar automáticamente.
+Y esta vez sí debes subir la carpeta completa:
 
-## Imágenes del menú
+- assets/images/
 
-Por ahora los fondos del menú son composiciones provisionales.
-
-Más adelante se pueden reemplazar por imágenes reales con CSS, por ejemplo:
-
-```css
-.preview-work {
-  background-image:
-    linear-gradient(90deg, rgba(0,0,0,.2), rgba(0,0,0,.75)),
-    url("assets/images/menu-work.jpg");
-}
-```
+La carpeta contiene las imágenes provisionales necesarias para que el menú y los proyectos se vean correctamente.
