@@ -1,47 +1,34 @@
-# Lola Davila — Portafolio Editorial Inmersivo
+# Lola Davila — Fashion Portfolio | Capítulos editoriales
 
-Esta versión transforma la apertura de cada proyecto en una experiencia editorial completa.
+Esta versión toma los archivos base entregados por Lola y reconstruye exclusivamente
+la sección de proyectos como una secuencia de capítulos editoriales.
 
-## Qué cambia
+## Qué cambió
 
-- Al hacer clic en un proyecto, se abre una página inmersiva a pantalla completa.
-- El proyecto comienza con un título enorme mezclando sans y serif.
-- Después aparece una portada de pantalla completa.
-- Incluye una introducción editorial, conceptos clave y seis momentos fotográficos.
-- Las imágenes se mueven suavemente al hacer scroll para crear profundidad.
-- Al final aparecen créditos y un enlace visual al siguiente proyecto.
-- El menú principal continúa usando una sola tipografía.
-- La estructura principal, el hero, el marquee, Archivo, Sobre mí y Contacto se mantienen.
+- Cada proyecto ahora es un capítulo de gran formato.
+- Los títulos tienen mucho más aire y jerarquía.
+- Cada capítulo combina una imagen principal, una imagen secundaria y una frase.
+- Hay cuatro composiciones controladas que se repiten automáticamente al añadir proyectos.
+- Ya no se muestran tarjetas dentro de cajas ni spreads con bordes redondeados.
+- Se mantiene el hero, el menú, el marquee, el archivo arrastrable, el cursor rojo,
+  la sección Sobre mí y Contacto.
+- El menú continúa usando una sola tipografía.
 
-## Archivos
+## Archivos modificados
 
 - `index.html`
 - `styles.css`
 - `script.js`
-- `projects.js`
 - `README.md`
 
-## Imágenes reales
+`projects.js` conserva los mismos datos y el mismo sistema de orden.
 
-Cada proyecto ahora acepta:
+## Agregar proyectos
 
-```js
-gallery: [
-  "assets/images/mi-proyecto/01.jpg",
-  "assets/images/mi-proyecto/02.jpg",
-  "assets/images/mi-proyecto/03.jpg"
-]
-```
-
-También puedes añadir:
-
-```js
-keywords: ["Movimiento", "Textura", "Carácter"]
-```
-
-La versión actual reutiliza temporalmente las imágenes de portada existentes para mostrar el recorrido.
+Añade un nuevo objeto en `projects.js`. La web asignará automáticamente una de las
+cuatro composiciones de capítulo según su posición.
 
 ## Publicación
 
-Reemplaza los cinco archivos en GitHub. Conserva `assets/images/`.
-Cloudflare detectará el cambio y publicará automáticamente.
+Reemplaza los cinco archivos en GitHub. No borres tu carpeta `assets/images/`.
+Cloudflare volverá a publicar automáticamente.
