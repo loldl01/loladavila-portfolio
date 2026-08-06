@@ -19,32 +19,52 @@ document.getElementById("project-total").textContent = `${String(projects.length
 document.getElementById("year").textContent = new Date().getFullYear();
 
 
-/* ---------- NYC selected works ---------- */
-const nycProjectList = document.getElementById("nyc-project-list");
-const nycProjectCount = document.getElementById("nyc-project-count");
+/* ---------- Photography-first selected work ---------- */
 
-function renderNycSelectedWorks() {
-  if (!nycProjectList) return;
-  if (nycProjectCount) {
-    nycProjectCount.textContent = `${String(projects.length).padStart(2, "0")} PROJECTS`;
+const lookbookList = document.getElementById("lookbook-list");
+const lookbookTotal = document.getElementById("lookbook-total");
+
+function renderLookbookIndex() {
+  if (!lookbookList) return;
+
+  if (lookbookTotal) {
+    lookbookTotal.textContent =
+      `${String(projects.length).padStart(2, "0")} PROJECTS`;
   }
 
-  nycProjectList.innerHTML = projects.map((project, index) => `
-    <button class="nyc-project-row" type="button" data-project-id="${project.id}" aria-label="Abrir proyecto ${project.title}">
-      <span class="nyc-project-number">${String(index + 1).padStart(2, "0")}</span>
-      <div class="nyc-project-copy">
-        <strong>${project.title}</strong>
-        <span>${project.shortLine || project.category}</span>
-      </div>
-      <figure class="nyc-project-thumb" aria-hidden="true">
-        <img src="${project.image}" alt="">
+  lookbookList.innerHTML = projects.map((project, index) => `
+    <button
+      class="lookbook-item"
+      type="button"
+      data-project-id="${project.id}"
+      aria-label="Abrir proyecto ${project.title}"
+    >
+      <figure class="lookbook-image">
+        <img src="${project.image}" alt="${project.title}">
       </figure>
-      <span class="nyc-project-arrow">↗</span>
+
+      <div class="lookbook-overlay">
+        <div class="lookbook-title">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <strong>${project.title}</strong>
+        </div>
+
+        <div class="lookbook-details">
+          <span>${project.roleLabel || project.category}</span>
+          <span>${project.year}</span>
+        </div>
+
+        <div class="lookbook-production">
+          <span>LOOK ${String(index + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}</span>
+          <span>${project.client}</span>
+          <span>OPEN PROJECT ↗</span>
+        </div>
+      </div>
     </button>
   `).join("");
 
-  nycProjectList.querySelectorAll(".nyc-project-row").forEach((row) => {
-    row.addEventListener("click", () => openProject(row.dataset.projectId));
+  lookbookList.querySelectorAll(".lookbook-item").forEach((item) => {
+    item.addEventListener("click", () => openProject(item.dataset.projectId));
   });
 }
 
@@ -104,7 +124,7 @@ function renderProjects() {
           </div>
 
           <div class="chapter-quote">
-            <span class="chapter-quote-line">${project.shortLine || project.description}</span>
+            <span>${project.description}</span>
           </div>
         </div>
 
@@ -206,8 +226,14 @@ window.addEventListener("scroll", () => {
   const scrollY = Math.min(window.scrollY, window.innerHeight);
   const progress = scrollY / window.innerHeight;
 
-  heroWords[0].style.transform = `translate3d(${-progress * 10}vw, ${-progress * 8}vh, 0)`;
-  heroWords[1].style.transform = `translate3d(${progress * 12}vw, ${progress * 3}vh, 0)`;
+  if (heroWords[0]) {
+    heroWords[0].style.transform =
+      `translate3d(${-progress * 1.5}vw, ${-progress * 1.2}vh, 0)`;
+  }
+  if (heroWords[1]) {
+    heroWords[1].style.transform =
+      `translate3d(${progress * 1.5}vw, ${progress * 1.2}vh, 0)`;
+  }
 }, { passive: true });
 
 /* ---------- Mobile menu ---------- */
@@ -322,6 +348,6 @@ function bindArchiveDrag() {
 
 bindArchiveDrag();
 
-renderNycSelectedWorks();
+renderLookbookIndex();
 renderProjects();
 bindCursorTargets();

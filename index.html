@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
@@ -46,85 +46,40 @@
   </aside>
 
   <main>
-    <section id="home" class="hero nyc-home">
-      <div class="hero-backdrop" aria-hidden="true">
-        <div class="hero-preview preview-work"></div>
-        <div class="hero-preview preview-archive"></div>
-        <div class="hero-preview preview-about"></div>
-        <div class="hero-preview preview-contact"></div>
+    <section id="home" class="hero image-director-home">
+      <div class="image-director-frame">
+        <img src="assets/images/project-01.jpg" alt="Trabajo de fashion styling de Lola Davila">
       </div>
 
-      <div class="nyc-grid" aria-hidden="true"></div>
-      <div class="nyc-scan" aria-hidden="true"></div>
+      <div class="image-director-name" aria-label="Lola Davila">
+        <span>LOLA</span>
+        <span>DAVILA</span>
+      </div>
 
-      <div class="nyc-topline">
-        <span>LDV</span>
-        <span>FASHION STYLING / CREATIVE DIRECTION</span>
+      <nav class="image-director-menu" aria-label="Navegación principal">
+        <a href="#work">WORK</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+
+      <div class="image-director-meta">
+        <span>FASHION STYLING</span>
+        <span>CREATIVE DIRECTION</span>
         <span>ECUADOR / 2026</span>
       </div>
 
-      <nav class="hero-navigation nyc-menu" aria-label="Navegación principal destacada">
-        <a href="#work" data-preview="work"><span>01</span><strong>WORK</strong></a>
-        <a href="#archive" data-preview="archive"><span>02</span><strong>ARCHIVE</strong></a>
-        <a href="#about" data-preview="about"><span>03</span><strong>ABOUT</strong></a>
-        <a href="#contact" data-preview="contact"><span>04</span><strong>CONTACT</strong></a>
-      </nav>
-
-      <div class="nyc-hero-copy">
-        <p class="nyc-role">// FASHION STYLIST<br>CREATIVE DIRECTION</p>
-        <h1 class="nyc-name" aria-label="Lola Davila"><span>LOLA</span><span>DAVILA</span></h1>
-        <div class="nyc-manifesto">
-          <span>WE BUILD IMAGES.</span>
-          <span>WE TELL STORIES.</span>
-          <span>WE CREATE IMPACT.</span>
-        </div>
+      <div class="image-director-production-note">
+        <span>LOOK 01 / 08</span>
+        <span>STYLING — LOLA DAVILA</span>
+        <span>NATURAL LIGHT</span>
       </div>
 
-      <figure class="nyc-portrait" aria-hidden="true">
-        <img src="assets/images/project-01.jpg" alt="">
-      </figure>
-
-      <div class="nyc-cross nyc-cross-a" aria-hidden="true">+</div>
-      <div class="nyc-cross nyc-cross-b" aria-hidden="true">+</div>
-      <div class="nyc-code" aria-hidden="true">-0.1807, -78.4678 / ECUADOR</div>
-
-      <div class="hero-title nyc-hidden-title" aria-hidden="true">
+      <div class="hero-title image-director-hidden-title" aria-hidden="true">
         <span class="hero-word hero-word-lola">LOLA</span>
         <span class="hero-word hero-word-davila">DAVILA</span>
       </div>
-
-      <div class="nyc-status">
-        <span>AVAILABLE FOR SELECTED PROJECTS</span>
-        <span>SCROLL ↓</span>
-      </div>
     </section>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Estilismo de Moda</span>
-        <span class="marquee-serif">Dirección Creativa</span>
-        <span>Estilismo de Vestuario</span>
-        <span class="marquee-serif">E-commerce</span>
-        <span>Editorial</span>
-        <span class="marquee-serif">Producción</span>
-        <span>Estilismo de Moda</span>
-        <span class="marquee-serif">Dirección Creativa</span>
-        <span>Estilismo de Vestuario</span>
-        <span class="marquee-serif">E-commerce</span>
-        <span>Editorial</span>
-        <span class="marquee-serif">Producción</span>
-      </div>
-    </div>
-
-    <section class="nyc-selected" aria-label="Selected works">
-      <div class="nyc-selected-head">
-        <span>// SELECTED WORKS</span>
-        <span id="nyc-project-count">00 PROJECTS</span>
-      </div>
-      <div id="nyc-project-list" class="nyc-project-list"></div>
-    </section>
-
-    <section id="work" class="work-section">
+<section id="work" class="work-section">
       <div class="section-intro reveal">
         <p class="section-index">01 — Trabajo Seleccionado</p>
 
