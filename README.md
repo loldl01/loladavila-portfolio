@@ -1,15 +1,20 @@
-# Lola Davila — Cyberpunk V4
+# Lola Davila — Gougou-inspired V5
 
-Correcciones aplicadas sobre la versión Cyberpunk:
+Esta versión conserva la estructura de capítulos editoriales y cambia la dirección visual hacia una estética tipográfica, editorial y de alto contraste.
 
-- Se conserva el efecto glitch horizontal que gustó.
-- Se reemplaza la tipografía con aspecto de terror por una sans geométrica más fashion-tech.
-- El cursor vuelve a ser rojo en todos sus estados.
-- La imagen final cambia a un collage fotográfico en negro, blanco y rojo.
-- Se reduce el uso de cyan y verde ácido.
-- La estética queda más editorial, punk y cyberpunk, y menos parecida a una interfaz de videojuego.
+## Lenguaje visual
 
-## Archivos que debes reemplazar
+- Negro, crema y rojo.
+- Sans pesada + serif retro + monoespaciada.
+- Grandes títulos con palabras en outline.
+- Bloques editoriales que parecen posters.
+- Imágenes con menos efectos digitales y más presencia.
+- Notas gráficas rojas usadas con moderación.
+- Menú con una sola tipografía.
+- Cursor rojo.
+- Sin scanlines, neones ni estética de videojuego.
+
+## Archivos a reemplazar
 
 - index.html
 - styles.css
@@ -17,4 +22,4 @@ Correcciones aplicadas sobre la versión Cyberpunk:
 - projects.js
 - README.md
 
-No borres la carpeta `assets/images/`.
+No borres `assets/images/`.
