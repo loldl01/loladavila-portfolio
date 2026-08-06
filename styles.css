@@ -1486,510 +1486,320 @@ button { font: inherit; }
 
 
 /* =========================================================
-   SIGNAL-INSPIRED COLLAGE SYSTEM
-   Dense, colorful, poster-like, deliberately energetic
+   CYBERPUNK V4 — targeted corrections
+   - keep glitch displacement
+   - replace horror-style display type
+   - restore red cursor
+   - redesign final section image treatment
    ========================================================= */
 
-:root {
-  --signal-pink: #ff3cac;
-  --signal-orange: #ff5c00;
-  --signal-blue: #2457ff;
-  --signal-yellow: #f5ff00;
-  --signal-green: #22ff78;
+/* 1. Keep the glitch displacement effect, but use a cleaner fashion-tech typeface */
+.title-signal {
+  position: relative;
+  display: inline-block;
+  font-family: var(--retro);
+  font-weight: 800;
+  letter-spacing: -0.085em;
+  line-height: 0.72;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-shadow:
+    2px 0 0 rgba(255, 42, 26, .95),
+    -2px 0 0 rgba(0, 229, 255, .72);
+  filter: contrast(1.06);
 }
 
-.scanlines {
-  opacity: .055;
-}
-
-.hero {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,60,172,.12), transparent 25%),
-    radial-gradient(circle at 80% 65%, rgba(36,87,255,.16), transparent 28%),
-    #080808;
-}
-
-.signal-collage {
+.title-signal::before,
+.title-signal::after {
+  content: attr(data-text);
   position: absolute;
-  z-index: 3;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
 }
 
-.signal-card {
-  position: absolute;
-  margin: 0;
-  overflow: hidden;
-  border: 2px solid var(--fg);
-  background: #111;
-  box-shadow: 12px 12px 0 rgba(0,0,0,.7);
-  transform: rotate(var(--rotation, 0deg));
-  transition: transform .45s var(--ease), opacity .4s ease;
+.title-signal::before {
+  color: var(--red);
+  clip-path: inset(0 0 56% 0);
+  transform: translateX(2px);
+  opacity: .82;
 }
 
-.signal-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  filter: saturate(1.25) contrast(1.08);
+.title-signal::after {
+  color: var(--cyan);
+  clip-path: inset(58% 0 0 0);
+  transform: translateX(-2px);
+  opacity: .68;
 }
 
-.signal-card figcaption {
-  position: absolute;
-  left: 8px;
-  right: 8px;
-  bottom: 7px;
-  color: #fff;
-  font-family: var(--hand);
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 0 #000;
+@keyframes signal-jump {
+  0%, 89%, 100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  90% {
+    transform: translate(-4px, 1px);
+    clip-path: inset(8% 0 58% 0);
+  }
+  92% {
+    transform: translate(3px, -1px);
+    clip-path: inset(46% 0 18% 0);
+  }
+  94% {
+    transform: translate(-2px, 0);
+    clip-path: inset(72% 0 6% 0);
+  }
+  96% {
+    transform: translate(1px, 0);
+    clip-path: inset(0 0 0 0);
+  }
 }
 
-.signal-card-1 {
-  --rotation: -6deg;
-  left: 4%;
-  top: 15%;
-  width: min(21vw, 280px);
-  aspect-ratio: 4 / 5;
+.title-signal::before {
+  animation: signal-jump 3.4s steps(1, end) infinite;
 }
 
-.signal-card-2 {
-  --rotation: 4deg;
-  right: 8%;
-  top: 36%;
-  width: min(24vw, 330px);
-  aspect-ratio: 16 / 11;
+.title-signal::after {
+  animation: signal-jump 3.9s steps(1, end) infinite reverse;
 }
 
-.signal-card-3 {
-  --rotation: -2deg;
-  left: 38%;
-  top: 7%;
-  width: min(17vw, 230px);
-  aspect-ratio: 1 / 1;
-}
-
-.signal-poster {
-  position: absolute;
-  z-index: 2;
-  padding: 10px 12px;
-  color: #111;
-  font-family: var(--retro);
-  font-weight: 800;
-  line-height: .78;
-  letter-spacing: -.07em;
-  text-transform: uppercase;
-  border: 2px solid #111;
-  box-shadow: 7px 7px 0 #111;
-  transform: rotate(var(--rotation, 0deg));
-  transition: transform .45s var(--ease);
-}
-
-.signal-poster-a {
-  --rotation: 7deg;
-  right: 17%;
-  top: 13%;
-  background: var(--signal-yellow);
-  font-size: clamp(24px, 4vw, 64px);
-}
-
-.signal-poster-b {
-  --rotation: -8deg;
-  left: 26%;
-  bottom: 17%;
-  background: var(--signal-pink);
-  font-size: clamp(26px, 5vw, 72px);
-}
-
-.signal-sticker {
-  position: absolute;
-  right: 3%;
-  bottom: 7%;
-  padding: 8px 12px;
-  background: var(--signal-blue);
-  color: white;
-  font-family: var(--hand);
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .12em;
-  transform: rotate(-2deg);
-}
-
-.hero-title {
-  z-index: 7;
-  mix-blend-mode: difference;
-  text-shadow: none;
-}
-
-.hero-navigation,
-.hero-meta {
-  z-index: 10;
-}
-
-.hero-navigation a {
-  background: rgba(8,8,8,.7);
-  backdrop-filter: blur(6px);
-}
-
-.hero-navigation a:hover {
-  background: var(--signal-yellow);
-  color: #111;
-}
-
-.hero::after {
-  content: "GRAPHIC ENERGY / VISUAL SIGNAL / LOLA DAVILA";
-  color: var(--signal-green);
-}
-
-.marquee {
-  background: var(--signal-orange);
-  color: #111;
-  border: 0;
-}
-
-.marquee-track {
-  font-family: var(--retro);
-  font-weight: 800;
-}
-
-.marquee-track span::after {
-  color: var(--signal-blue);
-}
-
-.marquee-serif {
-  font-family: var(--glitch);
-  color: #111;
-}
-
-.work-section {
-  background:
-    linear-gradient(180deg, #080808 0 88%, #111 100%);
-}
-
-.section-intro h2 {
-  max-width: 1100px;
-}
-
-.section-intro h2 .serif-display {
-  display: inline-block;
-  padding: 0 .08em;
-  background: var(--signal-yellow);
-  color: #111;
-  transform: rotate(-2deg);
-}
-
-.project-chapter {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.project-chapter::before {
-  display: none;
-}
-
-.chapter-header {
-  position: relative;
-  z-index: 10;
-  padding: 18px;
-  background: var(--fg);
-  color: #111;
-  border: 0;
-  transform: rotate(var(--header-rotation, -1deg));
-}
-
-.project-chapter:nth-child(even) .chapter-header {
-  --header-rotation: 1deg;
-  background: var(--signal-yellow);
-}
-
-.project-chapter:nth-child(3n) .chapter-header {
-  background: var(--signal-pink);
-}
-
-.chapter-number,
-.chapter-label,
-.chapter-meta {
-  color: #111;
-}
-
-.chapter-heading h3 {
-  color: #111;
-}
-
+/* Remove the horror-looking glitch font from major titles */
 .title-glitch {
-  color: #111;
+  font-family: var(--retro) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.08em !important;
   text-shadow:
-    3px 0 0 var(--signal-blue),
-    -3px 0 0 var(--signal-green);
+    2px 0 0 var(--red),
+    -2px 0 0 var(--cyan) !important;
+  animation: none !important;
 }
 
-.title-outline {
-  -webkit-text-stroke-color: #111;
-}
-
-.title-mono {
-  color: var(--signal-blue);
-}
-
-.signal-stage {
-  min-height: clamp(800px, 92vw, 1240px);
-  margin-top: -14px;
-}
-
-.chapter-image {
-  border: 2px solid var(--fg);
-  clip-path: none;
-  box-shadow: 14px 14px 0 rgba(0,0,0,.62);
-}
-
-.chapter-image::after {
-  border: 0;
-}
-
-.chapter-image-main::before {
-  content: "SIGNAL / IMAGE / FEED";
-  color: var(--signal-yellow);
-}
-
-.chapter-image-secondary {
-  border-color: var(--signal-pink);
-}
-
+/* Cleaner paragraph typography */
 .chapter-quote {
-  padding: 10px 12px;
-  background: var(--signal-blue);
-  color: white;
   font-family: var(--retro);
-  font-size: clamp(24px, 3vw, 48px);
-  line-height: .9;
-  text-shadow: none;
-  transform: rotate(-2deg);
-}
-
-.chapter-handwriting {
-  padding: 7px 10px;
-  background: var(--signal-yellow);
-  color: #111;
-  font-family: var(--hand);
-  font-size: clamp(16px, 2vw, 30px);
-  transform: rotate(3deg);
-}
-
-.chapter-handwriting::before {
-  color: var(--signal-pink);
-}
-
-.chapter-system-label {
-  background: var(--signal-green);
-  color: #111;
-  border: 0;
-  box-shadow: 6px 6px 0 #111;
-}
-
-.signal-fragment {
-  position: absolute;
-  z-index: 9;
-  padding: 7px 10px;
-  font-family: var(--hand);
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: .12em;
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 46px);
+  line-height: 0.93;
+  letter-spacing: -0.055em;
   text-transform: uppercase;
-  border: 1px solid #111;
+  text-shadow:
+    1px 0 0 var(--red);
 }
 
-.signal-fragment-a {
-  left: 1%;
-  top: 7%;
-  background: var(--signal-pink);
-  color: #111;
-  transform: rotate(-6deg);
-}
-
-.signal-fragment-b {
-  right: 3%;
-  top: 25%;
-  background: var(--signal-yellow);
-  color: #111;
-  transform: rotate(5deg);
-}
-
-.signal-mini-poster {
-  position: absolute;
-  z-index: 10;
-  left: 3%;
-  bottom: 3%;
-  width: min(240px, 25vw);
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background: var(--signal-orange);
-  color: #111;
-  border: 2px solid #111;
-  box-shadow: 7px 7px 0 #111;
-  transform: rotate(-4deg);
-}
-
-.signal-mini-poster span {
-  font-family: var(--hand);
-  font-size: 9px;
-  letter-spacing: .12em;
-}
-
-.signal-mini-poster strong {
-  font-family: var(--retro);
-  font-size: clamp(18px, 2vw, 30px);
-  line-height: .9;
-  letter-spacing: -.05em;
-  text-transform: uppercase;
-}
-
-.chapter-footer {
-  padding: 12px;
-  background: var(--fg);
-  color: #111;
-  border: 0;
-}
-
-.chapter-footer span:last-child {
-  color: var(--signal-blue);
-}
-
-.archive-section {
-  background:
-    linear-gradient(120deg, #080808 0 65%, rgba(36,87,255,.18) 65% 100%);
-}
-
-.archive-card {
-  border: 2px solid var(--fg);
-  box-shadow: 10px 10px 0 rgba(0,0,0,.68);
-}
-
-.archive-card-1 { background: var(--signal-pink); color: #111; }
-.archive-card-2 { background: var(--signal-yellow); color: #111; }
-.archive-card-3 { background: var(--signal-blue); }
-.archive-card-4 { background: var(--signal-green); color: #111; }
-.archive-card-5 { background: var(--signal-orange); color: #111; }
-.archive-card-6 { background: #f1efe9; color: #111; }
-
-.archive-serif {
-  color: inherit;
-  font-family: var(--glitch);
-}
-
-.about-section .serif-display {
-  color: var(--signal-pink);
-}
-
-.services span:nth-child(3n + 1) {
-  background: var(--signal-yellow);
-  color: #111;
-  border-color: #111;
-}
-
-.services span:nth-child(3n + 2) {
-  background: var(--signal-blue);
-  color: white;
-}
-
-.services span:nth-child(3n) {
-  background: var(--signal-pink);
-  color: #111;
-}
-
-.contact-section {
-  background:
-    linear-gradient(135deg,
-      var(--signal-yellow) 0 38%,
-      var(--signal-pink) 38% 68%,
-      var(--signal-blue) 68% 100%
-    );
-}
-
-.contact-section h2 {
-  text-shadow: none;
-}
-
-.contact-grid a {
-  padding: 7px 10px;
-  background: #111;
-  color: white;
-  border: 0;
+/* 2. Restore the cursor to red in every state */
+.cursor,
+.cursor.is-active {
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+  box-shadow: none !important;
 }
 
 .cursor.is-active {
-  border-color: var(--signal-yellow);
-  box-shadow:
-    0 0 0 3px var(--signal-pink),
-    0 0 22px rgba(36,87,255,.5);
+  width: 42px;
+  height: 42px;
+  background: transparent !important;
+  border: 2px solid var(--red) !important;
+}
+
+/* 3. Keep image manipulation, but make it more photographic and less terminal-like */
+.chapter-visual {
+  filter:
+    grayscale(.16)
+    contrast(1.08)
+    saturate(.88);
+}
+
+.chapter-image-main .chapter-visual {
+  background-blend-mode: normal;
+}
+
+.project-chapter:nth-child(odd) .chapter-image-main .chapter-visual {
+  filter:
+    grayscale(.42)
+    contrast(1.18)
+    saturate(.72);
+}
+
+.project-chapter:nth-child(even) .chapter-image-secondary .chapter-visual {
+  filter:
+    sepia(.12)
+    contrast(1.12)
+    saturate(.82);
+}
+
+/* red editorial slice instead of cyan outline */
+.chapter-image::after {
+  border-color: rgba(255, 42, 26, .28) !important;
+}
+
+.chapter-image-secondary {
+  border-color: rgba(255, 42, 26, .72) !important;
+}
+
+/* 4. New closing-image treatment */
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #090909 !important;
+  color: var(--fg) !important;
+}
+
+.contact-visual-layer {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.contact-image {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  filter:
+    grayscale(1)
+    contrast(1.34)
+    brightness(.62);
+}
+
+.contact-image-a {
+  right: -4%;
+  top: 4%;
+  width: 58%;
+  height: 92%;
+  background-image:
+    linear-gradient(180deg, transparent 0 54%, rgba(255,42,26,.72) 54% 100%),
+    url("assets/images/project-03.jpg");
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%, 0 18%);
+  transform: rotate(-2deg) scale(1.04);
+}
+
+.contact-image-b {
+  left: -8%;
+  bottom: -12%;
+  width: 48%;
+  height: 68%;
+  background-image:
+    linear-gradient(90deg, rgba(255,42,26,.55), transparent 68%),
+    url("assets/images/project-06.jpg");
+  clip-path: polygon(0 0, 88% 0, 100% 16%, 100% 100%, 0 100%);
+  opacity: .72;
+  transform: rotate(3deg);
+}
+
+.contact-grid-mask {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mix-blend-mode: screen;
+}
+
+.contact-section::before {
+  content: "END SIGNAL / LOLA DAVILA / ECUADOR";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  z-index: 2;
+  color: var(--red);
+  font-family: var(--hand);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.contact-section h2,
+.contact-section .section-index,
+.contact-grid,
+.contact-footer {
+  position: relative;
+  z-index: 3;
+}
+
+.contact-section h2 {
+  color: var(--fg) !important;
+  max-width: 78%;
+  text-shadow:
+    3px 3px 0 rgba(255,42,26,.42);
+}
+
+.contact-section .serif-display {
+  color: var(--red) !important;
+}
+
+.contact-grid a {
+  background: var(--red) !important;
+  color: #111 !important;
+  border: 1px solid var(--red) !important;
+}
+
+.contact-footer {
+  border-top-color: rgba(255,255,255,.25) !important;
+}
+
+/* reduce cyan/acid presence to keep the palette mostly black / white / red */
+:root {
+  --cyan: #d9d9d9;
+  --acid: #ff2a1a;
+}
+
+.chapter-number,
+.chapter-system-label,
+.chapter-image-main::before {
+  color: var(--red) !important;
+}
+
+.chapter-system-label {
+  border-color: var(--red) !important;
+}
+
+/* make the overall result less game-interface and more fashion editorial */
+.signal-corners {
+  opacity: .45;
+}
+
+.scanlines {
+  opacity: .06;
+}
+
+.services span {
+  border-color: rgba(255,42,26,.34) !important;
 }
 
 @media (max-width: 900px) {
-  .signal-card-3,
-  .signal-poster-b {
-    display: none;
+  .contact-image-a {
+    width: 76%;
+    right: -18%;
   }
 
-  .signal-card-1 {
-    width: 34vw;
+  .contact-image-b {
+    width: 62%;
   }
 
-  .signal-card-2 {
-    width: 38vw;
-  }
-
-  .signal-stage {
-    min-height: auto;
-  }
-
-  .signal-fragment,
-  .signal-mini-poster {
-    position: relative;
-    inset: auto;
-    width: max-content;
-    max-width: 90%;
-    margin: 14px 0;
-    transform: rotate(-1deg);
+  .contact-section h2 {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
-  .signal-card {
-    opacity: .62;
+  .contact-image-a {
+    width: 100%;
+    right: -32%;
+    opacity: .72;
   }
 
-  .signal-card-1 {
-    left: -6%;
-    top: 27%;
-    width: 48vw;
+  .contact-image-b {
+    width: 78%;
+    left: -28%;
+    opacity: .46;
   }
 
-  .signal-card-2 {
-    right: -8%;
-    top: 42%;
-    width: 54vw;
-  }
-
-  .signal-poster-a {
-    right: 2%;
-    top: 17%;
-  }
-
-  .signal-sticker {
-    display: none;
-  }
-
-  .chapter-header {
-    padding: 12px;
-  }
-
-  .signal-mini-poster {
-    width: 80%;
+  .title-signal {
+    text-shadow:
+      1px 0 0 var(--red),
+      -1px 0 0 rgba(255,255,255,.55);
   }
 }

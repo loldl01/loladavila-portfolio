@@ -1,24 +1,13 @@
-# Lola Davila — Signal Collage V4
+# Lola Davila — Cyberpunk V4
 
-Esta versión conserva la estructura de capítulos editoriales, pero cambia la dirección visual hacia un collage gráfico, denso y colorido.
+Correcciones aplicadas sobre la versión Cyberpunk:
 
-## Inspiración aplicada
-
-- Impacto inmediato mediante muchas piezas visuales simultáneas.
-- Capas de imágenes, posters, stickers y etiquetas.
-- Colores neón y contrastes fuertes.
-- Tipografía gráfica y comunicación directa.
-- Caos visual controlado en lugar de una cuadrícula limpia.
-
-## Se mantiene
-
-- Menú con una sola tipografía.
-- LOLA DAVILA grande y en movimiento.
-- Cursor personalizado.
-- Capítulos editoriales.
-- Archivo arrastrable.
-- About y Contact.
-- Sistema de proyectos en `projects.js`.
+- Se conserva el efecto glitch horizontal que gustó.
+- Se reemplaza la tipografía con aspecto de terror por una sans geométrica más fashion-tech.
+- El cursor vuelve a ser rojo en todos sus estados.
+- La imagen final cambia a un collage fotográfico en negro, blanco y rojo.
+- Se reduce el uso de cyan y verde ácido.
+- La estética queda más editorial, punk y cyberpunk, y menos parecida a una interfaz de videojuego.
 
 ## Archivos que debes reemplazar
 
@@ -28,4 +17,4 @@ Esta versión conserva la estructura de capítulos editoriales, pero cambia la d
 - projects.js
 - README.md
 
-No borres `assets/images/`.
+No borres la carpeta `assets/images/`.

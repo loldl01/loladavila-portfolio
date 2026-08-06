@@ -45,7 +45,7 @@ function formatChapterTitle(title, index) {
   const words = title.trim().split(/\s+/);
 
   if (words.length === 1) {
-    return `<span class="title-glitch" data-text="${words[0]}">${words[0]}</span>`;
+    return `<span class="title-signal" data-text="${words[0]}">${words[0]}</span>`;
   }
 
   const first = words.slice(0, -1).join(" ");
@@ -54,7 +54,7 @@ function formatChapterTitle(title, index) {
   if (index % 4 === 0) {
     return `
       <span class="title-sans">${first}</span>
-      <span class="title-glitch" data-text="${last}">${last}</span>
+      <span class="title-signal" data-text="${last}">${last}</span>
     `;
   }
 
@@ -73,7 +73,7 @@ function formatChapterTitle(title, index) {
   }
 
   return `
-    <span class="title-glitch" data-text="${first}">${first}</span>
+    <span class="title-signal" data-text="${first}">${first}</span>
     <span class="title-serif">${last}</span>
   `;
 }
@@ -109,14 +109,7 @@ function renderProjects() {
           </div>
         </header>
 
-        <div class="chapter-stage signal-stage">
-          <div class="signal-fragment signal-fragment-a" aria-hidden="true">
-            ${String(index + 1).padStart(2, "0")} / LOLA DAVILA
-          </div>
-          <div class="signal-fragment signal-fragment-b" aria-hidden="true">
-            ${project.category}
-          </div>
-
+        <div class="chapter-stage">
           <div class="chapter-image chapter-image-main">
             <div
               class="chapter-visual"
@@ -145,11 +138,6 @@ function renderProjects() {
             <span>IMG_SYS_${String(index + 1).padStart(2, "0")}</span>
             <span>STATUS: ACTIVE</span>
           </div>
-
-          <div class="signal-mini-poster" aria-hidden="true">
-            <span>${project.year}</span>
-            <strong>${project.client}</strong>
-          </div>
         </div>
 
         <footer class="chapter-footer">
@@ -172,30 +160,6 @@ function renderProjects() {
   });
 
   bindCursorTargets();
-}
-
-
-/* ---------- Signal collage movement ---------- */
-
-const signalCards = document.querySelectorAll(".signal-card, .signal-poster");
-
-if (window.matchMedia("(pointer: fine)").matches) {
-  hero.addEventListener("mousemove", (event) => {
-    const x = (event.clientX / window.innerWidth - 0.5);
-    const y = (event.clientY / window.innerHeight - 0.5);
-
-    signalCards.forEach((card, index) => {
-      const strength = (index + 1) * 5;
-      card.style.transform =
-        `translate3d(${x * strength}px, ${y * strength}px, 0) rotate(var(--rotation, 0deg))`;
-    });
-  });
-
-  hero.addEventListener("mouseleave", () => {
-    signalCards.forEach((card) => {
-      card.style.transform = `translate3d(0, 0, 0) rotate(var(--rotation, 0deg))`;
-    });
-  });
 }
 
 /* ---------- Project viewer ---------- */
