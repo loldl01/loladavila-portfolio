@@ -1,16 +1,18 @@
-# Lola Davila — Petr-Inspired V8
+# Lola Davila — Gougou 13 Inspired V7
 
-Esta versión adopta una lógica de navegación mucho más clara y directa:
+Esta versión toma como referencia la lógica visual de una página editorial numerada:
 
-- fondo negro;
-- menú completo visible;
-- cursor rojo;
-- imagen de vista previa que cambia al pasar por cada opción;
-- nombre gigante con movimiento;
-- índice de proyectos en formato lista;
-- acceso inmediato a cada proyecto;
-- composición limpia y experimental;
-- navegación móvil clara.
+- números de página gigantes;
+- tipografía a escala extrema;
+- nombres y palabras superpuestas;
+- imágenes flotando sobre la tipografía;
+- fondo crema, negro y rojo;
+- navegación pequeña;
+- transición de página con el número 13;
+- capítulos editoriales con una composición más física y rotada;
+- cursor rojo.
+
+No copia código, recursos ni la composición exacta de otro sitio. Usa la identidad y los proyectos de Lola Davila.
 
 ## Archivos que debes reemplazar
 
@@ -20,4 +22,4 @@ Esta versión adopta una lógica de navegación mucho más clara y directa:
 - projects.js
 - README.md
 
-Conserva la carpeta `assets/images/`.
+Conserva `assets/images/`.

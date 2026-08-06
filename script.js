@@ -18,36 +18,6 @@ document.getElementById("mobile-work-count").textContent = String(projects.lengt
 document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const petrProjectList = document.getElementById("petr-project-list");
-const petrProjectTotal = document.getElementById("petr-project-total");
-
-if (petrProjectTotal) {
-  petrProjectTotal.textContent = `${String(projects.length).padStart(2, "0")} PROJECTS`;
-}
-
-function renderPetrProjectIndex() {
-  if (!petrProjectList) return;
-
-  petrProjectList.innerHTML = projects.map((project, index) => `
-    <button
-      class="petr-project-row"
-      type="button"
-      data-project-id="${project.id}"
-      data-project-image="${project.image}"
-    >
-      <span>${String(index + 1).padStart(2, "0")}</span>
-      <strong>${project.title}</strong>
-      <span>${project.category}</span>
-      <span>${project.year}</span>
-    </button>
-  `).join("");
-
-  petrProjectList.querySelectorAll(".petr-project-row").forEach((row) => {
-    row.addEventListener("click", () => openProject(row.dataset.projectId));
-  });
-}
-
-
 /* ---------- Render projects as editorial chapters ---------- */
 
 const CHAPTER_LABELS = [
@@ -59,15 +29,60 @@ const CHAPTER_LABELS = [
   "Archive"
 ];
 
+
+const GOU_NOTES = [
+  "IMAGE / ATTITUDE / FORM",
+  "MOVEMENT BUILDS CHARACTER",
+  "THE DETAIL CHANGES EVERYTHING",
+  "STYLE BECOMES LANGUAGE",
+  "PERSONAL VISUAL SYSTEM",
+  "STYLING CREATES DESIRE",
+  "LOOK AGAIN",
+  "IMAGE FIRST"
+];
+
+function gouTitle(title, index) {
+  const words = title.trim().split(/\s+/);
+  const first = words.slice(0, -1).join(" ");
+  const last = words.at(-1);
+
+  if (words.length === 1) {
+    return `<span class="gou-title-serif">${last}</span>`;
+  }
+
+  const patterns = [
+    `
+      <span class="gou-title-sans">${first}</span>
+      <span class="gou-title-serif gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-serif">${first}</span>
+      <span class="gou-title-outline gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-condensed">${first}</span>
+      <span class="gou-title-sans gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-outline">${first}</span>
+      <span class="gou-title-serif">${last}</span>
+    `
+  ];
+
+  return patterns[index % patterns.length];
+}
+
 function renderProjects() {
   projectCanvas.innerHTML = projects.map((project, index) => {
     const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
     const number = String(index + 1).padStart(2, "0");
     const layout = `chapter-layout-${(index % 4) + 1}`;
+    const titleMarkup = gouTitle(project.title, index);
+    const posterNote = GOU_NOTES[index] || "";
 
     return `
       <article
-        class="project-chapter ${layout}"
+        class="project-chapter ${layout} gou-chapter"
         tabindex="0"
         role="button"
         data-project-id="${project.id}"
@@ -78,7 +93,7 @@ function renderProjects() {
 
           <div class="chapter-heading">
             <p class="chapter-label">${chapter}</p>
-            <h3>${project.title}</h3>
+            <h3 class="gou-chapter-title">${titleMarkup}</h3>
           </div>
 
           <div class="chapter-meta">
@@ -106,6 +121,15 @@ function renderProjects() {
           <div class="chapter-quote">
             <span>${project.description}</span>
           </div>
+
+          ${posterNote ? `
+            <div class="gou-poster-note" aria-hidden="true">${posterNote}</div>
+          ` : ""}
+
+          <div class="gou-index-tag gou13-index-tag" aria-hidden="true">
+            <strong>${String(index + 1).padStart(2, "0")}</strong>
+            <span>${project.year}</span>
+          </div>
         </div>
 
         <footer class="chapter-footer">
@@ -128,25 +152,6 @@ function renderProjects() {
   });
 
   bindCursorTargets();
-}
-
-
-/* ---------- Petr-inspired pointer response ---------- */
-
-const petrPreviewWindow = document.querySelector(".petr-preview-window");
-
-if (petrPreviewWindow && window.matchMedia("(pointer: fine)").matches) {
-  hero.addEventListener("mousemove", (event) => {
-    const x = event.clientX / window.innerWidth - 0.5;
-    const y = event.clientY / window.innerHeight - 0.5;
-
-    petrPreviewWindow.style.transform =
-      `translate3d(${x * 14}px, ${y * 10}px, 0)`;
-  });
-
-  hero.addEventListener("mouseleave", () => {
-    petrPreviewWindow.style.transform = "translate3d(0, 0, 0)";
-  });
 }
 
 /* ---------- Project viewer ---------- */
@@ -209,7 +214,7 @@ document.addEventListener("keydown", (event) => {
 
 /* ---------- Hero preview + parallax ---------- */
 
-document.querySelectorAll("[data-preview]").forEach((link) => {
+document.querySelectorAll(".hero-navigation a").forEach((link) => {
   const preview = link.dataset.preview;
 
   link.addEventListener("mouseenter", () => {
@@ -341,6 +346,5 @@ function bindArchiveDrag() {
 
 bindArchiveDrag();
 
-renderPetrProjectIndex();
 renderProjects();
 bindCursorTargets();
