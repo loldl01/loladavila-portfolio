@@ -1,23 +1,18 @@
-# Lola Davila — Image Director V14
+# Lola Davila — Image Director V15
 
-Esta versión prioriza la fotografía sobre la tipografía.
+Conserva la dirección visual de V14 y recupera:
 
-## Dirección visual
+- barra informativa en movimiento;
+- cursor rojo;
+- movimiento lento y continuo de `LOLA DAVILA`.
 
-- Fotografías ocupan entre 80% y 90% del protagonismo.
-- LOLA DAVILA se superpone como identidad, no como portada de revista.
-- Menú pequeño y vertical.
-- Proyectos presentados como un lookbook de pantalla completa.
-- Cada proyecto muestra solo título, rol y año.
-- Datos técnicos aparecen como una hoja de producción.
-- Paleta monocromática: negro, blanco roto y el color propio de las fotografías.
-- Sin rojo, verde ácido, glitch ni barras decorativas.
+## Barra móvil
 
-## Tipografías
+Incluye Fashion Styling, Creative Direction, E-commerce, Campaigns,
+Production, Image Making, Ecuador y Available Worldwide.
 
-- Barlow Condensed: nombres y títulos.
-- Manrope: textos generales.
-- IBM Plex Mono: etiquetas técnicas y producción.
+La barra permanece negra y blanca. El rojo aparece únicamente en los
+separadores y en pequeñas interacciones.
 
 ## Archivos para reemplazar
 
@@ -27,4 +22,4 @@ Esta versión prioriza la fotografía sobre la tipografía.
 - projects.js
 - README.md
 
-Conserva assets/images/.
+Conserva `assets/images/`.

@@ -1477,3 +1477,107 @@ body {
     display: none;
   }
 }
+
+
+/* =========================================================
+   IMAGE DIRECTOR V15 — restored moving bar, red cursor and name motion
+   ========================================================= */
+
+:root {
+  --lola-red: #ff2a1a;
+}
+
+/* Moving production bar */
+.production-marquee {
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+  padding: 10px 0;
+  border-top: 1px solid rgba(244,244,241,.2);
+  border-bottom: 1px solid rgba(244,244,241,.2);
+  background: var(--id-black);
+  color: var(--id-white);
+}
+
+.production-marquee .marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 25px;
+  animation: production-marquee-move 44s linear infinite;
+  font-family: var(--id-mono);
+  font-size: clamp(11px, 1.05vw, 16px);
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.production-marquee .marquee-track span::after {
+  content: "✦";
+  margin-left: 25px;
+  color: var(--lola-red);
+}
+
+@keyframes production-marquee-move {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Red custom cursor */
+.cursor {
+  width: 12px !important;
+  height: 12px !important;
+  background: var(--lola-red) !important;
+  border: 0 !important;
+}
+
+.cursor.is-active {
+  width: 44px !important;
+  height: 44px !important;
+  background: transparent !important;
+  border: 2px solid var(--lola-red) !important;
+}
+
+/* Name keeps its slow movement */
+.image-director-name {
+  will-change: transform;
+  transform-origin: left center;
+}
+
+/* Small red interactions only */
+.image-director-menu a:hover,
+.chapter-number,
+.archive-hint {
+  color: var(--lola-red);
+}
+
+@media (max-width: 600px) {
+  .production-marquee {
+    padding: 8px 0;
+  }
+
+  .production-marquee .marquee-track {
+    gap: 20px;
+    font-size: 10px;
+  }
+
+  .production-marquee .marquee-track span::after {
+    margin-left: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .production-marquee .marquee-track {
+    animation: none;
+  }
+
+  .image-director-name {
+    transform: none !important;
+  }
+}
