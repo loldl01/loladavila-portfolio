@@ -15,13 +15,23 @@ const archiveStrip = document.querySelector(".archive-strip");
 
 document.getElementById("work-count").textContent = String(projects.length).padStart(2, "0");
 document.getElementById("mobile-work-count").textContent = String(projects.length).padStart(2, "0");
-document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Projects`;
+document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ---------- Render projects ---------- */
 
+const CANVAS_BREAKS = {
+  2: `ESTILO / <span>FORMA</span> / CARÁCTER`,
+  3: `<span>Trabajo</span> Seleccionado`
+};
+
+const CANVAS_BREAK_ECHO = {
+  2: "ESTILO / FORMA / CARÁCTER",
+  3: "TRABAJO SELECCIONADO"
+};
+
 function renderProjects() {
-  projectCanvas.innerHTML = projects.map((project, index) => `
+  const items = projects.map((project, index) => `
     <article
       class="project-item"
       tabindex="0"
@@ -29,16 +39,34 @@ function renderProjects() {
       data-project-id="${project.id}"
       aria-label="Abrir proyecto ${project.title}"
     >
-      <div class="project-visual" style="--project-color: ${project.color}; --project-image: url('${project.image}')"></div>
+      <p class="project-kicker">Proyecto ${String(index + 1).padStart(2, "0")} — ${project.category}</p>
 
-      <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
+      <div class="project-frame">
+        <div class="project-visual" style="--project-color: ${project.color}; --project-image: url('${project.image}')"></div>
+        <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
+        <span class="project-edge-label">${project.client} · ${project.year}</span>
+      </div>
 
-      <div class="project-title">
+      <div class="project-caption">
         <h3>${project.title}</h3>
         <p>${project.category}<br>${project.year}</p>
       </div>
     </article>
-  `).join("");
+  `);
+
+  let markup = "";
+
+  for (let i = 0; i < items.length; i += 2) {
+    const pair = items.slice(i, i + 2).join("");
+    markup += `<div class="project-spread">${pair}</div>`;
+
+    const breakIndex = i / 2 + 1;
+    if (CANVAS_BREAKS[breakIndex]) {
+      markup += `<div class="canvas-break" data-echo="${CANVAS_BREAK_ECHO[breakIndex]}">${CANVAS_BREAKS[breakIndex]}</div>`;
+    }
+  }
+
+  projectCanvas.innerHTML = markup;
 
   document.querySelectorAll(".project-item").forEach((item) => {
     item.addEventListener("click", () => openProject(item.dataset.projectId));
@@ -79,15 +107,15 @@ function openProject(id) {
     <div class="viewer-gallery">
       ${project.galleryColors.map((color, index) => `
         <div class="viewer-image" style="--image-color: ${color}">
-          IMAGE ${String(index + 1).padStart(2, "0")}
+          IMAGEN ${String(index + 1).padStart(2, "0")}
         </div>
       `).join("")}
     </div>
 
     <div class="viewer-credits">
-      <span>Styling — Lola Davila</span>
-      <span>Client — ${project.client}</span>
-      <span>Year — ${project.year}</span>
+      <span>Estilismo — Lola Davila</span>
+      <span>Cliente — ${project.client}</span>
+      <span>Año — ${project.year}</span>
     </div>
   `;
 
