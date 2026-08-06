@@ -1,20 +1,19 @@
-# Lola Davila — Gougou-inspired V5
+# Lola Davila — Gougou Close V6
 
-Esta versión conserva la estructura de capítulos editoriales y cambia la dirección visual hacia una estética tipográfica, editorial y de alto contraste.
+Esta versión rehace el hero y la transición hacia proyectos para acercarse mucho más a una experiencia tipográfica editorial:
 
-## Lenguaje visual
+- fondo crema;
+- frases gigantes que ocupan la pantalla;
+- combinación de sans pesada y serif retro;
+- imágenes superpuestas sobre la tipografía;
+- rojo como acento;
+- navegación pequeña;
+- transición tipográfica a pantalla completa;
+- capítulos con imágenes superpuestas y títulos variables;
+- menú con una sola tipografía;
+- cursor rojo.
 
-- Negro, crema y rojo.
-- Sans pesada + serif retro + monoespaciada.
-- Grandes títulos con palabras en outline.
-- Bloques editoriales que parecen posters.
-- Imágenes con menos efectos digitales y más presencia.
-- Notas gráficas rojas usadas con moderación.
-- Menú con una sola tipografía.
-- Cursor rojo.
-- Sin scanlines, neones ni estética de videojuego.
-
-## Archivos a reemplazar
+## Reemplaza en GitHub
 
 - index.html
 - styles.css
@@ -22,4 +21,4 @@ Esta versión conserva la estructura de capítulos editoriales y cambia la direc
 - projects.js
 - README.md
 
-No borres `assets/images/`.
+Conserva `assets/images/`.

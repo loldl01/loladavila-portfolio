@@ -32,42 +32,44 @@ const CHAPTER_LABELS = [
 
 const GOU_NOTES = [
   "STYLE / FORM / ATTITUDE",
-  "",
-  "IMAGE AS LANGUAGE",
-  "",
-  "NOT JUST CLOTHES",
-  "",
-  "CHARACTER FIRST",
-  ""
+  "THE IMAGE COMES FIRST",
+  "MOVEMENT BUILDS CHARACTER",
+  "CLOTHES BECOME LANGUAGE",
+  "DETAIL CREATES DESIRE",
+  "PERSONAL VISUAL SYSTEM",
+  "STYLING AS NARRATIVE",
+  "LOOK CLOSER"
 ];
 
 function gouTitle(title, index) {
   const words = title.trim().split(/\s+/);
-  if (words.length === 1) {
-    return `<span class="gou-title-serif">${words[0]}</span>`;
-  }
-
   const first = words.slice(0, -1).join(" ");
   const last = words.at(-1);
 
-  if (index % 3 === 0) {
-    return `
+  if (words.length === 1) {
+    return `<span class="gou-title-serif">${last}</span>`;
+  }
+
+  const patterns = [
+    `
       <span class="gou-title-sans">${first}</span>
-      <span class="gou-title-serif">${last}</span>
-    `;
-  }
-
-  if (index % 3 === 1) {
-    return `
+      <span class="gou-title-serif gou-shift-right">${last}</span>
+    `,
+    `
       <span class="gou-title-serif">${first}</span>
-      <span class="gou-title-outline">${last}</span>
-    `;
-  }
+      <span class="gou-title-outline gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-condensed">${first}</span>
+      <span class="gou-title-sans gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-outline">${first}</span>
+      <span class="gou-title-serif">${last}</span>
+    `
+  ];
 
-  return `
-    <span class="gou-title-condensed">${first}</span>
-    <span class="gou-title-sans">${last}</span>
-  `;
+  return patterns[index % patterns.length];
 }
 
 function renderProjects() {
@@ -80,7 +82,7 @@ function renderProjects() {
 
     return `
       <article
-        class="project-chapter ${layout}"
+        class="project-chapter ${layout} gou-chapter"
         tabindex="0"
         role="button"
         data-project-id="${project.id}"
