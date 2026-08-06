@@ -1581,3 +1581,154 @@ body {
     transform: none !important;
   }
 }
+
+
+/* =========================================================
+   IMAGE DIRECTOR V16 — visibility correction
+   The bar is visible in the first screen and the name movement
+   is intentionally noticeable.
+   ========================================================= */
+
+/* Hero needs space for the ribbon */
+.image-director-home {
+  padding-bottom: 42px;
+}
+
+/* Bar visible at the bottom of the first screen */
+.production-marquee-hero {
+  position: absolute !important;
+  z-index: 30 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #090909 !important;
+  color: #f4f4f1 !important;
+}
+
+.production-marquee-hero .marquee-track {
+  display: flex !important;
+  animation: lola-ribbon-visible 26s linear infinite !important;
+}
+
+@keyframes lola-ribbon-visible {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Clearly visible movement for the name */
+.image-director-name {
+  animation: lola-name-drift 7s ease-in-out infinite alternate !important;
+  will-change: transform;
+}
+
+.image-director-name span:first-child {
+  animation: lola-word-one 6s ease-in-out infinite alternate;
+}
+
+.image-director-name span:last-child {
+  animation: lola-word-two 7.5s ease-in-out infinite alternate;
+}
+
+@keyframes lola-name-drift {
+  0% {
+    transform: translate3d(-10px, -4px, 0) rotate(-0.35deg);
+  }
+
+  50% {
+    transform: translate3d(16px, 7px, 0) rotate(0.25deg);
+  }
+
+  100% {
+    transform: translate3d(-2px, 12px, 0) rotate(-0.12deg);
+  }
+}
+
+@keyframes lola-word-one {
+  from {
+    transform: translateX(0);
+    letter-spacing: -.045em;
+  }
+
+  to {
+    transform: translateX(24px);
+    letter-spacing: -.025em;
+  }
+}
+
+@keyframes lola-word-two {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-30px);
+  }
+}
+
+/* Cursor red in all desktop states */
+.cursor {
+  display: block !important;
+  opacity: 1 !important;
+  background: #ff2a1a !important;
+}
+
+.cursor.is-active {
+  background: transparent !important;
+  border: 2px solid #ff2a1a !important;
+}
+
+/* Keep motion visible even if previous rules disabled it */
+@media (prefers-reduced-motion: reduce) {
+  .production-marquee-hero .marquee-track {
+    animation: lola-ribbon-visible 40s linear infinite !important;
+  }
+
+  .image-director-name {
+    animation: lola-name-drift 10s ease-in-out infinite alternate !important;
+  }
+
+  .image-director-name span:first-child {
+    animation: lola-word-one 9s ease-in-out infinite alternate !important;
+  }
+
+  .image-director-name span:last-child {
+    animation: lola-word-two 10s ease-in-out infinite alternate !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-director-home {
+    padding-bottom: 36px;
+  }
+
+  .production-marquee-hero .marquee-track {
+    animation-duration: 22s !important;
+  }
+
+  .image-director-name span:first-child {
+    animation-name: lola-word-one-mobile;
+  }
+
+  .image-director-name span:last-child {
+    animation-name: lola-word-two-mobile;
+  }
+
+  @keyframes lola-word-one-mobile {
+    from { transform: translateX(0); }
+    to { transform: translateX(10px); }
+  }
+
+  @keyframes lola-word-two-mobile {
+    from { transform: translateX(0); }
+    to { transform: translateX(-12px); }
+  }
+}

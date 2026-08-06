@@ -69,29 +69,6 @@ function renderLookbookIndex() {
 }
 
 
-/* ---------- Continuous movement for LOLA DAVILA ---------- */
-
-const movingName = document.querySelector(".image-director-name");
-
-if (movingName && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  let movementTime = 0;
-
-  function animateMovingName() {
-    movementTime += 0.004;
-
-    const x = Math.sin(movementTime) * 9;
-    const y = Math.cos(movementTime * 0.68) * 5;
-    const rotation = Math.sin(movementTime * 0.4) * 0.18;
-
-    movingName.style.transform =
-      `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
-
-    requestAnimationFrame(animateMovingName);
-  }
-
-  requestAnimationFrame(animateMovingName);
-}
-
 /* ---------- Render projects as editorial chapters ---------- */
 
 const CHAPTER_LABELS = [

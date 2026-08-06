@@ -1,20 +1,14 @@
-# Lola Davila — Image Director V15
+# Lola Davila — Image Director V16
 
-Conserva la dirección visual de V14 y recupera:
+Corrección de visibilidad:
 
-- barra informativa en movimiento;
-- cursor rojo;
-- movimiento lento y continuo de `LOLA DAVILA`.
+- La barra móvil ahora aparece dentro de la primera pantalla, pegada al borde inferior.
+- La barra se desplaza más rápido para que el movimiento sea evidente.
+- `LOLA DAVILA` tiene un desplazamiento continuo más visible.
+- `LOLA` y `DAVILA` también se mueven ligeramente en sentidos contrarios.
+- El cursor rojo se fuerza en todos los estados de escritorio.
 
-## Barra móvil
-
-Incluye Fashion Styling, Creative Direction, E-commerce, Campaigns,
-Production, Image Making, Ecuador y Available Worldwide.
-
-La barra permanece negra y blanca. El rojo aparece únicamente en los
-separadores y en pequeñas interacciones.
-
-## Archivos para reemplazar
+## Reemplaza
 
 - index.html
 - styles.css
