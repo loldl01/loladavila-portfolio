@@ -1,31 +1,21 @@
-# Lola Davila Portfolio — Version 1
+# Prueba de estilo — Lola Davila
 
-This is the first coded version of Lola Davila's editorial portfolio.
+Esta versión sirve para comparar tres combinaciones tipográficas y definir la dirección visual antes de construir el portafolio final.
 
-## Files
+## Estilos
 
-- `index.html`: page structure and content
-- `styles.css`: visual design and responsive layout
-- `script.js`: menu, scroll reveals, counters and custom cursor
-- `assets/images/`: replace the placeholder images here
+- A: editorial expresivo — Cormorant Garamond + Space Grotesk + Archivo Black
+- B: alta moda — Bodoni Moda + DM Sans
+- C: gráfico/brutalista — Archivo Black + DM Sans
 
-## Add your images
+Abre la página y usa los botones A, B y C en la esquina inferior derecha.
 
-Save your files with these exact names:
+## Subir a GitHub
 
-- `assets/images/hero.jpg`
-- `assets/images/project-01.jpg`
-- `assets/images/project-02.jpg`
-- `assets/images/project-03.jpg`
+Reemplaza temporalmente los archivos actuales del repositorio por:
 
-Then replace each `.image-placeholder` block in `index.html` with an `<img>` tag.
+- index.html
+- styles.css
+- script.js
 
-Example:
-
-```html
-<img src="assets/images/hero.jpg" alt="Lola Davila editorial portrait">
-```
-
-## Publish
-
-Upload all files to the root of your GitHub repository. Cloudflare Pages will deploy automatically.
+Cloudflare publicará automáticamente la nueva versión.
