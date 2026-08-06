@@ -74,7 +74,7 @@ function renderProjects() {
           </div>
 
           <div class="chapter-quote">
-            <span>${project.description}</span>
+            <span class="chapter-quote-line">${project.shortLine || project.description}</span>
           </div>
         </div>
 

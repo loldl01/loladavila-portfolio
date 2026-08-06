@@ -9,9 +9,10 @@
   --muted: #9f9b93;
   --line: rgba(242, 240, 235, 0.18);
   --red: #ff2a1a;
-  --display: "Archivo Black", sans-serif;
-  --sans: "DM Sans", sans-serif;
-  --serif: "Fraunces", serif;
+  --display: "Space Grotesk", sans-serif;
+  --sans: "Space Grotesk", sans-serif;
+  --serif: "Instrument Serif", serif;
+  --mono: "Space Mono", monospace;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -1054,5 +1055,180 @@ button { font: inherit; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================================
+   CREATIVE STUDIO TYPOGRAPHY V11
+   Digital, direct, graphic — not fashion-magazine editorial
+   ========================================================= */
+
+:root {
+  --studio-black: #090909;
+  --studio-white: #f2f0eb;
+  --studio-red: #ff2a1a;
+}
+
+/* Main voice: contemporary digital grotesk */
+body,
+.desktop-nav,
+.mobile-menu nav a,
+.hero-navigation a strong,
+.chapter-heading h3,
+.section-intro h2,
+.archive-sticky h2,
+.about-layout h2,
+.contact-section h2,
+.viewer-header h2,
+.archive-card {
+  font-family: var(--display);
+}
+
+/* Remove the book-editorial feeling from project titles */
+.project-chapter:nth-child(even) .chapter-heading h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: .74;
+  letter-spacing: -.075em;
+  text-transform: uppercase;
+}
+
+/* Serif becomes a rare accent only */
+.serif-display,
+.archive-serif,
+.viewer-serif,
+.marquee-serif {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+
+/* Keep accent words compact and modern */
+.serif-display {
+  display: inline-block;
+  font-style: italic;
+  line-height: .86;
+}
+
+/* Project descriptions become graphic signals */
+.chapter-quote {
+  max-width: 470px;
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: clamp(15px, 1.8vw, 27px);
+  font-weight: 700;
+  line-height: .92;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+}
+
+.chapter-quote-line {
+  display: block;
+  padding: 9px 11px;
+  background: var(--red);
+  color: #090909;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* More digital hierarchy */
+.chapter-label,
+.chapter-number,
+.chapter-meta,
+.chapter-footer,
+.section-index,
+.layout-note,
+.archive-hint,
+.services span,
+.contact-footer {
+  font-family: var(--mono);
+}
+
+/* Cleaner section accents */
+.section-intro h2,
+.archive-sticky h2,
+.about-layout h2,
+.contact-section h2 {
+  line-height: .75;
+}
+
+/* Marquee: readable, several items visible at once */
+.marquee {
+  padding: 10px 0;
+}
+
+.marquee-track {
+  gap: 26px;
+  font-family: var(--display);
+  font-size: clamp(14px, 1.55vw, 23px);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  animation-duration: 44s;
+}
+
+.marquee-track span::after {
+  margin-left: 26px;
+}
+
+/* Archive loses the romantic serif-card feeling */
+.archive-card {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.archive-serif {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -.05em;
+}
+
+/* Contact stays bold but not magazine-like */
+.contact-section h2 .serif-display {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -.075em;
+  text-transform: uppercase;
+}
+
+/* Viewer title remains one graphic family */
+.viewer-header .viewer-serif {
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Cursor remains red */
+.cursor {
+  background: var(--studio-red);
+}
+
+.cursor.is-active {
+  background: transparent;
+  border-color: var(--studio-red);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .chapter-quote {
+    font-size: clamp(14px, 3.2vw, 22px);
+  }
+}
+
+@media (max-width: 600px) {
+  .chapter-quote-line {
+    padding: 7px 9px;
+  }
+
+  .marquee-track {
+    font-size: 13px;
+    gap: 20px;
+  }
+
+  .marquee-track span::after {
+    margin-left: 20px;
   }
 }

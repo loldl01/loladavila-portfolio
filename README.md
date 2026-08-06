@@ -1,34 +1,33 @@
-# Lola Davila — Fashion Portfolio | Capítulos editoriales
+# Lola Davila — Creative Studio V11
 
-Esta versión toma los archivos base entregados por Lola y reconstruye exclusivamente
-la sección de proyectos como una secuencia de capítulos editoriales.
+Esta versión trabaja directamente sobre los archivos entregados por Lola.
 
-## Qué cambió
+## Cambio principal
 
-- Cada proyecto ahora es un capítulo de gran formato.
-- Los títulos tienen mucho más aire y jerarquía.
-- Cada capítulo combina una imagen principal, una imagen secundaria y una frase.
-- Hay cuatro composiciones controladas que se repiten automáticamente al añadir proyectos.
-- Ya no se muestran tarjetas dentro de cajas ni spreads con bordes redondeados.
-- Se mantiene el hero, el menú, el marquee, el archivo arrastrable, el cursor rojo,
-  la sección Sobre mí y Contacto.
-- El menú continúa usando una sola tipografía.
+Se eliminó la tipografía serif gruesa que hacía que las descripciones parecieran una revista o un libro de moda.
 
-## Archivos modificados
+## Nuevo sistema tipográfico
+
+- `Space Grotesk`: títulos, navegación y estructura.
+- `Space Mono`: números, etiquetas y frases gráficas.
+- `Instrument Serif`: solo pequeños acentos puntuales.
+
+## Proyectos
+
+Las descripciones largas siguen guardadas en `projects.js`, pero en la composición principal aparecen frases cortas como:
+
+- `SHADOW / FORM / CHARACTER`
+- `VOLUME / CUT / PROPORTION`
+- `COLOR / ENERGY / IMPACT`
+
+Esto hace que la página se sienta más como un creative studio y menos como una editorial impresa.
+
+## Archivos para reemplazar
 
 - `index.html`
 - `styles.css`
 - `script.js`
+- `projects.js`
 - `README.md`
 
-`projects.js` conserva los mismos datos y el mismo sistema de orden.
-
-## Agregar proyectos
-
-Añade un nuevo objeto en `projects.js`. La web asignará automáticamente una de las
-cuatro composiciones de capítulo según su posición.
-
-## Publicación
-
-Reemplaza los cinco archivos en GitHub. No borres tu carpeta `assets/images/`.
-Cloudflare volverá a publicar automáticamente.
+Conserva `assets/images/`.
