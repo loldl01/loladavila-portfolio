@@ -1,20 +1,20 @@
-# Lola Davila — Cyberpunk / Punk V3
+# Lola Davila — Gougou 13 Inspired V7
 
-Esta versión conserva la estructura de capítulos editoriales y cambia el lenguaje visual hacia una estética punk y cyberpunk.
+Esta versión toma como referencia la lógica visual de una página editorial numerada:
 
-## Cambios
+- números de página gigantes;
+- tipografía a escala extrema;
+- nombres y palabras superpuestas;
+- imágenes flotando sobre la tipografía;
+- fondo crema, negro y rojo;
+- navegación pequeña;
+- transición de página con el número 13;
+- capítulos editoriales con una composición más física y rotada;
+- cursor rojo.
 
-- Tipografía glitch.
-- Títulos geométricos con Syne.
-- Etiquetas técnicas con IBM Plex Mono.
-- Acentos rojo, cyan y verde ácido.
-- Scanlines y micro-glitches.
-- Cortes diagonales en imágenes.
-- Etiquetas de sistema.
-- El menú sigue usando una sola tipografía.
-- Se mantiene el tamaño y movimiento de LOLA DAVILA.
+No copia código, recursos ni la composición exacta de otro sitio. Usa la identidad y los proyectos de Lola Davila.
 
-## Reemplaza
+## Archivos que debes reemplazar
 
 - index.html
 - styles.css
@@ -22,4 +22,4 @@ Esta versión conserva la estructura de capítulos editoriales y cambia el lengu
 - projects.js
 - README.md
 
-No borres `assets/images/`.
+Conserva `assets/images/`.

@@ -30,52 +30,46 @@ const CHAPTER_LABELS = [
 ];
 
 
-const HANDWRITTEN_NOTES = [
-  "RAW IMAGE SYSTEM",
-  "NO SAFE MODE",
-  "",
-  "VISUAL SIGNAL / 03",
-  "",
-  "STYLE IS RESISTANCE",
-  "",
-  "RECODE THE IMAGE"
+const GOU_NOTES = [
+  "IMAGE / ATTITUDE / FORM",
+  "MOVEMENT BUILDS CHARACTER",
+  "THE DETAIL CHANGES EVERYTHING",
+  "STYLE BECOMES LANGUAGE",
+  "PERSONAL VISUAL SYSTEM",
+  "STYLING CREATES DESIRE",
+  "LOOK AGAIN",
+  "IMAGE FIRST"
 ];
 
-function formatChapterTitle(title, index) {
+function gouTitle(title, index) {
   const words = title.trim().split(/\s+/);
-
-  if (words.length === 1) {
-    return `<span class="title-glitch" data-text="${words[0]}">${words[0]}</span>`;
-  }
-
   const first = words.slice(0, -1).join(" ");
   const last = words.at(-1);
 
-  if (index % 4 === 0) {
-    return `
-      <span class="title-sans">${first}</span>
-      <span class="title-glitch" data-text="${last}">${last}</span>
-    `;
+  if (words.length === 1) {
+    return `<span class="gou-title-serif">${last}</span>`;
   }
 
-  if (index % 4 === 1) {
-    return `
-      <span class="title-outline">${first}</span>
-      <span class="title-sans">${last}</span>
-    `;
-  }
+  const patterns = [
+    `
+      <span class="gou-title-sans">${first}</span>
+      <span class="gou-title-serif gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-serif">${first}</span>
+      <span class="gou-title-outline gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-condensed">${first}</span>
+      <span class="gou-title-sans gou-shift-right">${last}</span>
+    `,
+    `
+      <span class="gou-title-outline">${first}</span>
+      <span class="gou-title-serif">${last}</span>
+    `
+  ];
 
-  if (index % 4 === 2) {
-    return `
-      <span class="title-sans">${first}</span>
-      <span class="title-mono">/${last}</span>
-    `;
-  }
-
-  return `
-    <span class="title-glitch" data-text="${first}">${first}</span>
-    <span class="title-serif">${last}</span>
-  `;
+  return patterns[index % patterns.length];
 }
 
 function renderProjects() {
@@ -83,12 +77,12 @@ function renderProjects() {
     const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
     const number = String(index + 1).padStart(2, "0");
     const layout = `chapter-layout-${(index % 4) + 1}`;
-    const titleMarkup = formatChapterTitle(project.title, index);
-    const handwrittenNote = HANDWRITTEN_NOTES[index] || "";
+    const titleMarkup = gouTitle(project.title, index);
+    const posterNote = GOU_NOTES[index] || "";
 
     return `
       <article
-        class="project-chapter ${layout}"
+        class="project-chapter ${layout} gou-chapter"
         tabindex="0"
         role="button"
         data-project-id="${project.id}"
@@ -99,7 +93,7 @@ function renderProjects() {
 
           <div class="chapter-heading">
             <p class="chapter-label">${chapter}</p>
-            <h3 class="chapter-title">${titleMarkup}</h3>
+            <h3 class="gou-chapter-title">${titleMarkup}</h3>
           </div>
 
           <div class="chapter-meta">
@@ -128,15 +122,13 @@ function renderProjects() {
             <span>${project.description}</span>
           </div>
 
-          ${handwrittenNote ? `
-            <div class="chapter-handwriting" aria-hidden="true">
-              ${handwrittenNote}
-            </div>
+          ${posterNote ? `
+            <div class="gou-poster-note" aria-hidden="true">${posterNote}</div>
           ` : ""}
 
-          <div class="chapter-system-label" aria-hidden="true">
-            <span>IMG_SYS_${String(index + 1).padStart(2, "0")}</span>
-            <span>STATUS: ACTIVE</span>
+          <div class="gou-index-tag gou13-index-tag" aria-hidden="true">
+            <strong>${String(index + 1).padStart(2, "0")}</strong>
+            <span>${project.year}</span>
           </div>
         </div>
 
