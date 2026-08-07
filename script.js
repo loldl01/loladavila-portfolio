@@ -19,6 +19,24 @@ document.getElementById("project-total").textContent = `${String(projects.length
 document.getElementById("year").textContent = new Date().getFullYear();
 
 
+
+/* ---------- Creative chaos motion ---------- */
+
+const chaosNotes = document.querySelectorAll(".chaos-floating-note, .play-note");
+
+if (window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("mousemove", (event) => {
+    const x = event.clientX / window.innerWidth - 0.5;
+    const y = event.clientY / window.innerHeight - 0.5;
+
+    chaosNotes.forEach((note, index) => {
+      const strength = (index + 1) * 2.4;
+      note.style.transform =
+        `translate3d(${x * strength}px, ${y * strength}px, 0) rotate(${(index % 2 ? 1 : -1) * 1.5}deg)`;
+    });
+  }, { passive: true });
+}
+
 /* ---------- Photography-first selected work ---------- */
 
 const lookbookList = document.getElementById("lookbook-list");
