@@ -34,6 +34,80 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "order": 2,
+    "folder": "FRESH",
+    "slug": "fresh",
+    "title": "Fresh",
+    "selected": true,
+    "description": "White and sky-blue styling photographed in clean, direct studio light. Relaxed silhouettes and small gestures give the sequence a light, contemporary energy.",
+    "featured": [
+      "Assets/Images/FRESH/1 (1).jpg",
+      "Assets/Images/FRESH/11.jpg",
+      "Assets/Images/FRESH/16.jpg",
+      "Assets/Images/FRESH/20.jpg",
+      "Assets/Images/FRESH/portrait-02.jpg"
+    ],
+    "images": [
+      "Assets/Images/FRESH/1 (1).jpg",
+      "Assets/Images/FRESH/6 (1).jpg",
+      "Assets/Images/FRESH/7 (1).jpg",
+      "Assets/Images/FRESH/10.jpg",
+      "Assets/Images/FRESH/11.jpg",
+      "Assets/Images/FRESH/13.jpg",
+      "Assets/Images/FRESH/14.jpg",
+      "Assets/Images/FRESH/16.jpg",
+      "Assets/Images/FRESH/20.jpg",
+      "Assets/Images/FRESH/21.jpg",
+      "Assets/Images/FRESH/portrait-02.jpg"
+    ]
+  },
+  {
+    "order": 3,
+    "folder": "TEXTURAS",
+    "slug": "textures",
+    "title": "Textures",
+    "selected": true,
+    "description": "A tactile study of drape, skin, knit and soft neutral layers. Cropped details alternate with wider portraits to emphasize material and touch.",
+    "featured": [
+      "Assets/Images/TEXTURAS/17495823_16174.jpg",
+      "Assets/Images/TEXTURAS/17497922_16314.jpg",
+      "Assets/Images/TEXTURAS/17502060_16142.jpg",
+      "Assets/Images/TEXTURAS/2.jpg",
+      "Assets/Images/TEXTURAS/6.jpg"
+    ],
+    "images": [
+      "Assets/Images/TEXTURAS/2.jpg",
+      "Assets/Images/TEXTURAS/3.jpg",
+      "Assets/Images/TEXTURAS/6.jpg",
+      "Assets/Images/TEXTURAS/8 (1).jpg",
+      "Assets/Images/TEXTURAS/17495823_16174.jpg",
+      "Assets/Images/TEXTURAS/17497922_16314.jpg",
+      "Assets/Images/TEXTURAS/17502060_16142.jpg"
+    ]
+  },
+  {
+    "order": 4,
+    "folder": "07",
+    "slug": "street-study",
+    "title": "Street Study",
+    "selected": true,
+    "description": "Denim and relaxed urban layers photographed in an industrial exterior. Low angles, seated poses and concrete structures add movement and scale.",
+    "featured": [
+      "Assets/Images/07/1.jpg",
+      "Assets/Images/07/10 (1).jpg",
+      "Assets/Images/07/11 (1).jpg",
+      "Assets/Images/07/13.jpg",
+      "Assets/Images/07/6.jpg"
+    ],
+    "images": [
+      "Assets/Images/07/1.jpg",
+      "Assets/Images/07/6.jpg",
+      "Assets/Images/07/10 (1).jpg",
+      "Assets/Images/07/11 (1).jpg",
+      "Assets/Images/07/13.jpg"
+    ]
+  },
+  {
+    "order": 5,
     "folder": "06",
     "slug": "neutral-edit",
     "title": "Neutral Edit",
@@ -63,7 +137,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 3,
+    "order": 6,
     "folder": "BLACK:WHIT3",
     "slug": "monochrome-study",
     "title": "Monochrome Study",
@@ -94,7 +168,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 4,
+    "order": 7,
     "folder": "COLOR",
     "slug": "color-study",
     "title": "Color Study",
@@ -118,7 +192,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 5,
+    "order": 8,
     "folder": "ETEREAL",
     "slug": "ethereal",
     "title": "Ethereal",
@@ -142,80 +216,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/ETEREAL/PLP_FALSO_325.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_326.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_327.jpg"
-    ]
-  },
-  {
-    "order": 6,
-    "folder": "FRESH",
-    "slug": "fresh",
-    "title": "Fresh",
-    "selected": true,
-    "description": "White and sky-blue styling photographed in clean, direct studio light. Relaxed silhouettes and small gestures give the sequence a light, contemporary energy.",
-    "featured": [
-      "Assets/Images/FRESH/1 (1).jpg",
-      "Assets/Images/FRESH/11.jpg",
-      "Assets/Images/FRESH/16.jpg",
-      "Assets/Images/FRESH/20.jpg",
-      "Assets/Images/FRESH/portrait-02.jpg"
-    ],
-    "images": [
-      "Assets/Images/FRESH/1 (1).jpg",
-      "Assets/Images/FRESH/6 (1).jpg",
-      "Assets/Images/FRESH/7 (1).jpg",
-      "Assets/Images/FRESH/10.jpg",
-      "Assets/Images/FRESH/11.jpg",
-      "Assets/Images/FRESH/13.jpg",
-      "Assets/Images/FRESH/14.jpg",
-      "Assets/Images/FRESH/16.jpg",
-      "Assets/Images/FRESH/20.jpg",
-      "Assets/Images/FRESH/21.jpg",
-      "Assets/Images/FRESH/portrait-02.jpg"
-    ]
-  },
-  {
-    "order": 7,
-    "folder": "OUTSIDE",
-    "slug": "outside",
-    "title": "Outside",
-    "selected": true,
-    "description": "Black-and-white looks meet strong road markings and open daylight. The location adds graphic diagonals and movement to a restrained palette.",
-    "featured": [
-      "Assets/Images/OUTSIDE/17151036_0.jpg",
-      "Assets/Images/OUTSIDE/17629797_1.jpg",
-      "Assets/Images/OUTSIDE/17631265_0.jpg",
-      "Assets/Images/OUTSIDE/17665650_0.jpg",
-      "Assets/Images/OUTSIDE/17665691_0.jpg"
-    ],
-    "images": [
-      "Assets/Images/OUTSIDE/17151036_0.jpg",
-      "Assets/Images/OUTSIDE/17629797_1.jpg",
-      "Assets/Images/OUTSIDE/17631265_0.jpg",
-      "Assets/Images/OUTSIDE/17665650_0.jpg",
-      "Assets/Images/OUTSIDE/17665691_0.jpg"
-    ]
-  },
-  {
-    "order": 8,
-    "folder": "TEXTURAS",
-    "slug": "textures",
-    "title": "Textures",
-    "selected": true,
-    "description": "A tactile study of drape, skin, knit and soft neutral layers. Cropped details alternate with wider portraits to emphasize material and touch.",
-    "featured": [
-      "Assets/Images/TEXTURAS/17495823_16174.jpg",
-      "Assets/Images/TEXTURAS/17497922_16314.jpg",
-      "Assets/Images/TEXTURAS/17502060_16142.jpg",
-      "Assets/Images/TEXTURAS/2.jpg",
-      "Assets/Images/TEXTURAS/6.jpg"
-    ],
-    "images": [
-      "Assets/Images/TEXTURAS/2.jpg",
-      "Assets/Images/TEXTURAS/3.jpg",
-      "Assets/Images/TEXTURAS/6.jpg",
-      "Assets/Images/TEXTURAS/8 (1).jpg",
-      "Assets/Images/TEXTURAS/17495823_16174.jpg",
-      "Assets/Images/TEXTURAS/17497922_16314.jpg",
-      "Assets/Images/TEXTURAS/17502060_16142.jpg"
     ]
   },
   {
@@ -289,24 +289,24 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "order": 12,
-    "folder": "07",
-    "slug": "street-study",
-    "title": "Street Study",
+    "folder": "OUTSIDE",
+    "slug": "outside",
+    "title": "Outside",
     "selected": false,
-    "description": "Denim and relaxed urban layers photographed in an industrial exterior. Low angles, seated poses and concrete structures add movement and scale.",
+    "description": "Black-and-white looks meet strong road markings and open daylight. The location adds graphic diagonals and movement to a restrained palette.",
     "featured": [
-      "Assets/Images/07/1.jpg",
-      "Assets/Images/07/10 (1).jpg",
-      "Assets/Images/07/11 (1).jpg",
-      "Assets/Images/07/13.jpg",
-      "Assets/Images/07/6.jpg"
+      "Assets/Images/OUTSIDE/17151036_0.jpg",
+      "Assets/Images/OUTSIDE/17629797_1.jpg",
+      "Assets/Images/OUTSIDE/17631265_0.jpg",
+      "Assets/Images/OUTSIDE/17665650_0.jpg",
+      "Assets/Images/OUTSIDE/17665691_0.jpg"
     ],
     "images": [
-      "Assets/Images/07/1.jpg",
-      "Assets/Images/07/6.jpg",
-      "Assets/Images/07/10 (1).jpg",
-      "Assets/Images/07/11 (1).jpg",
-      "Assets/Images/07/13.jpg"
+      "Assets/Images/OUTSIDE/17151036_0.jpg",
+      "Assets/Images/OUTSIDE/17629797_1.jpg",
+      "Assets/Images/OUTSIDE/17631265_0.jpg",
+      "Assets/Images/OUTSIDE/17665650_0.jpg",
+      "Assets/Images/OUTSIDE/17665691_0.jpg"
     ]
   },
   {
@@ -401,7 +401,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/GREEN/6 (3).jpg",
       "Assets/Images/GREEN/6a.jpg",
       "Assets/Images/GREEN/9.jpg",
-      "Assets/Images/GREEN/b742dc06-7c4e-4c42-9517-61e4be63e845 (1).jpg",
       "Assets/Images/GREEN/b742dc06-7c4e-4c42-9517-61e4be63e845.jpg",
       "Assets/Images/GREEN/d9f79cf8-79cb-4937-89fd-8903e111da10.jpg"
     ]
