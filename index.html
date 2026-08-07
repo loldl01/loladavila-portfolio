@@ -26,11 +26,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260807-clean-home">
+  <link rel="stylesheet" href="styles.css?v=20260807-editorial-scroll">
   <script src="projects.js?v=20260807-portrait" defer></script>
-  <script src="script.js?v=20260807-clean-home" defer></script>
+  <script src="script.js?v=20260807-editorial-scroll" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#work">Skip to selected work</a>
   <div class="cursor" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -90,7 +91,14 @@
           <p class="section-copy">A focused edit of styling, e-commerce content and visual production work.</p>
         </div>
       </header>
-      <div id="selected-projects" class="project-list"></div>
+      <div id="selected-showcase" class="horizontal-showcase">
+        <div class="horizontal-showcase-sticky">
+          <div class="horizontal-showcase-viewport" tabindex="0" aria-label="Selected productions. Scroll to explore projects.">
+            <div id="selected-projects" class="horizontal-showcase-track"></div>
+          </div>
+          <p class="showcase-hint" aria-hidden="true">SCROLL TO EXPLORE →</p>
+        </div>
+      </div>
     </section>
 
     <section id="archive" class="portfolio-section archive-section" aria-labelledby="archive-title">
@@ -101,7 +109,7 @@
           <p class="section-copy">Additional productions, studies, details and process documentation.</p>
         </div>
       </header>
-      <div id="archive-projects" class="project-list archive-list"></div>
+      <div id="archive-projects" class="archive-grid"></div>
     </section>
 
     <section id="about" class="about-section" aria-labelledby="about-title">
