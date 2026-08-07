@@ -116,8 +116,8 @@ expect(index.includes("loladavilast@gmail.com"), "Missing confirmed email");
 expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must use the exact confirmed mailto address");
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
-expect(index.includes("styles.css?v=20260807-en-hero"), "Main page must use the responsive English stylesheet version");
-expect(index.includes("script.js?v=20260807-en-hero"), "Main page must use the responsive Hero script version");
+expect(index.includes("styles.css?v=20260807-editorial-scroll"), "Main page must use the editorial-scroll stylesheet version");
+expect(index.includes("script.js?v=20260807-editorial-scroll"), "Main page must use the editorial-scroll script version");
 expect(index.includes("projects.js?v=20260807-portrait"), "Main project data must use the portrait-carousel cache version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
 expect(index.includes('href="#about">ABOUT ME</a>'), "Main menu must label About as About Me");
@@ -139,8 +139,9 @@ for (const path of green?.images || []) {
 expect(new Set(greenHashes).size === greenHashes.length, "Green Study contains duplicate image content");
 
 const styles = await readFile(join(root, "styles.css"), "utf8");
-expect((styles.match(/object-fit:\s*cover/g) || []).length === 1, "Only the hero may use object-fit: cover");
-expect(styles.includes(".project-gallery img") && styles.includes("object-fit: contain"), "Project images must use object-fit: contain");
+expect((styles.match(/object-fit:\s*cover/g) || []).length === 2, "Only the Hero and homepage project cards may use object-fit: cover");
+expect(styles.includes(".project-card-media img") && styles.includes("object-fit: cover"), "Homepage project cards must use cover framing");
+expect(styles.includes(".project-page-gallery img") && styles.includes("object-fit: contain"), "Project-page images must preserve their complete frame");
 expect(styles.includes("scroll-padding-top: 58px") && styles.includes("scroll-margin-top: 58px"), "Fixed-header anchor spacing is missing");
 expect(styles.includes(".about-slideshow") && styles.includes("aspect-ratio: 2 / 3"), "About slideshow must reserve stable space");
 
@@ -163,6 +164,15 @@ expect(headers.includes("Content-Language: en"), "Cloudflare headers must declar
 expect(styles.includes("--hero-motion") && styles.includes("--hero-fit-size") && styles.includes("orientation: landscape"), "Responsive Hero safeguards are missing");
 const mainScript = await readFile(join(root, "script.js"), "utf8");
 expect(mainScript.includes("function fitHeroName()") && mainScript.includes("document.fonts?.ready"), "Measured Hero fitting is missing");
+expect(styles.includes("clamp(144px, 22vw, 380px)"), "The enlarged fluid Hero name size is missing");
+expect(index.includes('id="selected-showcase"') && index.includes('class="horizontal-showcase-track"'), "Horizontal Selected Work structure is missing");
+expect(index.includes('id="archive-projects" class="archive-grid"'), "Archive project grid is missing");
+expect(styles.includes("position: sticky") && styles.includes("scroll-snap-type: x mandatory"), "Desktop sticky or mobile scroll-snap behavior is missing");
+expect((styles.match(/overflow-x:\s*clip/g) || []).length >= 2, "Page overflow protection must not break sticky positioning");
+expect(mainScript.includes("requestAnimationFrame(updateShowcase)") && mainScript.includes("ResizeObserver"), "Efficient horizontal-scroll calculations are missing");
+expect(mainScript.includes('window.addEventListener("scroll", scheduleShowcaseUpdate, { passive: true })'), "Horizontal showcase scroll listener must be passive");
+expect((mainScript.match(/project-card-title/g) || []).length === 1, "Project-card titles must be rendered from a single element");
+expect(!/project[ -]?index/i.test(index + styles + mainScript), "Project Index remnants remain in the homepage code");
 
 if (failures.length) {
   console.error(failures.map((failure) => `FAIL: ${failure}`).join("\n"));
