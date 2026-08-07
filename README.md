@@ -1,37 +1,35 @@
-# LOLA DAVILA PORTFOLIO
+# Lola Davila Portfolio
 
-Clean build based on the last approved V26 direction.
+Static fashion styling and creative production portfolio deployed from `main` through Cloudflare Pages.
 
-## Upload to GitHub
+## Site structure
 
-Upload the CONTENTS of this folder to the repository root:
+- `index.html` — Hero, Selected Work, Archive, Experience / About and Contact.
+- `projects/` — Stable individual URL for every production.
+- `projects.js` — Generated project titles, descriptions, featured images and complete galleries.
+- `script.js` — Main-page rendering and interactions.
+- `project-page.js` — Shared rendering and navigation for individual projects.
+- `styles.css` — Consolidated editorial design for desktop, tablet and mobile.
+- `Assets/Images/` — Original production folders and image files.
 
-- index.html
-- styles.css
-- script.js
-- assets/
+## Updating the gallery
 
-Do not upload older V20–V26 files together with this build.
+After adding, moving or deleting files inside `Assets/Images/`, run:
 
-## Structure
+```bash
+node scripts/build-projects.mjs
+node scripts/check-portfolio.mjs
+```
 
-assets/images/
-- hero/
-- form/
-- quiet/
-- new-boheme/
-- group/
-- men/
-- about/
+The build script keeps the existing folder names, excludes unsupported browser formats and regenerates the central project data plus the 20 individual pages. Project titles, order, descriptions and featured-image choices are configured in `scripts/build-projects.mjs`.
 
-## Key decisions
+## Confirmed design decisions
 
-- Entire website is in English.
-- The shaved-head model remains the cover.
-- Only the cover intentionally uses `object-fit: cover`.
-- Portfolio images preserve their full original frame.
-- Productions are grouped by original shoot.
-- NEW BOHEME only contains the red-haired model production.
-- About contains only Lola's approved on-set photo.
-- Instagram: @loladl_st
-- Email: loladavilast@gmail.com
+- All visitor-facing content is in English.
+- The current shaved-head portrait remains the cover.
+- `LOLA` and `DAVILA` move in opposite directions.
+- Only the hero intentionally uses `object-fit: cover`.
+- All portfolio and About images preserve their complete frame with `object-fit: contain`.
+- `BACKSTAGE` and `CONTACT SHEETS` remain the final two projects.
+- Instagram: `https://instagram.com/loladl_st`
+- Email: `loladavilast@gmail.com`
