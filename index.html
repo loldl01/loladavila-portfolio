@@ -1,163 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lola Davila — Fashion Stylist</title>
-<meta name="description" content="Lola Davila — Fashion Stylist. Portfolio, styling work, and press." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lola Davila — Fashion styling, creative direction and e-commerce content production.">
+  <meta name="theme-color" content="#080808">
+  <title>Lola Davila — Creative Producer / Fashion Stylist</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=Archivo+Expanded:wght@500;700;800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <div class="cursor" aria-hidden="true"></div>
 
-<!-- custom cursor -->
-<div class="cursor-dot" id="cursorDot"></div>
+  <header class="header">
+    <a class="brand" href="#home">LD</a>
 
-<!-- progress rail -->
-<div class="scroll-rail"><div class="scroll-rail-fill" id="scrollFill"></div></div>
+    <nav class="nav desktop">
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+      <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">IG</a>
+      <a href="mailto:loladavilast@gmail.com">MAIL</a>
+    </nav>
 
-<!-- NAV -->
-<header class="nav" id="siteNav">
-  <a href="#top" class="nav-mark">LD.</a>
-  <nav class="nav-links">
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="nav-social" href="https://instagram.com/loladl_st" target="_blank" rel="noopener">@loladl_st</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-    <span></span><span></span>
-  </button>
-</header>
+    <button class="menu-button" type="button" aria-expanded="false">MENU</button>
+  </header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#work">Work</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">Instagram — @loladl_st</a>
-  <a href="mailto:loladavilast@gmail.com">Email</a>
-</div>
+  <aside class="mobile-menu" aria-hidden="true">
+    <button class="menu-close" type="button">CLOSE</button>
+    <nav>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+      <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">INSTAGRAM</a>
+      <a href="mailto:loladavilast@gmail.com">MAIL</a>
+    </nav>
+  </aside>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-media">
-      <!-- Replace this file with the chosen portrait (shaved-head editorial image) -->
-      <img id="heroImg" src="images/hero/cover.jpg" alt="Lola Davila — editorial portrait" onerror="this.style.opacity='0'; this.parentElement.classList.add('no-img')">
-      <div class="hero-gradient"></div>
-    </div>
-
-    <div class="hero-name" aria-hidden="true">
-      <div class="hero-name-track">
-        <span>LOLA&nbsp;DAVILA</span><span>LOLA&nbsp;DAVILA</span><span>LOLA&nbsp;DAVILA</span><span>LOLA&nbsp;DAVILA</span>
-      </div>
-      <div class="hero-name-track hero-name-track--reverse">
-        <span>LOLA&nbsp;DAVILA</span><span>LOLA&nbsp;DAVILA</span><span>LOLA&nbsp;DAVILA</span><span>LOLA&nbsp;DAVILA</span>
-      </div>
-    </div>
-
-    <h1 class="sr-only">Lola Davila — Fashion Stylist Portfolio</h1>
-
-    <div class="hero-foot">
-      <span class="hero-foot-role">Fashion Stylist</span>
-      <span class="hero-foot-scroll">Scroll<i></i></span>
-    </div>
-  </section>
-
-  <!-- ROLES MARQUEE -->
-  <section class="ticker" aria-label="Professional roles">
-    <div class="ticker-track">
-      <span>FASHION STYLIST</span><i>—</i>
-      <span>WARDROBE STYLIST</span><i>—</i>
-      <span>EDITORIAL STYLING</span><i>—</i>
-      <span>CREATIVE DIRECTION</span><i>—</i>
-      <span>SET STYLIST</span><i>—</i>
-      <span>PERSONAL STYLING</span><i>—</i>
-      <span>CAMPAIGN STYLING</span><i>—</i>
-      <span>RUNWAY STYLING</span><i>—</i>
-      <span>FASHION STYLIST</span><i>—</i>
-      <span>WARDROBE STYLIST</span><i>—</i>
-      <span>EDITORIAL STYLING</span><i>—</i>
-      <span>CREATIVE DIRECTION</span><i>—</i>
-      <span>SET STYLIST</span><i>—</i>
-      <span>PERSONAL STYLING</span><i>—</i>
-      <span>CAMPAIGN STYLING</span><i>—</i>
-      <span>RUNWAY STYLING</span><i>—</i>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-label"><span>001</span><p>About</p></div>
-
-    <div class="about-grid">
-      <div class="about-portrait">
-        <img src="images/hero/about.jpg" alt="Lola Davila portrait" onerror="this.parentElement.classList.add('ph')">
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-image">
+        <img src="assets/images/hero/hero.jpg" alt="Fashion editorial portrait">
       </div>
 
-      <div class="about-copy">
-        <p class="about-lede">
-          Lola Davila is a fashion stylist working across editorial,
-          campaign and personal styling — building looks that sit at the
-          edge of concept and wearability.
-        </p>
-        <p class="about-body">
-          <em>[ Editar: escribe aquí tu reseña real — trayectoria, marcas
-          y publicaciones con las que has trabajado, tu enfoque de
-          styling, y lo que te distingue. 2–4 frases son suficientes. ]</em>
-        </p>
-        <div class="about-facts">
-          <div><span>Based in</span><p>[ Ciudad ]</p></div>
-          <div><span>Focus</span><p>Editorial / Campaign / Personal</p></div>
-          <div><span>Contact</span><p><a href="mailto:loladavilast@gmail.com">loladavilast@gmail.com</a></p></div>
+      <div class="hero-name" aria-label="Lola Davila">
+        <span>LOLA</span>
+        <span>DAVILA</span>
+      </div>
+
+      <div class="hero-meta">
+        <span>CREATIVE PRODUCER</span>
+        <span>FASHION STYLIST</span>
+        <span>E-COMMERCE CONTENT</span>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>STYLING</span><span>PRODUCTION</span><span>CREATIVE DIRECTION</span><span>E-COMMERCE</span><span>CAMPAIGNS</span>
+          <span>STYLING</span><span>PRODUCTION</span><span>CREATIVE DIRECTION</span><span>E-COMMERCE</span><span>CAMPAIGNS</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="about-label"><span>002</span><p>Work</p></div>
+    <section id="work" class="work">
+      <div class="section-intro">
+        <p>01 — SELECTED WORK</p>
+        <p>Productions are grouped by original shoot and visual direction.</p>
+      </div>
 
-    <div class="work-filters" id="workFilters"></div>
-    <div class="work-grid" id="workGrid"></div>
-  </section>
+      <article class="project">
+        <header class="project-head">
+          <span>01</span>
+          <div><p>EDITORIAL / TAILORING</p><h2>FORM</h2></div>
+          <p>Controlled portraiture, sharp silhouettes and monochrome contrast.</p>
+        </header>
+        <div class="gallery g3">
+          <figure><img src="assets/images/form/form-01.jpg" alt="Form editorial"><figcaption>PORTRAIT / STRUCTURE</figcaption></figure>
+          <figure><img src="assets/images/form/form-02.jpg" alt="Form suit"><figcaption>TAILORING / PROFILE</figcaption></figure>
+          <figure><img src="assets/images/form/form-03.jpg" alt="Form monochrome"><figcaption>MONOCHROME / SILHOUETTE</figcaption></figure>
+        </div>
+      </article>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="about-label about-label--light"><span>003</span><p>Contact</p></div>
+      <article class="project">
+        <header class="project-head">
+          <span>02</span>
+          <div><p>WOMENSWEAR / KNIT</p><h2>QUIET</h2></div>
+          <p>Neutral knitwear, texture and relaxed proportions built around restraint.</p>
+        </header>
+        <div class="gallery g8">
+          <figure><img src="assets/images/quiet/quiet-01.jpg" alt="Quiet brown look"><figcaption>EARTH / SILHOUETTE</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-02.jpg" alt="Quiet knit detail"><figcaption>TEXTURE / LAYERING</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-03.jpg" alt="Quiet neutral chair portrait"><figcaption>NEUTRAL / PROPORTION</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-04.jpg" alt="Quiet white portrait"><figcaption>PORTRAIT / CONTRAST</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-05.jpg" alt="Quiet white seated"><figcaption>SOFT SHAPE / FORM</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-06.jpg" alt="Quiet knit movement"><figcaption>KNIT / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-07.jpg" alt="Quiet cream tailoring"><figcaption>CREAM / ACCESSORIES</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-08.jpg" alt="Quiet detail"><figcaption>DETAIL / MATERIAL</figcaption></figure>
+        </div>
+      </article>
 
-    <a href="mailto:loladavilast@gmail.com" class="contact-email">loladavilast@gmail.com</a>
+      <article class="project">
+        <header class="project-head">
+          <span>03</span>
+          <div><p>WOMENSWEAR / SOFT COLOR</p><h2>NEW<br>BOHEME</h2></div>
+          <p>One production centered on soft blues, light fabrics and fluid silhouettes.</p>
+        </header>
+        <div class="gallery g4">
+          <figure><img src="assets/images/new-boheme/boheme-01.jpg" alt="New Boheme floral look"><figcaption>FLORAL / FULL LOOK</figcaption></figure>
+          <figure><img src="assets/images/new-boheme/boheme-02.jpg" alt="New Boheme blue dress"><figcaption>BLUE / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/new-boheme/boheme-03.jpg" alt="New Boheme portrait"><figcaption>PORTRAIT / COLOR</figcaption></figure>
+          <figure><img src="assets/images/new-boheme/boheme-04.jpg" alt="New Boheme monochrome portrait"><figcaption>MONOCHROME / ATTITUDE</figcaption></figure>
+        </div>
+      </article>
 
-    <div class="contact-row">
-      <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">Instagram <i>@loladl_st</i></a>
-      <a href="mailto:loladavilast@gmail.com">Email <i>Say hello →</i></a>
-    </div>
-  </section>
+      <article class="project">
+        <header class="project-head">
+          <span>04</span>
+          <div><p>CAMPAIGN / YOUTH</p><h2>COLOR</h2></div>
+          <p>Commercial group styling with stronger color, younger energy and movement.</p>
+        </header>
+        <div class="gallery g5">
+          <figure><img src="assets/images/color/color-01.jpg" alt="Color campaign group"><figcaption>GROUP / WHITE</figcaption></figure>
+          <figure><img src="assets/images/color/color-02.jpg" alt="Color campaign denim"><figcaption>DENIM / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/color/color-03.jpg" alt="Color campaign group portrait"><figcaption>COLOR / CAST</figcaption></figure>
+          <figure><img src="assets/images/color/color-04.jpg" alt="Color campaign seated group"><figcaption>COMPOSITION / COLOR</figcaption></figure>
+          <figure><img src="assets/images/color/color-05.jpg" alt="Color campaign vertical group"><figcaption>GROUP / PROPORTION</figcaption></figure>
+        </div>
+      </article>
 
-  <footer class="footer">
-    <span>Lola Davila © <span id="year"></span></span>
-    <a href="#top">Back to top ↑</a>
-  </footer>
+      <article class="project">
+        <header class="project-head">
+          <span>05</span>
+          <div><p>MENSWEAR / EDITORIAL</p><h2>MEN</h2></div>
+          <p>Relaxed menswear styling focused on proportion, attitude and understated character.</p>
+        </header>
+        <div class="gallery g5">
+          <figure><img src="assets/images/men/men-01.jpg" alt="Menswear black look"><figcaption>BLACK / PORTRAIT</figcaption></figure>
+          <figure><img src="assets/images/men/men-02.jpg" alt="Menswear chair"><figcaption>EARTH / PROPORTION</figcaption></figure>
+          <figure><img src="assets/images/men/men-03.jpg" alt="Menswear seated"><figcaption>RELAXED / ATTITUDE</figcaption></figure>
+          <figure><img src="assets/images/men/men-04.jpg" alt="Menswear detail"><figcaption>DETAIL / LAYERING</figcaption></figure>
+          <figure><img src="assets/images/men/men-05.jpg" alt="Menswear leather look"><figcaption>LEATHER / FULL LOOK</figcaption></figure>
+        </div>
+      </article>
 
-</main>
+      <article class="project">
+        <header class="project-head">
+          <span>06</span>
+          <div><p>WOMENSWEAR / CITY</p><h2>SARTORIAL</h2></div>
+          <p>Tailoring translated into movement, street context and a sharper commercial attitude.</p>
+        </header>
+        <div class="gallery g5">
+          <figure><img src="assets/images/sartorial/sartorial-01.jpg" alt="Sartorial cream city look"><figcaption>CITY / CREAM</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-02.jpg" alt="Sartorial black blazer"><figcaption>TAILORING / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-03.jpg" alt="Sartorial black look"><figcaption>BLACK / STREET</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-04.jpg" alt="Sartorial white suit"><figcaption>WHITE / STRUCTURE</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-05.jpg" alt="Sartorial black white look"><figcaption>CONTRAST / ACCESSORY</figcaption></figure>
+        </div>
+      </article>
+    </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">←</button>
-  <img id="lightboxImg" src="" alt="">
-  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">→</button>
-  <div class="lightbox-caption" id="lightboxCaption"></div>
-</div>
+    <section id="about" class="about">
+      <p class="section-index">02 — ABOUT</p>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">LOLA DAVILA / VISUAL PRODUCTION</p>
+          <h2>I BUILD<br>IMAGES<br>AROUND<br>PRODUCT.</h2>
+          <p class="lead">Fashion stylist and e-commerce content producer focused on turning product into a clear and consistent visual story.</p>
+          <p>My work sits between styling, creative direction and production. I develop looks, coordinate creative teams and help maintain visual consistency across campaigns and e-commerce content.</p>
 
-<script src="js/gallery-data.js"></script>
-<script src="js/script.js"></script>
+          <div class="services">
+            <span>Fashion Styling</span>
+            <span>Creative Direction</span>
+            <span>E-commerce Content</span>
+            <span>Production</span>
+          </div>
+        </div>
+
+        <figure class="about-image">
+          <img src="assets/images/about/about.jpg" alt="Lola Davila working on set">
+          <figcaption>ON SET / VISUAL PRODUCTION</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <p class="section-index">03 — CONTACT</p>
+      <h2>LET'S BUILD<br><span>SOMETHING.</span></h2>
+      <div class="contact-links">
+        <a href="mailto:loladavilast@gmail.com">MAIL ↗</a>
+        <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+      </div>
+      <footer><span>ECUADOR / AVAILABLE WORLDWIDE</span><span>© <span id="year"></span> LOLA DAVILA</span></footer>
+    </section>
+  </main>
 </body>
 </html>
