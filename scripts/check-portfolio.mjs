@@ -46,21 +46,21 @@ const projectReferences = projects.flatMap((project) => project.images).sort();
 const referenced = [...projectReferences, ...backstageImages].sort();
 const uniqueReferences = new Set(referenced);
 
-expect(projects.length === 19, `Expected 19 projects; found ${projects.length}`);
+expect(projects.length === 18, `Expected 18 projects; found ${projects.length}`);
 expect(projects.filter((project) => project.selected).length === 8, "Selected Work must contain 8 projects");
-expect(projects.filter((project) => !project.selected).length === 11, "Archive must contain 11 projects");
+expect(projects.filter((project) => !project.selected).length === 10, "Archive must contain 10 projects");
 expect(!projects.some((project) => project.folder === "BACKSTAGE" || project.slug === "backstage"), "BACKSTAGE must not be listed as a project");
 expect(projects.at(-1)?.folder === "HOJA_DE_CONTACTO", "Contact Sheets must be the final project");
-expect(projectReferences.length === 134, `Expected 134 project images; found ${projectReferences.length}`);
+expect(projectReferences.length === 129, `Expected 129 project images; found ${projectReferences.length}`);
 expect(backstageImages.length === 4, `Expected 4 portrait About slideshow images; found ${backstageImages.length}`);
 expect(backstageImages.every((path) => path.startsWith("Assets/Images/BACKSTAGE/")), "About slideshow must use only BACKSTAGE images");
-expect(referenced.length === 138, `Expected 138 displayed images; found ${referenced.length}`);
+expect(referenced.length === 133, `Expected 133 displayed images; found ${referenced.length}`);
 expect(uniqueReferences.size === referenced.length, "A project image is duplicated across groups");
 expect(referenced.every((path) => diskImages.includes(path)), "A displayed image is missing from disk");
 const carouselExcluded = diskImages.filter((path) => path.startsWith("Assets/Images/BACKSTAGE/") && !backstageImages.includes(path));
 expect(carouselExcluded.length === 2, `Expected 2 horizontal Backstage images excluded from About; found ${carouselExcluded.length}`);
 expect(carouselExcluded.every((path) => dimensions[path]?.width > dimensions[path]?.height), "Only horizontal Backstage images may be excluded from About");
-expect(Object.keys(dimensions).length === diskImages.length, "Every compatible image must have stored dimensions");
+expect(Object.keys(dimensions).length === referenced.length + carouselExcluded.length, "Every displayed or Backstage image must have stored dimensions");
 
 const verifiedYears = new Map([
   ["textures", 2025],
@@ -116,9 +116,9 @@ expect(index.includes("loladavilast@gmail.com"), "Missing confirmed email");
 expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must use the exact confirmed mailto address");
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
-expect(index.includes("styles.css?v=20260807-editorial-scroll"), "Main page must use the editorial-scroll stylesheet version");
+expect(index.includes("styles.css?v=20260807-layout-tune"), "Main page must use the layout-tune stylesheet version");
 expect(index.includes("script.js?v=20260807-editorial-scroll"), "Main page must use the editorial-scroll script version");
-expect(index.includes("projects.js?v=20260807-portrait"), "Main project data must use the portrait-carousel cache version");
+expect(index.includes("projects.js?v=20260807-layout-tune"), "Main project data must use the layout-tune cache version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
 expect(index.includes('href="#about">ABOUT ME</a>'), "Main menu must label About as About Me");
 expect(!index.includes('href="#about">EXPERIENCE</a>'), "Old Experience menu label remains on the main page");
@@ -165,6 +165,11 @@ expect(styles.includes("--hero-motion") && styles.includes("--hero-fit-size") &&
 const mainScript = await readFile(join(root, "script.js"), "utf8");
 expect(mainScript.includes("function fitHeroName()") && mainScript.includes("document.fonts?.ready"), "Measured Hero fitting is missing");
 expect(styles.includes("clamp(144px, 22vw, 380px)"), "The enlarged fluid Hero name size is missing");
+expect(styles.includes("clamp(54px, 6.4vw, 110px)") && styles.includes("clamp(38px, 9.8vw, 52px)"), "Selected Productions and The Archive headings must use the reduced responsive scale");
+expect(styles.includes("margin: 0 0 -52px") && styles.includes("margin-bottom: -32px"), "Professional profile must overlap the first production image slightly");
+expect(index.indexOf('class="profile-intro"') > index.indexOf('id="selected-title"') && index.indexOf('class="profile-intro"') < index.indexOf('id="selected-showcase"'), "Professional profile must sit directly before the first production image");
+expect(!projects.some((project) => project.slug === "essentials"), "Essentials must not be displayed as a project");
+expect(!index.includes("19 PRODUCTIONS") && index.includes("18 PRODUCTIONS"), "Homepage production count must be 18");
 expect(index.includes('id="selected-showcase"') && index.includes('class="horizontal-showcase-track"'), "Horizontal Selected Work structure is missing");
 expect(index.includes('id="archive-projects" class="archive-grid"'), "Archive project grid is missing");
 expect(styles.includes("position: sticky") && styles.includes("scroll-snap-type: x mandatory"), "Desktop sticky or mobile scroll-snap behavior is missing");
@@ -180,6 +185,6 @@ if (failures.length) {
 }
 
 console.log("Portfolio checks passed.");
-console.log(`Projects: ${projects.length} (8 selected, 11 archive)`);
+console.log(`Projects: ${projects.length} (8 selected, 10 archive)`);
 console.log(`Images: ${projectReferences.length} in projects + ${backstageImages.length} in About`);
-console.log("Project pages: 19 active");
+console.log("Project pages: 18 active");
