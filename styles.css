@@ -202,13 +202,19 @@ button:focus-visible {
 }
 
 .hero-name {
+  --hero-motion: clamp(8px, 1.5vw, 24px);
   position: absolute;
   z-index: 5;
-  left: 1.5vw;
+  left: 0;
+  right: 0;
   top: 13vh;
   display: flex;
+  width: 100%;
+  max-width: 100%;
   flex-direction: column;
+  align-items: center;
   margin: 0;
+  padding-inline: calc(var(--hero-motion) + clamp(12px, 2vw, 28px));
   font-family: var(--condensed);
   font-size: clamp(120px, 19vw, 320px);
   font-weight: 700;
@@ -218,20 +224,25 @@ button:focus-visible {
   pointer-events: none;
 }
 
-.hero-name span { display: block; will-change: transform; }
-.hero-name span:last-child { margin-left: 8vw; }
+.hero-name span {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  will-change: transform;
+}
+.hero-name span:last-child { margin-left: clamp(0px, 4vw, 64px); }
 
 .hero-name span:first-child { animation: lola-horizontal 5s ease-in-out infinite alternate; }
 .hero-name span:last-child { animation: davila-horizontal 5s ease-in-out infinite alternate; }
 
 @keyframes lola-horizontal {
-  from { transform: translate3d(-24px, 0, 0); }
-  to { transform: translate3d(24px, 0, 0); }
+  from { transform: translate3d(calc(-1 * var(--hero-motion)), 0, 0); }
+  to { transform: translate3d(var(--hero-motion), 0, 0); }
 }
 
 @keyframes davila-horizontal {
-  from { transform: translate3d(24px, 0, 0); }
-  to { transform: translate3d(-24px, 0, 0); }
+  from { transform: translate3d(var(--hero-motion), 0, 0); }
+  to { transform: translate3d(calc(-1 * var(--hero-motion)), 0, 0); }
 }
 
 .hero-meta,
@@ -783,8 +794,16 @@ button:focus-visible {
 
   .hero-image { left: 6vw; top: 7vh; width: 88vw; height: 78vh; }
   .hero-image img { object-position: 53% 20%; }
-  .hero-name { top: 16vh; left: 0; font-size: clamp(84px, 25vw, 130px); }
-  .hero-name span:last-child { margin-left: 4vw; }
+  .hero-name {
+    --hero-motion: clamp(4px, 1.2vw, 8px);
+    top: 16svh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-inline: calc(var(--hero-motion) + clamp(12px, 4vw, 24px));
+    font-size: clamp(4rem, 22vw, 7rem);
+  }
+  .hero-name span:last-child { margin-left: 0; }
   .hero-meta { left: 10px; bottom: 42px; gap: 8px; font-size: 6px; }
   .hero-production { display: none; }
 
@@ -848,6 +867,13 @@ button:focus-visible {
   .project-page-title { font-size: clamp(54px, 14vw, 82px); }
   .project-nav { grid-template-columns: 1fr 1fr; }
   .project-nav .back-projects { grid-column: 1 / -1; grid-row: 2; margin-top: 22px; text-align: center; }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-name {
+    top: 10svh;
+    font-size: clamp(3.5rem, min(19vw, 28svh), 10rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
