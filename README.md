@@ -21,15 +21,16 @@ node scripts/build-projects.mjs
 node scripts/check-portfolio.mjs
 ```
 
-The build script keeps the existing folder names, excludes unsupported browser formats and regenerates the central project data plus the 20 individual pages. Project titles, order, descriptions and featured-image choices are configured in `scripts/build-projects.mjs`.
+The build script keeps the existing folder names, excludes unsupported browser formats and regenerates the central project data plus the 19 individual pages. Project titles, order, descriptions and featured-image choices are configured in `scripts/build-projects.mjs`.
 
 ## Confirmed design decisions
 
 - All visitor-facing content is in English.
 - The current shaved-head portrait remains the cover.
 - `LOLA` and `DAVILA` move in opposite directions.
-- Only the hero intentionally uses `object-fit: cover`.
-- All portfolio and About images preserve their complete frame with `object-fit: contain`.
+- The hero and homepage project cards use `object-fit: cover` for an immersive editorial crop.
+- Individual project galleries and About images preserve their complete frame with `object-fit: contain`.
+- Selected Work uses a sticky horizontal showcase on desktop and touch scroll-snap on mobile; Archive uses one card per production.
 - `BACKSTAGE` imagery appears as the rotating visual in About; `CONTACT SHEETS` remains the final project.
 - Instagram: `https://instagram.com/loladl_st`
 - Email: `loladavilast@gmail.com`

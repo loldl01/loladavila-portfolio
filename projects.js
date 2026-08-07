@@ -317,26 +317,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "order": 13,
-    "folder": "BASICOS",
-    "slug": "essentials",
-    "title": "Essentials",
-    "selected": false,
-    "description": "Colorful everyday pieces brought together in energetic group compositions. The white background and varied poses keep the styling clear and approachable.",
-    "role": "Fashion Styling / Creative Production",
-    "responsibilities": "Fashion styling, production coordination and visual consistency.",
-    "featured": [
-      "Assets/Images/BASICOS/IMG_5391.JPG"
-    ],
-    "images": [
-      "Assets/Images/BASICOS/IMG_5391.JPG",
-      "Assets/Images/BASICOS/IMG_5394.JPG",
-      "Assets/Images/BASICOS/IMG_5395.JPG",
-      "Assets/Images/BASICOS/IMG_5410.JPG",
-      "Assets/Images/BASICOS/IMG_5424.JPG"
-    ]
-  },
-  {
-    "order": 14,
     "folder": "DENIM",
     "slug": "denim",
     "title": "Denim",
@@ -354,7 +334,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 15,
+    "order": 14,
     "folder": "DETALLES",
     "slug": "details",
     "title": "Details",
@@ -371,7 +351,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 16,
+    "order": 15,
     "folder": "FRIO",
     "slug": "cold-study",
     "title": "Cold Study",
@@ -389,7 +369,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 17,
+    "order": 16,
     "folder": "GREEN",
     "slug": "green-study",
     "title": "Green Study",
@@ -412,7 +392,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 18,
+    "order": 17,
     "folder": "OPTICAL",
     "slug": "optical",
     "title": "Optical",
@@ -434,7 +414,7 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "order": 19,
+    "order": 18,
     "folder": "HOJA_DE_CONTACTO",
     "slug": "contact-sheets",
     "title": "Contact Sheets",
@@ -879,26 +859,6 @@ window.PORTFOLIO_IMAGE_DIMENSIONS = {
   "Assets/Images/OUTSIDE/17665691_0.jpg": {
     "width": 1863,
     "height": 2800
-  },
-  "Assets/Images/BASICOS/IMG_5391.JPG": {
-    "width": 3559,
-    "height": 5339
-  },
-  "Assets/Images/BASICOS/IMG_5394.JPG": {
-    "width": 5568,
-    "height": 3712
-  },
-  "Assets/Images/BASICOS/IMG_5395.JPG": {
-    "width": 5568,
-    "height": 3712
-  },
-  "Assets/Images/BASICOS/IMG_5410.JPG": {
-    "width": 5308,
-    "height": 3539
-  },
-  "Assets/Images/BASICOS/IMG_5424.JPG": {
-    "width": 5568,
-    "height": 3712
   },
   "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg": {
     "width": 1440,

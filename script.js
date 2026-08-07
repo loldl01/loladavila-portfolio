@@ -4,80 +4,122 @@ const imageDimensions = window.PORTFOLIO_IMAGE_DIMENSIONS || {};
 const backstageImages = Array.isArray(window.PORTFOLIO_BACKSTAGE_IMAGES) ? window.PORTFOLIO_BACKSTAGE_IMAGES : [];
 const selectedContainer = document.querySelector("#selected-projects");
 const archiveContainer = document.querySelector("#archive-projects");
-const layoutPattern = ["layout-large-left", "layout-small-right", "layout-small-left", "layout-large-right"];
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-function imageFigure(project, path, index, root = "") {
-  const figure = document.createElement("figure");
+const heroName = document.querySelector(".hero-name");
+const heroNameSpans = heroName ? Array.from(heroName.querySelectorAll("span")) : [];
+
+function fitHeroName() {
+  if (!heroName || !heroNameSpans.length) return;
+
+  heroName.style.removeProperty("--hero-fit-size");
+  const style = window.getComputedStyle(heroName);
+  const availableWidth = heroName.clientWidth
+    - Number.parseFloat(style.paddingLeft)
+    - Number.parseFloat(style.paddingRight);
+  const widestWord = Math.max(...heroNameSpans.map((span) => span.scrollWidth));
+
+  if (widestWord > availableWidth) {
+    const currentSize = Number.parseFloat(style.fontSize);
+    const fittedSize = Math.max(1, Math.floor(currentSize * availableWidth / widestWord));
+    heroName.style.setProperty("--hero-fit-size", `${fittedSize}px`);
+  }
+}
+
+let heroFitFrame = 0;
+function scheduleHeroFit() {
+  window.cancelAnimationFrame(heroFitFrame);
+  heroFitFrame = window.requestAnimationFrame(fitHeroName);
+}
+
+if (heroName) {
+  scheduleHeroFit();
+  window.addEventListener("resize", scheduleHeroFit, { passive: true });
+  window.addEventListener("orientationchange", scheduleHeroFit, { passive: true });
+  document.fonts?.ready.then(scheduleHeroFit);
+}
+
+function projectCard(project, index) {
+  const article = document.createElement("article");
+  article.className = `project-card ${project.selected ? "project-card--featured" : "project-card--archive"}`;
+  article.id = `project-${project.slug}`;
+  const href = `projects/${project.slug}.html`;
+  const path = project.featured[0];
   const dimensions = imageDimensions[path];
-  const ratio = dimensions ? dimensions.width / dimensions.height : 1;
-  figure.className = ratio >= 1.15 ? "layout-wide" : layoutPattern[index % layoutPattern.length];
 
-  const image = document.createElement("img");
-  image.alt = `${project.title} — image ${index + 1}`;
-  image.loading = "lazy";
-  image.decoding = "async";
+  article.innerHTML = `
+    <a class="project-card-link" href="${href}" aria-label="View ${project.title} project">
+      <figure class="project-card-media">
+        <img alt="${project.title} fashion production" decoding="async">
+        <figcaption class="project-card-caption">
+          <span class="project-card-number">${String(project.order).padStart(2, "0")}</span>
+          <h3 class="project-card-title">${project.title}</h3>
+          <span class="project-card-action" aria-hidden="true">VIEW PROJECT ↗</span>
+        </figcaption>
+      </figure>
+    </a>`;
+
+  const image = article.querySelector("img");
+  image.src = path;
+  image.loading = project.selected && index < 2 ? "eager" : "lazy";
+  if (project.selected && index === 0) image.fetchPriority = "high";
   if (dimensions) {
     image.width = dimensions.width;
     image.height = dimensions.height;
   }
-  image.src = `${root}${path}`;
-
-  image.addEventListener("error", () => figure.classList.add("image-error"), { once: true });
-  figure.append(image);
-  return figure;
-}
-
-function projectCard(project) {
-  const article = document.createElement("article");
-  article.className = "project-card";
-  article.id = `project-${project.slug}`;
-  const href = `projects/${project.slug}.html`;
-  const countLabel = `${project.images.length} ${project.images.length === 1 ? "IMAGE" : "IMAGES"}`;
-
-  article.innerHTML = `
-    <header class="project-head">
-      <span class="project-number">${String(project.order).padStart(2, "0")}</span>
-      <h3 class="project-title">
-        <a class="project-title-link" href="${href}" aria-label="Open the full ${project.title} project">
-          <span>${project.title}</span><span class="arrow" aria-hidden="true">↗</span>
-        </a>
-      </h3>
-      <div class="project-summary">
-        <p class="project-description">${project.description}</p>
-        <a class="project-action" href="${href}" aria-label="View the full ${project.title} project with ${project.images.length} images">
-          VIEW FULL PROJECT — ${countLabel} <span class="arrow" aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </header>
-    <div class="project-gallery" aria-label="Selected images from ${project.title}"></div>`;
-
-  const gallery = article.querySelector(".project-gallery");
-  project.featured.forEach((path, index) => gallery.append(imageFigure(project, path, index)));
+  image.addEventListener("error", () => article.classList.add("image-error"), { once: true });
   return article;
 }
 
-projects.forEach((project) => {
+projects.forEach((project, index) => {
   const target = project.selected ? selectedContainer : archiveContainer;
-  target?.append(projectCard(project));
+  target?.append(projectCard(project, index));
 });
 
-const projectIndex = document.querySelector(".project-index");
-const projectIndexLinks = document.querySelector("#project-index-links");
-const projectIndexCount = document.querySelector("#project-index-count");
+const horizontalShowcase = document.querySelector("#selected-showcase");
+const horizontalViewport = horizontalShowcase?.querySelector(".horizontal-showcase-viewport");
+const horizontalTrack = horizontalShowcase?.querySelector(".horizontal-showcase-track");
+const desktopShowcase = window.matchMedia("(min-width: 901px)");
+let showcaseDistance = 0;
+let showcaseFrame = 0;
 
-if (projectIndexCount) {
-  projectIndexCount.textContent = `${projects.length} PROJECTS`;
+function measureShowcase() {
+  if (!horizontalShowcase || !horizontalViewport || !horizontalTrack) return;
+
+  horizontalTrack.style.removeProperty("transform");
+  if (!desktopShowcase.matches || prefersReducedMotion.matches) {
+    horizontalShowcase.style.removeProperty("height");
+    showcaseDistance = 0;
+    return;
+  }
+
+  showcaseDistance = Math.max(0, horizontalTrack.scrollWidth - horizontalViewport.clientWidth);
+  horizontalShowcase.style.height = `${window.innerHeight + showcaseDistance}px`;
+  updateShowcase();
 }
 
-projects.forEach((project) => {
-  if (!projectIndexLinks) return;
-  const link = document.createElement("a");
-  link.href = `#project-${project.slug}`;
-  link.innerHTML = `<span class="project-index-number">${String(project.order).padStart(2, "0")}</span><span class="project-index-name">${project.title}</span>`;
-  link.setAttribute("aria-label", `Go to ${project.title}`);
-  link.addEventListener("click", () => projectIndex?.removeAttribute("open"));
-  projectIndexLinks.append(link);
-});
+function updateShowcase() {
+  showcaseFrame = 0;
+  if (!horizontalShowcase || !horizontalTrack || !desktopShowcase.matches || prefersReducedMotion.matches) return;
+  const scrollRange = Math.max(1, horizontalShowcase.offsetHeight - window.innerHeight);
+  const progress = Math.min(1, Math.max(0, -horizontalShowcase.getBoundingClientRect().top / scrollRange));
+  horizontalTrack.style.transform = `translate3d(${-showcaseDistance * progress}px, 0, 0)`;
+}
+
+function scheduleShowcaseUpdate() {
+  if (!showcaseFrame) showcaseFrame = window.requestAnimationFrame(updateShowcase);
+}
+
+if (horizontalShowcase && horizontalViewport && horizontalTrack) {
+  measureShowcase();
+  window.addEventListener("scroll", scheduleShowcaseUpdate, { passive: true });
+  window.addEventListener("resize", measureShowcase, { passive: true });
+  window.addEventListener("orientationchange", measureShowcase, { passive: true });
+  desktopShowcase.addEventListener("change", measureShowcase);
+  prefersReducedMotion.addEventListener("change", measureShowcase);
+  document.fonts?.ready.then(measureShowcase);
+  if ("ResizeObserver" in window) new ResizeObserver(measureShowcase).observe(horizontalTrack);
+}
 
 const menuButton = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -101,7 +143,6 @@ menuButton?.addEventListener("click", openMenu);
 mobileClose?.addEventListener("click", closeMenu);
 mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const siteHeader = document.querySelector(".site-header");
 let anchorNavigationToken = 0;
 
@@ -139,8 +180,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
     event.preventDefault();
     closeMenu();
-    projectIndex?.removeAttribute("open");
-
     const smooth = !prefersReducedMotion.matches;
     window.history.pushState(null, "", `#${encodeURIComponent(targetId)}`);
     alignHashWhenStable(`#${encodeURIComponent(targetId)}`, smooth ? "smooth" : "auto");
@@ -204,7 +243,7 @@ if (heroImage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches)
 }
 
 const revealTargets = document.querySelectorAll(
-  ".section-heading, .project-head, .project-gallery figure, .about-grid, .contact-section > *"
+  ".section-heading, .project-card, .about-grid, .contact-section > *"
 );
 
 if ("IntersectionObserver" in window) {

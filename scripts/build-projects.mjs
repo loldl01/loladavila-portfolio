@@ -75,11 +75,6 @@ const definitions = [
     featured: ["17151036_0.jpg"]
   },
   {
-    folder: "BASICOS", slug: "essentials", title: "Essentials", selected: false,
-    description: "Colorful everyday pieces brought together in energetic group compositions. The white background and varied poses keep the styling clear and approachable.",
-    featured: ["IMG_5391.JPG"]
-  },
-  {
     folder: "DENIM", slug: "denim", title: "Denim", selected: false,
     description: "Coordinated denim looks explored through group portraiture and tonal blue styling. The sequence balances casual movement with a clean studio finish.",
     featured: ["63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg"]
@@ -218,17 +213,34 @@ await mkdir(projectDirectory, { recursive: true });
 
 for (const project of projects) {
   const html = `<!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" translate="no">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="content-language" content="en">
+  <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${project.title} — a visual production by Lola Davila.">
   <meta name="theme-color" content="#070707">
   <title>${project.title} — Lola Davila</title>
+  <link rel="canonical" href="https://loladavila-portfolio.pages.dev/projects/${project.slug}.html">
+  <link rel="alternate" hreflang="en" href="https://loladavila-portfolio.pages.dev/projects/${project.slug}.html">
+  <link rel="alternate" hreflang="x-default" href="https://loladavila-portfolio.pages.dev/projects/${project.slug}.html">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lola Davila">
+  <meta property="og:title" content="${project.title} — Lola Davila">
+  <meta property="og:description" content="${project.title} — a visual production by Lola Davila.">
+  <meta property="og:url" content="https://loladavila-portfolio.pages.dev/projects/${project.slug}.html">
+  <meta property="og:image" content="https://loladavila-portfolio.pages.dev/${encodeURI(project.featured[0])}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${project.title} — Lola Davila">
+  <meta name="twitter:description" content="${project.title} — a visual production by Lola Davila.">
+  <meta name="twitter:image" content="https://loladavila-portfolio.pages.dev/${encodeURI(project.featured[0])}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260807-about">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20260807-en-hero">
   <script src="../projects.js?v=20260807-about" defer></script>
   <script src="../project-page.js?v=20260807-about" defer></script>
 </head>

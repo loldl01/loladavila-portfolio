@@ -1,19 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" translate="no">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="content-language" content="en">
+  <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Lola Davila — Fashion styling, e-commerce content production, creative direction and production coordination.">
   <meta name="theme-color" content="#070707">
   <title>Lola Davila — Styling / Creative Production</title>
+  <link rel="canonical" href="https://loladavila-portfolio.pages.dev/">
+  <link rel="alternate" hreflang="en" href="https://loladavila-portfolio.pages.dev/">
+  <link rel="alternate" hreflang="x-default" href="https://loladavila-portfolio.pages.dev/">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lola Davila">
+  <meta property="og:title" content="Lola Davila — Styling / Creative Production">
+  <meta property="og:description" content="Lola Davila — Fashion styling, e-commerce content production, creative direction and production coordination.">
+  <meta property="og:url" content="https://loladavila-portfolio.pages.dev/">
+  <meta property="og:image" content="https://loladavila-portfolio.pages.dev/Assets/Images/01/17476740_0.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lola Davila — Styling / Creative Production">
+  <meta name="twitter:description" content="Lola Davila — Fashion styling, e-commerce content production, creative direction and production coordination.">
+  <meta name="twitter:image" content="https://loladavila-portfolio.pages.dev/Assets/Images/01/17476740_0.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260807-about">
-  <script src="projects.js?v=20260807-portrait" defer></script>
-  <script src="script.js?v=20260807-about" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260807-bodoni-project-titles">
+  <script src="projects.js?v=20260807-layout-tune" defer></script>
+  <script src="script.js?v=20260807-editorial-scroll" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#work">Skip to selected work</a>
   <div class="cursor" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -48,42 +66,10 @@
         <span>LOLA</span>
         <span>DAVILA</span>
       </h1>
-      <div class="hero-meta">
-        <span>FASHION STYLING</span>
-        <span>CREATIVE DIRECTION</span>
-        <span>E-COMMERCE CONTENT</span>
-      </div>
       <div class="hero-production">
-        <span>19 PRODUCTIONS</span>
+        <span>18 PRODUCTIONS</span>
         <span>ECUADOR / AVAILABLE WORLDWIDE</span>
       </div>
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>FASHION STYLING</span><span>CREATIVE DIRECTION</span><span>E-COMMERCE CONTENT</span><span>PRODUCTION COORDINATION</span><span>VISUAL CONSISTENCY</span>
-          <span>FASHION STYLING</span><span>CREATIVE DIRECTION</span><span>E-COMMERCE CONTENT</span><span>PRODUCTION COORDINATION</span><span>VISUAL CONSISTENCY</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="project-index-strip" aria-label="Project index">
-      <details class="project-index">
-        <summary>
-          <span>PROJECT INDEX</span>
-          <span class="project-index-status"><span id="project-index-count">19 PROJECTS</span><span class="project-index-symbol" aria-hidden="true"></span></span>
-        </summary>
-        <nav id="project-index-links" class="project-index-links" aria-label="All portfolio projects"></nav>
-      </details>
-    </section>
-
-    <section class="profile-intro" aria-label="Professional profile">
-      <p>I’m a fashion stylist and e-commerce content producer with seven years of experience coordinating visual production for fashion retail.</p>
-      <ul aria-label="Specialties">
-        <li>Fashion Styling</li>
-        <li>Creative Direction</li>
-        <li>E-commerce Content</li>
-        <li>Production Coordination</li>
-        <li>Visual Consistency</li>
-      </ul>
     </section>
 
     <section id="work" class="portfolio-section selected-section" aria-labelledby="selected-title">
@@ -94,7 +80,24 @@
           <p class="section-copy">A focused edit of styling, e-commerce content and visual production work.</p>
         </div>
       </header>
-      <div id="selected-projects" class="project-list"></div>
+      <div class="profile-intro" aria-label="Professional profile">
+        <p>I’m a fashion stylist and e-commerce content producer with seven years of experience coordinating visual production for fashion retail.</p>
+        <ul aria-label="Specialties">
+          <li>Fashion Styling</li>
+          <li>Creative Direction</li>
+          <li>E-commerce Content</li>
+          <li>Production Coordination</li>
+          <li>Visual Consistency</li>
+        </ul>
+      </div>
+      <div id="selected-showcase" class="horizontal-showcase">
+        <div class="horizontal-showcase-sticky">
+          <div class="horizontal-showcase-viewport" tabindex="0" aria-label="Selected productions. Scroll to explore projects.">
+            <div id="selected-projects" class="horizontal-showcase-track"></div>
+          </div>
+          <p class="showcase-hint" aria-hidden="true">SCROLL TO EXPLORE →</p>
+        </div>
+      </div>
     </section>
 
     <section id="archive" class="portfolio-section archive-section" aria-labelledby="archive-title">
@@ -105,7 +108,7 @@
           <p class="section-copy">Additional productions, studies, details and process documentation.</p>
         </div>
       </header>
-      <div id="archive-projects" class="project-list archive-list"></div>
+      <div id="archive-projects" class="archive-grid"></div>
     </section>
 
     <section id="about" class="about-section" aria-labelledby="about-title">
