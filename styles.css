@@ -1,8 +1,16 @@
 @font-face {
-  font-family: "IM Fell English SC";
-  src: url("Assets/Fonts/im-fell-english-sc-latin-400-normal.woff2") format("woff2");
+  font-family: "Syne";
+  src: url("Assets/Fonts/syne-latin-600-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("Assets/Fonts/syne-latin-700-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
   font-display: swap;
 }
 
@@ -13,8 +21,8 @@
   --muted: rgba(244, 244, 241, .58);
   --line: rgba(244, 244, 241, .19);
   --red: #ff2a1a;
-  --display: "IM Fell English SC", Georgia, serif;
-  --condensed: "Arial Narrow", Arial, sans-serif;
+  --display: "Syne", Arial, sans-serif;
+  --condensed: "Syne", Arial, sans-serif;
   --sans: "Courier New", Courier, monospace;
   --mono: "Courier New", Courier, monospace;
   --ease: cubic-bezier(.2, .75, .25, 1);
