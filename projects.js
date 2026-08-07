@@ -10,12 +10,14 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
+      "Assets/Images/01/1.jpg",
       "Assets/Images/01/17476740_0.jpg",
       "Assets/Images/01/Relleno generativo 10.jpg",
       "Assets/Images/01/Relleno generativo 2.jpg",
       "Assets/Images/01/extra_6 (1).jpg"
     ],
     "images": [
+      "Assets/Images/01/1.jpg",
       "Assets/Images/01/17476740_0.jpg",
       "Assets/Images/01/extra_6 (1).jpg",
       "Assets/Images/01/extraaa_5 (1).jpg",
@@ -43,12 +45,14 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
+      "Assets/Images/FRESH/1.jpg",
       "Assets/Images/FRESH/1 (1).jpg",
       "Assets/Images/FRESH/11.jpg",
       "Assets/Images/FRESH/16.jpg",
       "Assets/Images/FRESH/20.jpg"
     ],
     "images": [
+      "Assets/Images/FRESH/1.jpg",
       "Assets/Images/FRESH/1 (1).jpg",
       "Assets/Images/FRESH/6 (1).jpg",
       "Assets/Images/FRESH/7 (1).jpg",
@@ -73,12 +77,14 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2025,
     "featured": [
+      "Assets/Images/TEXTURAS/1.jpg",
       "Assets/Images/TEXTURAS/17495823_16174.jpg",
       "Assets/Images/TEXTURAS/17497922_16314.jpg",
       "Assets/Images/TEXTURAS/2.jpg",
       "Assets/Images/TEXTURAS/6.jpg"
     ],
     "images": [
+      "Assets/Images/TEXTURAS/1.jpg",
       "Assets/Images/TEXTURAS/2.jpg",
       "Assets/Images/TEXTURAS/3.jpg",
       "Assets/Images/TEXTURAS/6.jpg",
@@ -121,12 +127,14 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
+      "Assets/Images/06/1.jpg",
       "Assets/Images/06/17409469_0 (1).jpg",
       "Assets/Images/06/17760976_0.jpg",
       "Assets/Images/06/IMG_1183.JPG",
       "Assets/Images/06/IMG_1189.JPG"
     ],
     "images": [
+      "Assets/Images/06/1.jpg",
       "Assets/Images/06/17409469_0 (1).jpg",
       "Assets/Images/06/17409489_0.JPG",
       "Assets/Images/06/17409652_0 (1).jpg",
@@ -152,12 +160,14 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
+      "Assets/Images/BLACK:WHIT3/1.JPG",
       "Assets/Images/BLACK:WHIT3/DSC_8196.jpg",
       "Assets/Images/BLACK:WHIT3/IMG_8604.JPG",
       "Assets/Images/BLACK:WHIT3/IMG_8607.JPG",
       "Assets/Images/BLACK:WHIT3/PLP_FALSO_308 (1).jpg"
     ],
     "images": [
+      "Assets/Images/BLACK:WHIT3/1.JPG",
       "Assets/Images/BLACK:WHIT3/DSC_8196.jpg",
       "Assets/Images/BLACK:WHIT3/DSC_8202.JPG",
       "Assets/Images/BLACK:WHIT3/DSC_8227.jpg",
@@ -185,12 +195,14 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2022,
     "featured": [
+      "Assets/Images/COLOR/1.jpg",
       "Assets/Images/COLOR/0.jpg",
       "Assets/Images/COLOR/15.jpg",
       "Assets/Images/COLOR/2F1F7196-FBF9-487A-8313-A22F26D0A644.jpg",
       "Assets/Images/COLOR/8.jpg"
     ],
     "images": [
+      "Assets/Images/COLOR/1.jpg",
       "Assets/Images/COLOR/0.jpg",
       "Assets/Images/COLOR/2F1F7196-FBF9-487A-8313-A22F26D0A644.jpg",
       "Assets/Images/COLOR/7F44BBFD-8922-420F-BEFE-1AC1119BDA3F.jpg",
@@ -211,12 +223,14 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2024,
     "featured": [
+      "Assets/Images/ETEREAL/1.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_313.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_316 (1).jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_325.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_327.jpg"
     ],
     "images": [
+      "Assets/Images/ETEREAL/1.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_313.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_316 (1).jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_316.jpg",
@@ -240,9 +254,11 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2025,
     "featured": [
+      "Assets/Images/02/1.jpg",
       "Assets/Images/02/17527186_0.jpg"
     ],
     "images": [
+      "Assets/Images/02/1.jpg",
       "Assets/Images/02/17527186_0.jpg",
       "Assets/Images/02/17527210_0.jpg",
       "Assets/Images/02/17562299_0.jpg",
@@ -262,9 +278,11 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
+      "Assets/Images/03/1.jpg",
       "Assets/Images/03/17741822_2.jpg"
     ],
     "images": [
+      "Assets/Images/03/1.jpg",
       "Assets/Images/03/17741822_2.jpg",
       "Assets/Images/03/17741882_0.jpg",
       "Assets/Images/03/17741892_2.jpg",
@@ -284,9 +302,11 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2026,
     "featured": [
+      "Assets/Images/04/1.jpg",
       "Assets/Images/04/17684544_0188.jpg"
     ],
     "images": [
+      "Assets/Images/04/1.jpg",
       "Assets/Images/04/17684544_0188.jpg",
       "Assets/Images/04/17684554_0755.jpg",
       "Assets/Images/04/17684966_0977.jpg",
@@ -305,9 +325,11 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2025,
     "featured": [
+      "Assets/Images/OUTSIDE/1.jpg",
       "Assets/Images/OUTSIDE/17151036_0.jpg"
     ],
     "images": [
+      "Assets/Images/OUTSIDE/1.jpg",
       "Assets/Images/OUTSIDE/17151036_0.jpg",
       "Assets/Images/OUTSIDE/17629797_1.jpg",
       "Assets/Images/OUTSIDE/17631265_0.jpg",
@@ -325,9 +347,11 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
+      "Assets/Images/DENIM/1.jpg",
       "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg"
     ],
     "images": [
+      "Assets/Images/DENIM/1.jpg",
       "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg",
       "Assets/Images/DENIM/D5E6CCCC-E4E6-4E03-80B5-A0346ABCC2DF.jpg",
       "Assets/Images/DENIM/IMG_7645.JPG"
@@ -379,9 +403,11 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2023,
     "featured": [
+      "Assets/Images/GREEN/1.jpg",
       "Assets/Images/GREEN/2a.jpg"
     ],
     "images": [
+      "Assets/Images/GREEN/1.jpg",
       "Assets/Images/GREEN/2a.jpg",
       "Assets/Images/GREEN/3a.jpg",
       "Assets/Images/GREEN/6 (3).jpg",
@@ -402,9 +428,11 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2026,
     "featured": [
+      "Assets/Images/OPTICAL/1.jpg",
       "Assets/Images/OPTICAL/17785066_0.jpg"
     ],
     "images": [
+      "Assets/Images/OPTICAL/1.jpg",
       "Assets/Images/OPTICAL/17785066_0.jpg",
       "Assets/Images/OPTICAL/17785114_0.jpg",
       "Assets/Images/OPTICAL/17785162_0.jpg",
@@ -423,9 +451,11 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
+      "Assets/Images/HOJA_DE_CONTACTO/1.jpg",
       "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg"
     ],
     "images": [
+      "Assets/Images/HOJA_DE_CONTACTO/1.jpg",
       "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg",
       "Assets/Images/HOJA_DE_CONTACTO/SARTORIAL_1.jpg",
       "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.02.18.png",
