@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
@@ -46,135 +46,109 @@
   </aside>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-backdrop" aria-hidden="true">
-        <div class="hero-preview preview-work"></div>
-        <div class="hero-preview preview-archive"></div>
-        <div class="hero-preview preview-about"></div>
-        <div class="hero-preview preview-contact"></div>
+    <section id="home" class="hero v20-home">
+      <figure class="v20-hero-image" aria-hidden="true">
+        <img id="hero-main-image" src="portrait-01.jpg?v=211" alt="">
+      </figure>
+
+      <div class="v20-name" aria-label="Lola Davila">
+        <span>LOLA</span>
+        <span>DAVILA</span>
       </div>
 
-      <div class="hero-navigation">
-        <a href="#work" data-preview="work">
-          <span>01</span>
-          <strong>Trabajo Seleccionado</strong>
-        </a>
-        <a href="#archive" data-preview="archive">
-          <span>02</span>
-          <strong>Archivo Visual</strong>
-        </a>
-        <a href="#about" data-preview="about">
-          <span>03</span>
-          <strong>Sobre Lola</strong>
-        </a>
-        <a href="#contact" data-preview="contact">
-          <span>04</span>
-          <strong>Contactar</strong>
-        </a>
+      <nav class="v20-menu" aria-label="Navegación principal">
+        <a href="#work">WORK</a>
+        <a href="#playground">PLAY</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+        <span class="v20-menu-rule" aria-hidden="true"></span>
+        <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="mailto:loladavilast@gmail.com">MAIL</a>
+      </nav>
+
+      <div class="v20-meta">
+        <span>FASHION STYLING</span>
+        <span>CREATIVE DIRECTION</span>
+        <span>VISUAL PRODUCTION</span>
       </div>
 
-      <div class="hero-title" aria-label="Lola Davila">
-        <span class="hero-word hero-word-lola">LOLA</span>
-        <span class="hero-word hero-word-davila">DAVILA</span>
+      <div class="v20-production">
+        <span>LOOK 01 / 04</span>
+        <span>ECUADOR / AVAILABLE WORLDWIDE</span>
       </div>
 
-      <div class="hero-meta">
-        <p>Estilista de Moda · Dirección Creativa · Ecuador</p>
-        <p>Desliza para explorar ↓</p>
-      </div>
-    </section>
+      <div class="marquee production-marquee production-marquee-hero" aria-hidden="true">
+        <div class="marquee-track">
+          <span>FASHION STYLING</span>
+          <span>CREATIVE DIRECTION</span>
+          <span>VISUAL PRODUCTION</span>
+          <span>E-COMMERCE</span>
+          <span>CAMPAIGNS</span>
+          <span>ART DIRECTION</span>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Estilismo de Moda</span>
-        <span class="marquee-serif">Dirección Creativa</span>
-        <span>Estilismo de Vestuario</span>
-        <span class="marquee-serif">E-commerce</span>
-        <span>Editorial</span>
-        <span class="marquee-serif">Producción</span>
-        <span>Estilismo de Moda</span>
-        <span class="marquee-serif">Dirección Creativa</span>
-        <span>Estilismo de Vestuario</span>
-        <span class="marquee-serif">E-commerce</span>
-        <span>Editorial</span>
-        <span class="marquee-serif">Producción</span>
-      </div>
-    </div>
-
-    <section id="work" class="work-section">
-      <div class="section-intro reveal">
-        <p class="section-index">01 — Trabajo Seleccionado</p>
-
-        <h2>
-          UN <span class="serif-display">Archivo</span><br>
-          DE IMAGEN EDITORIAL
-        </h2>
-
-        <p class="section-description">
-          Campañas, editoriales e historias de e-commerce estilizadas a través
-          de la proporción, la textura, el carácter y la tensión visual.
-        </p>
-      </div>
-
-      <div class="layout-note reveal">
-        <span>Mueve / Haz clic / Explora</span>
-        <span id="project-total">08 Proyectos</span>
-      </div>
-
-      <div id="project-canvas" class="project-canvas" aria-live="polite"></div>
-    </section>
-
-    <section id="archive" class="archive-section">
-      <div class="archive-sticky reveal">
-        <p class="section-index">02 — Archivo</p>
-
-        <h2>
-          PROCESO,<br>
-          <span class="serif-display">Pruebas,</span><br>
-          BACKSTAGE.
-        </h2>
-
-        <p>
-          Una colección en evolución de referencias, pruebas de estilismo, notas,
-          polaroids e imágenes que viven entre los proyectos finales.
-        </p>
-
-        <span class="archive-hint">Arrastra para explorar →</span>
-      </div>
-
-      <div class="archive-strip" aria-label="Archivo visual">
-        <div class="archive-track">
-          <div class="archive-card archive-card-1">MOODBOARD</div>
-          <div class="archive-card archive-card-2 archive-serif">Prueba</div>
-          <div class="archive-card archive-card-3">BACKSTAGE</div>
-          <div class="archive-card archive-card-4 archive-serif">Polaroid</div>
-          <div class="archive-card archive-card-5">DETALLE</div>
-          <div class="archive-card archive-card-6 archive-serif">Notas</div>
+          <span>FASHION STYLING</span>
+          <span>CREATIVE DIRECTION</span>
+          <span>VISUAL PRODUCTION</span>
+          <span>E-COMMERCE</span>
+          <span>CAMPAIGNS</span>
+          <span>ART DIRECTION</span>
         </div>
+      </div>
+    </section>
+    <section id="work" class="v21-work">
+      <div class="v21-work-head reveal">
+        <p class="section-index">01 — SELECTED WORK</p>
+        <p class="v21-work-note">
+          Four visual directions.<br>
+          Eight selected images.
+        </p>
+        <p id="lookbook-total">04 PROJECTS</p>
+      </div>
+
+      <div id="lookbook-list" class="lookbook-list v21-lookbook" aria-live="polite"></div>
+    </section>
+
+    <section id="playground" class="v21-process">
+      <div class="v21-process-head reveal">
+        <p class="section-index">02 — PROCESS</p>
+        <h2>BEHIND<br>THE FRAME</h2>
+        <p>
+          Fitting, adjustments and the work that happens before the final image.
+        </p>
+      </div>
+
+      <div class="v21-process-grid">
+        <figure>
+          <img src="process-01.jpg?v=211" alt="Fashion production process">
+          <figcaption>ON SET / TEAM / FITTING</figcaption>
+        </figure>
+
+        <figure>
+          <img src="process-02.jpg?v=211" alt="Wardrobe fitting process">
+          <figcaption>WARDROBE / ADJUSTMENT / DETAIL</figcaption>
+        </figure>
       </div>
     </section>
 
     <section id="about" class="about-section">
-      <p class="section-index reveal">03 — Sobre Mí</p>
+      <p class="section-index reveal">03 — ABOUT</p>
 
       <div class="about-layout">
         <h2 class="reveal">
-          ESTILO<br>
-          <span class="serif-display">Personajes,</span><br>
-          NO SOLO<br>
-          ROPA.
+          IMAGE<br>
+          THROUGH<br>
+          STYLING.
         </h2>
 
         <div class="about-copy reveal">
           <p class="about-lead">
-            Soy Lola Davila, estilista de moda y productora creativa con experiencia
-            construyendo historias visuales para e-commerce, campañas y proyectos editoriales.
+            I build images through styling,<br>
+            character and production.
           </p>
 
           <p>
-            Mi trabajo combina estilismo, producción y dirección visual. Me interesa
-            cómo la ropa transforma a un personaje, cómo una imagen genera deseo, y cómo
-            cada detalle aporta a la narrativa final.
+            Fashion styling, creative direction and visual production
+            for campaigns, e-commerce and selected creative projects.
           </p>
 
           <div class="services">
@@ -189,7 +163,7 @@
     </section>
 
     <section id="contact" class="contact-section">
-      <p class="section-index">04 — Contacto</p>
+      <p class="section-index">04 — CONTACT</p>
 
       <h2>
         CREEMOS<br>
@@ -197,13 +171,13 @@
       </h2>
 
       <div class="contact-grid">
-        <a href="mailto:hello@loladavilaenlinea.com">Correo ↗</a>
-        <a href="#" target="_blank" rel="noreferrer">Instagram ↗</a>
-        <a href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="mailto:loladavilast@gmail.com">Mail ↗</a>
+        <a href="https://instagram.com/loladl_st" target="_blank" rel="noreferrer">Instagram ↗</a>
+        
       </div>
 
       <div class="contact-footer">
-        <span>Guayaquil, Ecuador</span>
+        <span>Ecuador / Available Worldwide</span>
         <span>© <span id="year"></span> Lola Davila</span>
       </div>
     </section>

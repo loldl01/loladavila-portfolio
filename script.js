@@ -18,57 +18,196 @@ document.getElementById("mobile-work-count").textContent = String(projects.lengt
 document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ---------- Render projects ---------- */
 
-const CANVAS_BREAKS = {
-  2: `ESTILO / <span>FORMA</span> / CARÁCTER`,
-  3: `<span>Trabajo</span> Seleccionado`
-};
+/* ---------- Safe image loading ---------- */
 
-const CANVAS_BREAK_ECHO = {
-  2: "ESTILO / FORMA / CARÁCTER",
-  3: "TRABAJO SELECCIONADO"
-};
+function activateImageFallback(img) {
+  if (!img) return;
 
-function renderProjects() {
-  const items = projects.map((project, index) => `
-    <article
-      class="project-item"
-      tabindex="0"
-      role="button"
-      data-project-id="${project.id}"
-      aria-label="Abrir proyecto ${project.title}"
-    >
-      <p class="project-kicker">Proyecto ${String(index + 1).padStart(2, "0")} — ${project.category}</p>
+  const parent = img.parentElement;
+  if (parent) parent.classList.add("image-load-fallback");
 
-      <div class="project-frame">
-        <div class="project-visual" style="--project-color: ${project.color}; --project-image: url('${project.image}')"></div>
-        <span class="project-number">${String(index + 1).padStart(2, "0")}</span>
-        <span class="project-edge-label">${project.client} · ${project.year}</span>
-      </div>
+  img.style.display = "none";
+  img.setAttribute("aria-hidden", "true");
+}
 
-      <div class="project-caption">
-        <h3>${project.title}</h3>
-        <p>${project.category}<br>${project.year}</p>
-      </div>
-    </article>
-  `);
-
-  let markup = "";
-
-  for (let i = 0; i < items.length; i += 2) {
-    const pair = items.slice(i, i + 2).join("");
-    markup += `<div class="project-spread">${pair}</div>`;
-
-    const breakIndex = i / 2 + 1;
-    if (CANVAS_BREAKS[breakIndex]) {
-      markup += `<div class="canvas-break" data-echo="${CANVAS_BREAK_ECHO[breakIndex]}">${CANVAS_BREAKS[breakIndex]}</div>`;
+function bindSafeImages(root = document) {
+  root.querySelectorAll('img[src]').forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) {
+      activateImageFallback(img);
+      return;
     }
+
+    img.addEventListener("error", () => activateImageFallback(img), { once: true });
+  });
+}
+
+const heroMainImage = document.getElementById("hero-main-image");
+
+if (heroMainImage && projects[0]?.image) {
+  heroMainImage.src = projects[0].image;
+}
+
+bindSafeImages();
+
+
+
+
+
+
+/* ---------- V20 movement ---------- */
+
+const v20Name = document.querySelector(".v20-name");
+const v20HeroImage = document.querySelector(".v20-hero-image img");
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let t = 0;
+
+  function v20Loop() {
+    t += 0.0038;
+
+    if (v20Name) {
+      const x = Math.sin(t) * 10;
+      const y = Math.cos(t * 0.72) * 4;
+      v20Name.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    }
+
+    if (v20HeroImage) {
+      const x = Math.sin(t * 0.38) * 0.45;
+      const y = Math.cos(t * 0.31) * 0.35;
+      v20HeroImage.style.transform = `scale(1.025) translate3d(${x}%, ${y}%, 0)`;
+    }
+
+    requestAnimationFrame(v20Loop);
   }
 
-  projectCanvas.innerHTML = markup;
+  requestAnimationFrame(v20Loop);
+}
 
-  document.querySelectorAll(".project-item").forEach((item) => {
+/* ---------- Photography-first selected work ---------- */
+
+const lookbookList = document.getElementById("lookbook-list");
+const lookbookTotal = document.getElementById("lookbook-total");
+
+function renderLookbookIndex() {
+  if (!lookbookList) return;
+
+  if (lookbookTotal) {
+    lookbookTotal.textContent =
+      `${String(projects.length).padStart(2, "0")} PROJECTS`;
+  }
+
+  lookbookList.innerHTML = projects.map((project, index) => {
+    const layoutClass = [
+      "v20-project-full",
+      "v20-project-split-left",
+      "v20-project-small",
+      "v20-project-split-right"
+    ][index % 4];
+
+    return `
+      <button
+        class="lookbook-item v20-project ${layoutClass}"
+        type="button"
+        data-project-id="${project.id}"
+        aria-label="Abrir proyecto ${project.title}"
+      >
+        <figure class="lookbook-image">
+          <img src="${project.image}" alt="${project.title}">
+        </figure>
+
+        <div class="v20-project-info">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <strong>${project.title}</strong>
+          <span>${project.roleLabel || project.category} / ${project.year}</span>
+        </div>
+
+        <div class="v20-project-tech">
+          <span>LOOK ${String(index + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}</span>
+          <span>${project.client}</span>
+          <span>OPEN ↗</span>
+        </div>
+      </button>
+    `;
+  }).join("");
+
+  lookbookList.querySelectorAll(".lookbook-item").forEach((item) => {
+    item.addEventListener("click", () => openProject(item.dataset.projectId));
+  });
+
+  bindSafeImages(lookbookList);
+}
+
+
+/* ---------- Render projects as editorial chapters ---------- */
+
+const CHAPTER_LABELS = [
+  "Editorial",
+  "Campaign",
+  "Personal",
+  "Commercial",
+  "E-commerce",
+  "Archive"
+];
+
+function renderProjects() {
+  projectCanvas.innerHTML = projects.map((project, index) => {
+    const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
+    const number = String(index + 1).padStart(2, "0");
+    const layout = `chapter-layout-${(index % 4) + 1}`;
+
+    return `
+      <article
+        class="project-chapter ${layout}"
+        tabindex="0"
+        role="button"
+        data-project-id="${project.id}"
+        aria-label="Abrir proyecto ${project.title}"
+      >
+        <header class="chapter-header">
+          <div class="chapter-number">PROJECT ${number}</div>
+
+          <div class="chapter-heading">
+            <p class="chapter-label">${chapter}</p>
+            <h3>${project.title}</h3>
+          </div>
+
+          <div class="chapter-meta">
+            <span>${project.category}</span>
+            <span>${project.client}</span>
+            <span>${project.year}</span>
+          </div>
+        </header>
+
+        <div class="chapter-stage">
+          <div class="chapter-image chapter-image-main">
+            <div
+              class="chapter-visual"
+              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
+            ></div>
+          </div>
+
+          <div class="chapter-image chapter-image-secondary">
+            <div
+              class="chapter-visual chapter-visual-secondary"
+              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
+            ></div>
+          </div>
+
+          <div class="chapter-quote">
+            <span>${project.description}</span>
+          </div>
+        </div>
+
+        <footer class="chapter-footer">
+          <span>Ver proyecto completo</span>
+          <span>↗</span>
+        </footer>
+      </article>
+    `;
+  }).join("");
+
+  document.querySelectorAll(".project-chapter").forEach((item) => {
     item.addEventListener("click", () => openProject(item.dataset.projectId));
 
     item.addEventListener("keydown", (event) => {
@@ -83,27 +222,6 @@ function renderProjects() {
 }
 
 /* ---------- Project viewer ---------- */
-
-function buildPhoneSlot(project) {
-  const tickerText = Array(6).fill(project.category.toUpperCase()).join(" · ");
-
-  return `
-    <div class="viewer-phone-slot">
-      <div class="viewer-phone" style="--image-color: ${project.galleryColors[2]}">
-        <div class="phone-status">
-          <span>9:41</span>
-          <span>LDS</span>
-        </div>
-        <div class="phone-ticker">${tickerText}</div>
-        <div class="phone-headline">${project.title}</div>
-        <div class="phone-footer">
-          <strong>@lola.davila</strong>
-          ${project.client} — ${project.year}
-        </div>
-      </div>
-    </div>
-  `;
-}
 
 function openProject(id) {
   const project = projects.find((item) => item.id === id);
@@ -125,16 +243,13 @@ function openProject(id) {
       </div>
     </div>
 
-    <div class="viewer-gallery">
-      ${project.galleryColors.map((color, index) => {
-        if (index === 2) return buildPhoneSlot(project);
-
-        return `
-          <div class="viewer-image" style="--image-color: ${color}">
-            IMAGEN ${String(index + 1).padStart(2, "0")}
-          </div>
-        `;
-      }).join("")}
+    <div class="viewer-gallery v21-viewer-gallery">
+      ${(project.gallery || [project.image]).map((image, index) => `
+        <figure class="viewer-image v21-viewer-image">
+          <img src="${image}" alt="${project.title} — image ${String(index + 1).padStart(2, "0")}">
+          <figcaption>${String(index + 1).padStart(2, "0")} / ${String((project.gallery || [project.image]).length).padStart(2, "0")}</figcaption>
+        </figure>
+      `).join("")}
     </div>
 
     <div class="viewer-credits">
@@ -143,6 +258,8 @@ function openProject(id) {
       <span>Año — ${project.year}</span>
     </div>
   `;
+
+  bindSafeImages(viewerContent);
 
   projectViewer.classList.add("is-open");
   projectViewer.setAttribute("aria-hidden", "false");
@@ -183,8 +300,14 @@ window.addEventListener("scroll", () => {
   const scrollY = Math.min(window.scrollY, window.innerHeight);
   const progress = scrollY / window.innerHeight;
 
-  heroWords[0].style.transform = `translate3d(${-progress * 10}vw, ${-progress * 8}vh, 0)`;
-  heroWords[1].style.transform = `translate3d(${progress * 12}vw, ${progress * 3}vh, 0)`;
+  if (heroWords[0]) {
+    heroWords[0].style.transform =
+      `translate3d(${-progress * 1.5}vw, ${-progress * 1.2}vh, 0)`;
+  }
+  if (heroWords[1]) {
+    heroWords[1].style.transform =
+      `translate3d(${progress * 1.5}vw, ${progress * 1.2}vh, 0)`;
+  }
 }, { passive: true });
 
 /* ---------- Mobile menu ---------- */
@@ -212,7 +335,7 @@ mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 function bindCursorTargets() {
   if (!window.matchMedia("(pointer: fine)").matches || !cursor) return;
 
-  document.querySelectorAll("a, button, .project-item").forEach((element) => {
+  document.querySelectorAll("a, button, .project-chapter").forEach((element) => {
     element.addEventListener("mouseenter", () => cursor.classList.add("is-active"));
     element.addEventListener("mouseleave", () => cursor.classList.remove("is-active"));
   });
@@ -299,5 +422,6 @@ function bindArchiveDrag() {
 
 bindArchiveDrag();
 
+renderLookbookIndex();
 renderProjects();
 bindCursorTargets();
