@@ -96,7 +96,7 @@ for (const [index, project] of projects.entries()) {
     expect(html.includes(`data-project="${project.slug}"`), `Wrong project identifier in ${project.slug}.html`);
     expect(html.includes(`<title>${project.title} — Lola Davila</title>`), `Wrong browser title in ${project.slug}.html`);
     expect(html.includes("../project-page.js"), `Missing project script in ${project.slug}.html`);
-    expect(html.includes("?v=20260807-about"), `Missing cache-safe asset version in ${project.slug}.html`);
+    expect(html.includes("../styles.css?v=20260807-en-hero"), `Missing responsive stylesheet version in ${project.slug}.html`);
     expect(html.includes('href="/#about">ABOUT ME</a>'), `Missing About Me menu label in ${project.slug}.html`);
     expect(!html.includes('href="/#about">EXPERIENCE</a>'), `Old Experience menu label remains in ${project.slug}.html`);
     for (const hash of ["work", "archive", "about", "contact"]) {
@@ -116,7 +116,8 @@ expect(index.includes("loladavilast@gmail.com"), "Missing confirmed email");
 expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must use the exact confirmed mailto address");
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
-expect((index.match(/\?v=20260807-about/g) || []).length === 2, "Main stylesheet and script must use the About version");
+expect(index.includes("styles.css?v=20260807-en-hero"), "Main page must use the responsive English stylesheet version");
+expect(index.includes("script.js?v=20260807-about"), "Main script cache version changed unexpectedly");
 expect(index.includes("projects.js?v=20260807-portrait"), "Main project data must use the portrait-carousel cache version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
 expect(index.includes('href="#about">ABOUT ME</a>'), "Main menu must label About as About Me");
@@ -142,6 +143,24 @@ expect((styles.match(/object-fit:\s*cover/g) || []).length === 1, "Only the hero
 expect(styles.includes(".project-gallery img") && styles.includes("object-fit: contain"), "Project images must use object-fit: contain");
 expect(styles.includes("scroll-padding-top: 58px") && styles.includes("scroll-margin-top: 58px"), "Fixed-header anchor spacing is missing");
 expect(styles.includes(".about-slideshow") && styles.includes("aspect-ratio: 2 / 3"), "About slideshow must reserve stable space");
+
+
+expect(index.includes('<html lang="en" dir="ltr" translate="no">'), "Main document must declare English, LTR and no automatic translation");
+expect(index.includes('http-equiv="content-language" content="en"'), "Main document is missing English content-language metadata");
+expect(index.includes('hreflang="en"'), "Main document is missing English hreflang");
+expect(index.includes('property="og:locale" content="en_US"'), "Main document is missing the English Open Graph locale");
+expect(index.includes('name="twitter:card"'), "Main document is missing Twitter Card metadata");
+expect(!/lang=["']es(?:[-_][A-Z]{2})?["']/i.test(index), "Spanish lang attribute remains on the main page");
+
+const manifest = JSON.parse(await readFile(join(root, "manifest.json"), "utf8"));
+expect(manifest.lang === "en" && manifest.dir === "ltr", "Manifest language must be English and LTR");
+const sitemap = await readFile(join(root, "sitemap.xml"), "utf8");
+expect(sitemap.includes('hreflang="en"') && !sitemap.includes('hreflang="es"'), "Sitemap hreflang must be English-only");
+const robots = await readFile(join(root, "robots.txt"), "utf8");
+expect(robots.includes("Sitemap: https://loladavila-portfolio.pages.dev/sitemap.xml"), "robots.txt must expose the sitemap");
+const headers = await readFile(join(root, "_headers"), "utf8");
+expect(headers.includes("Content-Language: en"), "Cloudflare headers must declare English");
+expect(styles.includes("--hero-motion") && styles.includes("orientation: landscape"), "Responsive Hero safeguards are missing");
 
 if (failures.length) {
   console.error(failures.map((failure) => `FAIL: ${failure}`).join("\n"));
