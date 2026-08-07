@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "IM Fell English SC";
+  src: url("Assets/Fonts/im-fell-english-sc-latin-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --black: #070707;
   --white: #f4f4f1;
@@ -5,7 +13,7 @@
   --muted: rgba(244, 244, 241, .58);
   --line: rgba(244, 244, 241, .19);
   --red: #ff2a1a;
-  --display: Georgia, "Times New Roman", serif;
+  --display: "IM Fell English SC", Georgia, serif;
   --condensed: "Arial Narrow", Arial, sans-serif;
   --sans: "Courier New", Courier, monospace;
   --mono: "Courier New", Courier, monospace;
