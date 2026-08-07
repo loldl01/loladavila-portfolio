@@ -288,6 +288,90 @@ button:focus-visible {
   to { transform: translate3d(-50%, 0, 0); }
 }
 
+.project-index-strip {
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--black);
+}
+
+.project-index { border-top: 1px solid var(--line); }
+
+.project-index summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.project-index summary::-webkit-details-marker { display: none; }
+
+.project-index-status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--muted);
+}
+
+.project-index-symbol {
+  position: relative;
+  width: 11px;
+  height: 11px;
+}
+
+.project-index-symbol::before,
+.project-index-symbol::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 11px;
+  height: 1px;
+  background: var(--white);
+  transition: transform .25s ease;
+}
+
+.project-index-symbol::after { transform: rotate(90deg); }
+.project-index[open] .project-index-symbol::after { transform: rotate(0); }
+
+.project-index-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 4px 0 22px;
+  border-top: 1px solid var(--line);
+}
+
+.project-index-links a {
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+  padding: 11px 12px 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .06em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  transition: color .2s ease, padding-left .2s ease;
+}
+
+.project-index-links a:hover,
+.project-index-links a:focus-visible {
+  padding-left: 5px;
+  color: var(--red);
+}
+
+.project-index-number { flex: 0 0 auto; color: var(--red); }
+.project-index-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.project-card { scroll-margin-top: 56px; }
+
 .portfolio-section {
   padding: 120px 20px 180px;
   scroll-margin-top: 58px;
@@ -617,6 +701,11 @@ button:focus-visible {
   .hero-name span:last-child { margin-left: 4vw; }
   .hero-meta { left: 10px; bottom: 42px; gap: 8px; font-size: 6px; }
   .hero-production { display: none; }
+
+  .project-index-strip { padding: 0 10px; }
+  .project-index-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-index-links a { padding-right: 8px; font-size: 8px; }
+  .project-index-status { gap: 9px; }
 
   .portfolio-section,
   .about-section,
