@@ -1,30 +1,27 @@
 const body = document.body;
 const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
+const imageDimensions = window.PORTFOLIO_IMAGE_DIMENSIONS || {};
 const selectedContainer = document.querySelector("#selected-projects");
 const archiveContainer = document.querySelector("#archive-projects");
 const layoutPattern = ["layout-large-left", "layout-small-right", "layout-small-left", "layout-large-right"];
 
 function imageFigure(project, path, index, root = "") {
   const figure = document.createElement("figure");
-  figure.className = layoutPattern[index % layoutPattern.length];
+  const dimensions = imageDimensions[path];
+  const ratio = dimensions ? dimensions.width / dimensions.height : 1;
+  figure.className = ratio >= 1.15 ? "layout-wide" : layoutPattern[index % layoutPattern.length];
 
   const image = document.createElement("img");
-  image.src = `${root}${path}`;
   image.alt = `${project.title} — image ${index + 1}`;
   image.loading = "lazy";
   image.decoding = "async";
+  if (dimensions) {
+    image.width = dimensions.width;
+    image.height = dimensions.height;
+  }
+  image.src = `${root}${path}`;
 
-  const assignLayout = () => {
-    const ratio = image.naturalWidth && image.naturalHeight
-      ? image.naturalWidth / image.naturalHeight
-      : 1;
-    figure.classList.remove("layout-wide", ...layoutPattern);
-    figure.classList.add(ratio >= 1.15 ? "layout-wide" : layoutPattern[index % layoutPattern.length]);
-  };
-
-  image.addEventListener("load", assignLayout, { once: true });
   image.addEventListener("error", () => figure.classList.add("image-error"), { once: true });
-  if (image.complete) assignLayout();
   figure.append(image);
   return figure;
 }
@@ -105,7 +102,7 @@ mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const siteHeader = document.querySelector(".site-header");
-let stopActiveAnchorAlignment = null;
+let anchorNavigationToken = 0;
 
 function anchorOffset() {
   return Math.ceil(siteHeader?.getBoundingClientRect().height || 0) + 8;
@@ -116,74 +113,21 @@ function alignToAnchor(target, behavior = "auto") {
   window.scrollTo({ top, behavior });
 }
 
-function keepAnchorAligned(target, initialDelay = 0) {
-  stopActiveAnchorAlignment?.();
+function alignHashWhenStable(hash, behavior = "auto") {
+  const targetId = decodeURIComponent(hash.replace(/^#/, ""));
+  const target = document.getElementById(targetId);
+  if (!target) return;
 
-  let stopped = false;
-  let ready = initialDelay === 0;
-  let frameId = 0;
-  let remainingImages = 0;
-  let resizeObserver = null;
-  let settleTimer = 0;
-
-  const userEvents = ["wheel", "touchstart", "pointerdown", "keydown"];
-
-  const realign = () => {
-    if (stopped || !ready) return;
-    cancelAnimationFrame(frameId);
-    frameId = requestAnimationFrame(() => alignToAnchor(target));
+  const token = ++anchorNavigationToken;
+  const realign = (nextBehavior = "auto") => {
+    if (token !== anchorNavigationToken) return;
+    alignToAnchor(target, nextBehavior);
   };
 
-  const stop = () => {
-    if (stopped) return;
-    stopped = true;
-    cancelAnimationFrame(frameId);
-    clearTimeout(settleTimer);
-    resizeObserver?.disconnect();
-    userEvents.forEach((eventName) => window.removeEventListener(eventName, stop));
-    if (stopActiveAnchorAlignment === stop) stopActiveAnchorAlignment = null;
-  };
-
-  stopActiveAnchorAlignment = stop;
-  userEvents.forEach((eventName) => window.addEventListener(eventName, stop, { passive: true }));
-
-  const pendingImages = Array.from(document.images).filter((image) => {
-    const imageIsBeforeTarget = Boolean(
-      image.compareDocumentPosition(target) & Node.DOCUMENT_POSITION_FOLLOWING
-    );
-    return imageIsBeforeTarget && !image.complete;
-  });
-
-  remainingImages = pendingImages.length;
-
-  const imageSettled = () => {
-    remainingImages -= 1;
-    realign();
-    if (remainingImages <= 0) {
-      clearTimeout(settleTimer);
-      settleTimer = window.setTimeout(stop, 500);
-    }
-  };
-
-  pendingImages.forEach((image) => {
-    image.loading = "eager";
-    image.addEventListener("load", imageSettled, { once: true });
-    image.addEventListener("error", imageSettled, { once: true });
-  });
-
-  if ("ResizeObserver" in window) {
-    resizeObserver = new ResizeObserver(realign);
-    resizeObserver.observe(document.body);
-  }
-
-  window.setTimeout(() => {
-    ready = true;
-    realign();
-    if (remainingImages === 0) settleTimer = window.setTimeout(stop, 500);
-  }, initialDelay);
-
-  document.fonts?.ready.then(realign);
-  window.setTimeout(stop, 15000);
+  requestAnimationFrame(() => requestAnimationFrame(() => realign(behavior)));
+  document.fonts?.ready.then(() => realign());
+  window.setTimeout(() => realign(), 250);
+  window.setTimeout(() => realign(), 900);
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -197,13 +141,17 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     projectIndex?.removeAttribute("open");
 
     const smooth = !prefersReducedMotion.matches;
-    requestAnimationFrame(() => {
-      alignToAnchor(target, smooth ? "smooth" : "auto");
-      window.history.pushState(null, "", `#${encodeURIComponent(targetId)}`);
-      keepAnchorAligned(target, smooth ? 500 : 0);
-    });
+    window.history.pushState(null, "", `#${encodeURIComponent(targetId)}`);
+    alignHashWhenStable(`#${encodeURIComponent(targetId)}`, smooth ? "smooth" : "auto");
   });
 });
+
+window.addEventListener("hashchange", () => alignHashWhenStable(window.location.hash));
+window.addEventListener("pageshow", () => {
+  if (window.location.hash) alignHashWhenStable(window.location.hash);
+});
+
+if (window.location.hash) alignHashWhenStable(window.location.hash);
 
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();

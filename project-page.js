@@ -1,5 +1,6 @@
 const projectBody = document.body;
 const projectList = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
+const projectImageDimensions = window.PORTFOLIO_IMAGE_DIMENSIONS || {};
 const slug = projectBody.dataset.project;
 const currentIndex = projectList.findIndex((item) => item.slug === slug);
 const project = projectList[currentIndex];
@@ -8,35 +9,31 @@ const projectLayouts = ["layout-large-left", "layout-small-right", "layout-small
 
 function projectImage(path, index) {
   const figure = document.createElement("figure");
-  figure.className = projectLayouts[index % projectLayouts.length];
+  const dimensions = projectImageDimensions[path];
+  const ratio = dimensions ? dimensions.width / dimensions.height : 1;
+  figure.className = ratio >= 1.15 ? "layout-wide" : projectLayouts[index % projectLayouts.length];
 
   const image = document.createElement("img");
-  image.src = `../${path}`;
   image.alt = `${project.title} — image ${index + 1}`;
   image.loading = index < 2 ? "eager" : "lazy";
   image.decoding = "async";
+  if (dimensions) {
+    image.width = dimensions.width;
+    image.height = dimensions.height;
+  }
+  image.src = `../${path}`;
 
   const caption = document.createElement("figcaption");
   caption.textContent = `${String(index + 1).padStart(2, "0")} / ${String(project.images.length).padStart(2, "0")}`;
 
-  const setLayout = () => {
-    const ratio = image.naturalWidth && image.naturalHeight
-      ? image.naturalWidth / image.naturalHeight
-      : 1;
-    figure.classList.remove("layout-wide", ...projectLayouts);
-    figure.classList.add(ratio >= 1.15 ? "layout-wide" : projectLayouts[index % projectLayouts.length]);
-  };
-
-  image.addEventListener("load", setLayout, { once: true });
   image.addEventListener("error", () => figure.classList.add("image-error"), { once: true });
-  if (image.complete) setLayout();
   figure.append(image, caption);
   return figure;
 }
 
 if (!project || !main) {
   document.title = "Project not found — Lola Davila";
-  if (main) main.innerHTML = '<p class="project-page-description">PROJECT NOT FOUND. <a class="back-link" href="../index.html#work">RETURN TO SELECTED WORK</a></p>';
+  if (main) main.innerHTML = '<p class="project-page-description">PROJECT NOT FOUND. <a class="back-link" href="/#work">RETURN TO SELECTED WORK</a></p>';
 } else {
   document.title = `${project.title} — Lola Davila`;
   const previous = projectList[(currentIndex - 1 + projectList.length) % projectList.length];
@@ -55,10 +52,21 @@ if (!project || !main) {
         <div class="project-meta"><span>${project.images.length} IMAGES</span><span>FULL PROJECT</span></div>
       </div>
     </header>
+    <section class="project-credits" aria-label="Professional contribution">
+      <div>
+        <p class="project-credit-label">ROLE</p>
+        <p>${project.role}</p>
+      </div>
+      <div>
+        <p class="project-credit-label">RESPONSIBILITIES</p>
+        <p>${project.responsibilities}</p>
+      </div>
+      ${project.year ? `<div><p class="project-credit-label">YEAR</p><p>${project.year}</p></div>` : ""}
+    </section>
     <div class="project-page-gallery" aria-label="Full ${project.title} project"></div>
     <nav class="project-nav" aria-label="Project navigation">
       <a href="${previous.slug}.html">← PREVIOUS / ${previous.title}</a>
-      <a class="back-projects back-link" href="../index.html#${returnHash}">BACK TO ${project.selected ? "SELECTED WORK" : "ARCHIVE"}</a>
+      <a class="back-projects back-link" href="/#${returnHash}">BACK TO ${project.selected ? "SELECTED WORK" : "ARCHIVE"}</a>
       <a class="next" href="${next.slug}.html">NEXT / ${next.title} →</a>
     </nav>`;
 

@@ -13,7 +13,10 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 58px;
+}
 
 body {
   margin: 0;
@@ -75,13 +78,13 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-.mini-brand { font-size: 9px; }
+.mini-brand { font-size: 10px; }
 
 .desktop-nav {
   display: flex;
   gap: 16px;
   align-items: center;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .desktop-nav a,
@@ -372,6 +375,43 @@ button:focus-visible {
 .project-index-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .project-card { scroll-margin-top: 56px; }
 
+.profile-intro {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.05fr) minmax(320px, .95fr);
+  gap: clamp(30px, 8vw, 140px);
+  align-items: end;
+  padding: 54px 20px 66px;
+  border-bottom: 1px solid var(--line);
+  background: var(--black);
+}
+
+.profile-intro > p {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(20px, 2.1vw, 32px);
+  line-height: 1.35;
+}
+
+.profile-intro ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.profile-intro li::after {
+  content: " /";
+  color: var(--red);
+}
+
 .portfolio-section {
   padding: 120px 20px 180px;
   scroll-margin-top: 58px;
@@ -396,7 +436,7 @@ button:focus-visible {
 
 .section-index {
   margin: 0;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .section-heading h2,
@@ -473,7 +513,7 @@ button:focus-visible {
 .project-description {
   margin: 0 0 18px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.65;
 }
 
@@ -481,7 +521,7 @@ button:focus-visible {
   display: inline-block;
   color: var(--white);
   cursor: pointer;
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -525,8 +565,9 @@ button:focus-visible {
 .layout-small-left { grid-column: 2 / span 4; margin-top: clamp(12px, 3vw, 56px) !important; }
 .layout-large-right { grid-column: 6 / -1; margin-top: clamp(38px, 6vw, 110px) !important; }
 
-.archive-list .project-card { margin-bottom: clamp(100px, 12vw, 180px); }
+.archive-list .project-card { margin-bottom: clamp(78px, 9vw, 130px); }
 .archive-list .project-title { font-size: clamp(58px, 7.6vw, 128px); }
+.archive-list .project-gallery { width: min(64vw, 760px); }
 
 .about-section {
   min-height: 100svh;
@@ -656,8 +697,24 @@ button:focus-visible {
 
 .project-page-title { font-size: clamp(70px, 9vw, 145px); }
 .project-page-kicker { margin: 0 0 14px; color: var(--muted); font-size: 9px; }
-.project-page-description { margin: 0; color: var(--muted); font-size: 9px; line-height: 1.75; }
-.project-meta { display: flex; gap: 18px; margin-top: 22px; color: var(--white); font-size: 9px; }
+.project-page-description { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.75; }
+.project-meta { display: flex; gap: 18px; margin-top: 22px; color: var(--white); font-size: 10px; }
+.project-credits {
+  display: grid;
+  grid-template-columns: minmax(180px, .7fr) minmax(280px, 1.6fr) minmax(100px, .35fr);
+  gap: 28px;
+  margin: calc(clamp(80px, 10vw, 150px) * -.55) 0 clamp(76px, 8vw, 120px) 82px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  line-height: 1.65;
+  text-transform: uppercase;
+}
+
+.project-credits p { margin: 0; }
+.project-credit-label { margin-bottom: 9px !important; color: var(--red); font-size: 9px; letter-spacing: .1em; }
 .project-page-gallery { margin-bottom: 120px; }
 .project-page-gallery figcaption { margin-top: 8px; color: var(--muted); font-family: var(--mono); font-size: 8px; }
 
@@ -681,7 +738,10 @@ button:focus-visible {
 
   .section-heading,
   .about-grid,
-  .project-page-header { grid-template-columns: 1fr; }
+  .project-page-header,
+  .project-credits { grid-template-columns: 1fr; }
+
+  .project-credits { margin-left: 0; }
 
   .project-head { grid-template-columns: 42px minmax(0, 1fr); }
   .project-summary { grid-column: 2; }
@@ -711,6 +771,15 @@ button:focus-visible {
   .project-index-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-index-links a { padding-right: 8px; font-size: 8px; }
   .project-index-status { gap: 9px; }
+
+  .profile-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 44px 10px 52px;
+  }
+
+  .profile-intro > p { font-size: 20px; }
+  .profile-intro ul { font-size: 8px; }
 
   .portfolio-section,
   .about-section,
@@ -754,6 +823,7 @@ button:focus-visible {
   .contact-footer { flex-direction: column; }
 
   .project-page-header { gap: 16px; }
+  .project-credits { margin-top: -36px; margin-bottom: 74px; }
   .project-page-title { font-size: clamp(54px, 14vw, 82px); }
   .project-nav { grid-template-columns: 1fr 1fr; }
   .project-nav .back-projects { grid-column: 1 / -1; grid-row: 2; margin-top: 22px; text-align: center; }

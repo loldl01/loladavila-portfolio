@@ -7,12 +7,13 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Modern Menswear",
     "selected": true,
     "description": "Tailored and casual menswear set against a textured charcoal backdrop. Full-length looks and close portraits bring proportion, layering and fabric contrast into focus.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
       "Assets/Images/01/17476740_0.jpg",
       "Assets/Images/01/Relleno generativo 10.jpg",
       "Assets/Images/01/Relleno generativo 2.jpg",
-      "Assets/Images/01/extra_6 (1).jpg",
-      "Assets/Images/01/extraaa_5 (1).jpg"
+      "Assets/Images/01/extra_6 (1).jpg"
     ],
     "images": [
       "Assets/Images/01/17476740_0.jpg",
@@ -39,12 +40,13 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Fresh",
     "selected": true,
     "description": "White and sky-blue styling photographed in clean, direct studio light. Relaxed silhouettes and small gestures give the sequence a light, contemporary energy.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
       "Assets/Images/FRESH/1 (1).jpg",
       "Assets/Images/FRESH/11.jpg",
       "Assets/Images/FRESH/16.jpg",
-      "Assets/Images/FRESH/20.jpg",
-      "Assets/Images/FRESH/portrait-02.jpg"
+      "Assets/Images/FRESH/20.jpg"
     ],
     "images": [
       "Assets/Images/FRESH/1 (1).jpg",
@@ -67,10 +69,12 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Textures",
     "selected": true,
     "description": "A tactile study of drape, skin, knit and soft neutral layers. Cropped details alternate with wider portraits to emphasize material and touch.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2025,
     "featured": [
       "Assets/Images/TEXTURAS/17495823_16174.jpg",
       "Assets/Images/TEXTURAS/17497922_16314.jpg",
-      "Assets/Images/TEXTURAS/17502060_16142.jpg",
       "Assets/Images/TEXTURAS/2.jpg",
       "Assets/Images/TEXTURAS/6.jpg"
     ],
@@ -91,10 +95,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Street Study",
     "selected": true,
     "description": "Denim and relaxed urban layers photographed in an industrial exterior. Low angles, seated poses and concrete structures add movement and scale.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
       "Assets/Images/07/1.jpg",
       "Assets/Images/07/10 (1).jpg",
-      "Assets/Images/07/11 (1).jpg",
       "Assets/Images/07/13.jpg",
       "Assets/Images/07/6.jpg"
     ],
@@ -113,10 +118,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Neutral Edit",
     "selected": true,
     "description": "A studio edit moving between monochrome tailoring, softened pastels and clean negative space. The sequence highlights silhouette, line and controlled styling variation.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
       "Assets/Images/06/17409469_0 (1).jpg",
       "Assets/Images/06/17760976_0.jpg",
-      "Assets/Images/06/17761350_0.jpg",
       "Assets/Images/06/IMG_1183.JPG",
       "Assets/Images/06/IMG_1189.JPG"
     ],
@@ -143,11 +149,12 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Monochrome Study",
     "selected": true,
     "description": "Black-and-white styling explored through sharp tailoring, fluid shapes and graphic contrast. Tonal lighting keeps attention on silhouette and construction.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
       "Assets/Images/BLACK:WHIT3/DSC_8196.jpg",
       "Assets/Images/BLACK:WHIT3/IMG_8604.JPG",
       "Assets/Images/BLACK:WHIT3/IMG_8607.JPG",
-      "Assets/Images/BLACK:WHIT3/PLP_FALSO_307.jpg",
       "Assets/Images/BLACK:WHIT3/PLP_FALSO_308 (1).jpg"
     ],
     "images": [
@@ -174,12 +181,14 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Color Study",
     "selected": true,
     "description": "Pastel pink and saturated blue create a playful studio tension. Clean styling, pattern and crisp color blocking shape the visual rhythm.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2022,
     "featured": [
       "Assets/Images/COLOR/0.jpg",
       "Assets/Images/COLOR/15.jpg",
       "Assets/Images/COLOR/2F1F7196-FBF9-487A-8313-A22F26D0A644.jpg",
-      "Assets/Images/COLOR/8.jpg",
-      "Assets/Images/COLOR/92096228-B677-4AA3-89A4-5FF97E91420C.jpg"
+      "Assets/Images/COLOR/8.jpg"
     ],
     "images": [
       "Assets/Images/COLOR/0.jpg",
@@ -198,10 +207,12 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Ethereal",
     "selected": true,
     "description": "Soft neutrals and powder pinks frame fluid dresses, delicate texture and close portraiture. Rotated poses and quiet gestures create an airy editorial pace.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2024,
     "featured": [
       "Assets/Images/ETEREAL/PLP_FALSO_313.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_316 (1).jpg",
-      "Assets/Images/ETEREAL/PLP_FALSO_320 (1).jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_325.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_327.jpg"
     ],
@@ -225,12 +236,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Casual Menswear",
     "selected": false,
     "description": "Relaxed menswear built through dark knitwear, jackets and understated layers. A warm neutral set keeps the focus on styling and pose.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2025,
     "featured": [
-      "Assets/Images/02/17527186_0.jpg",
-      "Assets/Images/02/17527210_0.jpg",
-      "Assets/Images/02/17562299_0.jpg",
-      "Assets/Images/02/17614623_0.jpg",
-      "Assets/Images/02/17628952_0.jpg"
+      "Assets/Images/02/17527186_0.jpg"
     ],
     "images": [
       "Assets/Images/02/17527186_0.jpg",
@@ -249,12 +259,10 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Graphic Menswear",
     "selected": false,
     "description": "Layered sportswear and casual separates photographed against a graphic two-tone backdrop. Strong color breaks and upright silhouettes unify the series.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
-      "Assets/Images/03/17741822_2.jpg",
-      "Assets/Images/03/17741882_0.jpg",
-      "Assets/Images/03/17741892_2.jpg",
-      "Assets/Images/03/17741920_0.jpg",
-      "Assets/Images/03/17741937_0.jpg"
+      "Assets/Images/03/17741822_2.jpg"
     ],
     "images": [
       "Assets/Images/03/17741822_2.jpg",
@@ -272,12 +280,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Outerwear Study",
     "selected": false,
     "description": "Technical outerwear is reduced to silhouette, volume and close product detail. The pale studio setting keeps the visual language direct and functional.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2026,
     "featured": [
-      "Assets/Images/04/17684544_0188.jpg",
-      "Assets/Images/04/17684554_0755.jpg",
-      "Assets/Images/04/17684966_0977.jpg",
-      "Assets/Images/04/17684966_0992 2.jpg",
-      "Assets/Images/04/17684966_1052.jpg"
+      "Assets/Images/04/17684544_0188.jpg"
     ],
     "images": [
       "Assets/Images/04/17684544_0188.jpg",
@@ -294,12 +301,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Outside",
     "selected": false,
     "description": "Black-and-white looks meet strong road markings and open daylight. The location adds graphic diagonals and movement to a restrained palette.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2025,
     "featured": [
-      "Assets/Images/OUTSIDE/17151036_0.jpg",
-      "Assets/Images/OUTSIDE/17629797_1.jpg",
-      "Assets/Images/OUTSIDE/17631265_0.jpg",
-      "Assets/Images/OUTSIDE/17665650_0.jpg",
-      "Assets/Images/OUTSIDE/17665691_0.jpg"
+      "Assets/Images/OUTSIDE/17151036_0.jpg"
     ],
     "images": [
       "Assets/Images/OUTSIDE/17151036_0.jpg",
@@ -316,12 +322,10 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Essentials",
     "selected": false,
     "description": "Colorful everyday pieces brought together in energetic group compositions. The white background and varied poses keep the styling clear and approachable.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
-      "Assets/Images/BASICOS/IMG_5391.JPG",
-      "Assets/Images/BASICOS/IMG_5394.JPG",
-      "Assets/Images/BASICOS/IMG_5395.JPG",
-      "Assets/Images/BASICOS/IMG_5410.JPG",
-      "Assets/Images/BASICOS/IMG_5424.JPG"
+      "Assets/Images/BASICOS/IMG_5391.JPG"
     ],
     "images": [
       "Assets/Images/BASICOS/IMG_5391.JPG",
@@ -338,10 +342,10 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Denim",
     "selected": false,
     "description": "Coordinated denim looks explored through group portraiture and tonal blue styling. The sequence balances casual movement with a clean studio finish.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
-      "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg",
-      "Assets/Images/DENIM/D5E6CCCC-E4E6-4E03-80B5-A0346ABCC2DF.jpg",
-      "Assets/Images/DENIM/IMG_7645.JPG"
+      "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg"
     ],
     "images": [
       "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg",
@@ -356,9 +360,10 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Details",
     "selected": false,
     "description": "Close crops bring accessories, print and surface detail forward. The reduced framing turns small styling decisions into the central image.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
-      "Assets/Images/DETALLES/17590889_0.jpg",
-      "Assets/Images/DETALLES/2 (1).jpg"
+      "Assets/Images/DETALLES/17590889_0.jpg"
     ],
     "images": [
       "Assets/Images/DETALLES/2 (1).jpg",
@@ -372,9 +377,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Cold Study",
     "selected": false,
     "description": "Structured outerwear and group portraiture presented in a stark studio setting. Dark layers and direct poses create a compact cold-weather study.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2022,
     "featured": [
-      "Assets/Images/FRIO/_DSC6238.JPG",
-      "Assets/Images/FRIO/_DSC6285.JPG"
+      "Assets/Images/FRIO/_DSC6238.JPG"
     ],
     "images": [
       "Assets/Images/FRIO/_DSC6238.JPG",
@@ -388,12 +395,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Green Study",
     "selected": false,
     "description": "Olive and moss tones connect casual menswear and softly styled pairings. Repeated color creates continuity across varied silhouettes and compositions.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2023,
     "featured": [
-      "Assets/Images/GREEN/2a.jpg",
-      "Assets/Images/GREEN/3a.jpg",
-      "Assets/Images/GREEN/6 (3).jpg",
-      "Assets/Images/GREEN/6a.jpg",
-      "Assets/Images/GREEN/9.jpg"
+      "Assets/Images/GREEN/2a.jpg"
     ],
     "images": [
       "Assets/Images/GREEN/2a.jpg",
@@ -412,12 +418,11 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Optical",
     "selected": false,
     "description": "Bold print and elongated silhouettes stand against a saturated blue backdrop. Repetition and contrast give the studio series a graphic pulse.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
+    "year": 2026,
     "featured": [
-      "Assets/Images/OPTICAL/17785066_0.jpg",
-      "Assets/Images/OPTICAL/17785114_0.jpg",
-      "Assets/Images/OPTICAL/17785162_0.jpg",
-      "Assets/Images/OPTICAL/17785193_0.jpg",
-      "Assets/Images/OPTICAL/17785443_0.jpg"
+      "Assets/Images/OPTICAL/17785066_0.jpg"
     ],
     "images": [
       "Assets/Images/OPTICAL/17785066_0.jpg",
@@ -435,10 +440,9 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Backstage",
     "selected": false,
     "description": "A process view of makeup, fittings, styling adjustments and the working studio. These frames document the coordination behind the finished image.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
-      "Assets/Images/BACKSTAGE/16644878_1087.jpg",
-      "Assets/Images/BACKSTAGE/17409657_0932.jpg",
-      "Assets/Images/BACKSTAGE/17590944_0749 1.jpg",
       "Assets/Images/BACKSTAGE/2E87E05D-B0E1-4B97-89CF-2ABA677ED45F.jpg"
     ],
     "images": [
@@ -457,11 +461,10 @@ window.PORTFOLIO_PROJECTS = [
     "title": "Contact Sheets",
     "selected": false,
     "description": "Contact sheets reveal sequencing, variation and image selection across studio productions. The overview makes the visual editing process visible.",
+    "role": "Fashion Styling / Creative Production",
+    "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
-      "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg",
-      "Assets/Images/HOJA_DE_CONTACTO/SARTORIAL_1.jpg",
-      "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.02.18.png",
-      "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.36.08.png"
+      "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg"
     ],
     "images": [
       "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg",
@@ -471,3 +474,565 @@ window.PORTFOLIO_PROJECTS = [
     ]
   }
 ];
+window.PORTFOLIO_IMAGE_DIMENSIONS = {
+  "Assets/Images/01/17476740_0.jpg": {
+    "width": 1363,
+    "height": 2048
+  },
+  "Assets/Images/01/extra_6 (1).jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/01/extraaa_5 (1).jpg": {
+    "width": 2048,
+    "height": 1363
+  },
+  "Assets/Images/01/Relleno generativo 2.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 4.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 5.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 6.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 8.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 9.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 10.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 12.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 13.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 14.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo 16.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/01/Relleno generativo.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/1 (1).jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/6 (1).jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/7 (1).jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/10.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/11.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/13.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/14.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/16.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/20.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/21.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/FRESH/portrait-02.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/TEXTURAS/2.jpg": {
+    "width": 1068,
+    "height": 1335
+  },
+  "Assets/Images/TEXTURAS/3.jpg": {
+    "width": 1069,
+    "height": 1340
+  },
+  "Assets/Images/TEXTURAS/6.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/TEXTURAS/8 (1).jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/TEXTURAS/17495823_16174.jpg": {
+    "width": 4978,
+    "height": 2800
+  },
+  "Assets/Images/TEXTURAS/17497922_16314.jpg": {
+    "width": 3920,
+    "height": 2800
+  },
+  "Assets/Images/TEXTURAS/17502060_16142.jpg": {
+    "width": 3500,
+    "height": 2800
+  },
+  "Assets/Images/07/1.jpg": {
+    "width": 4016,
+    "height": 6016
+  },
+  "Assets/Images/07/6.jpg": {
+    "width": 6016,
+    "height": 4016
+  },
+  "Assets/Images/07/10 (1).jpg": {
+    "width": 4016,
+    "height": 6016
+  },
+  "Assets/Images/07/11 (1).jpg": {
+    "width": 4016,
+    "height": 6016
+  },
+  "Assets/Images/07/13.jpg": {
+    "width": 4016,
+    "height": 6016
+  },
+  "Assets/Images/06/17409469_0 (1).jpg": {
+    "width": 2240,
+    "height": 2800
+  },
+  "Assets/Images/06/17409489_0.JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/17409652_0 (1).jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/17760976_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/17761266_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/17761350_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/17761350_1.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/17761410_3.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/CARMEN.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/06/IMG_1183.JPG": {
+    "width": 1200,
+    "height": 1800
+  },
+  "Assets/Images/06/IMG_1184.JPG": {
+    "width": 1200,
+    "height": 1800
+  },
+  "Assets/Images/06/IMG_1185.JPG": {
+    "width": 1198,
+    "height": 1800
+  },
+  "Assets/Images/06/IMG_1189.JPG": {
+    "width": 1200,
+    "height": 1800
+  },
+  "Assets/Images/BLACK:WHIT3/DSC_8196.jpg": {
+    "width": 1080,
+    "height": 720
+  },
+  "Assets/Images/BLACK:WHIT3/DSC_8202.JPG": {
+    "width": 2055,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/DSC_8227.jpg": {
+    "width": 1080,
+    "height": 720
+  },
+  "Assets/Images/BLACK:WHIT3/DSC_8255 copia.JPG": {
+    "width": 1867,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/IMG_8602.JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/IMG_8603 (1).JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/IMG_8604.JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/IMG_8607.JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/IMG_8609.JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/IMG_8610.JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/IMG_8611.JPG": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/PLP_FALSO_306 (1).jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/PLP_FALSO_307.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BLACK:WHIT3/PLP_FALSO_308 (1).jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/COLOR/0.jpg": {
+    "width": 5568,
+    "height": 3630
+  },
+  "Assets/Images/COLOR/2F1F7196-FBF9-487A-8313-A22F26D0A644.jpg": {
+    "width": 1440,
+    "height": 1800
+  },
+  "Assets/Images/COLOR/7F44BBFD-8922-420F-BEFE-1AC1119BDA3F.jpg": {
+    "width": 1438,
+    "height": 1436
+  },
+  "Assets/Images/COLOR/8.jpg": {
+    "width": 5568,
+    "height": 3712
+  },
+  "Assets/Images/COLOR/15.jpg": {
+    "width": 3712,
+    "height": 5568
+  },
+  "Assets/Images/COLOR/9710D791-81A9-45A5-8ABA-6F4D29839B2B.jpg": {
+    "width": 1440,
+    "height": 1795
+  },
+  "Assets/Images/COLOR/92096228-B677-4AA3-89A4-5FF97E91420C.jpg": {
+    "width": 1440,
+    "height": 1800
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_313.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_316 (1).jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_316.jpg": {
+    "width": 2800,
+    "height": 1863
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_318.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_320 (1).jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_320.jpg": {
+    "width": 1242,
+    "height": 1863
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_321.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_325.jpg": {
+    "width": 2800,
+    "height": 1863
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_326.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/ETEREAL/PLP_FALSO_327.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/02/17527186_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/02/17527210_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/02/17562299_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/02/17614623_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/02/17628952_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/02/17629092_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/02/17629104_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/03/17741822_2.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/03/17741882_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/03/17741892_2.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/03/17741920_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/03/17741937_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/03/17741979_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/04/17684544_0188.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/04/17684554_0755.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/04/17684966_0977.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/04/17684966_0992 2.jpg": {
+    "width": 1839,
+    "height": 2763
+  },
+  "Assets/Images/04/17684966_1052.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OUTSIDE/17151036_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OUTSIDE/17629797_1.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OUTSIDE/17631265_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OUTSIDE/17665650_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OUTSIDE/17665691_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BASICOS/IMG_5391.JPG": {
+    "width": 3559,
+    "height": 5339
+  },
+  "Assets/Images/BASICOS/IMG_5394.JPG": {
+    "width": 5568,
+    "height": 3712
+  },
+  "Assets/Images/BASICOS/IMG_5395.JPG": {
+    "width": 5568,
+    "height": 3712
+  },
+  "Assets/Images/BASICOS/IMG_5410.JPG": {
+    "width": 5308,
+    "height": 3539
+  },
+  "Assets/Images/BASICOS/IMG_5424.JPG": {
+    "width": 5568,
+    "height": 3712
+  },
+  "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg": {
+    "width": 1440,
+    "height": 1110
+  },
+  "Assets/Images/DENIM/D5E6CCCC-E4E6-4E03-80B5-A0346ABCC2DF.jpg": {
+    "width": 1440,
+    "height": 1106
+  },
+  "Assets/Images/DENIM/IMG_7645.JPG": {
+    "width": 4713,
+    "height": 4713
+  },
+  "Assets/Images/DETALLES/2 (1).jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/DETALLES/17590889_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/FRIO/_DSC6238.JPG": {
+    "width": 5568,
+    "height": 3712
+  },
+  "Assets/Images/FRIO/_DSC6285.JPG": {
+    "width": 5568,
+    "height": 3712
+  },
+  "Assets/Images/GREEN/2a.jpg": {
+    "width": 1080,
+    "height": 1920
+  },
+  "Assets/Images/GREEN/3a.jpg": {
+    "width": 1080,
+    "height": 1920
+  },
+  "Assets/Images/GREEN/6 (3).jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/GREEN/6a.jpg": {
+    "width": 1080,
+    "height": 1920
+  },
+  "Assets/Images/GREEN/9.jpg": {
+    "width": 1080,
+    "height": 1350
+  },
+  "Assets/Images/GREEN/b742dc06-7c4e-4c42-9517-61e4be63e845.jpg": {
+    "width": 683,
+    "height": 1024
+  },
+  "Assets/Images/GREEN/d9f79cf8-79cb-4937-89fd-8903e111da10.jpg": {
+    "width": 596,
+    "height": 895
+  },
+  "Assets/Images/OPTICAL/17785066_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OPTICAL/17785114_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OPTICAL/17785162_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OPTICAL/17785193_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OPTICAL/17785443_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/OPTICAL/17787442_0.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BACKSTAGE/_DSC0329.NEF.jpg": {
+    "width": 4016,
+    "height": 6016
+  },
+  "Assets/Images/BACKSTAGE/_DSC0646.NEF.jpg": {
+    "width": 6016,
+    "height": 4016
+  },
+  "Assets/Images/BACKSTAGE/2E87E05D-B0E1-4B97-89CF-2ABA677ED45F.jpg": {
+    "width": 828,
+    "height": 1472
+  },
+  "Assets/Images/BACKSTAGE/16644878_1087.jpg": {
+    "width": 1528,
+    "height": 2292
+  },
+  "Assets/Images/BACKSTAGE/17409657_0932.jpg": {
+    "width": 1863,
+    "height": 2800
+  },
+  "Assets/Images/BACKSTAGE/17590944_0749 1.jpg": {
+    "width": 2800,
+    "height": 1863
+  },
+  "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg": {
+    "width": 3584,
+    "height": 4659
+  },
+  "Assets/Images/HOJA_DE_CONTACTO/SARTORIAL_1.jpg": {
+    "width": 3584,
+    "height": 3832
+  },
+  "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.02.18.png": {
+    "width": 3590,
+    "height": 1874
+  },
+  "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.36.08.png": {
+    "width": 3588,
+    "height": 2144
+  }
+};
