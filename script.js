@@ -45,20 +45,7 @@ if (cursor && window.matchMedia("(pointer: fine)").matches) {
   cursor.style.display = "none";
 }
 
-/* Continuous LOLA DAVILA movement */
-if (name && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  let t = 0;
-
-  function animateName() {
-    t += 0.004;
-    const x = Math.sin(t) * 10;
-    const y = Math.cos(t * 0.7) * 4;
-    name.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    requestAnimationFrame(animateName);
-  }
-
-  requestAnimationFrame(animateName);
-}
+/* LOLA and DAVILA move independently through CSS. */
 
 /* Very subtle hero drift */
 if (heroImage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -70,7 +57,7 @@ if (heroImage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches)
 
 /* Reveal */
 const revealTargets = document.querySelectorAll(
-  ".v26-project-head, .v26-gallery figure, .v24-about-grid, .clean-contact"
+  ".folder-project-head, .folder-gallery figure, .v24-about-grid, .clean-contact"
 );
 
 if ("IntersectionObserver" in window) {
