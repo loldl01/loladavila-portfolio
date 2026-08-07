@@ -2598,3 +2598,336 @@ body {
     font-size: 11px !important;
   }
 }
+
+
+/* =========================================================
+   V21 — CURATED WORK
+   4 directions / 8 selected images
+   The images lead. Design supports.
+   ========================================================= */
+
+.v21-work {
+  padding: 110px 14px 170px;
+  background: #070707;
+  color: #f4f4f1;
+}
+
+.v21-work-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 28px;
+  align-items: start;
+  padding: 0 4px 16px;
+  margin-bottom: 90px;
+  border-bottom: 1px solid rgba(244,244,241,.2);
+}
+
+.v21-work-head p {
+  margin: 0;
+}
+
+.v21-work-note {
+  max-width: 280px;
+  font-family: var(--id-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(244,244,241,.58);
+}
+
+#lookbook-total {
+  font-family: var(--id-mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.v21-lookbook {
+  display: block !important;
+}
+
+.v21-lookbook .v20-project {
+  min-height: 0;
+  overflow: visible;
+  margin-bottom: 180px;
+}
+
+.v21-lookbook .v20-project-full {
+  width: 96%;
+  height: 88svh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.v21-lookbook .v20-project-split-left {
+  width: 62%;
+  height: 78svh;
+  margin-left: 3%;
+  margin-right: auto;
+}
+
+.v21-lookbook .v20-project-small {
+  width: 48%;
+  height: 68svh;
+  margin-left: auto;
+  margin-right: 8%;
+}
+
+.v21-lookbook .v20-project-split-right {
+  width: 70%;
+  height: 82svh;
+  margin-left: auto;
+  margin-right: 2%;
+}
+
+.v21-lookbook .lookbook-image {
+  background: #111;
+}
+
+.v21-lookbook .lookbook-image img {
+  object-position: center center;
+}
+
+.v21-lookbook .v20-project-info {
+  left: 14px;
+  bottom: 36px;
+}
+
+.v21-lookbook .v20-project-info strong {
+  max-width: 90%;
+  font-size: clamp(72px, 10vw, 165px);
+  mix-blend-mode: difference;
+}
+
+.v21-lookbook .v20-project-tech {
+  left: 14px;
+  right: 14px;
+}
+
+/* The first portrait gets a quieter, stronger entrance */
+.v21-lookbook .v20-project:first-child .v20-project-info strong {
+  font-size: clamp(86px, 12vw, 190px);
+}
+
+/* PROCESS */
+.v21-process {
+  padding: 120px 18px 160px;
+  background: #efefeb;
+  color: #090909;
+}
+
+.v21-process-head {
+  display: grid;
+  grid-template-columns: .45fr 1.2fr .65fr;
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+
+.v21-process-head h2 {
+  margin: 0;
+  font-family: var(--id-condensed);
+  font-size: clamp(70px, 10vw, 160px);
+  font-weight: 600;
+  line-height: .72;
+  letter-spacing: -.035em;
+}
+
+.v21-process-head p:last-child {
+  margin: 0;
+  max-width: 320px;
+  font-family: var(--id-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.v21-process-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.v21-process-grid figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #d8d8d3;
+}
+
+.v21-process-grid figure:first-child {
+  aspect-ratio: 4 / 5;
+}
+
+.v21-process-grid figure:last-child {
+  margin-top: 17vh;
+  aspect-ratio: 3 / 4;
+}
+
+.v21-process-grid img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.v21-process-grid figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 9px;
+  padding: 5px 7px;
+  background: #f4f4f1;
+  color: #090909;
+  font-family: var(--id-mono);
+  font-size: 8px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* PROJECT VIEWER — actual photography */
+.v21-viewer-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.v21-viewer-image {
+  position: relative;
+  min-height: 0 !important;
+  aspect-ratio: auto;
+  margin: 0;
+  background: #111;
+  color: white;
+  overflow: hidden;
+}
+
+.v21-viewer-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 70svh;
+  max-height: 120svh;
+  object-fit: contain;
+  background: #090909;
+}
+
+.v21-viewer-image figcaption {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-family: var(--id-mono);
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+/* Remove legacy content that is no longer part of V21 */
+.work-section,
+.archive-section,
+.v20-playground,
+.playground-section {
+  display: none !important;
+}
+
+/* Hero: preserve the V20 personality */
+.v20-home .v20-name {
+  z-index: 6;
+}
+
+.v20-home .v20-hero-image {
+  width: 70vw;
+  left: 10vw;
+}
+
+/* Contact: don't make it feel luxurious; keep it graphic */
+.contact-section h2 {
+  font-family: var(--id-condensed) !important;
+}
+
+.contact-section .serif-display {
+  font-family: var(--id-condensed) !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .v21-work-head {
+    grid-template-columns: 1fr auto;
+  }
+
+  .v21-work-note {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+
+  .v21-lookbook .v20-project-full,
+  .v21-lookbook .v20-project-split-left,
+  .v21-lookbook .v20-project-small,
+  .v21-lookbook .v20-project-split-right {
+    width: 82%;
+    height: 72svh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .v21-process-head {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .v21-work {
+    padding: 80px 8px 100px;
+  }
+
+  .v21-work-head {
+    margin-bottom: 45px;
+  }
+
+  .v21-work-note {
+    font-size: 15px;
+  }
+
+  #lookbook-total {
+    font-size: 10px;
+  }
+
+  .v21-lookbook .v20-project,
+  .v21-lookbook .v20-project-full,
+  .v21-lookbook .v20-project-split-left,
+  .v21-lookbook .v20-project-small,
+  .v21-lookbook .v20-project-split-right {
+    width: 100%;
+    height: 68svh;
+    margin: 0 0 60px;
+  }
+
+  .v21-lookbook .v20-project-info strong,
+  .v21-lookbook .v20-project:first-child .v20-project-info strong {
+    font-size: 17vw;
+  }
+
+  .v21-process {
+    padding: 90px 10px 110px;
+  }
+
+  .v21-process-head p:last-child {
+    font-size: 15px;
+  }
+
+  .v21-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .v21-process-grid figure:last-child {
+    margin-top: 0;
+  }
+
+  .v21-process-grid figcaption {
+    font-size: 9px;
+  }
+
+  .v21-viewer-image img {
+    min-height: 0;
+    max-height: none;
+  }
+}

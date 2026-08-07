@@ -243,11 +243,12 @@ function openProject(id) {
       </div>
     </div>
 
-    <div class="viewer-gallery">
-      ${project.galleryColors.map((color, index) => `
-        <div class="viewer-image" style="--image-color: ${color}">
-          IMAGEN ${String(index + 1).padStart(2, "0")}
-        </div>
+    <div class="viewer-gallery v21-viewer-gallery">
+      ${(project.gallery || [project.image]).map((image, index) => `
+        <figure class="viewer-image v21-viewer-image">
+          <img src="${image}" alt="${project.title} — image ${String(index + 1).padStart(2, "0")}">
+          <figcaption>${String(index + 1).padStart(2, "0")} / ${String((project.gallery || [project.image]).length).padStart(2, "0")}</figcaption>
+        </figure>
       `).join("")}
     </div>
 
@@ -257,6 +258,8 @@ function openProject(id) {
       <span>Año — ${project.year}</span>
     </div>
   `;
+
+  bindSafeImages(viewerContent);
 
   projectViewer.classList.add("is-open");
   projectViewer.setAttribute("aria-hidden", "false");

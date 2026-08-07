@@ -1,32 +1,38 @@
-# Lola Davila — V20.1 Mobile Legibility
+# Lola Davila — V21 Curated Work
 
-Esta versión conserva exactamente la dirección visual de V20 y solo mejora la lectura en móvil.
+This version applies the portfolio curation directly to the site.
 
-## Cambios
-- Menú mobile: 11px.
-- Metadatos: 9px.
-- Barra móvil: 10px.
-- Datos técnicos de proyectos: 9px.
-- Captions de PLAY: 9px.
-- Textos secundarios: 15px.
-- Contacto: 11px.
+## Main portfolio
+Only 4 visual directions / 8 selected images:
 
-No se modifica:
-- composición;
-- tamaños de imágenes;
-- movimiento de LOLA DAVILA;
-- cursor rojo;
-- barra en movimiento;
-- IG;
-- MAIL;
-- estructura de proyectos.
+1. Portraits
+2. Tailoring
+3. Movement
+4. Commercial
+
+Each project contains two selected images.
+
+## Process
+Two behind-the-scenes / fitting images live separately in PROCESS.
+They do not compete with the finished portfolio.
+
+## Preserved from V20.1
+- moving LOLA DAVILA
+- red cursor
+- moving production ticker
+- mobile legibility improvements
+- IG: @loladl_st
+- MAIL: loladavilast@gmail.com
 
 ## GitHub
-Reemplaza:
+This ZIP is complete and includes the new `assets/images/` folder.
+
+Upload/reconcile:
 - index.html
 - styles.css
 - script.js
 - projects.js
 - README.md
+- assets/images/
 
-Conserva `assets/images/`.
+The old `project-01.jpg` etc. are no longer required by V21.
