@@ -104,6 +104,87 @@ mobileClose?.addEventListener("click", closeMenu);
 mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const siteHeader = document.querySelector(".site-header");
+let stopActiveAnchorAlignment = null;
+
+function anchorOffset() {
+  return Math.ceil(siteHeader?.getBoundingClientRect().height || 0) + 8;
+}
+
+function alignToAnchor(target, behavior = "auto") {
+  const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - anchorOffset());
+  window.scrollTo({ top, behavior });
+}
+
+function keepAnchorAligned(target, initialDelay = 0) {
+  stopActiveAnchorAlignment?.();
+
+  let stopped = false;
+  let ready = initialDelay === 0;
+  let frameId = 0;
+  let remainingImages = 0;
+  let resizeObserver = null;
+  let settleTimer = 0;
+
+  const userEvents = ["wheel", "touchstart", "pointerdown", "keydown"];
+
+  const realign = () => {
+    if (stopped || !ready) return;
+    cancelAnimationFrame(frameId);
+    frameId = requestAnimationFrame(() => alignToAnchor(target));
+  };
+
+  const stop = () => {
+    if (stopped) return;
+    stopped = true;
+    cancelAnimationFrame(frameId);
+    clearTimeout(settleTimer);
+    resizeObserver?.disconnect();
+    userEvents.forEach((eventName) => window.removeEventListener(eventName, stop));
+    if (stopActiveAnchorAlignment === stop) stopActiveAnchorAlignment = null;
+  };
+
+  stopActiveAnchorAlignment = stop;
+  userEvents.forEach((eventName) => window.addEventListener(eventName, stop, { passive: true }));
+
+  const pendingImages = Array.from(document.images).filter((image) => {
+    const imageIsBeforeTarget = Boolean(
+      image.compareDocumentPosition(target) & Node.DOCUMENT_POSITION_FOLLOWING
+    );
+    return imageIsBeforeTarget && !image.complete;
+  });
+
+  remainingImages = pendingImages.length;
+
+  const imageSettled = () => {
+    remainingImages -= 1;
+    realign();
+    if (remainingImages <= 0) {
+      clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(stop, 500);
+    }
+  };
+
+  pendingImages.forEach((image) => {
+    image.loading = "eager";
+    image.addEventListener("load", imageSettled, { once: true });
+    image.addEventListener("error", imageSettled, { once: true });
+  });
+
+  if ("ResizeObserver" in window) {
+    resizeObserver = new ResizeObserver(realign);
+    resizeObserver.observe(document.body);
+  }
+
+  window.setTimeout(() => {
+    ready = true;
+    realign();
+    if (remainingImages === 0) settleTimer = window.setTimeout(stop, 500);
+  }, initialDelay);
+
+  document.fonts?.ready.then(realign);
+  window.setTimeout(stop, 15000);
+}
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -115,12 +196,11 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     closeMenu();
     projectIndex?.removeAttribute("open");
 
+    const smooth = !prefersReducedMotion.matches;
     requestAnimationFrame(() => {
-      target.scrollIntoView({
-        behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-        block: "start"
-      });
+      alignToAnchor(target, smooth ? "smooth" : "auto");
       window.history.pushState(null, "", `#${encodeURIComponent(targetId)}`);
+      keepAnchorAligned(target, smooth ? 500 : 0);
     });
   });
 });
