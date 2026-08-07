@@ -52,12 +52,15 @@ expect(projects.filter((project) => !project.selected).length === 11, "Archive m
 expect(!projects.some((project) => project.folder === "BACKSTAGE" || project.slug === "backstage"), "BACKSTAGE must not be listed as a project");
 expect(projects.at(-1)?.folder === "HOJA_DE_CONTACTO", "Contact Sheets must be the final project");
 expect(projectReferences.length === 134, `Expected 134 project images; found ${projectReferences.length}`);
-expect(backstageImages.length === 6, `Expected 6 About slideshow images; found ${backstageImages.length}`);
+expect(backstageImages.length === 4, `Expected 4 portrait About slideshow images; found ${backstageImages.length}`);
 expect(backstageImages.every((path) => path.startsWith("Assets/Images/BACKSTAGE/")), "About slideshow must use only BACKSTAGE images");
-expect(referenced.length === 140, `Expected 140 compatible images; found ${referenced.length}`);
+expect(referenced.length === 138, `Expected 138 displayed images; found ${referenced.length}`);
 expect(uniqueReferences.size === referenced.length, "A project image is duplicated across groups");
-expect(JSON.stringify(referenced) === JSON.stringify(diskImages), "The project data and compatible image files are not synchronized");
-expect(Object.keys(dimensions).length === referenced.length, "Every image must have stored dimensions");
+expect(referenced.every((path) => diskImages.includes(path)), "A displayed image is missing from disk");
+const carouselExcluded = diskImages.filter((path) => path.startsWith("Assets/Images/BACKSTAGE/") && !backstageImages.includes(path));
+expect(carouselExcluded.length === 2, `Expected 2 horizontal Backstage images excluded from About; found ${carouselExcluded.length}`);
+expect(carouselExcluded.every((path) => dimensions[path]?.width > dimensions[path]?.height), "Only horizontal Backstage images may be excluded from About");
+expect(Object.keys(dimensions).length === diskImages.length, "Every compatible image must have stored dimensions");
 
 const verifiedYears = new Map([
   ["textures", 2025],
@@ -113,7 +116,8 @@ expect(index.includes("loladavilast@gmail.com"), "Missing confirmed email");
 expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must use the exact confirmed mailto address");
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
-expect((index.match(/\?v=20260807-about/g) || []).length === 3, "Main assets must use the current cache-safe version");
+expect((index.match(/\?v=20260807-about/g) || []).length === 2, "Main stylesheet and script must use the About version");
+expect(index.includes("projects.js?v=20260807-portrait"), "Main project data must use the portrait-carousel cache version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
 expect(index.includes('href="#about">ABOUT ME</a>'), "Main menu must label About as About Me");
 expect(!index.includes('href="#about">EXPERIENCE</a>'), "Old Experience menu label remains on the main page");
