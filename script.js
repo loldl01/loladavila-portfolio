@@ -63,6 +63,24 @@ projects.forEach((project) => {
   target?.append(projectCard(project));
 });
 
+const projectIndex = document.querySelector(".project-index");
+const projectIndexLinks = document.querySelector("#project-index-links");
+const projectIndexCount = document.querySelector("#project-index-count");
+
+if (projectIndexCount) {
+  projectIndexCount.textContent = `${projects.length} PROJECTS`;
+}
+
+projects.forEach((project) => {
+  if (!projectIndexLinks) return;
+  const link = document.createElement("a");
+  link.href = `#project-${project.slug}`;
+  link.innerHTML = `<span class="project-index-number">${String(project.order).padStart(2, "0")}</span><span class="project-index-name">${project.title}</span>`;
+  link.setAttribute("aria-label", `Go to ${project.title}`);
+  link.addEventListener("click", () => projectIndex?.removeAttribute("open"));
+  projectIndexLinks.append(link);
+});
+
 const menuButton = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileClose = document.querySelector(".mobile-menu-close");
