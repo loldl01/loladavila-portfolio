@@ -1,35 +1,26 @@
-# Lola Davila — V22 Curated Expanded
+# Lola Davila — V23 Full Frame
 
-This version uses a larger curated selection from both image batches.
+## Important change
+All portfolio images are shown at their natural aspect ratio.
+No portfolio image uses fixed height or `object-fit: cover`, so faces,
+clothes, shoes and compositions are not cropped.
 
-## Selected work
-18 curated images:
-- menswear editorial
-- portrait
-- tailoring
-- beauty
-- campaign
-- set
-- commercial
-- accessories
-- lifestyle
-- group styling
-- movement
+## Hero
+The cover uses the black-and-white portrait of the model with the shaved head:
+`hero-bald.jpg`
 
-## Process
-3 images showing:
-- makeup / styling team
-- fitting / adjustment
-- on-set production
+## Selected structure
+01 FORM / TAILORING
+02 COLOR / CAMPAIGN
+03 MEN / IMAGE
+04 BEHIND THE IMAGE
 
 ## Preserved
-- moving LOLA DAVILA
-- red cursor
-- moving ticker
-- IG @loladl_st
-- MAIL loladavilast@gmail.com
-- mobile legibility
+- Moving LOLA DAVILA
+- Red cursor
+- Moving ticker
+- Instagram: @loladl_st
+- Email: loladavilast@gmail.com
+- Mobile responsive layout
 
-## GitHub
-Upload everything from this ZIP.
-The selected JPG files are already included in the root.
+Upload every file in this folder to the same GitHub repository/root.

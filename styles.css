@@ -3389,3 +3389,339 @@ body {
     font-size: 9px;
   }
 }
+
+
+/* =========================================================
+   V23 — FULL FRAME
+   IMPORTANT: portfolio images are NEVER cropped.
+   No fixed image heights. No object-fit: cover.
+   ========================================================= */
+
+.v22-work,
+.v22-process {
+  display: none !important;
+}
+
+/* HERO — full image visible */
+.v20-hero-image {
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #090909;
+}
+
+.v20-hero-image img,
+#hero-main-image {
+  width: auto !important;
+  height: auto !important;
+  max-width: 48vw !important;
+  max-height: 82vh !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* WORK */
+.v23-work {
+  padding: 110px 18px 180px;
+  background: #070707;
+  color: #f2f1ed;
+}
+
+.v23-section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 130px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(242,241,237,.22);
+}
+
+.v23-section-head p {
+  margin: 0;
+  font-family: var(--id-mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+}
+
+.v23-series {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  margin-bottom: 150px;
+}
+
+.v23-series-title {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) 320px;
+  gap: 20px;
+  align-items: end;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(242,241,237,.15);
+}
+
+.v23-series-title span,
+.v23-series-title p {
+  margin: 0;
+  font-family: var(--id-mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.v23-series-title h2 {
+  margin: 0;
+  font-family: var(--id-condensed);
+  font-size: clamp(64px, 8.5vw, 145px);
+  line-height: .72;
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+
+/* Natural-ratio images — NEVER crop */
+.v23-image {
+  position: relative;
+  margin: 0;
+  width: min(100%, 760px);
+  overflow: visible;
+}
+
+.v23-image img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.v23-image figcaption {
+  margin-top: 8px;
+  color: rgba(242,241,237,.72);
+  font-family: var(--id-mono);
+  font-size: 8px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.v23-large {
+  width: min(82vw, 980px);
+  margin-left: 4vw;
+}
+
+.v23-wide {
+  width: min(92vw, 1320px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.v23-align-right {
+  margin-left: auto;
+  margin-right: 4vw;
+}
+
+.v23-two {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(16px, 3vw, 52px);
+  align-items: start;
+}
+
+.v23-two > .v23-image {
+  width: 100%;
+}
+
+.v23-two > .v23-image:nth-child(2) {
+  margin-top: 10vw;
+}
+
+.v23-two-offset {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+}
+
+.v23-two-offset > .v23-image:nth-child(1) {
+  margin-top: 7vw;
+}
+
+.v23-two-offset > .v23-image:nth-child(2) {
+  margin-top: 0;
+}
+
+.v23-divider {
+  padding: 120px 0 150px;
+  overflow: hidden;
+}
+
+.v23-divider span {
+  display: block;
+  white-space: nowrap;
+  font-family: var(--id-condensed);
+  font-size: clamp(48px, 7.8vw, 130px);
+  font-weight: 700;
+  line-height: .8;
+  letter-spacing: -.035em;
+}
+
+/* PROCESS */
+.v23-process {
+  padding: 120px 18px 160px;
+  background: #efeee9;
+  color: #0a0a0a;
+}
+
+.v23-process-head {
+  display: grid;
+  grid-template-columns: .4fr 1fr .65fr;
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 90px;
+}
+
+.v23-process-head h2 {
+  margin: 0;
+  font-family: var(--id-condensed);
+  font-size: clamp(70px, 9.5vw, 155px);
+  line-height: .72;
+  letter-spacing: -.035em;
+}
+
+.v23-process-head p:last-child {
+  margin: 0;
+  max-width: 350px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.v23-process-grid {
+  display: grid;
+  grid-template-columns: 1fr .82fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.v23-process-grid figure {
+  margin: 0;
+}
+
+.v23-process-grid figure:nth-child(2) {
+  margin-top: 10vw;
+}
+
+.v23-process-grid img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.v23-process-grid figcaption {
+  margin-top: 7px;
+  font-family: var(--id-mono);
+  font-size: 8px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .v20-hero-image img,
+  #hero-main-image {
+    max-width: 76vw !important;
+    max-height: 58vh !important;
+  }
+
+  .v23-work {
+    padding: 88px 10px 120px;
+  }
+
+  .v23-section-head {
+    margin-bottom: 80px;
+  }
+
+  .v23-series {
+    gap: 56px;
+    margin-bottom: 90px;
+  }
+
+  .v23-series-title {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .v23-series-title p {
+    grid-column: 2;
+  }
+
+  .v23-large,
+  .v23-wide,
+  .v23-align-right {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .v23-two,
+  .v23-two-offset {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .v23-two > .v23-image:nth-child(2),
+  .v23-two-offset > .v23-image:nth-child(1),
+  .v23-two-offset > .v23-image:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .v23-divider {
+    padding: 80px 0 100px;
+  }
+
+  .v23-process-head {
+    grid-template-columns: 1fr;
+  }
+
+  .v23-process-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .v23-process-grid figure:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .v20-hero-image img,
+  #hero-main-image {
+    max-width: 84vw !important;
+    max-height: 52vh !important;
+  }
+
+  .v23-section-head p,
+  .v23-series-title span,
+  .v23-series-title p {
+    font-size: 10px;
+  }
+
+  .v23-image figcaption,
+  .v23-process-grid figcaption {
+    font-size: 9px;
+  }
+
+  .v23-series-title h2 {
+    font-size: clamp(56px, 20vw, 88px);
+  }
+
+  .v23-divider span {
+    white-space: normal;
+    font-size: clamp(48px, 15vw, 78px);
+  }
+
+  .v23-process {
+    padding: 90px 10px 110px;
+  }
+
+  .v23-process-head p:last-child {
+    font-size: 15px;
+  }
+}
