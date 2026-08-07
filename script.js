@@ -19,6 +19,40 @@ document.getElementById("project-total").textContent = `${String(projects.length
 document.getElementById("year").textContent = new Date().getFullYear();
 
 
+/* ---------- Safe image loading ---------- */
+
+function activateImageFallback(img) {
+  if (!img) return;
+
+  const parent = img.parentElement;
+  if (parent) parent.classList.add("image-load-fallback");
+
+  img.style.display = "none";
+  img.setAttribute("aria-hidden", "true");
+}
+
+function bindSafeImages(root = document) {
+  root.querySelectorAll('img[src]').forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) {
+      activateImageFallback(img);
+      return;
+    }
+
+    img.addEventListener("error", () => activateImageFallback(img), { once: true });
+  });
+}
+
+const heroMainImage = document.getElementById("hero-main-image");
+
+if (heroMainImage && projects[0]?.image) {
+  heroMainImage.src = projects[0].image;
+}
+
+bindSafeImages();
+
+
+
+
 
 /* ---------- Creative chaos motion ---------- */
 
@@ -84,6 +118,8 @@ function renderLookbookIndex() {
   lookbookList.querySelectorAll(".lookbook-item").forEach((item) => {
     item.addEventListener("click", () => openProject(item.dataset.projectId));
   });
+
+  bindSafeImages(lookbookList);
 }
 
 
