@@ -4813,13 +4813,16 @@ body {
 
 .folder-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 2.4vw, 38px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(12px, 1.8vw, 28px);
+  row-gap: clamp(56px, 8vw, 140px);
   align-items: start;
 }
 
 .folder-gallery figure {
+  grid-column: span 6;
   margin: 0;
+  overflow: hidden;
 }
 
 .folder-gallery img {
@@ -4830,6 +4833,34 @@ body {
   background: #111;
   object-fit: contain;
   object-position: center;
+  transition: transform .7s cubic-bezier(.2, .75, .25, 1);
+}
+
+.folder-gallery figure:hover img {
+  transform: scale(1.012);
+}
+
+.folder-gallery .editorial-wide {
+  grid-column: 1 / -1;
+}
+
+.folder-gallery .editorial-large-left {
+  grid-column: 1 / span 7;
+}
+
+.folder-gallery .editorial-small-right {
+  grid-column: 9 / span 4;
+  margin-top: clamp(48px, 8vw, 140px);
+}
+
+.folder-gallery .editorial-small-left {
+  grid-column: 2 / span 4;
+  margin-top: clamp(12px, 3vw, 56px);
+}
+
+.folder-gallery .editorial-large-right {
+  grid-column: 6 / -1;
+  margin-top: clamp(38px, 6vw, 110px);
 }
 
 @media (max-width: 900px) {
@@ -4842,8 +4873,31 @@ body {
   }
 
   .folder-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: 14px;
+    row-gap: 72px;
+  }
+
+  .folder-gallery .editorial-wide {
+    grid-column: 1 / -1;
+  }
+
+  .folder-gallery .editorial-large-left {
+    grid-column: 1 / span 5;
+  }
+
+  .folder-gallery .editorial-small-right {
+    grid-column: 6 / span 3;
+    margin-top: 56px;
+  }
+
+  .folder-gallery .editorial-small-left {
+    grid-column: 1 / span 3;
+  }
+
+  .folder-gallery .editorial-large-right {
+    grid-column: 4 / span 5;
+    margin-top: 40px;
   }
 }
 
@@ -4871,7 +4925,35 @@ body {
 
   .folder-gallery {
     grid-template-columns: 1fr;
-    gap: 38px;
+    gap: 58px;
+  }
+
+  .folder-gallery figure,
+  .folder-gallery .editorial-wide,
+  .folder-gallery .editorial-large-left,
+  .folder-gallery .editorial-small-right,
+  .folder-gallery .editorial-small-left,
+  .folder-gallery .editorial-large-right {
+    grid-column: 1;
+    margin-top: 0;
+  }
+
+  .folder-gallery .editorial-large-left {
+    width: 92%;
+  }
+
+  .folder-gallery .editorial-small-right {
+    width: 74%;
+    margin-left: auto;
+  }
+
+  .folder-gallery .editorial-small-left {
+    width: 74%;
+  }
+
+  .folder-gallery .editorial-large-right {
+    width: 92%;
+    margin-left: auto;
   }
 }
 
