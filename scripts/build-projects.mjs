@@ -75,11 +75,6 @@ const definitions = [
     featured: ["17151036_0.jpg"]
   },
   {
-    folder: "BASICOS", slug: "essentials", title: "Essentials", selected: false,
-    description: "Colorful everyday pieces brought together in energetic group compositions. The white background and varied poses keep the styling clear and approachable.",
-    featured: ["IMG_5391.JPG"]
-  },
-  {
     folder: "DENIM", slug: "denim", title: "Denim", selected: false,
     description: "Coordinated denim looks explored through group portraiture and tonal blue styling. The sequence balances casual movement with a clean studio finish.",
     featured: ["63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg"]
