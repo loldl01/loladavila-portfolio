@@ -6,6 +6,39 @@ const selectedContainer = document.querySelector("#selected-projects");
 const archiveContainer = document.querySelector("#archive-projects");
 const layoutPattern = ["layout-large-left", "layout-small-right", "layout-small-left", "layout-large-right"];
 
+const heroName = document.querySelector(".hero-name");
+const heroNameSpans = heroName ? Array.from(heroName.querySelectorAll("span")) : [];
+
+function fitHeroName() {
+  if (!heroName || !heroNameSpans.length) return;
+
+  heroName.style.removeProperty("--hero-fit-size");
+  const style = window.getComputedStyle(heroName);
+  const availableWidth = heroName.clientWidth
+    - Number.parseFloat(style.paddingLeft)
+    - Number.parseFloat(style.paddingRight);
+  const widestWord = Math.max(...heroNameSpans.map((span) => span.scrollWidth));
+
+  if (widestWord > availableWidth) {
+    const currentSize = Number.parseFloat(style.fontSize);
+    const fittedSize = Math.max(1, Math.floor(currentSize * availableWidth / widestWord));
+    heroName.style.setProperty("--hero-fit-size", `${fittedSize}px`);
+  }
+}
+
+let heroFitFrame = 0;
+function scheduleHeroFit() {
+  window.cancelAnimationFrame(heroFitFrame);
+  heroFitFrame = window.requestAnimationFrame(fitHeroName);
+}
+
+if (heroName) {
+  scheduleHeroFit();
+  window.addEventListener("resize", scheduleHeroFit, { passive: true });
+  window.addEventListener("orientationchange", scheduleHeroFit, { passive: true });
+  document.fonts?.ready.then(scheduleHeroFit);
+}
+
 function imageFigure(project, path, index, root = "") {
   const figure = document.createElement("figure");
   const dimensions = imageDimensions[path];
