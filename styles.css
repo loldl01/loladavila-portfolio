@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "Syne";
-  src: url("Assets/Fonts/syne-latin-600-normal.woff2") format("woff2");
+  font-family: "Space Grotesk";
+  src: url("Assets/Fonts/space-grotesk-latin-500-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Syne";
-  src: url("Assets/Fonts/syne-latin-700-normal.woff2") format("woff2");
+  font-family: "Space Grotesk";
+  src: url("Assets/Fonts/space-grotesk-latin-600-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-display: swap;
 }
 
@@ -21,8 +21,8 @@
   --muted: rgba(244, 244, 241, .58);
   --line: rgba(244, 244, 241, .19);
   --red: #ff2a1a;
-  --display: "Syne", Arial, sans-serif;
-  --condensed: "Syne", Arial, sans-serif;
+  --display: "Space Grotesk", Arial, sans-serif;
+  --condensed: "Space Grotesk", Arial, sans-serif;
   --sans: "Courier New", Courier, monospace;
   --mono: "Courier New", Courier, monospace;
   --ease: cubic-bezier(.2, .75, .25, 1);
@@ -1025,10 +1025,10 @@ button:focus-visible {
   max-width: 22ch;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(18px, 1.55vw, 25px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -.025em;
+  font-size: clamp(13px, 1vw, 17px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.01em;
   text-transform: none;
   text-wrap: balance;
 }
@@ -1047,6 +1047,6 @@ button:focus-visible {
 @media (max-width: 600px) {
   .project-card-title,
   .project-card--archive .project-card-title {
-    font-size: clamp(19px, 5.8vw, 25px);
+    font-size: clamp(13px, 3.8vw, 16px);
   }
 }
