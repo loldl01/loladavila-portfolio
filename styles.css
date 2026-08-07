@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:wght@500;600;700&display=swap");
+
 :root {
   --black: #070707;
   --white: #f4f4f1;
@@ -5,8 +7,9 @@
   --muted: rgba(244, 244, 241, .58);
   --line: rgba(244, 244, 241, .19);
   --red: #ff2a1a;
-  --condensed: "Barlow Condensed", sans-serif;
-  --sans: "Manrope", sans-serif;
+  --display: "Bodoni Moda", "Times New Roman", serif;
+  --condensed: "Archivo", Arial, sans-serif;
+  --sans: "Archivo", Arial, sans-serif;
   --mono: "IBM Plex Mono", monospace;
   --ease: cubic-bezier(.2, .75, .25, 1);
 }
@@ -234,7 +237,7 @@ button:focus-visible {
   align-items: center;
   margin: 0;
   padding-inline: calc(var(--hero-motion) + clamp(12px, 2vw, 28px));
-  font-family: var(--condensed);
+  font-family: var(--display);
   font-size: var(--hero-fit-size, clamp(144px, 22vw, 380px));
   font-weight: 700;
   line-height: .61;
@@ -335,7 +338,7 @@ button:focus-visible {
   height: auto;
   min-height: 0;
   margin-block: 0;
-  padding-block: 32px 24px;
+  padding-block: 24px 16px;
   background: var(--black);
 }
 
@@ -365,7 +368,7 @@ button:focus-visible {
 .project-page-title {
   max-width: 100%;
   margin: 0;
-  font-family: var(--condensed);
+  font-family: var(--display);
   font-weight: 700;
   line-height: .72;
   letter-spacing: -.045em;
@@ -381,17 +384,19 @@ button:focus-visible {
 .section-heading h2 { font-size: clamp(54px, 6.4vw, 110px); }
 
 .selected-section .section-heading {
-  gap: 16px clamp(20px, 3vw, 48px);
-  margin-bottom: 16px;
-  padding-bottom: 16px;
+  align-items: start;
+  gap: 10px clamp(16px, 2vw, 32px);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .selected-section .section-heading h2 {
-  font-size: clamp(44px, 5.2vw, 82px);
+  font-size: clamp(40px, 4.6vw, 72px);
   line-height: .82;
 }
 
-.selected-section .section-copy { margin-top: 12px; }
+.selected-section .section-copy { margin-top: 8px; }
+.selected-section .profile-intro { padding-bottom: 10px; }
 
 .section-copy {
   max-width: 510px;
@@ -762,15 +767,15 @@ button:focus-visible {
 
   .project-credits { margin-left: 0; }
 
-  .selected-section { padding-block: 28px 20px; }
+  .selected-section { padding-block: 20px 14px; }
 
   .selected-section .section-heading {
-    gap: 12px;
-    margin-bottom: 14px;
-    padding-bottom: 14px;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
   }
 
-  .selected-section .profile-intro { padding-bottom: 18px; }
+  .selected-section .profile-intro { padding-bottom: 8px; }
 
   .horizontal-showcase {
     height: auto !important;
@@ -854,20 +859,20 @@ button:focus-visible {
   .project-page { padding-left: 10px; padding-right: 10px; }
 
   .portfolio-section { padding-top: 90px; padding-bottom: 120px; }
-  .selected-section { padding-block: 22px 18px; }
+  .selected-section { padding-block: 16px 12px; }
   .section-heading { gap: 18px; margin-bottom: 90px; }
   .selected-section .section-heading {
-    gap: 10px;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
+    gap: 7px;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
   }
   .section-heading h2 { font-size: clamp(38px, 9.8vw, 52px); }
   .selected-section .section-heading h2 {
-    font-size: clamp(38px, 11vw, 46px);
+    font-size: clamp(34px, 9vw, 42px);
     line-height: .82;
   }
-  .selected-section .section-copy { margin-top: 10px; }
-  .selected-section .profile-intro { padding-bottom: 16px; }
+  .selected-section .section-copy { margin-top: 6px; }
+  .selected-section .profile-intro { padding-bottom: 7px; }
 
   .horizontal-showcase { width: calc(100% + 20px); margin-inline: -10px; }
   .horizontal-showcase-track { gap: 12px; padding: 10px; }
