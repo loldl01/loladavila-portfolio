@@ -116,7 +116,7 @@ expect(index.includes("loladavilast@gmail.com"), "Missing confirmed email");
 expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must use the exact confirmed mailto address");
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
-expect(index.includes("styles.css?v=20260807-compact-selected"), "Main page must use the compact Selected Productions stylesheet version");
+expect(index.includes("styles.css?v=20260807-bodoni-archivo-compact"), "Main page must use the Bodoni + Archivo compact stylesheet version");
 expect(index.includes("script.js?v=20260807-editorial-scroll"), "Main page must use the editorial-scroll script version");
 expect(index.includes("projects.js?v=20260807-layout-tune"), "Main project data must use the layout-tune cache version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
@@ -165,20 +165,23 @@ expect(styles.includes("--hero-motion") && styles.includes("--hero-fit-size") &&
 const mainScript = await readFile(join(root, "script.js"), "utf8");
 expect(mainScript.includes("function fitHeroName()") && mainScript.includes("document.fonts?.ready"), "Measured Hero fitting is missing");
 expect(styles.includes("clamp(144px, 22vw, 380px)"), "The enlarged fluid Hero name size is missing");
-expect(styles.includes("clamp(44px, 5.2vw, 82px)") && styles.includes("clamp(38px, 11vw, 46px)"), "Selected Productions must use the compact responsive scale");
-expect(styles.includes("padding-block: 32px 24px") && styles.includes("padding-block: 28px 20px") && styles.includes("padding-block: 22px 18px"), "Selected Productions must use compact responsive spacing");
+expect(styles.includes("clamp(40px, 4.6vw, 72px)") && styles.includes("clamp(34px, 9vw, 42px)"), "Selected Productions must use the tighter responsive scale");
+expect(styles.includes("padding-block: 24px 16px") && styles.includes("padding-block: 20px 14px") && styles.includes("padding-block: 16px 12px"), "Selected Productions must use tighter responsive spacing");
+expect(styles.includes('--display: "Bodoni Moda"') && styles.includes('--condensed: "Archivo"') && styles.includes('--sans: "Archivo"'), "Bodoni Moda and Archivo font roles are missing");
+expect(index.includes("family=Archivo") && index.includes("family=Bodoni+Moda"), "Homepage must request Archivo and Bodoni Moda");
+expect(!index.includes("Barlow+Condensed") && !styles.includes('"Barlow Condensed"'), "Barlow Condensed must not remain active");
 expect(styles.includes("height: auto") && styles.includes("min-height: 0") && styles.includes("margin-block: 0"), "Selected Productions must size itself from its content");
 expect(!styles.includes("margin: 0 0 -52px") && !styles.includes("margin-bottom: -32px"), "Selected Productions must not use negative margins to hide excess spacing");
 const selectedBreakpoints = [1440, 1024, 430, 390, 375, 320];
 for (const width of selectedBreakpoints) {
   const mobile = width <= 600;
   const titleSize = mobile
-    ? Math.min(46, Math.max(38, width * .11))
-    : Math.min(82, Math.max(44, width * .052));
-  const expectedPadding = mobile ? [22, 18] : width <= 900 ? [28, 20] : [32, 24];
-  expect(titleSize >= 38 && titleSize <= 82, `Selected Productions title is outside its responsive range at ${width}px`);
+    ? Math.min(42, Math.max(34, width * .09))
+    : Math.min(72, Math.max(40, width * .046));
+  const expectedPadding = mobile ? [16, 12] : width <= 900 ? [20, 14] : [24, 16];
+  expect(titleSize >= 34 && titleSize <= 72, `Selected Productions title is outside its responsive range at ${width}px`);
   expect(titleSize < width - 20, `Selected Productions title cannot fit the viewport at ${width}px`);
-  expect(expectedPadding[0] <= 32 && expectedPadding[1] <= 24, `Selected Productions spacing is excessive at ${width}px`);
+  expect(expectedPadding[0] <= 24 && expectedPadding[1] <= 16, `Selected Productions spacing is excessive at ${width}px`);
 }
 expect(index.indexOf('class="profile-intro"') > index.indexOf('id="selected-title"') && index.indexOf('class="profile-intro"') < index.indexOf('id="selected-showcase"'), "Professional profile must sit directly before the first production image");
 expect(!projects.some((project) => project.slug === "essentials"), "Essentials must not be displayed as a project");
