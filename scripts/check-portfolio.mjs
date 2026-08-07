@@ -117,7 +117,7 @@ expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must 
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
 expect(index.includes("styles.css?v=20260807-en-hero"), "Main page must use the responsive English stylesheet version");
-expect(index.includes("script.js?v=20260807-about"), "Main script cache version changed unexpectedly");
+expect(index.includes("script.js?v=20260807-en-hero"), "Main page must use the responsive Hero script version");
 expect(index.includes("projects.js?v=20260807-portrait"), "Main project data must use the portrait-carousel cache version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
 expect(index.includes('href="#about">ABOUT ME</a>'), "Main menu must label About as About Me");
@@ -160,7 +160,9 @@ const robots = await readFile(join(root, "robots.txt"), "utf8");
 expect(robots.includes("Sitemap: https://loladavila-portfolio.pages.dev/sitemap.xml"), "robots.txt must expose the sitemap");
 const headers = await readFile(join(root, "_headers"), "utf8");
 expect(headers.includes("Content-Language: en"), "Cloudflare headers must declare English");
-expect(styles.includes("--hero-motion") && styles.includes("orientation: landscape"), "Responsive Hero safeguards are missing");
+expect(styles.includes("--hero-motion") && styles.includes("--hero-fit-size") && styles.includes("orientation: landscape"), "Responsive Hero safeguards are missing");
+const mainScript = await readFile(join(root, "script.js"), "utf8");
+expect(mainScript.includes("function fitHeroName()") && mainScript.includes("document.fonts?.ready"), "Measured Hero fitting is missing");
 
 if (failures.length) {
   console.error(failures.map((failure) => `FAIL: ${failure}`).join("\n"));
