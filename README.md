@@ -1,36 +1,34 @@
-# Lola Davila — Creative Chaos V18 FIXED
+# Lola Davila — Creative Chaos V19 Social
 
-Corrección puntual del error de imagen rota.
+Versión basada en Creative Chaos V18 sin GUAYAQUIL.
 
-## Qué se corrigió
-
-- El hero ya no muestra el ícono de imagen rota ni el texto alternativo.
-- La imagen principal toma automáticamente la ruta del primer proyecto definido en `projects.js`.
-- Si cualquier imagen no existe o tiene una ruta incorrecta, la web muestra un fondo visual limpio en vez del error del navegador.
-- También se aplica el fallback a imágenes dinámicas de proyectos.
-
-## Importante
-
-Si quieres que aparezca la fotografía real, el archivo indicado en `projects.js`
-sí debe existir dentro de `assets/images/`.
-
-Ejemplo:
-`assets/images/project-01.jpg`
-
-## Se conserva
-
-- barra móvil;
+## Se mantiene
+- barra en movimiento;
+- LOLA DAVILA en movimiento;
 - cursor rojo;
-- movimiento de LOLA DAVILA;
 - PLAYGROUND;
+- fallback para imágenes rotas;
 - composición Creative Chaos.
 
-## Reemplaza
+## Nuevo
+En el menú del inicio se añadieron:
+- IG
+- MAIL
 
+MAIL abre:
+loladavilast@gmail.com
+
+IMPORTANTE:
+El enlace de IG está preparado pero apunta temporalmente a `https://instagram.com/loladl_st`
+porque todavía falta colocar tu usuario exacto de Instagram.
+
+Cuando me des tu @ exacto, solo hay que reemplazar esa URL.
+
+## Archivos para GitHub
 - index.html
 - styles.css
 - script.js
 - projects.js
 - README.md
 
-Conserva tu carpeta `assets/images/`.
+Conserva `assets/images/`.

@@ -1977,3 +1977,56 @@ body {
   font-size: 0;
   color: transparent;
 }
+
+
+/* =========================================================
+   V19 — SOCIAL LINKS IN HERO
+   ========================================================= */
+
+.chaos-menu .menu-divider {
+  width: 18px;
+  height: 1px;
+  margin: 10px 0 8px;
+  background: rgba(255,255,255,.28);
+}
+
+.chaos-menu .social-link {
+  position: relative;
+  opacity: .62;
+  transition:
+    transform .22s ease,
+    opacity .22s ease,
+    letter-spacing .22s ease;
+}
+
+.chaos-menu .social-link:hover {
+  opacity: 1;
+  transform: translateX(-10px);
+  letter-spacing: .08em;
+}
+
+.chaos-menu .social-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: #ff2a1a;
+  transition: width .22s ease;
+}
+
+.chaos-menu .social-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .chaos-menu .menu-divider {
+    width: 12px;
+    margin: 7px 0 5px;
+  }
+
+  .chaos-menu .social-link {
+    font-size: 8px;
+  }
+}
