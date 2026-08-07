@@ -11,14 +11,12 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
       "Assets/Images/01/1.jpg",
-      "Assets/Images/01/17476740_0.jpg",
       "Assets/Images/01/Relleno generativo 10.jpg",
       "Assets/Images/01/Relleno generativo 2.jpg",
       "Assets/Images/01/extra_6 (1).jpg"
     ],
     "images": [
       "Assets/Images/01/1.jpg",
-      "Assets/Images/01/17476740_0.jpg",
       "Assets/Images/01/extra_6 (1).jpg",
       "Assets/Images/01/extraaa_5 (1).jpg",
       "Assets/Images/01/Relleno generativo 2.jpg",
@@ -47,7 +45,6 @@ window.PORTFOLIO_PROJECTS = [
     "featured": [
       "Assets/Images/FRESH/1.jpg",
       "Assets/Images/FRESH/1 (1).jpg",
-      "Assets/Images/FRESH/11.jpg",
       "Assets/Images/FRESH/16.jpg",
       "Assets/Images/FRESH/20.jpg"
     ],
@@ -57,13 +54,11 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/FRESH/6 (1).jpg",
       "Assets/Images/FRESH/7 (1).jpg",
       "Assets/Images/FRESH/10.jpg",
-      "Assets/Images/FRESH/11.jpg",
       "Assets/Images/FRESH/13.jpg",
       "Assets/Images/FRESH/14.jpg",
       "Assets/Images/FRESH/16.jpg",
       "Assets/Images/FRESH/20.jpg",
       "Assets/Images/FRESH/21.jpg",
-      "Assets/Images/FRESH/portrait-02.jpg"
     ]
   },
   {
@@ -86,7 +81,6 @@ window.PORTFOLIO_PROJECTS = [
     "images": [
       "Assets/Images/TEXTURAS/1.jpg",
       "Assets/Images/TEXTURAS/2.jpg",
-      "Assets/Images/TEXTURAS/3.jpg",
       "Assets/Images/TEXTURAS/6.jpg",
       "Assets/Images/TEXTURAS/8 (1).jpg",
       "Assets/Images/TEXTURAS/17495823_16174.jpg",
@@ -106,7 +100,6 @@ window.PORTFOLIO_PROJECTS = [
     "featured": [
       "Assets/Images/07/1.jpg",
       "Assets/Images/07/10 (1).jpg",
-      "Assets/Images/07/13.jpg",
       "Assets/Images/07/6.jpg"
     ],
     "images": [
@@ -114,7 +107,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/07/6.jpg",
       "Assets/Images/07/10 (1).jpg",
       "Assets/Images/07/11 (1).jpg",
-      "Assets/Images/07/13.jpg"
     ]
   },
   {
@@ -143,7 +135,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/06/17761350_0.jpg",
       "Assets/Images/06/17761350_1.jpg",
       "Assets/Images/06/17761410_3.jpg",
-      "Assets/Images/06/CARMEN.jpg",
       "Assets/Images/06/IMG_1183.JPG",
       "Assets/Images/06/IMG_1184.JPG",
       "Assets/Images/06/IMG_1185.JPG",
@@ -171,7 +162,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/BLACK:WHIT3/DSC_8196.jpg",
       "Assets/Images/BLACK:WHIT3/DSC_8202.JPG",
       "Assets/Images/BLACK:WHIT3/DSC_8227.jpg",
-      "Assets/Images/BLACK:WHIT3/DSC_8255 copia.JPG",
       "Assets/Images/BLACK:WHIT3/IMG_8602.JPG",
       "Assets/Images/BLACK:WHIT3/IMG_8603 (1).JPG",
       "Assets/Images/BLACK:WHIT3/IMG_8604.JPG",
@@ -205,7 +195,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/COLOR/1.jpg",
       "Assets/Images/COLOR/0.jpg",
       "Assets/Images/COLOR/2F1F7196-FBF9-487A-8313-A22F26D0A644.jpg",
-      "Assets/Images/COLOR/7F44BBFD-8922-420F-BEFE-1AC1119BDA3F.jpg",
       "Assets/Images/COLOR/8.jpg",
       "Assets/Images/COLOR/15.jpg",
       "Assets/Images/COLOR/9710D791-81A9-45A5-8ABA-6F4D29839B2B.jpg",
@@ -236,7 +225,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/ETEREAL/PLP_FALSO_316.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_318.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_320 (1).jpg",
-      "Assets/Images/ETEREAL/PLP_FALSO_320.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_321.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_325.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_326.jpg",
@@ -263,7 +251,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/02/17527210_0.jpg",
       "Assets/Images/02/17562299_0.jpg",
       "Assets/Images/02/17614623_0.jpg",
-      "Assets/Images/02/17628952_0.jpg",
       "Assets/Images/02/17629092_0.jpg",
       "Assets/Images/02/17629104_0.jpg"
     ]
@@ -284,9 +271,7 @@ window.PORTFOLIO_PROJECTS = [
     "images": [
       "Assets/Images/03/1.jpg",
       "Assets/Images/03/17741822_2.jpg",
-      "Assets/Images/03/17741882_0.jpg",
       "Assets/Images/03/17741892_2.jpg",
-      "Assets/Images/03/17741920_0.jpg",
       "Assets/Images/03/17741937_0.jpg",
       "Assets/Images/03/17741979_0.jpg"
     ]
@@ -310,7 +295,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/04/17684544_0188.jpg",
       "Assets/Images/04/17684554_0755.jpg",
       "Assets/Images/04/17684966_0977.jpg",
-      "Assets/Images/04/17684966_0992 2.jpg",
       "Assets/Images/04/17684966_1052.jpg"
     ]
   },
@@ -326,11 +310,9 @@ window.PORTFOLIO_PROJECTS = [
     "year": 2025,
     "featured": [
       "Assets/Images/OUTSIDE/1.jpg",
-      "Assets/Images/OUTSIDE/17151036_0.jpg"
     ],
     "images": [
       "Assets/Images/OUTSIDE/1.jpg",
-      "Assets/Images/OUTSIDE/17151036_0.jpg",
       "Assets/Images/OUTSIDE/17629797_1.jpg",
       "Assets/Images/OUTSIDE/17631265_0.jpg",
       "Assets/Images/OUTSIDE/17665650_0.jpg",
@@ -353,7 +335,6 @@ window.PORTFOLIO_PROJECTS = [
     "images": [
       "Assets/Images/DENIM/1.jpg",
       "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg",
-      "Assets/Images/DENIM/D5E6CCCC-E4E6-4E03-80B5-A0346ABCC2DF.jpg",
       "Assets/Images/DENIM/IMG_7645.JPG"
     ]
   },
@@ -411,7 +392,6 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/GREEN/2a.jpg",
       "Assets/Images/GREEN/3a.jpg",
       "Assets/Images/GREEN/6 (3).jpg",
-      "Assets/Images/GREEN/6a.jpg",
       "Assets/Images/GREEN/9.jpg",
       "Assets/Images/GREEN/b742dc06-7c4e-4c42-9517-61e4be63e845.jpg",
       "Assets/Images/GREEN/d9f79cf8-79cb-4937-89fd-8903e111da10.jpg"
@@ -434,7 +414,6 @@ window.PORTFOLIO_PROJECTS = [
     "images": [
       "Assets/Images/OPTICAL/1.jpg",
       "Assets/Images/OPTICAL/17785066_0.jpg",
-      "Assets/Images/OPTICAL/17785114_0.jpg",
       "Assets/Images/OPTICAL/17785162_0.jpg",
       "Assets/Images/OPTICAL/17785193_0.jpg",
       "Assets/Images/OPTICAL/17785443_0.jpg",
@@ -452,11 +431,9 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
       "Assets/Images/HOJA_DE_CONTACTO/1.jpg",
-      "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg"
     ],
     "images": [
       "Assets/Images/HOJA_DE_CONTACTO/1.jpg",
-      "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg",
       "Assets/Images/HOJA_DE_CONTACTO/SARTORIAL_1.jpg",
       "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.02.18.png",
       "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.36.08.png"
