@@ -1,0 +1,12 @@
+{
+  "name": "Lola Davila Portfolio",
+  "short_name": "Lola Davila",
+  "description": "Lola Davila — Fashion styling, e-commerce content production, creative direction and production coordination.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070707",
+  "theme_color": "#070707"
+}
