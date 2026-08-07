@@ -42,7 +42,7 @@ expect(projects.filter((project) => project.selected).length === 8, "Selected Wo
 expect(projects.filter((project) => !project.selected).length === 12, "Archive must contain 12 projects");
 expect(projects.at(-2)?.folder === "BACKSTAGE", "BACKSTAGE must be project 19");
 expect(projects.at(-1)?.folder === "HOJA_DE_CONTACTO", "Contact Sheets must be project 20");
-expect(referenced.length === 141, `Expected 141 compatible images; found ${referenced.length}`);
+expect(referenced.length === 140, `Expected 140 compatible images; found ${referenced.length}`);
 expect(uniqueReferences.size === referenced.length, "A project image is duplicated across groups");
 expect(JSON.stringify(referenced) === JSON.stringify(diskImages), "The project data and compatible image files are not synchronized");
 
