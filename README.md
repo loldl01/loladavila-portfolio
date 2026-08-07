@@ -1,41 +1,35 @@
-# Lola Davila — V21.2 ALL IMAGES VISIBLE
+# Lola Davila — V22 Curated Expanded
 
-Corrección del problema donde solo aparecían algunas imágenes.
+This version uses a larger curated selection from both image batches.
 
-## Cambio principal
-Las 8 fotografías principales ya no dependen de JavaScript para renderizarse.
-Están directamente escritas en `index.html`.
+## Selected work
+18 curated images:
+- menswear editorial
+- portrait
+- tailoring
+- beauty
+- campaign
+- set
+- commercial
+- accessories
+- lifestyle
+- group styling
+- movement
 
-Por eso deben aparecer siempre:
+## Process
+3 images showing:
+- makeup / styling team
+- fitting / adjustment
+- on-set production
 
-PORTRAITS
-- portrait-01.jpg
-- portrait-02.jpg
-
-TAILORING
-- tailoring-01.jpg
-- tailoring-02.jpg
-
-MOVEMENT
-- movement-01.jpg
-- movement-02.jpg
-
-COMMERCIAL
-- commercial-01.jpg
-- commercial-02.jpg
-
-Además se mantienen 2 imágenes en PROCESS.
-
-## Total visible
-- 8 imágenes de portfolio
-- 2 imágenes de proceso
-
-## Se conserva
-- cursor rojo
-- barra en movimiento
-- LOLA DAVILA en movimiento
+## Preserved
+- moving LOLA DAVILA
+- red cursor
+- moving ticker
 - IG @loladl_st
 - MAIL loladavilast@gmail.com
-- responsive mobile
+- mobile legibility
 
-Sube TODO el contenido del ZIP a GitHub.
+## GitHub
+Upload everything from this ZIP.
+The selected JPG files are already included in the root.
