@@ -21,12 +21,26 @@ function projectImage(path, index) {
     image.width = dimensions.width;
     image.height = dimensions.height;
   }
-  image.src = `../${path}`;
+  const imageUrl = `/${path.split("/").map(encodeURIComponent).join("/")}`;
+  image.src = imageUrl;
 
   const caption = document.createElement("figcaption");
   caption.textContent = `${String(index + 1).padStart(2, "0")} / ${String(project.images.length).padStart(2, "0")}`;
 
-  image.addEventListener("error", () => figure.classList.add("image-error"), { once: true });
+  let retryCount = 0;
+  image.addEventListener("error", () => {
+    if (retryCount === 0) {
+      retryCount += 1;
+      image.removeAttribute("src");
+      window.requestAnimationFrame(() => {
+        image.src = `${imageUrl}?retry=1`;
+      });
+      return;
+    }
+
+    figure.classList.add("image-error");
+    figure.hidden = true;
+  });
   figure.append(image, caption);
   return figure;
 }
