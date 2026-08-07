@@ -1,29 +1,27 @@
-# Lola Davila — V20 / THE WORK IS ALIVE
+# Lola Davila — V20.1 Mobile Legibility
 
-Primera versión de refinamiento sobre una sola base.
+Esta versión conserva exactamente la dirección visual de V20 y solo mejora la lectura en móvil.
 
-## Concepto
-Photography-first. Process-led. Creative, alive, not luxurious, not magazine-like.
+## Cambios
+- Menú mobile: 11px.
+- Metadatos: 9px.
+- Barra móvil: 10px.
+- Datos técnicos de proyectos: 9px.
+- Captions de PLAY: 9px.
+- Textos secundarios: 15px.
+- Contacto: 11px.
 
-## Conservado
-- Cursor rojo
-- Barra en movimiento
-- LOLA DAVILA en movimiento
-- IG: @loladl_st
-- Mail: loladavilast@gmail.com
-- PLAY / ABOUT / CONTACT
-- Sistema dinámico de proyectos
+No se modifica:
+- composición;
+- tamaños de imágenes;
+- movimiento de LOLA DAVILA;
+- cursor rojo;
+- barra en movimiento;
+- IG;
+- MAIL;
+- estructura de proyectos.
 
-## Cambios V20
-- Hero simplificado: imagen + nombre + menú + datos mínimos.
-- Se eliminan los post-its y adornos de V17/V19.
-- La barra es más fina, como cinta de producción.
-- Proyectos con diferentes escalas y posiciones.
-- PLAY se convierte en pared de proceso limpia.
-- Menos tipografía decorativa y más fotografía.
-- Paleta negro/blanco; rojo solo para el cursor y microacentos.
-
-## Para GitHub
+## GitHub
 Reemplaza:
 - index.html
 - styles.css
@@ -31,4 +29,4 @@ Reemplaza:
 - projects.js
 - README.md
 
-Conserva tu carpeta assets/images/.
+Conserva `assets/images/`.
