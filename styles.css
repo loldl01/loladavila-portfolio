@@ -390,13 +390,37 @@ button:focus-visible {
   padding-bottom: 10px;
 }
 
-.selected-section .section-heading h2 {
-  font-size: clamp(40px, 4.6vw, 72px);
-  line-height: .82;
+.selected-intro {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(320px, 1fr);
+  gap: clamp(24px, 5vw, 80px);
+  align-items: start;
 }
 
-.selected-section .section-copy { margin-top: 8px; }
-.selected-section .profile-intro { padding-bottom: 10px; }
+.selected-section .section-copy {
+  margin: 0;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+.selected-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.selected-specialties li::after {
+  content: " /";
+  color: var(--red);
+}
 
 .section-copy {
   max-width: 510px;
@@ -775,7 +799,7 @@ button:focus-visible {
     padding-bottom: 8px;
   }
 
-  .selected-section .profile-intro { padding-bottom: 8px; }
+  .selected-intro { grid-template-columns: 1fr; gap: 12px; }
 
   .horizontal-showcase {
     height: auto !important;
@@ -867,12 +891,8 @@ button:focus-visible {
     padding-bottom: 7px;
   }
   .section-heading h2 { font-size: clamp(38px, 9.8vw, 52px); }
-  .selected-section .section-heading h2 {
-    font-size: clamp(34px, 9vw, 42px);
-    line-height: .82;
-  }
-  .selected-section .section-copy { margin-top: 6px; }
-  .selected-section .profile-intro { padding-bottom: 7px; }
+  .selected-intro { grid-template-columns: 1fr; gap: 10px; }
+  .selected-specialties { font-size: 8px; }
 
   .horizontal-showcase { width: calc(100% + 20px); margin-inline: -10px; }
   .horizontal-showcase-track { gap: 12px; padding: 10px; }
