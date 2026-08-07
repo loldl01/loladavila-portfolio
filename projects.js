@@ -455,11 +455,9 @@ window.PORTFOLIO_PROJECTS = [
 ];
 window.PORTFOLIO_BACKSTAGE_IMAGES = [
   "Assets/Images/BACKSTAGE/_DSC0329.NEF.jpg",
-  "Assets/Images/BACKSTAGE/_DSC0646.NEF.jpg",
   "Assets/Images/BACKSTAGE/2E87E05D-B0E1-4B97-89CF-2ABA677ED45F.jpg",
   "Assets/Images/BACKSTAGE/16644878_1087.jpg",
-  "Assets/Images/BACKSTAGE/17409657_0932.jpg",
-  "Assets/Images/BACKSTAGE/17590944_0749 1.jpg"
+  "Assets/Images/BACKSTAGE/17409657_0932.jpg"
 ];
 window.PORTFOLIO_IMAGE_DIMENSIONS = {
   "Assets/Images/01/17476740_0.jpg": {
