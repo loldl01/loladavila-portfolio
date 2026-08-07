@@ -4740,30 +4740,189 @@ body {
 }
 
 
-/* Hero name — gentle horizontal motion */
+/* =========================================================
+   FOLDER GALLERIES — uploaded portfolio
+   ========================================================= */
+
+.folder-work {
+  padding: 120px 20px 180px;
+  background: #070707;
+  color: #f2f1ed;
+}
+
+.folder-work-intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 12px;
+  margin-bottom: 140px;
+  border-bottom: 1px solid rgba(242, 241, 237, .2);
+}
+
+.folder-work-intro p,
+.folder-project-head p {
+  margin: 0;
+}
+
+.folder-intro-copy {
+  max-width: 440px;
+  font-family: var(--id-mono);
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.folder-project {
+  margin-bottom: clamp(120px, 15vw, 220px);
+}
+
+.folder-project-head {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 24px;
+  align-items: end;
+  padding-bottom: 16px;
+  margin-bottom: 54px;
+  border-bottom: 1px solid rgba(242, 241, 237, .16);
+}
+
+.folder-project-head > span,
+.folder-project-head p {
+  font-family: var(--id-mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.folder-project-head p {
+  margin-bottom: 8px;
+  color: rgba(242, 241, 237, .68);
+  text-transform: uppercase;
+}
+
+.folder-project-head h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--id-condensed);
+  font-size: clamp(68px, 10vw, 164px);
+  font-weight: 700;
+  line-height: .72;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+}
+
+.folder-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 38px);
+  align-items: start;
+}
+
+.folder-gallery figure {
+  margin: 0;
+}
+
+.folder-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  background: #111;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 900px) {
+  .folder-work {
+    padding: 90px 10px 120px;
+  }
+
+  .folder-work-intro {
+    margin-bottom: 90px;
+  }
+
+  .folder-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .folder-work-intro {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .folder-intro-copy,
+  .folder-project-head > span,
+  .folder-project-head p {
+    font-size: 10px;
+  }
+
+  .folder-project-head {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px;
+    margin-bottom: 38px;
+  }
+
+  .folder-project-head h2 {
+    font-size: clamp(54px, 18vw, 88px);
+  }
+
+  .folder-gallery {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+}
+
+/* Hero name — opposite horizontal movement */
 .clean-name {
-  animation: hero-name-sway 5s ease-in-out infinite alternate;
+  animation: none;
+  transform: none;
+}
+
+.clean-name > span {
+  display: block;
   will-change: transform;
 }
 
-@keyframes hero-name-sway {
-  from { transform: translate3d(-22px, 0, 0); }
-  to { transform: translate3d(22px, 0, 0); }
+.clean-name > span:first-child {
+  animation: lola-horizontal 5s ease-in-out infinite alternate;
+}
+
+.clean-name > span:last-child {
+  animation: davila-horizontal 5s ease-in-out infinite alternate;
+}
+
+@keyframes lola-horizontal {
+  from { transform: translate3d(-24px, 0, 0); }
+  to { transform: translate3d(24px, 0, 0); }
+}
+
+@keyframes davila-horizontal {
+  from { transform: translate3d(24px, 0, 0); }
+  to { transform: translate3d(-24px, 0, 0); }
 }
 
 @media (max-width: 760px) {
-  .clean-name {
+  .clean-name > span:first-child,
+  .clean-name > span:last-child {
     animation-duration: 4.5s;
   }
 
-  @keyframes hero-name-sway {
+  @keyframes lola-horizontal {
     from { transform: translate3d(-10px, 0, 0); }
     to { transform: translate3d(10px, 0, 0); }
+  }
+
+  @keyframes davila-horizontal {
+    from { transform: translate3d(10px, 0, 0); }
+    to { transform: translate3d(-10px, 0, 0); }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .clean-name {
+  .clean-name > span {
     animation: none;
     transform: none;
   }
