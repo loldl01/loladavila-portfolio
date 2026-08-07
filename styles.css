@@ -485,6 +485,11 @@ button:focus-visible {
   line-height: 1.5;
 }
 
+.project-gallery {
+  width: min(82vw, 1100px);
+  margin-inline: auto;
+}
+
 .project-gallery,
 .project-page-gallery {
   display: grid;
@@ -722,6 +727,9 @@ button:focus-visible {
   .project-summary { grid-column: 1 / -1; margin-top: 12px; }
   .project-description,
   .project-action { font-size: 10px; }
+
+  .project-gallery { width: 88%; }
+  .project-page-gallery { width: 100%; }
 
   .project-gallery,
   .project-page-gallery { grid-template-columns: 1fr; gap: 58px; }
