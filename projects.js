@@ -9,10 +9,10 @@ window.PORTFOLIO_PROJECTS = [
     client: "Portrait / Editorial",
     description: "Character, expression and styling reduced to the essential.",
     color: "#171717",
-    image: "portrait-01.jpg",
+    image: "assets/images/portrait-01.jpg",
     gallery: [
-      "portrait-01.jpg",
-      "portrait-02.jpg"
+      "assets/images/portrait-01.jpg",
+      "assets/images/portrait-02.jpg"
     ]
   },
   {
@@ -25,10 +25,10 @@ window.PORTFOLIO_PROJECTS = [
     client: "Tailoring / Studio",
     description: "Shape, proportion and controlled silhouettes built through styling.",
     color: "#6f7551",
-    image: "tailoring-01.jpg",
+    image: "assets/images/tailoring-01.jpg",
     gallery: [
-      "tailoring-01.jpg",
-      "tailoring-02.jpg"
+      "assets/images/tailoring-01.jpg",
+      "assets/images/tailoring-02.jpg"
     ]
   },
   {
@@ -41,10 +41,10 @@ window.PORTFOLIO_PROJECTS = [
     client: "Movement / Fashion",
     description: "Images where gesture, fabric and body create the composition.",
     color: "#6f604e",
-    image: "movement-01.jpg",
+    image: "assets/images/movement-01.jpg",
     gallery: [
-      "movement-01.jpg",
-      "movement-02.jpg"
+      "assets/images/movement-01.jpg",
+      "assets/images/movement-02.jpg"
     ]
   },
   {
@@ -57,10 +57,10 @@ window.PORTFOLIO_PROJECTS = [
     client: "Commercial Fashion",
     description: "Commercial image-making with clear product focus and strong styling.",
     color: "#818564",
-    image: "commercial-01.jpg",
+    image: "assets/images/commercial-01.jpg",
     gallery: [
-      "commercial-01.jpg",
-      "commercial-02.jpg"
+      "assets/images/commercial-01.jpg",
+      "assets/images/commercial-02.jpg"
     ]
   }
 ];

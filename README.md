@@ -1,51 +1,38 @@
-# Lola Davila — V21.1 Images Fixed
+# Lola Davila — V21 Curated Work
 
-Esta versión corrige el problema de imágenes que no aparecían.
+This version applies the portfolio curation directly to the site.
 
-## Qué cambié
+## Main portfolio
+Only 4 visual directions / 8 selected images:
 
-Las 10 fotografías ahora están también en la RAÍZ del proyecto, al mismo nivel que:
+1. Portraits
+2. Tailoring
+3. Movement
+4. Commercial
 
+Each project contains two selected images.
+
+## Process
+Two behind-the-scenes / fitting images live separately in PROCESS.
+They do not compete with the finished portfolio.
+
+## Preserved from V20.1
+- moving LOLA DAVILA
+- red cursor
+- moving production ticker
+- mobile legibility improvements
+- IG: @loladl_st
+- MAIL: loladavilast@gmail.com
+
+## GitHub
+This ZIP is complete and includes the new `assets/images/` folder.
+
+Upload/reconcile:
 - index.html
 - styles.css
 - script.js
 - projects.js
+- README.md
+- assets/images/
 
-Esto evita depender de que GitHub conserve correctamente una carpeta anidada `assets/images/`
-cuando subes los archivos manualmente desde el navegador.
-
-## IMPORTANTE AL SUBIR A GITHUB
-
-Sube TODO el contenido del ZIP, incluyendo los archivos `.jpg`.
-
-Debe verse aproximadamente así:
-
-index.html
-styles.css
-script.js
-projects.js
-README.md
-portrait-01.jpg
-portrait-02.jpg
-tailoring-01.jpg
-tailoring-02.jpg
-movement-01.jpg
-movement-02.jpg
-commercial-01.jpg
-commercial-02.jpg
-process-01.jpg
-process-02.jpg
-
-También dejé `assets/images/` como copia de seguridad.
-
-## Se mantiene
-
-- 4 proyectos curados
-- 8 imágenes principales
-- sección PROCESS
-- cursor rojo
-- barra móvil
-- LOLA DAVILA en movimiento
-- mobile optimizado
-- IG @loladl_st
-- MAIL loladavilast@gmail.com
+The old `project-01.jpg` etc. are no longer required by V21.

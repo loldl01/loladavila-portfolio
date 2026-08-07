@@ -174,25 +174,25 @@ button { font: inherit; }
 .preview-work {
   background-image:
     linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.72)),
-    url("menu-work.jpg");
+    url("assets/images/menu-work.jpg");
 }
 
 .preview-archive {
   background-image:
     linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,.70)),
-    url("menu-archive.jpg");
+    url("assets/images/menu-archive.jpg");
 }
 
 .preview-about {
   background-image:
     linear-gradient(90deg, rgba(0,0,0,.06), rgba(0,0,0,.68)),
-    url("menu-about.jpg");
+    url("assets/images/menu-about.jpg");
 }
 
 .preview-contact {
   background-image:
     linear-gradient(90deg, rgba(0,0,0,.05), rgba(0,0,0,.70)),
-    url("menu-contact.jpg");
+    url("assets/images/menu-contact.jpg");
 }
 
 .hero[data-active-preview="work"] .preview-work,

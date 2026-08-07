@@ -3,7 +3,6 @@ const projects = [...window.PORTFOLIO_PROJECTS].sort((a, b) => a.order - b.order
 const body = document.body;
 const hero = document.querySelector(".hero");
 const heroWords = document.querySelectorAll(".hero-word");
-const projectCanvas = document.getElementById("project-canvas");
 const projectViewer = document.getElementById("project-viewer");
 const viewerContent = document.getElementById("viewer-content");
 const viewerClose = document.querySelector(".viewer-close");
@@ -15,7 +14,6 @@ const archiveStrip = document.querySelector(".archive-strip");
 
 document.getElementById("work-count").textContent = String(projects.length).padStart(2, "0");
 document.getElementById("mobile-work-count").textContent = String(projects.length).padStart(2, "0");
-document.getElementById("project-total").textContent = `${String(projects.length).padStart(2, "0")} Proyectos`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
 
@@ -139,89 +137,10 @@ function renderLookbookIndex() {
 }
 
 
-/* ---------- Render projects as editorial chapters ---------- */
-
-const CHAPTER_LABELS = [
-  "Editorial",
-  "Campaign",
-  "Personal",
-  "Commercial",
-  "E-commerce",
-  "Archive"
-];
-
-function renderProjects() {
-  projectCanvas.innerHTML = projects.map((project, index) => {
-    const chapter = CHAPTER_LABELS[index % CHAPTER_LABELS.length];
-    const number = String(index + 1).padStart(2, "0");
-    const layout = `chapter-layout-${(index % 4) + 1}`;
-
-    return `
-      <article
-        class="project-chapter ${layout}"
-        tabindex="0"
-        role="button"
-        data-project-id="${project.id}"
-        aria-label="Abrir proyecto ${project.title}"
-      >
-        <header class="chapter-header">
-          <div class="chapter-number">PROJECT ${number}</div>
-
-          <div class="chapter-heading">
-            <p class="chapter-label">${chapter}</p>
-            <h3>${project.title}</h3>
-          </div>
-
-          <div class="chapter-meta">
-            <span>${project.category}</span>
-            <span>${project.client}</span>
-            <span>${project.year}</span>
-          </div>
-        </header>
-
-        <div class="chapter-stage">
-          <div class="chapter-image chapter-image-main">
-            <div
-              class="chapter-visual"
-              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
-            ></div>
-          </div>
-
-          <div class="chapter-image chapter-image-secondary">
-            <div
-              class="chapter-visual chapter-visual-secondary"
-              style="--project-color: ${project.color}; --project-image: url('${project.image}')"
-            ></div>
-          </div>
-
-          <div class="chapter-quote">
-            <span>${project.description}</span>
-          </div>
-        </div>
-
-        <footer class="chapter-footer">
-          <span>Ver proyecto completo</span>
-          <span>↗</span>
-        </footer>
-      </article>
-    `;
-  }).join("");
-
-  document.querySelectorAll(".project-chapter").forEach((item) => {
-    item.addEventListener("click", () => openProject(item.dataset.projectId));
-
-    item.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openProject(item.dataset.projectId);
-      }
-    });
-  });
-
-  bindCursorTargets();
-}
-
-/* ---------- Project viewer ---------- */
+/* ---------- Render projects as editorial chapters ----------
+   (Sin uso en V21 — el HTML actual solo usa #lookbook-list.
+   Se retiró esta función porque apuntaba a un #project-canvas
+   que ya no existe, y su error detenía el resto del script.) */
 
 function openProject(id) {
   const project = projects.find((item) => item.id === id);
@@ -335,7 +254,7 @@ mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 function bindCursorTargets() {
   if (!window.matchMedia("(pointer: fine)").matches || !cursor) return;
 
-  document.querySelectorAll("a, button, .project-chapter").forEach((element) => {
+  document.querySelectorAll("a, button, .lookbook-item").forEach((element) => {
     element.addEventListener("mouseenter", () => cursor.classList.add("is-active"));
     element.addEventListener("mouseleave", () => cursor.classList.remove("is-active"));
   });
@@ -423,5 +342,4 @@ function bindArchiveDrag() {
 bindArchiveDrag();
 
 renderLookbookIndex();
-renderProjects();
 bindCursorTargets();
