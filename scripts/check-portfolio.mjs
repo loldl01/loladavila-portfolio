@@ -88,6 +88,7 @@ for (const [index, project] of projects.entries()) {
     expect(html.includes(`data-project="${project.slug}"`), `Wrong project identifier in ${project.slug}.html`);
     expect(html.includes(`<title>${project.title} — Lola Davila</title>`), `Wrong browser title in ${project.slug}.html`);
     expect(html.includes("../project-page.js"), `Missing project script in ${project.slug}.html`);
+    expect(html.includes("?v=20260807-final"), `Missing cache-safe asset version in ${project.slug}.html`);
     for (const hash of ["work", "archive", "about", "contact"]) {
       expect(html.includes(`href="/#${hash}"`), `Incorrect ${hash} navigation in ${project.slug}.html`);
     }
@@ -105,6 +106,7 @@ expect(index.includes("loladavilast@gmail.com"), "Missing confirmed email");
 expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must use the exact confirmed mailto address");
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
+expect((index.match(/\?v=20260807-final/g) || []).length === 3, "Main assets must use the current cache-safe version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
 for (const hash of ["work", "archive", "about", "contact"]) {
   expect(index.includes(`href="#${hash}"`), `Missing main menu target: ${hash}`);
