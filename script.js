@@ -103,6 +103,28 @@ menuButton?.addEventListener("click", openMenu);
 mobileClose?.addEventListener("click", closeMenu);
 mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = decodeURIComponent(link.hash.slice(1));
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    event.preventDefault();
+    closeMenu();
+    projectIndex?.removeAttribute("open");
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({
+        behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+        block: "start"
+      });
+      window.history.pushState(null, "", `#${encodeURIComponent(targetId)}`);
+    });
+  });
+});
+
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
