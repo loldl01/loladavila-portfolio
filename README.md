@@ -1,34 +1,34 @@
-# Lola Davila — Creative Chaos V19 Social
+# Lola Davila — V20 / THE WORK IS ALIVE
 
-Versión basada en Creative Chaos V18 sin GUAYAQUIL.
+Primera versión de refinamiento sobre una sola base.
 
-## Se mantiene
-- barra en movimiento;
-- LOLA DAVILA en movimiento;
-- cursor rojo;
-- PLAYGROUND;
-- fallback para imágenes rotas;
-- composición Creative Chaos.
+## Concepto
+Photography-first. Process-led. Creative, alive, not luxurious, not magazine-like.
 
-## Nuevo
-En el menú del inicio se añadieron:
-- IG
-- MAIL
+## Conservado
+- Cursor rojo
+- Barra en movimiento
+- LOLA DAVILA en movimiento
+- IG: @loladl_st
+- Mail: loladavilast@gmail.com
+- PLAY / ABOUT / CONTACT
+- Sistema dinámico de proyectos
 
-MAIL abre:
-loladavilast@gmail.com
+## Cambios V20
+- Hero simplificado: imagen + nombre + menú + datos mínimos.
+- Se eliminan los post-its y adornos de V17/V19.
+- La barra es más fina, como cinta de producción.
+- Proyectos con diferentes escalas y posiciones.
+- PLAY se convierte en pared de proceso limpia.
+- Menos tipografía decorativa y más fotografía.
+- Paleta negro/blanco; rojo solo para el cursor y microacentos.
 
-IMPORTANTE:
-El enlace de IG está preparado pero apunta temporalmente a `https://instagram.com/loladl_st`
-porque todavía falta colocar tu usuario exacto de Instagram.
-
-Cuando me des tu @ exacto, solo hay que reemplazar esa URL.
-
-## Archivos para GitHub
+## Para GitHub
+Reemplaza:
 - index.html
 - styles.css
 - script.js
 - projects.js
 - README.md
 
-Conserva `assets/images/`.
+Conserva tu carpeta assets/images/.

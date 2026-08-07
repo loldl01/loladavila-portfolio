@@ -54,21 +54,34 @@ bindSafeImages();
 
 
 
-/* ---------- Creative chaos motion ---------- */
 
-const chaosNotes = document.querySelectorAll(".chaos-floating-note, .play-note");
+/* ---------- V20 movement ---------- */
 
-if (window.matchMedia("(pointer: fine)").matches) {
-  window.addEventListener("mousemove", (event) => {
-    const x = event.clientX / window.innerWidth - 0.5;
-    const y = event.clientY / window.innerHeight - 0.5;
+const v20Name = document.querySelector(".v20-name");
+const v20HeroImage = document.querySelector(".v20-hero-image img");
 
-    chaosNotes.forEach((note, index) => {
-      const strength = (index + 1) * 2.4;
-      note.style.transform =
-        `translate3d(${x * strength}px, ${y * strength}px, 0) rotate(${(index % 2 ? 1 : -1) * 1.5}deg)`;
-    });
-  }, { passive: true });
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let t = 0;
+
+  function v20Loop() {
+    t += 0.0038;
+
+    if (v20Name) {
+      const x = Math.sin(t) * 10;
+      const y = Math.cos(t * 0.72) * 4;
+      v20Name.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    }
+
+    if (v20HeroImage) {
+      const x = Math.sin(t * 0.38) * 0.45;
+      const y = Math.cos(t * 0.31) * 0.35;
+      v20HeroImage.style.transform = `scale(1.025) translate3d(${x}%, ${y}%, 0)`;
+    }
+
+    requestAnimationFrame(v20Loop);
+  }
+
+  requestAnimationFrame(v20Loop);
 }
 
 /* ---------- Photography-first selected work ---------- */
@@ -84,36 +97,39 @@ function renderLookbookIndex() {
       `${String(projects.length).padStart(2, "0")} PROJECTS`;
   }
 
-  lookbookList.innerHTML = projects.map((project, index) => `
-    <button
-      class="lookbook-item"
-      type="button"
-      data-project-id="${project.id}"
-      aria-label="Abrir proyecto ${project.title}"
-    >
-      <figure class="lookbook-image">
-        <img src="${project.image}" alt="${project.title}">
-      </figure>
+  lookbookList.innerHTML = projects.map((project, index) => {
+    const layoutClass = [
+      "v20-project-full",
+      "v20-project-split-left",
+      "v20-project-small",
+      "v20-project-split-right"
+    ][index % 4];
 
-      <div class="lookbook-overlay">
-        <div class="lookbook-title">
+    return `
+      <button
+        class="lookbook-item v20-project ${layoutClass}"
+        type="button"
+        data-project-id="${project.id}"
+        aria-label="Abrir proyecto ${project.title}"
+      >
+        <figure class="lookbook-image">
+          <img src="${project.image}" alt="${project.title}">
+        </figure>
+
+        <div class="v20-project-info">
           <span>${String(index + 1).padStart(2, "0")}</span>
           <strong>${project.title}</strong>
+          <span>${project.roleLabel || project.category} / ${project.year}</span>
         </div>
 
-        <div class="lookbook-details">
-          <span>${project.roleLabel || project.category}</span>
-          <span>${project.year}</span>
-        </div>
-
-        <div class="lookbook-production">
+        <div class="v20-project-tech">
           <span>LOOK ${String(index + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}</span>
           <span>${project.client}</span>
-          <span>OPEN PROJECT ↗</span>
+          <span>OPEN ↗</span>
         </div>
-      </div>
-    </button>
-  `).join("");
+      </button>
+    `;
+  }).join("");
 
   lookbookList.querySelectorAll(".lookbook-item").forEach((item) => {
     item.addEventListener("click", () => openProject(item.dataset.projectId));
