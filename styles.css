@@ -216,7 +216,7 @@ button:focus-visible {
   margin: 0;
   padding-inline: calc(var(--hero-motion) + clamp(12px, 2vw, 28px));
   font-family: var(--condensed);
-  font-size: clamp(120px, 19vw, 320px);
+  font-size: var(--hero-fit-size, clamp(120px, 19vw, 320px));
   font-weight: 700;
   line-height: .61;
   letter-spacing: -.045em;
@@ -801,7 +801,7 @@ button:focus-visible {
     right: 0;
     width: 100%;
     padding-inline: calc(var(--hero-motion) + clamp(12px, 4vw, 24px));
-    font-size: clamp(4rem, 22vw, 7rem);
+    font-size: var(--hero-fit-size, clamp(4rem, 22vw, 7rem));
   }
   .hero-name span:last-child { margin-left: 0; }
   .hero-meta { left: 10px; bottom: 42px; gap: 8px; font-size: 6px; }
@@ -872,7 +872,7 @@ button:focus-visible {
 @media (orientation: landscape) and (max-height: 500px) {
   .hero-name {
     top: 10svh;
-    font-size: clamp(3.5rem, min(19vw, 28svh), 10rem);
+    font-size: var(--hero-fit-size, clamp(3.5rem, min(19vw, 28svh), 10rem));
   }
 }
 
