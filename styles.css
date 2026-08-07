@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Grenze+Gotisch:wght@500;600;700&family=League+Gothic&display=swap");
 
 :root {
   --black: #070707;
@@ -7,10 +7,10 @@
   --muted: rgba(244, 244, 241, .58);
   --line: rgba(244, 244, 241, .19);
   --red: #ff2a1a;
-  --display: "Bodoni Moda", "Times New Roman", serif;
-  --condensed: "Archivo", Arial, sans-serif;
-  --sans: "Archivo", Arial, sans-serif;
-  --mono: "IBM Plex Mono", monospace;
+  --display: "Grenze Gotisch", Georgia, serif;
+  --condensed: "League Gothic", "Arial Narrow", sans-serif;
+  --sans: "Courier Prime", "Courier New", monospace;
+  --mono: "Courier Prime", "Courier New", monospace;
   --ease: cubic-bezier(.2, .75, .25, 1);
 }
 
@@ -951,4 +951,51 @@ button:focus-visible {
   .horizontal-showcase-viewport { height: auto; overflow-x: auto; scrollbar-width: thin; }
   .horizontal-showcase-track { height: auto; transform: none !important; will-change: auto; }
   .project-card--featured { height: min(76svh, 720px); }
+}
+
+
+/* Theatrical type system */
+.section-index {
+  font-family: var(--condensed);
+  font-size: 15px;
+  line-height: .9;
+  letter-spacing: .055em;
+}
+
+.section-heading h2,
+.project-card-title,
+.project-page-title {
+  font-family: var(--condensed);
+  font-weight: 400;
+  line-height: .78;
+  letter-spacing: .015em;
+}
+
+.about-copy h2,
+.contact-section h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: .66;
+  letter-spacing: -.035em;
+}
+
+.hero-name {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: .58;
+  letter-spacing: -.035em;
+}
+
+.archive-section .section-heading > div { transform: translateX(clamp(0px, 1.2vw, 18px)); }
+.about-copy h2 { transform: translateX(clamp(0px, 1vw, 14px)); }
+.contact-section h2 { transform: translateX(clamp(0px, 2vw, 28px)); }
+
+@media (max-width: 600px) {
+  .section-index { font-size: 13px; }
+  .archive-section .section-heading > div { transform: translateX(6px); }
+  .about-copy h2,
+  .contact-section h2 { transform: translateX(4px); }
+  .about-copy h2 { font-size: clamp(54px, 17vw, 84px); }
+  .contact-section h2 { font-size: clamp(58px, 18vw, 92px); }
+  .project-page-title { font-size: clamp(50px, 13vw, 76px); }
 }
