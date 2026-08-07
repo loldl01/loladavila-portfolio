@@ -435,27 +435,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "order": 19,
-    "folder": "BACKSTAGE",
-    "slug": "backstage",
-    "title": "Backstage",
-    "selected": false,
-    "description": "A process view of makeup, fittings, styling adjustments and the working studio. These frames document the coordination behind the finished image.",
-    "role": "Fashion Styling / Creative Production",
-    "responsibilities": "Fashion styling, production coordination and visual consistency.",
-    "featured": [
-      "Assets/Images/BACKSTAGE/2E87E05D-B0E1-4B97-89CF-2ABA677ED45F.jpg"
-    ],
-    "images": [
-      "Assets/Images/BACKSTAGE/_DSC0329.NEF.jpg",
-      "Assets/Images/BACKSTAGE/_DSC0646.NEF.jpg",
-      "Assets/Images/BACKSTAGE/2E87E05D-B0E1-4B97-89CF-2ABA677ED45F.jpg",
-      "Assets/Images/BACKSTAGE/16644878_1087.jpg",
-      "Assets/Images/BACKSTAGE/17409657_0932.jpg",
-      "Assets/Images/BACKSTAGE/17590944_0749 1.jpg"
-    ]
-  },
-  {
-    "order": 20,
     "folder": "HOJA_DE_CONTACTO",
     "slug": "contact-sheets",
     "title": "Contact Sheets",
@@ -473,6 +452,14 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.36.08.png"
     ]
   }
+];
+window.PORTFOLIO_BACKSTAGE_IMAGES = [
+  "Assets/Images/BACKSTAGE/_DSC0329.NEF.jpg",
+  "Assets/Images/BACKSTAGE/_DSC0646.NEF.jpg",
+  "Assets/Images/BACKSTAGE/2E87E05D-B0E1-4B97-89CF-2ABA677ED45F.jpg",
+  "Assets/Images/BACKSTAGE/16644878_1087.jpg",
+  "Assets/Images/BACKSTAGE/17409657_0932.jpg",
+  "Assets/Images/BACKSTAGE/17590944_0749 1.jpg"
 ];
 window.PORTFOLIO_IMAGE_DIMENSIONS = {
   "Assets/Images/01/17476740_0.jpg": {
@@ -995,6 +982,22 @@ window.PORTFOLIO_IMAGE_DIMENSIONS = {
     "width": 1863,
     "height": 2800
   },
+  "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg": {
+    "width": 3584,
+    "height": 4659
+  },
+  "Assets/Images/HOJA_DE_CONTACTO/SARTORIAL_1.jpg": {
+    "width": 3584,
+    "height": 3832
+  },
+  "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.02.18.png": {
+    "width": 3590,
+    "height": 1874
+  },
+  "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.36.08.png": {
+    "width": 3588,
+    "height": 2144
+  },
   "Assets/Images/BACKSTAGE/_DSC0329.NEF.jpg": {
     "width": 4016,
     "height": 6016
@@ -1018,21 +1021,5 @@ window.PORTFOLIO_IMAGE_DIMENSIONS = {
   "Assets/Images/BACKSTAGE/17590944_0749 1.jpg": {
     "width": 2800,
     "height": 1863
-  },
-  "Assets/Images/HOJA_DE_CONTACTO/NEW BOHEME 1.jpg": {
-    "width": 3584,
-    "height": 4659
-  },
-  "Assets/Images/HOJA_DE_CONTACTO/SARTORIAL_1.jpg": {
-    "width": 3584,
-    "height": 3832
-  },
-  "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.02.18.png": {
-    "width": 3590,
-    "height": 1874
-  },
-  "Assets/Images/HOJA_DE_CONTACTO/Screenshot 2025-03-24 at 15.36.08.png": {
-    "width": 3588,
-    "height": 2144
   }
 };

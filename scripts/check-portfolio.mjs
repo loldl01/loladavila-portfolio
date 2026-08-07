@@ -13,7 +13,8 @@ function assignedJson(variable, nextVariable = null) {
   return JSON.parse(dataSource.slice(start, end));
 }
 
-const projects = assignedJson("PORTFOLIO_PROJECTS", "PORTFOLIO_IMAGE_DIMENSIONS");
+const projects = assignedJson("PORTFOLIO_PROJECTS", "PORTFOLIO_BACKSTAGE_IMAGES");
+const backstageImages = assignedJson("PORTFOLIO_BACKSTAGE_IMAGES", "PORTFOLIO_IMAGE_DIMENSIONS");
 const dimensions = assignedJson("PORTFOLIO_IMAGE_DIMENSIONS");
 const supported = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 const failures = [];
@@ -41,14 +42,18 @@ const diskImages = (await walk(join(root, "Assets", "Images")))
   .map((path) => path.slice(root.length))
   .sort();
 
-const referenced = projects.flatMap((project) => project.images).sort();
+const projectReferences = projects.flatMap((project) => project.images).sort();
+const referenced = [...projectReferences, ...backstageImages].sort();
 const uniqueReferences = new Set(referenced);
 
-expect(projects.length === 20, `Expected 20 projects; found ${projects.length}`);
+expect(projects.length === 19, `Expected 19 projects; found ${projects.length}`);
 expect(projects.filter((project) => project.selected).length === 8, "Selected Work must contain 8 projects");
-expect(projects.filter((project) => !project.selected).length === 12, "Archive must contain 12 projects");
-expect(projects.at(-2)?.folder === "BACKSTAGE", "BACKSTAGE must be project 19");
-expect(projects.at(-1)?.folder === "HOJA_DE_CONTACTO", "Contact Sheets must be project 20");
+expect(projects.filter((project) => !project.selected).length === 11, "Archive must contain 11 projects");
+expect(!projects.some((project) => project.folder === "BACKSTAGE" || project.slug === "backstage"), "BACKSTAGE must not be listed as a project");
+expect(projects.at(-1)?.folder === "HOJA_DE_CONTACTO", "Contact Sheets must be the final project");
+expect(projectReferences.length === 134, `Expected 134 project images; found ${projectReferences.length}`);
+expect(backstageImages.length === 6, `Expected 6 About slideshow images; found ${backstageImages.length}`);
+expect(backstageImages.every((path) => path.startsWith("Assets/Images/BACKSTAGE/")), "About slideshow must use only BACKSTAGE images");
 expect(referenced.length === 140, `Expected 140 compatible images; found ${referenced.length}`);
 expect(uniqueReferences.size === referenced.length, "A project image is duplicated across groups");
 expect(JSON.stringify(referenced) === JSON.stringify(diskImages), "The project data and compatible image files are not synchronized");
@@ -88,7 +93,9 @@ for (const [index, project] of projects.entries()) {
     expect(html.includes(`data-project="${project.slug}"`), `Wrong project identifier in ${project.slug}.html`);
     expect(html.includes(`<title>${project.title} — Lola Davila</title>`), `Wrong browser title in ${project.slug}.html`);
     expect(html.includes("../project-page.js"), `Missing project script in ${project.slug}.html`);
-    expect(html.includes("?v=20260807-final"), `Missing cache-safe asset version in ${project.slug}.html`);
+    expect(html.includes("?v=20260807-about"), `Missing cache-safe asset version in ${project.slug}.html`);
+    expect(html.includes('href="/#about">ABOUT ME</a>'), `Missing About Me menu label in ${project.slug}.html`);
+    expect(!html.includes('href="/#about">EXPERIENCE</a>'), `Old Experience menu label remains in ${project.slug}.html`);
     for (const hash of ["work", "archive", "about", "contact"]) {
       expect(html.includes(`href="/#${hash}"`), `Incorrect ${hash} navigation in ${project.slug}.html`);
     }
@@ -106,8 +113,11 @@ expect(index.includes("loladavilast@gmail.com"), "Missing confirmed email");
 expect(index.includes('href="mailto:loladavilast@gmail.com"'), "Email link must use the exact confirmed mailto address");
 expect(index.includes("https://instagram.com/loladl_st"), "Missing confirmed Instagram URL");
 expect(index.includes("I’m a fashion stylist"), "About and professional introduction must use first person");
-expect((index.match(/\?v=20260807-final/g) || []).length === 3, "Main assets must use the current cache-safe version");
+expect((index.match(/\?v=20260807-about/g) || []).length === 3, "Main assets must use the current cache-safe version");
 expect(index.includes('width="1363" height="2048"'), "Hero image dimensions are missing");
+expect(index.includes('href="#about">ABOUT ME</a>'), "Main menu must label About as About Me");
+expect(!index.includes('href="#about">EXPERIENCE</a>'), "Old Experience menu label remains on the main page");
+expect(index.includes('id="about-slideshow"'), "About slideshow container is missing");
 for (const hash of ["work", "archive", "about", "contact"]) {
   expect(index.includes(`href="#${hash}"`), `Missing main menu target: ${hash}`);
 }
@@ -127,6 +137,7 @@ const styles = await readFile(join(root, "styles.css"), "utf8");
 expect((styles.match(/object-fit:\s*cover/g) || []).length === 1, "Only the hero may use object-fit: cover");
 expect(styles.includes(".project-gallery img") && styles.includes("object-fit: contain"), "Project images must use object-fit: contain");
 expect(styles.includes("scroll-padding-top: 58px") && styles.includes("scroll-margin-top: 58px"), "Fixed-header anchor spacing is missing");
+expect(styles.includes(".about-slideshow") && styles.includes("aspect-ratio: 2 / 3"), "About slideshow must reserve stable space");
 
 if (failures.length) {
   console.error(failures.map((failure) => `FAIL: ${failure}`).join("\n"));
@@ -134,6 +145,6 @@ if (failures.length) {
 }
 
 console.log("Portfolio checks passed.");
-console.log(`Projects: ${projects.length} (8 selected, 12 archive)`);
-console.log(`Images: ${referenced.length}`);
-console.log("Project pages: 20");
+console.log(`Projects: ${projects.length} (8 selected, 11 archive)`);
+console.log(`Images: ${projectReferences.length} in projects + ${backstageImages.length} in About`);
+console.log("Project pages: 19 active");

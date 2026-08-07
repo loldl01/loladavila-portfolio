@@ -1,6 +1,7 @@
 const body = document.body;
 const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
 const imageDimensions = window.PORTFOLIO_IMAGE_DIMENSIONS || {};
+const backstageImages = Array.isArray(window.PORTFOLIO_BACKSTAGE_IMAGES) ? window.PORTFOLIO_BACKSTAGE_IMAGES : [];
 const selectedContainer = document.querySelector("#selected-projects");
 const archiveContainer = document.querySelector("#archive-projects");
 const layoutPattern = ["layout-large-left", "layout-small-right", "layout-small-left", "layout-large-right"];
@@ -155,6 +156,44 @@ if (window.location.hash) alignHashWhenStable(window.location.hash);
 
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
+
+const aboutSlideshow = document.querySelector("#about-slideshow");
+const aboutSlideshowCount = document.querySelector("#about-slideshow-count");
+
+if (aboutSlideshow && backstageImages.length) {
+  const slides = backstageImages.map((path, index) => {
+    const image = document.createElement("img");
+    const dimensions = imageDimensions[path];
+    image.className = `about-slide${index === 0 ? " is-active" : ""}`;
+    image.src = path;
+    image.alt = `Behind the scenes of Lola Davila's visual production — image ${index + 1}`;
+    image.loading = index === 0 ? "eager" : "lazy";
+    image.decoding = "async";
+    if (dimensions) {
+      image.width = dimensions.width;
+      image.height = dimensions.height;
+    }
+    aboutSlideshow.append(image);
+    return image;
+  });
+
+  let activeSlide = 0;
+  const updateCounter = () => {
+    if (aboutSlideshowCount) {
+      aboutSlideshowCount.textContent = `${String(activeSlide + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+    }
+  };
+  updateCounter();
+
+  if (slides.length > 1 && !prefersReducedMotion.matches) {
+    window.setInterval(() => {
+      slides[activeSlide].classList.remove("is-active");
+      activeSlide = (activeSlide + 1) % slides.length;
+      slides[activeSlide].classList.add("is-active");
+      updateCounter();
+    }, 3600);
+  }
+}
 
 const heroImage = document.querySelector("#hero-main-image");
 if (heroImage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

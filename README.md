@@ -30,6 +30,6 @@ The build script keeps the existing folder names, excludes unsupported browser f
 - `LOLA` and `DAVILA` move in opposite directions.
 - Only the hero intentionally uses `object-fit: cover`.
 - All portfolio and About images preserve their complete frame with `object-fit: contain`.
-- `BACKSTAGE` and `CONTACT SHEETS` remain the final two projects.
+- `BACKSTAGE` imagery appears as the rotating visual in About; `CONTACT SHEETS` remains the final project.
 - Instagram: `https://instagram.com/loladl_st`
 - Email: `loladavilast@gmail.com`
