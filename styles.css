@@ -229,7 +229,7 @@ button:focus-visible {
   z-index: 5;
   left: 0;
   right: 0;
-  top: 13vh;
+  top: 16vh;
   display: flex;
   width: 100%;
   max-width: 100%;
@@ -832,7 +832,7 @@ button:focus-visible {
   .hero-image img { object-position: 53% 20%; }
   .hero-name {
     --hero-motion: clamp(4px, 1.2vw, 8px);
-    top: 16svh;
+    top: 19svh;
     left: 0;
     right: 0;
     width: 100%;
@@ -916,7 +916,7 @@ button:focus-visible {
 
 @media (orientation: landscape) and (max-height: 500px) {
   .hero-name {
-    top: 10svh;
+    top: 13svh;
     font-size: var(--hero-fit-size, clamp(3.5rem, min(19vw, 28svh), 10rem));
   }
 }
