@@ -12,6 +12,21 @@ const definitions = [
     featured: ["17476740_0.jpg", "Relleno generativo 10.jpg", "Relleno generativo 2.jpg", "extra_6 (1).jpg", "extraaa_5 (1).jpg"]
   },
   {
+    folder: "FRESH", slug: "fresh", title: "Fresh", selected: true,
+    description: "White and sky-blue styling photographed in clean, direct studio light. Relaxed silhouettes and small gestures give the sequence a light, contemporary energy.",
+    featured: ["1 (1).jpg", "11.jpg", "16.jpg", "20.jpg", "portrait-02.jpg"]
+  },
+  {
+    folder: "TEXTURAS", slug: "textures", title: "Textures", selected: true,
+    description: "A tactile study of drape, skin, knit and soft neutral layers. Cropped details alternate with wider portraits to emphasize material and touch.",
+    featured: ["17495823_16174.jpg", "17497922_16314.jpg", "17502060_16142.jpg", "2.jpg", "6.jpg"]
+  },
+  {
+    folder: "07", slug: "street-study", title: "Street Study", selected: true,
+    description: "Denim and relaxed urban layers photographed in an industrial exterior. Low angles, seated poses and concrete structures add movement and scale.",
+    featured: ["1.jpg", "10 (1).jpg", "11 (1).jpg", "13.jpg", "6.jpg"]
+  },
+  {
     folder: "06", slug: "neutral-edit", title: "Neutral Edit", selected: true,
     description: "A studio edit moving between monochrome tailoring, softened pastels and clean negative space. The sequence highlights silhouette, line and controlled styling variation.",
     featured: ["17409469_0 (1).jpg", "17760976_0.jpg", "17761350_0.jpg", "IMG_1183.JPG", "IMG_1189.JPG"]
@@ -32,21 +47,6 @@ const definitions = [
     featured: ["PLP_FALSO_313.jpg", "PLP_FALSO_316 (1).jpg", "PLP_FALSO_320 (1).jpg", "PLP_FALSO_325.jpg", "PLP_FALSO_327.jpg"]
   },
   {
-    folder: "FRESH", slug: "fresh", title: "Fresh", selected: true,
-    description: "White and sky-blue styling photographed in clean, direct studio light. Relaxed silhouettes and small gestures give the sequence a light, contemporary energy.",
-    featured: ["1 (1).jpg", "11.jpg", "16.jpg", "20.jpg", "portrait-02.jpg"]
-  },
-  {
-    folder: "OUTSIDE", slug: "outside", title: "Outside", selected: true,
-    description: "Black-and-white looks meet strong road markings and open daylight. The location adds graphic diagonals and movement to a restrained palette.",
-    featured: ["17151036_0.jpg", "17629797_1.jpg", "17631265_0.jpg", "17665650_0.jpg", "17665691_0.jpg"]
-  },
-  {
-    folder: "TEXTURAS", slug: "textures", title: "Textures", selected: true,
-    description: "A tactile study of drape, skin, knit and soft neutral layers. Cropped details alternate with wider portraits to emphasize material and touch.",
-    featured: ["17495823_16174.jpg", "17497922_16314.jpg", "17502060_16142.jpg", "2.jpg", "6.jpg"]
-  },
-  {
     folder: "02", slug: "casual-menswear", title: "Casual Menswear", selected: false,
     description: "Relaxed menswear built through dark knitwear, jackets and understated layers. A warm neutral set keeps the focus on styling and pose.",
     featured: ["17527186_0.jpg", "17527210_0.jpg", "17562299_0.jpg", "17614623_0.jpg", "17628952_0.jpg"]
@@ -62,9 +62,9 @@ const definitions = [
     featured: ["17684544_0188.jpg", "17684554_0755.jpg", "17684966_0977.jpg", "17684966_0992 2.jpg", "17684966_1052.jpg"]
   },
   {
-    folder: "07", slug: "street-study", title: "Street Study", selected: false,
-    description: "Denim and relaxed urban layers photographed in an industrial exterior. Low angles, seated poses and concrete structures add movement and scale.",
-    featured: ["1.jpg", "10 (1).jpg", "11 (1).jpg", "13.jpg", "6.jpg"]
+    folder: "OUTSIDE", slug: "outside", title: "Outside", selected: false,
+    description: "Black-and-white looks meet strong road markings and open daylight. The location adds graphic diagonals and movement to a restrained palette.",
+    featured: ["17151036_0.jpg", "17629797_1.jpg", "17631265_0.jpg", "17665650_0.jpg", "17665691_0.jpg"]
   },
   {
     folder: "BASICOS", slug: "essentials", title: "Essentials", selected: false,
