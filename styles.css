@@ -238,7 +238,7 @@ button:focus-visible {
   margin: 0;
   padding-inline: calc(var(--hero-motion) + clamp(12px, 2vw, 28px));
   font-family: var(--display);
-  font-size: var(--hero-fit-size, clamp(144px, 22vw, 380px));
+  font-size: var(--hero-fit-size, clamp(112px, 17vw, 290px));
   font-weight: 700;
   line-height: .61;
   letter-spacing: -.045em;
@@ -837,7 +837,7 @@ button:focus-visible {
     right: 0;
     width: 100%;
     padding-inline: calc(var(--hero-motion) + clamp(12px, 4vw, 24px));
-    font-size: var(--hero-fit-size, clamp(5rem, 25vw, 8.4rem));
+    font-size: var(--hero-fit-size, clamp(4.4rem, 21vw, 7rem));
   }
   .hero-name span:last-child { margin-left: 0; }
   .hero-meta { left: 10px; bottom: 42px; gap: 8px; font-size: 6px; }
