@@ -1,314 +1,203 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio de fashion styling de Lola Davila.">
-  <meta name="theme-color" content="#090909">
-
-  <title>Lola Davila — Fashion Styling</title>
+  <meta name="description" content="Lola Davila — Fashion styling, creative direction and e-commerce content production.">
+  <meta name="theme-color" content="#080808">
+  <title>Lola Davila — Creative Producer / Fashion Stylist</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-  <script src="projects.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 
 <body>
   <div class="cursor" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="#work">Trabajo <sup id="work-count">00</sup></a>
-      <a href="#archive">Archivo</a>
-      <a href="#about">Sobre mí</a>
-      <a href="#contact">Contacto</a>
+  <header class="header">
+    <a class="brand" href="#home">LD</a>
+
+    <nav class="nav desktop">
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+      <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">IG</a>
+      <a href="mailto:loladavilast@gmail.com">MAIL</a>
     </nav>
 
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      Índice
-    </button>
+    <button class="menu-button" type="button" aria-expanded="false">MENU</button>
   </header>
 
-  <aside id="mobile-menu" class="mobile-menu" aria-hidden="true">
-    <button class="mobile-menu-close" type="button">Cerrar</button>
-
+  <aside class="mobile-menu" aria-hidden="true">
+    <button class="menu-close" type="button">CLOSE</button>
     <nav>
-      <a href="#work">Trabajo <sup id="mobile-work-count">00</sup></a>
-      <a href="#archive">Archivo</a>
-      <a href="#about">Sobre mí</a>
-      <a href="#contact">Contacto</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+      <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">INSTAGRAM</a>
+      <a href="mailto:loladavilast@gmail.com">MAIL</a>
     </nav>
   </aside>
 
   <main>
-    <section id="home" class="hero v20-home">
-      <figure class="v20-hero-image" aria-hidden="true">
-        <img id="hero-main-image" src="hero-sharp.jpg?v=241" alt="Fashion editorial portrait">
-      </figure>
+    <section id="home" class="hero">
+      <div class="hero-image">
+        <img src="assets/images/hero/hero.jpg" alt="Fashion editorial portrait">
+      </div>
 
-      <div class="v20-name" aria-label="Lola Davila">
+      <div class="hero-name" aria-label="Lola Davila">
         <span>LOLA</span>
         <span>DAVILA</span>
       </div>
 
-      <nav class="v20-menu" aria-label="Navegación principal">
-        <a href="#work">WORK</a>
-        <a href="#playground">PLAY</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-        <span class="v20-menu-rule" aria-hidden="true"></span>
-        <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener noreferrer">IG</a>
-        <a href="mailto:loladavilast@gmail.com">MAIL</a>
-      </nav>
-
-      <div class="v20-meta">
-        <span>FASHION STYLING</span>
-        <span>CREATIVE DIRECTION</span>
-        <span>VISUAL PRODUCTION</span>
+      <div class="hero-meta">
+        <span>CREATIVE PRODUCER</span>
+        <span>FASHION STYLIST</span>
+        <span>E-COMMERCE CONTENT</span>
       </div>
 
-      <div class="v20-production">
-        <span>05 PRODUCTIONS</span>
-        <span>ECUADOR / AVAILABLE WORLDWIDE</span>
-      </div>
-
-      <div class="marquee production-marquee production-marquee-hero" aria-hidden="true">
+      <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>FASHION STYLING</span>
-          <span>CREATIVE DIRECTION</span>
-          <span>VISUAL PRODUCTION</span>
-          <span>E-COMMERCE</span>
-          <span>CAMPAIGNS</span>
-          <span>ART DIRECTION</span>
-
-          <span>FASHION STYLING</span>
-          <span>CREATIVE DIRECTION</span>
-          <span>VISUAL PRODUCTION</span>
-          <span>E-COMMERCE</span>
-          <span>CAMPAIGNS</span>
-          <span>ART DIRECTION</span>
+          <span>STYLING</span><span>PRODUCTION</span><span>CREATIVE DIRECTION</span><span>E-COMMERCE</span><span>CAMPAIGNS</span>
+          <span>STYLING</span><span>PRODUCTION</span><span>CREATIVE DIRECTION</span><span>E-COMMERCE</span><span>CAMPAIGNS</span>
         </div>
       </div>
     </section>
 
-    <section id="work" class="v24-work">
-      <div class="v24-work-intro">
-        <p class="section-index">01 — SELECTED WORK</p>
-        <p class="v24-intro-copy">Selected productions grouped by concept and visual language.</p>
+    <section id="work" class="work">
+      <div class="section-intro">
+        <p>01 — SELECTED WORK</p>
+        <p>Productions are grouped by original shoot and visual direction.</p>
       </div>
 
-      <article class="v24-project">
-        <header class="v24-project-head">
-          <span class="v24-no">01</span>
-          <div>
-            <p class="v24-kicker">EDITORIAL / TAILORING</p>
-            <h2>SHARP<br>FORM</h2>
-          </div>
-          <p class="v24-project-text">Monochrome tailoring, clean structure and controlled portraiture.</p>
+      <article class="project">
+        <header class="project-head">
+          <span>01</span>
+          <div><p>EDITORIAL / TAILORING</p><h2>FORM</h2></div>
+          <p>Controlled portraiture, sharp silhouettes and monochrome contrast.</p>
         </header>
-
-        <figure class="v24-frame v24-frame-xl">
-          <img src="sharp-01.jpg?v=241" alt="Sharp Form editorial portrait">
-          <figcaption><span>01</span><span>PORTRAIT / STRUCTURE</span></figcaption>
-        </figure>
-
-        <div class="v24-pair">
-          <figure class="v24-frame">
-            <img src="sharp-02.jpg?v=241" alt="Sharp Form tailoring look">
-            <figcaption><span>02</span><span>TAILORING / SILHOUETTE</span></figcaption>
-          </figure>
-          <figure class="v24-frame">
-            <img src="sharp-03.jpg?v=241" alt="Sharp Form monochrome look">
-            <figcaption><span>03</span><span>MONOCHROME / ATTITUDE</span></figcaption>
-          </figure>
+        <div class="gallery g3">
+          <figure><img src="assets/images/form/form-01.jpg" alt="Form editorial"><figcaption>PORTRAIT / STRUCTURE</figcaption></figure>
+          <figure><img src="assets/images/form/form-02.jpg" alt="Form suit"><figcaption>TAILORING / PROFILE</figcaption></figure>
+          <figure><img src="assets/images/form/form-03.jpg" alt="Form monochrome"><figcaption>MONOCHROME / SILHOUETTE</figcaption></figure>
         </div>
       </article>
 
-      <article class="v24-project">
-        <header class="v24-project-head">
-          <span class="v24-no">02</span>
-          <div>
-            <p class="v24-kicker">WOMENSWEAR / KNIT</p>
-            <h2>QUIET<br>STRUCTURE</h2>
-          </div>
-          <p class="v24-project-text">Soft neutrals, knit textures and relaxed proportions built around restraint.</p>
+      <article class="project">
+        <header class="project-head">
+          <span>02</span>
+          <div><p>WOMENSWEAR / KNIT</p><h2>QUIET</h2></div>
+          <p>Neutral knitwear, texture and relaxed proportions built around restraint.</p>
         </header>
-
-        <figure class="v24-frame v24-frame-wide">
-          <img src="quiet-01.jpg?v=241" alt="Quiet Structure neutral knitwear">
-          <figcaption><span>01</span><span>NEUTRAL / PROPORTION</span></figcaption>
-        </figure>
-
-        <div class="v24-pair v24-offset">
-          <figure class="v24-frame">
-            <img src="quiet-02.jpg?v=241" alt="Quiet Structure detail">
-            <figcaption><span>02</span><span>TEXTURE / LAYERING</span></figcaption>
-          </figure>
-          <figure class="v24-frame">
-            <img src="quiet-03.jpg?v=241" alt="Quiet Structure contrast portrait">
-            <figcaption><span>03</span><span>CONTRAST / PORTRAIT</span></figcaption>
-          </figure>
-        </div>
-
-        <figure class="v24-frame v24-frame-large v24-right">
-          <img src="quiet-04.jpg?v=241" alt="Quiet Structure close portrait">
-          <figcaption><span>04</span><span>CLOSE-UP / CHARACTER</span></figcaption>
-        </figure>
-      </article>
-
-      <article class="v24-project">
-        <header class="v24-project-head">
-          <span class="v24-no">03</span>
-          <div>
-            <p class="v24-kicker">WOMENSWEAR / SOFT COLOR</p>
-            <h2>NEW<br>BOHEME</h2>
-          </div>
-          <p class="v24-project-text">Light fabrics, soft blues and fluid shapes with a clean commercial finish.</p>
-        </header>
-
-        <figure class="v24-frame v24-frame-xl">
-          <img src="boheme-01.jpg?v=241" alt="New Boheme blue womenswear">
-          <figcaption><span>01</span><span>COLOR / SHAPE</span></figcaption>
-        </figure>
-
-        <div class="v24-pair">
-          <figure class="v24-frame">
-            <img src="boheme-02.jpg?v=241" alt="New Boheme portrait">
-            <figcaption><span>02</span><span>PORTRAIT / SOFTNESS</span></figcaption>
-          </figure>
-          <figure class="v24-frame">
-            <img src="boheme-03.jpg?v=241" alt="New Boheme full look">
-            <figcaption><span>03</span><span>LOOK / PROPORTION</span></figcaption>
-          </figure>
-        </div>
-
-        <figure class="v24-frame v24-frame-large">
-          <img src="boheme-04.jpg?v=241" alt="New Boheme movement image">
-          <figcaption><span>04</span><span>MOVEMENT / DETAIL</span></figcaption>
-        </figure>
-      </article>
-
-      <article class="v24-project">
-        <header class="v24-project-head">
-          <span class="v24-no">04</span>
-          <div>
-            <p class="v24-kicker">CAMPAIGN / YOUTH</p>
-            <h2>COLOR<br>ENERGY</h2>
-          </div>
-          <p class="v24-project-text">Commercial styling with a younger rhythm, stronger color and group composition.</p>
-        </header>
-
-        <figure class="v24-frame v24-frame-wide">
-          <img src="campaign-01.jpg?v=241" alt="Color Energy campaign">
-          <figcaption><span>01</span><span>CAMPAIGN / GROUP</span></figcaption>
-        </figure>
-
-        <div class="v24-pair">
-          <figure class="v24-frame">
-            <img src="campaign-02.jpg?v=241" alt="Color Energy group styling">
-            <figcaption><span>02</span><span>GROUP / STYLING</span></figcaption>
-          </figure>
-          <figure class="v24-frame">
-            <img src="campaign-03.jpg?v=241" alt="Color Energy denim campaign">
-            <figcaption><span>03</span><span>DENIM / MOVEMENT</span></figcaption>
-          </figure>
+        <div class="gallery g8">
+          <figure><img src="assets/images/quiet/quiet-01.jpg" alt="Quiet brown look"><figcaption>EARTH / SILHOUETTE</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-02.jpg" alt="Quiet knit detail"><figcaption>TEXTURE / LAYERING</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-03.jpg" alt="Quiet neutral chair portrait"><figcaption>NEUTRAL / PROPORTION</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-04.jpg" alt="Quiet white portrait"><figcaption>PORTRAIT / CONTRAST</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-05.jpg" alt="Quiet white seated"><figcaption>SOFT SHAPE / FORM</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-06.jpg" alt="Quiet knit movement"><figcaption>KNIT / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-07.jpg" alt="Quiet cream tailoring"><figcaption>CREAM / ACCESSORIES</figcaption></figure>
+          <figure><img src="assets/images/quiet/quiet-08.jpg" alt="Quiet detail"><figcaption>DETAIL / MATERIAL</figcaption></figure>
         </div>
       </article>
 
-      <article class="v24-project">
-        <header class="v24-project-head">
-          <span class="v24-no">05</span>
-          <div>
-            <p class="v24-kicker">MENSWEAR / EDITORIAL</p>
-            <h2>QUIET<br>MOTION</h2>
-          </div>
-          <p class="v24-project-text">Relaxed menswear styling focused on attitude, proportion and understated character.</p>
+      <article class="project">
+        <header class="project-head">
+          <span>03</span>
+          <div><p>WOMENSWEAR / SOFT COLOR</p><h2>NEW<br>BOHEME</h2></div>
+          <p>One production centered on soft blues, light fabrics and fluid silhouettes.</p>
         </header>
+        <div class="gallery g4">
+          <figure><img src="assets/images/new-boheme/boheme-01.jpg" alt="New Boheme floral look"><figcaption>FLORAL / FULL LOOK</figcaption></figure>
+          <figure><img src="assets/images/new-boheme/boheme-02.jpg" alt="New Boheme blue dress"><figcaption>BLUE / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/new-boheme/boheme-03.jpg" alt="New Boheme portrait"><figcaption>PORTRAIT / COLOR</figcaption></figure>
+          <figure><img src="assets/images/new-boheme/boheme-04.jpg" alt="New Boheme monochrome portrait"><figcaption>MONOCHROME / ATTITUDE</figcaption></figure>
+        </div>
+      </article>
 
-        <figure class="v24-frame v24-frame-large">
-          <img src="men-01.jpg?v=241" alt="Menswear editorial seated">
-          <figcaption><span>01</span><span>MENSWEAR / EDITORIAL</span></figcaption>
-        </figure>
+      <article class="project">
+        <header class="project-head">
+          <span>04</span>
+          <div><p>CAMPAIGN / YOUTH</p><h2>COLOR</h2></div>
+          <p>Commercial group styling with stronger color, younger energy and movement.</p>
+        </header>
+        <div class="gallery g5">
+          <figure><img src="assets/images/color/color-01.jpg" alt="Color campaign group"><figcaption>GROUP / WHITE</figcaption></figure>
+          <figure><img src="assets/images/color/color-02.jpg" alt="Color campaign denim"><figcaption>DENIM / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/color/color-03.jpg" alt="Color campaign group portrait"><figcaption>COLOR / CAST</figcaption></figure>
+          <figure><img src="assets/images/color/color-04.jpg" alt="Color campaign seated group"><figcaption>COMPOSITION / COLOR</figcaption></figure>
+          <figure><img src="assets/images/color/color-05.jpg" alt="Color campaign vertical group"><figcaption>GROUP / PROPORTION</figcaption></figure>
+        </div>
+      </article>
 
-        <div class="v24-pair v24-offset">
-          <figure class="v24-frame">
-            <img src="men-02.jpg?v=241" alt="Menswear relaxed portrait">
-            <figcaption><span>02</span><span>PORTRAIT / ATTITUDE</span></figcaption>
-          </figure>
-          <figure class="v24-frame">
-            <img src="men-03.jpg?v=241" alt="Menswear seated portrait">
-            <figcaption><span>03</span><span>PROPORTION / CHARACTER</span></figcaption>
-          </figure>
+      <article class="project">
+        <header class="project-head">
+          <span>05</span>
+          <div><p>MENSWEAR / EDITORIAL</p><h2>MEN</h2></div>
+          <p>Relaxed menswear styling focused on proportion, attitude and understated character.</p>
+        </header>
+        <div class="gallery g5">
+          <figure><img src="assets/images/men/men-01.jpg" alt="Menswear black look"><figcaption>BLACK / PORTRAIT</figcaption></figure>
+          <figure><img src="assets/images/men/men-02.jpg" alt="Menswear chair"><figcaption>EARTH / PROPORTION</figcaption></figure>
+          <figure><img src="assets/images/men/men-03.jpg" alt="Menswear seated"><figcaption>RELAXED / ATTITUDE</figcaption></figure>
+          <figure><img src="assets/images/men/men-04.jpg" alt="Menswear detail"><figcaption>DETAIL / LAYERING</figcaption></figure>
+          <figure><img src="assets/images/men/men-05.jpg" alt="Menswear leather look"><figcaption>LEATHER / FULL LOOK</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="project">
+        <header class="project-head">
+          <span>06</span>
+          <div><p>WOMENSWEAR / CITY</p><h2>SARTORIAL</h2></div>
+          <p>Tailoring translated into movement, street context and a sharper commercial attitude.</p>
+        </header>
+        <div class="gallery g5">
+          <figure><img src="assets/images/sartorial/sartorial-01.jpg" alt="Sartorial cream city look"><figcaption>CITY / CREAM</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-02.jpg" alt="Sartorial black blazer"><figcaption>TAILORING / MOVEMENT</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-03.jpg" alt="Sartorial black look"><figcaption>BLACK / STREET</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-04.jpg" alt="Sartorial white suit"><figcaption>WHITE / STRUCTURE</figcaption></figure>
+          <figure><img src="assets/images/sartorial/sartorial-05.jpg" alt="Sartorial black white look"><figcaption>CONTRAST / ACCESSORY</figcaption></figure>
         </div>
       </article>
     </section>
 
-    <section id="about" class="v24-about">
+    <section id="about" class="about">
       <p class="section-index">02 — ABOUT</p>
-
-      <div class="v24-about-grid">
-        <div class="v24-about-copy">
-          <p class="v24-kicker">LOLA DAVILA / VISUAL PRODUCTION</p>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">LOLA DAVILA / VISUAL PRODUCTION</p>
           <h2>I BUILD<br>IMAGES<br>AROUND<br>PRODUCT.</h2>
-
-          <p class="v24-about-lead">
-            Fashion stylist and e-commerce content producer focused on turning
-            product into a clear, consistent visual story.
-          </p>
-
-          <p class="v24-about-body">
-            My work sits between styling, creative direction and production:
-            developing looks, coordinating teams and maintaining visual
-            consistency across campaigns and e-commerce content. I am especially
-            interested in how proportion, casting, movement and image selection
-            can strengthen the way a brand communicates.
-          </p>
+          <p class="lead">Fashion stylist and e-commerce content producer focused on turning product into a clear and consistent visual story.</p>
+          <p>My work sits between styling, creative direction and production. I develop looks, coordinate creative teams and help maintain visual consistency across campaigns and e-commerce content.</p>
 
           <div class="services">
             <span>Fashion Styling</span>
-            <span>E-commerce Content</span>
             <span>Creative Direction</span>
-            <span>Production Coordination</span>
-            <span>Visual Consistency</span>
+            <span>E-commerce Content</span>
+            <span>Production</span>
           </div>
         </div>
 
-        <figure class="v24-about-image">
-          <img src="about-lola.jpg?v=241" alt="Lola Davila working on set with a model">
+        <figure class="about-image">
+          <img src="assets/images/about/about.jpg" alt="Lola Davila working on set">
           <figcaption>ON SET / VISUAL PRODUCTION</figcaption>
         </figure>
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
-      <p class="section-index">04 — CONTACT</p>
-
-      <h2>
-        CREEMOS<br>
-        UNA <span class="serif-display dark-serif">Nueva Imagen.</span>
-      </h2>
-
-      <div class="contact-grid">
-        <a href="mailto:loladavilast@gmail.com">Mail ↗</a>
-        <a href="https://instagram.com/loladl_st" target="_blank" rel="noreferrer">Instagram ↗</a>
-        
+    <section id="contact" class="contact">
+      <p class="section-index">03 — CONTACT</p>
+      <h2>LET'S BUILD<br><span>SOMETHING.</span></h2>
+      <div class="contact-links">
+        <a href="mailto:loladavilast@gmail.com">MAIL ↗</a>
+        <a href="https://instagram.com/loladl_st" target="_blank" rel="noopener">INSTAGRAM ↗</a>
       </div>
-
-      <div class="contact-footer">
-        <span>Ecuador / Available Worldwide</span>
-        <span>© <span id="year"></span> Lola Davila</span>
-      </div>
+      <footer><span>ECUADOR / AVAILABLE WORLDWIDE</span><span>© <span id="year"></span> LOLA DAVILA</span></footer>
     </section>
   </main>
-
-  <section id="project-viewer" class="project-viewer" aria-hidden="true">
-    <button class="viewer-close" type="button">Cerrar</button>
-    <div id="viewer-content" class="viewer-content"></div>
-  </section>
 </body>
 </html>
