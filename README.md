@@ -1,38 +1,41 @@
-# Lola Davila — V21 Curated Work
+# Lola Davila — V21.2 ALL IMAGES VISIBLE
 
-This version applies the portfolio curation directly to the site.
+Corrección del problema donde solo aparecían algunas imágenes.
 
-## Main portfolio
-Only 4 visual directions / 8 selected images:
+## Cambio principal
+Las 8 fotografías principales ya no dependen de JavaScript para renderizarse.
+Están directamente escritas en `index.html`.
 
-1. Portraits
-2. Tailoring
-3. Movement
-4. Commercial
+Por eso deben aparecer siempre:
 
-Each project contains two selected images.
+PORTRAITS
+- portrait-01.jpg
+- portrait-02.jpg
 
-## Process
-Two behind-the-scenes / fitting images live separately in PROCESS.
-They do not compete with the finished portfolio.
+TAILORING
+- tailoring-01.jpg
+- tailoring-02.jpg
 
-## Preserved from V20.1
-- moving LOLA DAVILA
-- red cursor
-- moving production ticker
-- mobile legibility improvements
-- IG: @loladl_st
-- MAIL: loladavilast@gmail.com
+MOVEMENT
+- movement-01.jpg
+- movement-02.jpg
 
-## GitHub
-This ZIP is complete and includes the new `assets/images/` folder.
+COMMERCIAL
+- commercial-01.jpg
+- commercial-02.jpg
 
-Upload/reconcile:
-- index.html
-- styles.css
-- script.js
-- projects.js
-- README.md
-- assets/images/
+Además se mantienen 2 imágenes en PROCESS.
 
-The old `project-01.jpg` etc. are no longer required by V21.
+## Total visible
+- 8 imágenes de portfolio
+- 2 imágenes de proceso
+
+## Se conserva
+- cursor rojo
+- barra en movimiento
+- LOLA DAVILA en movimiento
+- IG @loladl_st
+- MAIL loladavilast@gmail.com
+- responsive mobile
+
+Sube TODO el contenido del ZIP a GitHub.
