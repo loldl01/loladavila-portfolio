@@ -4738,3 +4738,33 @@ body {
     transition: none;
   }
 }
+
+
+/* Hero name — gentle horizontal motion */
+.clean-name {
+  animation: hero-name-sway 5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes hero-name-sway {
+  from { transform: translate3d(-22px, 0, 0); }
+  to { transform: translate3d(22px, 0, 0); }
+}
+
+@media (max-width: 760px) {
+  .clean-name {
+    animation-duration: 4.5s;
+  }
+
+  @keyframes hero-name-sway {
+    from { transform: translate3d(-10px, 0, 0); }
+    to { transform: translate3d(10px, 0, 0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clean-name {
+    animation: none;
+    transform: none;
+  }
+}
