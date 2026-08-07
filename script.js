@@ -68,6 +68,40 @@ function projectCard(project, index) {
     image.height = dimensions.height;
   }
   image.addEventListener("error", () => article.classList.add("image-error"), { once: true });
+
+  const hoverPath = [...(project.featured || []), ...(project.images || [])]
+    .find((candidate) => candidate && candidate !== path);
+
+  if (hoverPath && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    let isHovering = false;
+    let hoverImage;
+
+    const showHoverImage = () => {
+      isHovering = true;
+      if (hoverImage?.complete && hoverImage.naturalWidth) {
+        image.src = hoverPath;
+        return;
+      }
+
+      hoverImage = new Image();
+      hoverImage.decoding = "async";
+      hoverImage.src = hoverPath;
+      hoverImage.addEventListener("load", () => {
+        if (isHovering) image.src = hoverPath;
+      }, { once: true });
+    };
+
+    const showPrimaryImage = () => {
+      isHovering = false;
+      image.src = path;
+    };
+
+    article.addEventListener("mouseenter", showHoverImage);
+    article.addEventListener("mouseleave", showPrimaryImage);
+    article.addEventListener("focusin", showHoverImage);
+    article.addEventListener("focusout", showPrimaryImage);
+  }
+
   return article;
 }
 
