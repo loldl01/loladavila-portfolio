@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loladavila-portfolio.pages.dev/sitemap.xml
