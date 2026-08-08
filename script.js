@@ -312,36 +312,48 @@ if (heroSection && fallingMotionEnabled) {
   fallingLayer.setAttribute("aria-hidden", "true");
 
   const fallingPhotoData = [
-    { src: "Assets/Images/FRESH/1.jpg", className: "hero-falling-photo--one", delay: 0, direction: 1 },
-    { src: "Assets/Images/ETEREAL/1.jpg", className: "hero-falling-photo--two", delay: .12, direction: -1 }
+    { src: "Assets/Images/BLACK:WHIT3/1.JPG", left: "3%", top: "8%", width: "13vw", min: 105, max: 205, delay: 0, direction: 1, tone: "grayscale(1) contrast(1.08)" },
+    { src: "Assets/Images/BLACK:WHIT3/DSC_8196.jpg", left: "21%", top: "2%", width: "10vw", min: 90, max: 165, delay: .03, direction: -1, tone: "grayscale(1) contrast(1.05)" },
+    { src: "Assets/Images/BLACK:WHIT3/IMG_8604.JPG", left: "37%", top: "13%", width: "12vw", min: 100, max: 190, delay: .07, direction: 1, tone: "grayscale(1) contrast(1.1)" },
+    { src: "Assets/Images/OUTSIDE/1.jpg", left: "52%", top: "3%", width: "14vw", min: 110, max: 220, delay: .02, direction: -1, tone: "grayscale(1) contrast(1.08)" },
+    { src: "Assets/Images/02/1.jpg", left: "70%", top: "11%", width: "11vw", min: 95, max: 175, delay: .09, direction: 1, tone: "sepia(.72) saturate(.62) contrast(1.02)" },
+    { src: "Assets/Images/06/1.jpg", left: "84%", top: "4%", width: "12vw", min: 100, max: 190, delay: .05, direction: -1, tone: "sepia(.48) saturate(.68) contrast(1.02)" },
+    { src: "Assets/Images/BLACK:WHIT3/PLP_FALSO_307.jpg", left: "11%", top: "48%", width: "11vw", min: 92, max: 175, delay: .12, direction: -1, tone: "grayscale(1) contrast(1.12)" },
+    { src: "Assets/Images/OUTSIDE/17631265_0.jpg", left: "76%", top: "50%", width: "13vw", min: 105, max: 205, delay: .15, direction: 1, tone: "grayscale(1) contrast(1.06)" }
   ];
 
-  const fallingPhotos = fallingPhotoData.map((item) => {
+  const fallingPhotos = fallingPhotoData.map((item, index) => {
     const image = document.createElement("img");
-    image.className = `hero-falling-photo ${item.className}`;
+    image.className = "hero-falling-photo";
     image.src = item.src;
     image.alt = "";
     image.loading = "eager";
     image.decoding = "async";
+    image.style.left = item.left;
+    image.style.top = item.top;
+    image.style.width = `clamp(${item.min}px, ${item.width}, ${item.max}px)`;
+    image.style.height = "auto";
+    image.style.aspectRatio = index % 3 === 0 ? "4 / 5" : "2 / 3";
+    image.style.filter = item.tone;
     fallingLayer.append(image);
-    return { image, ...item };
+    return { image, ...item, index };
   });
 
   heroSection.append(fallingLayer);
 
   const updateFallingPhotos = () => {
     fallingFrame = 0;
-    const rawProgress = Math.min(1, Math.max(0, window.scrollY / Math.max(1, window.innerHeight * .92)));
+    const rawProgress = Math.min(1, Math.max(0, window.scrollY / Math.max(1, window.innerHeight * .94)));
 
-    fallingPhotos.forEach(({ image, delay, direction }, index) => {
+    fallingPhotos.forEach(({ image, delay, direction, index }) => {
       const progress = Math.min(1, Math.max(0, (rawProgress - delay) / (1 - delay)));
-      const y = progress * window.innerHeight * (1.05 + index * .12);
-      const x = Math.sin(progress * Math.PI) * direction * window.innerWidth * .045;
-      const rotation = direction * (-7 + progress * 25);
-      const scale = .82 + progress * .24;
-      const fadeIn = Math.min(1, progress / .12);
-      const fadeOut = Math.min(1, (1 - progress) / .24);
-      const opacity = Math.max(0, Math.min(fadeIn, fadeOut)) * .94;
+      const y = progress * window.innerHeight * (1.08 + (index % 3) * .1);
+      const x = Math.sin(progress * Math.PI) * direction * window.innerWidth * (.025 + (index % 4) * .008);
+      const startingRotation = direction * (-9 + (index % 5) * 3);
+      const rotation = startingRotation + direction * progress * (18 + (index % 4) * 5);
+      const scale = .94 + progress * .12;
+      const fadeOut = progress < .58 ? 1 : Math.max(0, (1 - progress) / .42);
+      const opacity = fadeOut * (.74 + (index % 3) * .08);
 
       image.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${scale})`;
       image.style.opacity = opacity.toFixed(3);
