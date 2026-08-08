@@ -209,10 +209,10 @@ button:focus-visible {
 .hero-image {
   position: absolute;
   z-index: 1;
-  left: 9vw;
-  top: 6vh;
-  width: 72vw;
-  height: 82vh;
+  left: 4vw;
+  top: 4vh;
+  width: 84vw;
+  height: 88vh;
   margin: 0;
   overflow: hidden;
   background: #111;
@@ -866,7 +866,7 @@ button:focus-visible {
 @media (max-width: 600px) {
   .site-header { padding: 12px 10px; }
 
-  .hero-image { left: 6vw; top: 7vh; width: 88vw; height: 78vh; }
+  .hero-image { left: 3vw; top: 4vh; width: 94vw; height: 84vh; }
   .hero-image img { object-position: 53% 20%; }
   .hero-name {
     --hero-motion: clamp(4px, 1.2vw, 8px);
