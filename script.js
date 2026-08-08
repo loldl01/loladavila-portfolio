@@ -276,3 +276,27 @@ if (cursor && window.matchMedia("(pointer: fine)").matches) {
 } else if (cursor) {
   cursor.hidden = true;
 }
+
+const scrollDepthEnabled = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let depthFrame = 0;
+
+function updateScrollDepth() {
+  depthFrame = 0;
+  if (!scrollDepthEnabled) return;
+
+  const scrollY = window.scrollY;
+  const heroProgress = Math.min(scrollY, window.innerHeight * 1.15);
+  document.documentElement.style.setProperty("--page-backdrop-y", `${Math.max(-42, -scrollY * .018)}px`);
+  document.documentElement.style.setProperty("--hero-backdrop-y", `${heroProgress * .085}px`);
+  document.documentElement.style.setProperty("--hero-backdrop-scale", `${1.14 + Math.min(.06, heroProgress / window.innerHeight * .06)}`);
+}
+
+function scheduleScrollDepth() {
+  if (!depthFrame) depthFrame = window.requestAnimationFrame(updateScrollDepth);
+}
+
+if (scrollDepthEnabled) {
+  updateScrollDepth();
+  window.addEventListener("scroll", scheduleScrollDepth, { passive: true });
+  window.addEventListener("resize", scheduleScrollDepth, { passive: true });
+}
