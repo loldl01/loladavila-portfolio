@@ -31,7 +31,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/01/Relleno generativo 14.jpg",
       "Assets/Images/01/Relleno generativo 16.jpg",
       "Assets/Images/01/Relleno generativo.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 2,
@@ -59,7 +60,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/FRESH/16.jpg",
       "Assets/Images/FRESH/20.jpg",
       "Assets/Images/FRESH/21.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 3,
@@ -141,7 +143,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/06/IMG_1184.JPG",
       "Assets/Images/06/IMG_1185.JPG",
       "Assets/Images/06/IMG_1189.JPG"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 6,
@@ -174,7 +177,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/BLACK:WHIT3/PLP_FALSO_306 (1).jpg",
       "Assets/Images/BLACK:WHIT3/PLP_FALSO_307.jpg",
       "Assets/Images/BLACK:WHIT3/PLP_FALSO_308 (1).jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 7,
@@ -232,7 +236,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/ETEREAL/PLP_FALSO_325.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_326.jpg",
       "Assets/Images/ETEREAL/PLP_FALSO_327.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 9,
