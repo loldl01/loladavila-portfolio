@@ -1351,3 +1351,54 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
   .hero-falling-photos { display: none; }
 }
+
+
+/* Unified black canvas */
+.hero,
+.selected-section,
+.archive-section,
+.about-section,
+.contact-section {
+  background-color: #070707;
+  color: #f4f4f1;
+}
+
+.selected-section,
+.archive-section,
+.about-section {
+  background: rgba(7, 7, 7, .92);
+}
+
+.about-copy > p:not(.eyebrow),
+.about-copy .about-lead {
+  color: #f4f4f1;
+}
+
+.experience-list {
+  border-top-color: rgba(244, 244, 241, .24);
+}
+
+.experience-list li {
+  border-bottom-color: rgba(244, 244, 241, .24);
+}
+
+.about-slideshow,
+.about-slide {
+  background: #111;
+}
+
+.contact-section::after {
+  background: rgba(7, 7, 7, .38);
+}
+
+.contact-section h2,
+.contact-section .section-index,
+.contact-links,
+.contact-links a,
+.contact-footer {
+  color: #f4f4f1;
+}
+
+.contact-footer {
+  border-top-color: rgba(244, 244, 241, .25);
+}
