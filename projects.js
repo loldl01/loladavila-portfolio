@@ -145,7 +145,7 @@ window.PORTFOLIO_PROJECTS = [
     "order": 6,
     "folder": "BLACK:WHIT3",
     "slug": "monochrome-study",
-    "title": "Mono",
+    "title": "Noir",
     "selected": true,
     "description": "Black-and-white styling explored through sharp tailoring, fluid shapes and graphic contrast. Tonal lighting keeps attention on silhouette and construction.",
     "role": "Fashion Styling / Creative Production",
