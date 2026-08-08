@@ -58,7 +58,7 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/FRESH/14.jpg",
       "Assets/Images/FRESH/16.jpg",
       "Assets/Images/FRESH/20.jpg",
-      "Assets/Images/FRESH/21.jpg",
+      "Assets/Images/FRESH/21.jpg"
     ]
   },
   {
@@ -86,7 +86,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/TEXTURAS/17495823_16174.jpg",
       "Assets/Images/TEXTURAS/17497922_16314.jpg",
       "Assets/Images/TEXTURAS/17502060_16142.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 4,
@@ -106,8 +107,9 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/07/1.jpg",
       "Assets/Images/07/6.jpg",
       "Assets/Images/07/10 (1).jpg",
-      "Assets/Images/07/11 (1).jpg",
-    ]
+      "Assets/Images/07/11 (1).jpg"
+    ],
+    "photographer": "July Figueroa"
   },
   {
     "order": 5,
@@ -199,7 +201,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/COLOR/15.jpg",
       "Assets/Images/COLOR/9710D791-81A9-45A5-8ABA-6F4D29839B2B.jpg",
       "Assets/Images/COLOR/92096228-B677-4AA3-89A4-5FF97E91420C.jpg"
-    ]
+    ],
+    "photographer": "July Figueroa"
   },
   {
     "order": 8,
@@ -253,7 +256,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/02/17614623_0.jpg",
       "Assets/Images/02/17629092_0.jpg",
       "Assets/Images/02/17629104_0.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 10,
@@ -296,7 +300,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/04/17684554_0755.jpg",
       "Assets/Images/04/17684966_0977.jpg",
       "Assets/Images/04/17684966_1052.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 12,
@@ -309,7 +314,7 @@ window.PORTFOLIO_PROJECTS = [
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "year": 2025,
     "featured": [
-      "Assets/Images/OUTSIDE/1.jpg",
+      "Assets/Images/OUTSIDE/1.jpg"
     ],
     "images": [
       "Assets/Images/OUTSIDE/1.jpg",
@@ -317,7 +322,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/OUTSIDE/17631265_0.jpg",
       "Assets/Images/OUTSIDE/17665650_0.jpg",
       "Assets/Images/OUTSIDE/17665691_0.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 13,
@@ -336,7 +342,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/DENIM/1.jpg",
       "Assets/Images/DENIM/63CA29B8-EEE7-4D46-934C-2A5199554AB5.jpg",
       "Assets/Images/DENIM/IMG_7645.JPG"
-    ]
+    ],
+    "photographer": "July Figueroa"
   },
   {
     "order": 14,
@@ -395,7 +402,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/GREEN/9.jpg",
       "Assets/Images/GREEN/b742dc06-7c4e-4c42-9517-61e4be63e845.jpg",
       "Assets/Images/GREEN/d9f79cf8-79cb-4937-89fd-8903e111da10.jpg"
-    ]
+    ],
+    "photographer": "July Figueroa"
   },
   {
     "order": 17,
@@ -418,7 +426,8 @@ window.PORTFOLIO_PROJECTS = [
       "Assets/Images/OPTICAL/17785193_0.jpg",
       "Assets/Images/OPTICAL/17785443_0.jpg",
       "Assets/Images/OPTICAL/17787442_0.jpg"
-    ]
+    ],
+    "photographer": "Maria Suarez"
   },
   {
     "order": 18,
@@ -430,7 +439,7 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Fashion Styling / Creative Production",
     "responsibilities": "Fashion styling, production coordination and visual consistency.",
     "featured": [
-      "Assets/Images/HOJA_DE_CONTACTO/1.jpg",
+      "Assets/Images/HOJA_DE_CONTACTO/1.jpg"
     ],
     "images": [
       "Assets/Images/HOJA_DE_CONTACTO/1.jpg",
