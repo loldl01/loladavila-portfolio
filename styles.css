@@ -1116,3 +1116,82 @@ button:focus-visible {
     text-align: right;
   }
 }
+
+
+/* Blurred editorial contact artwork */
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #f3f1ed;
+  color: #080808;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -12%;
+  background: url("Assets/Images/01/1.jpg") center 24% / contain no-repeat;
+  filter: blur(38px) saturate(.72) contrast(.9);
+  opacity: .86;
+  transform: scale(1.12);
+  animation: contact-image-drift 11s ease-in-out infinite alternate;
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgba(244, 242, 238, .2);
+  pointer-events: none;
+}
+
+.contact-section h2 {
+  align-self: center;
+  max-width: 11ch;
+  margin: auto;
+  font-size: clamp(54px, 10.5vw, 172px);
+  font-weight: 600;
+  line-height: .78;
+  letter-spacing: -.065em;
+  text-align: center;
+  text-wrap: balance;
+  transform: none;
+}
+
+.contact-section .section-index,
+.contact-links,
+.contact-footer {
+  color: #080808;
+}
+
+.contact-footer {
+  border-top-color: rgba(8, 8, 8, .28);
+}
+
+@keyframes contact-image-drift {
+  from { transform: scale(1.12) translate3d(-1.2%, -1%, 0); }
+  to { transform: scale(1.18) translate3d(1.2%, 1%, 0); }
+}
+
+@media (max-width: 600px) {
+  .contact-section::before {
+    inset: -18%;
+    background-size: cover;
+    filter: blur(26px) saturate(.72) contrast(.9);
+  }
+
+  .contact-section h2 {
+    max-width: 10ch;
+    font-size: clamp(46px, 15vw, 78px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-section::before {
+    animation: none;
+    transform: scale(1.14);
+  }
+}
