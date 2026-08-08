@@ -75,6 +75,7 @@ if (!project || !main) {
         <p class="project-credit-label">RESPONSIBILITIES</p>
         <p>${project.responsibilities}</p>
       </div>
+      ${project.photographer ? `<div><p class="project-credit-label">PHOTOGRAPHY</p><p>${project.photographer}</p></div>` : ""}
       ${project.year ? `<div><p class="project-credit-label">YEAR</p><p>${project.year}</p></div>` : ""}
     </section>
     <div class="project-page-gallery" aria-label="Full ${project.title} project"></div>
