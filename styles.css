@@ -1472,3 +1472,54 @@ body::before {
       #070707 100%
     );
 }
+
+
+/* Full-site high-contrast photographic background */
+body::before {
+  inset: -8vh -5vw;
+  background: url("Assets/Images/BLACK:WHIT3/1.JPG") center 32% / cover no-repeat;
+  filter: grayscale(1) contrast(1.42) brightness(.62);
+  opacity: .58;
+  transform: translate3d(0, var(--page-backdrop-y, 0px), 0) scale(1.08);
+}
+
+.selected-section,
+.archive-section,
+.about-section {
+  background: rgba(7, 7, 7, .7);
+}
+
+.contact-section {
+  background: rgba(7, 7, 7, .62);
+}
+
+.contact-section::before {
+  display: none;
+}
+
+.contact-section::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 7, 7, .88) 0%,
+    rgba(7, 7, 7, .48) 18%,
+    rgba(7, 7, 7, .3) 50%,
+    rgba(7, 7, 7, .52) 84%,
+    rgba(7, 7, 7, .9) 100%
+  );
+}
+
+@media (max-width: 600px) {
+  body::before {
+    inset: -6vh -24vw;
+    background-position: 48% center;
+    filter: grayscale(1) contrast(1.34) brightness(.58);
+    opacity: .52;
+  }
+
+  .selected-section,
+  .archive-section,
+  .about-section,
+  .contact-section {
+    background-color: rgba(7, 7, 7, .76);
+  }
+}
