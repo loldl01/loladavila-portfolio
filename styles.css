@@ -1412,3 +1412,21 @@ body::before {
     cursor: none !important;
   }
 }
+
+
+/* Dense monochrome falling collage */
+.hero-falling-photo {
+  max-height: 38vh;
+  border: 1px solid rgba(244, 244, 241, .2);
+}
+
+@media (max-width: 600px) {
+  .hero-falling-photo {
+    max-width: 29vw;
+    max-height: 31vh;
+  }
+
+  .hero-falling-photo:nth-child(n + 7) {
+    display: none;
+  }
+}
