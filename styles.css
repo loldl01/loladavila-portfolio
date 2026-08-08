@@ -1523,3 +1523,24 @@ body::before {
     background-color: rgba(7, 7, 7, .76);
   }
 }
+
+
+/* Center and enlarge About slideshow on mobile */
+@media (max-width: 600px) {
+  .about-image {
+    width: 100%;
+    max-width: none;
+    margin: 38px auto 0;
+  }
+
+  .about-slideshow {
+    width: min(100%, 520px);
+    margin-inline: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-image figcaption {
+    width: min(100%, 520px);
+    margin: 10px auto 0;
+  }
+}
