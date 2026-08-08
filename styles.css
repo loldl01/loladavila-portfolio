@@ -249,6 +249,7 @@ button:focus-visible {
   max-width: 100%;
   flex-direction: column;
   align-items: center;
+  row-gap: clamp(14px, 2.2vh, 34px);
   margin: 0;
   padding-inline: calc(var(--hero-motion) + clamp(12px, 2vw, 28px));
   font-family: var(--display);
@@ -268,8 +269,8 @@ button:focus-visible {
 }
 .hero-name span:last-child { margin-left: clamp(0px, 4vw, 64px); }
 
-.hero-name span:first-child { animation: lola-horizontal 5s ease-in-out infinite alternate; }
-.hero-name span:last-child { animation: davila-horizontal 5s ease-in-out infinite alternate; }
+.hero-name span:first-child { animation: lola-horizontal 3.6s ease-in-out infinite alternate; }
+.hero-name span:last-child { animation: davila-horizontal 3.6s ease-in-out infinite alternate; }
 
 @keyframes lola-horizontal {
   from { transform: translate3d(calc(-1 * var(--hero-motion)), 0, 0); }
