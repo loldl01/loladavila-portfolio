@@ -1305,3 +1305,49 @@ body::before {
   background: transparent;
   box-shadow: 0 0 18px rgba(57, 255, 20, .55);
 }
+
+
+/* Falling gallery photographs */
+.hero-falling-photos {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-falling-photo {
+  position: absolute;
+  top: 16%;
+  width: clamp(110px, 14vw, 220px);
+  height: clamp(150px, 20vw, 310px);
+  object-fit: cover;
+  opacity: 0;
+  will-change: transform, opacity;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .32);
+}
+
+.hero-falling-photo--one {
+  left: clamp(5%, 15vw, 20%);
+}
+
+.hero-falling-photo--two {
+  right: clamp(4%, 13vw, 18%);
+  top: 23%;
+  width: clamp(100px, 12vw, 190px);
+  height: clamp(140px, 18vw, 280px);
+}
+
+@media (max-width: 600px) {
+  .hero-falling-photo {
+    width: clamp(86px, 28vw, 125px);
+    height: clamp(120px, 40vw, 180px);
+  }
+
+  .hero-falling-photo--one { left: 7%; }
+  .hero-falling-photo--two { right: 6%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-falling-photos { display: none; }
+}
