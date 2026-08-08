@@ -312,14 +312,14 @@ if (heroSection && fallingMotionEnabled) {
   fallingLayer.setAttribute("aria-hidden", "true");
 
   const fallingPhotoData = [
-    { src: "Assets/Images/BLACK:WHIT3/1.JPG", left: "3%", top: "8%", width: "13vw", min: 105, max: 205, delay: 0, direction: 1, tone: "grayscale(1) contrast(1.08)" },
-    { src: "Assets/Images/BLACK:WHIT3/DSC_8196.jpg", left: "21%", top: "2%", width: "10vw", min: 90, max: 165, delay: .03, direction: -1, tone: "grayscale(1) contrast(1.05)" },
-    { src: "Assets/Images/BLACK:WHIT3/IMG_8604.JPG", left: "37%", top: "13%", width: "12vw", min: 100, max: 190, delay: .07, direction: 1, tone: "grayscale(1) contrast(1.1)" },
-    { src: "Assets/Images/OUTSIDE/1.jpg", left: "52%", top: "3%", width: "14vw", min: 110, max: 220, delay: .02, direction: -1, tone: "grayscale(1) contrast(1.08)" },
-    { src: "Assets/Images/02/1.jpg", left: "70%", top: "11%", width: "11vw", min: 95, max: 175, delay: .09, direction: 1, tone: "sepia(.72) saturate(.62) contrast(1.02)" },
-    { src: "Assets/Images/06/1.jpg", left: "84%", top: "4%", width: "12vw", min: 100, max: 190, delay: .05, direction: -1, tone: "sepia(.48) saturate(.68) contrast(1.02)" },
-    { src: "Assets/Images/BLACK:WHIT3/PLP_FALSO_307.jpg", left: "11%", top: "48%", width: "11vw", min: 92, max: 175, delay: .12, direction: -1, tone: "grayscale(1) contrast(1.12)" },
-    { src: "Assets/Images/OUTSIDE/17631265_0.jpg", left: "76%", top: "50%", width: "13vw", min: 105, max: 205, delay: .15, direction: 1, tone: "grayscale(1) contrast(1.06)" }
+    { src: "Assets/Images/BLACK:WHIT3/1.JPG", left: "3%", top: "8%", width: "18vw", min: 142, max: 277, delay: 0, direction: 1, tone: "grayscale(1) contrast(1.08)" },
+    { src: "Assets/Images/BLACK:WHIT3/DSC_8196.jpg", left: "21%", top: "2%", width: "14vw", min: 122, max: 223, delay: .03, direction: -1, tone: "grayscale(1) contrast(1.05)" },
+    { src: "Assets/Images/BLACK:WHIT3/IMG_8604.JPG", left: "37%", top: "13%", width: "16vw", min: 135, max: 257, delay: .07, direction: 1, tone: "grayscale(1) contrast(1.1)" },
+    { src: "Assets/Images/OUTSIDE/1.jpg", left: "52%", top: "3%", width: "19vw", min: 149, max: 297, delay: .02, direction: -1, tone: "grayscale(1) contrast(1.08)" },
+    { src: "Assets/Images/02/1.jpg", left: "70%", top: "11%", width: "15vw", min: 128, max: 236, delay: .09, direction: 1, tone: "sepia(.72) saturate(.62) contrast(1.02)" },
+    { src: "Assets/Images/06/1.jpg", left: "84%", top: "4%", width: "16vw", min: 135, max: 257, delay: .05, direction: -1, tone: "sepia(.48) saturate(.68) contrast(1.02)" },
+    { src: "Assets/Images/BLACK:WHIT3/PLP_FALSO_307.jpg", left: "11%", top: "48%", width: "15vw", min: 124, max: 236, delay: .12, direction: -1, tone: "grayscale(1) contrast(1.12)" },
+    { src: "Assets/Images/OUTSIDE/17631265_0.jpg", left: "76%", top: "50%", width: "18vw", min: 142, max: 277, delay: .15, direction: 1, tone: "grayscale(1) contrast(1.06)" }
   ];
 
   const fallingPhotos = fallingPhotoData.map((item, index) => {
