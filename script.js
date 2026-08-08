@@ -300,3 +300,59 @@ if (scrollDepthEnabled) {
   window.addEventListener("scroll", scheduleScrollDepth, { passive: true });
   window.addEventListener("resize", scheduleScrollDepth, { passive: true });
 }
+
+
+const heroSection = document.querySelector(".hero");
+const fallingMotionEnabled = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let fallingFrame = 0;
+
+if (heroSection && fallingMotionEnabled) {
+  const fallingLayer = document.createElement("div");
+  fallingLayer.className = "hero-falling-photos";
+  fallingLayer.setAttribute("aria-hidden", "true");
+
+  const fallingPhotoData = [
+    { src: "Assets/Images/FRESH/1.jpg", className: "hero-falling-photo--one", delay: 0, direction: 1 },
+    { src: "Assets/Images/ETEREAL/1.jpg", className: "hero-falling-photo--two", delay: .12, direction: -1 }
+  ];
+
+  const fallingPhotos = fallingPhotoData.map((item) => {
+    const image = document.createElement("img");
+    image.className = `hero-falling-photo ${item.className}`;
+    image.src = item.src;
+    image.alt = "";
+    image.loading = "eager";
+    image.decoding = "async";
+    fallingLayer.append(image);
+    return { image, ...item };
+  });
+
+  heroSection.append(fallingLayer);
+
+  const updateFallingPhotos = () => {
+    fallingFrame = 0;
+    const rawProgress = Math.min(1, Math.max(0, window.scrollY / Math.max(1, window.innerHeight * .92)));
+
+    fallingPhotos.forEach(({ image, delay, direction }, index) => {
+      const progress = Math.min(1, Math.max(0, (rawProgress - delay) / (1 - delay)));
+      const y = progress * window.innerHeight * (1.05 + index * .12);
+      const x = Math.sin(progress * Math.PI) * direction * window.innerWidth * .045;
+      const rotation = direction * (-7 + progress * 25);
+      const scale = .82 + progress * .24;
+      const fadeIn = Math.min(1, progress / .12);
+      const fadeOut = Math.min(1, (1 - progress) / .24);
+      const opacity = Math.max(0, Math.min(fadeIn, fadeOut)) * .94;
+
+      image.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${scale})`;
+      image.style.opacity = opacity.toFixed(3);
+    });
+  };
+
+  const scheduleFallingPhotos = () => {
+    if (!fallingFrame) fallingFrame = window.requestAnimationFrame(updateFallingPhotos);
+  };
+
+  updateFallingPhotos();
+  window.addEventListener("scroll", scheduleFallingPhotos, { passive: true });
+  window.addEventListener("resize", scheduleFallingPhotos, { passive: true });
+}
