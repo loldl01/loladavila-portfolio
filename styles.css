@@ -1449,3 +1449,26 @@ body::before {
     transparent 100%
   );
 }
+
+
+/* True edge-to-edge contact fade */
+.contact-section::before {
+  inset: 0;
+  -webkit-mask-image: none;
+  mask-image: none;
+  transform: scale(1.16);
+}
+
+.contact-section::after {
+  background:
+    linear-gradient(
+      to bottom,
+      #070707 0%,
+      rgba(7, 7, 7, .96) 5%,
+      rgba(7, 7, 7, .55) 20%,
+      rgba(7, 7, 7, .18) 38%,
+      rgba(7, 7, 7, .18) 68%,
+      rgba(7, 7, 7, .62) 86%,
+      #070707 100%
+    );
+}
