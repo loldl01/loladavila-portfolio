@@ -1,4 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Grenze+Gotisch:wght@500;600;700&family=League+Gothic&display=swap");
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("Assets/Fonts/space-grotesk-latin-500-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("Assets/Fonts/space-grotesk-latin-600-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
 
 :root {
   --black: #070707;
@@ -7,10 +21,10 @@
   --muted: rgba(244, 244, 241, .58);
   --line: rgba(244, 244, 241, .19);
   --red: #ff2a1a;
-  --display: "Grenze Gotisch", Georgia, serif;
-  --condensed: "League Gothic", "Arial Narrow", sans-serif;
-  --sans: "Courier Prime", "Courier New", monospace;
-  --mono: "Courier Prime", "Courier New", monospace;
+  --display: "Space Grotesk", Arial, sans-serif;
+  --condensed: "Space Grotesk", Arial, sans-serif;
+  --sans: "Courier New", Courier, monospace;
+  --mono: "Courier New", Courier, monospace;
   --ease: cubic-bezier(.2, .75, .25, 1);
 }
 
@@ -998,4 +1012,41 @@ button:focus-visible {
   .about-copy h2 { font-size: clamp(54px, 17vw, 84px); }
   .contact-section h2 { font-size: clamp(58px, 18vw, 92px); }
   .project-page-title { font-size: clamp(50px, 13vw, 76px); }
+}
+
+
+/* Contemporary project labels */
+.project-card-caption {
+  text-align: left;
+}
+
+.project-card-title,
+.project-card--archive .project-card-title {
+  max-width: 22ch;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(13px, 1vw, 17px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  text-transform: none;
+  text-wrap: balance;
+}
+
+.project-card-number {
+  margin-bottom: 9px;
+  opacity: .7;
+}
+
+.project-card-action {
+  margin-top: 12px;
+  font-size: 8px;
+  letter-spacing: .13em;
+}
+
+@media (max-width: 600px) {
+  .project-card-title,
+  .project-card--archive .project-card-title {
+    font-size: clamp(13px, 3.8vw, 16px);
+  }
 }

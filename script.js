@@ -68,6 +68,7 @@ function projectCard(project, index) {
     image.height = dimensions.height;
   }
   image.addEventListener("error", () => article.classList.add("image-error"), { once: true });
+
   return article;
 }
 
