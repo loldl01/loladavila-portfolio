@@ -1402,3 +1402,13 @@ body::before {
 .contact-footer {
   border-top-color: rgba(244, 244, 241, .25);
 }
+
+
+/* Hide native pointer when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  body * {
+    cursor: none !important;
+  }
+}
