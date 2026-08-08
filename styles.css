@@ -1292,3 +1292,16 @@ body::before {
     will-change: auto;
   }
 }
+
+
+/* Fluorescent cursor */
+.cursor {
+  background: #39ff14;
+  box-shadow: 0 0 10px rgba(57, 255, 20, .7);
+}
+
+.cursor.is-active {
+  border-color: #39ff14;
+  background: transparent;
+  box-shadow: 0 0 18px rgba(57, 255, 20, .55);
+}
