@@ -352,8 +352,9 @@ if (heroSection && fallingMotionEnabled) {
       const startingRotation = direction * (-9 + (index % 5) * 3);
       const rotation = startingRotation + direction * progress * (18 + (index % 4) * 5);
       const scale = .94 + progress * .12;
+      const fadeIn = Math.min(1, progress / .16);
       const fadeOut = progress < .58 ? 1 : Math.max(0, (1 - progress) / .42);
-      const opacity = fadeOut * (.74 + (index % 3) * .08);
+      const opacity = fadeIn * fadeOut * (.74 + (index % 3) * .08);
 
       image.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${scale})`;
       image.style.opacity = opacity.toFixed(3);
