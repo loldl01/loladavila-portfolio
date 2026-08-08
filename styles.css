@@ -1238,3 +1238,57 @@ button:focus-visible {
     transform: scale(1.16);
   }
 }
+
+
+/* Scroll-linked depth layer */
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -2;
+  inset: -14vh -8vw;
+  background: url("Assets/Images/01/1.jpg") center / cover no-repeat;
+  filter: blur(10px) saturate(.78) contrast(.94);
+  opacity: .14;
+  transform: translate3d(0, var(--page-backdrop-y, 0px), 0) scale(1.12);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.selected-section {
+  background: rgba(7, 7, 7, .9);
+}
+
+.archive-section {
+  background: rgba(12, 12, 12, .91);
+}
+
+.about-section {
+  background: rgba(239, 238, 233, .96);
+}
+
+.hero::before {
+  animation: none;
+  transform: translate3d(0, var(--hero-backdrop-y, 0px), 0) scale(var(--hero-backdrop-scale, 1.14));
+  will-change: transform;
+}
+
+@media (max-width: 600px) {
+  body::before {
+    inset: -10vh -18vw;
+    filter: blur(7px) saturate(.78) contrast(.94);
+    opacity: .11;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .hero::before {
+    transform: scale(1.12);
+    will-change: auto;
+  }
+}
