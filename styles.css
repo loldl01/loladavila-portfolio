@@ -1195,3 +1195,46 @@ button:focus-visible {
     transform: scale(1.14);
   }
 }
+
+
+/* Blurred photographic hero backdrop */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -14%;
+  background: url("Assets/Images/01/1.jpg") center 27% / cover no-repeat;
+  filter: blur(46px) saturate(.72) contrast(.88);
+  opacity: .72;
+  transform: scale(1.14);
+  animation: hero-backdrop-drift 13s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: rgba(7, 7, 7, .2);
+  pointer-events: none;
+}
+
+@keyframes hero-backdrop-drift {
+  from { transform: scale(1.14) translate3d(-1%, -.7%, 0); }
+  to { transform: scale(1.2) translate3d(1%, .7%, 0); }
+}
+
+@media (max-width: 600px) {
+  .hero::before {
+    inset: -20%;
+    filter: blur(30px) saturate(.72) contrast(.88);
+    opacity: .78;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
+    transform: scale(1.16);
+  }
+}
