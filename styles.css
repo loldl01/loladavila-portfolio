@@ -1324,7 +1324,24 @@ body::before {
   object-fit: cover;
   opacity: 0;
   will-change: transform, opacity;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, .32);
+  border: 0;
+  box-shadow: none;
+  -webkit-mask-image: radial-gradient(
+    ellipse 94% 94% at center,
+    #000 48%,
+    rgba(0, 0, 0, .96) 62%,
+    rgba(0, 0, 0, .7) 76%,
+    rgba(0, 0, 0, .28) 89%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 94% 94% at center,
+    #000 48%,
+    rgba(0, 0, 0, .96) 62%,
+    rgba(0, 0, 0, .7) 76%,
+    rgba(0, 0, 0, .28) 89%,
+    transparent 100%
+  );
 }
 
 .hero-falling-photo--one {
@@ -1417,7 +1434,6 @@ body::before {
 /* Dense monochrome falling collage */
 .hero-falling-photo {
   max-height: 52vh;
-  border: 1px solid rgba(244, 244, 241, .2);
 }
 
 @media (max-width: 600px) {
