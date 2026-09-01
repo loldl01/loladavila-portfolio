@@ -1307,69 +1307,6 @@ body::before {
 }
 
 
-/* Falling gallery photographs */
-.hero-falling-photos {
-  position: absolute;
-  z-index: 4;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.hero-falling-photo {
-  position: absolute;
-  top: 16%;
-  width: clamp(110px, 14vw, 220px);
-  height: clamp(150px, 20vw, 310px);
-  object-fit: cover;
-  opacity: 0;
-  will-change: transform, opacity;
-  border: 0;
-  box-shadow: none;
-  -webkit-mask-image: radial-gradient(
-    ellipse 94% 94% at center,
-    #000 48%,
-    rgba(0, 0, 0, .96) 62%,
-    rgba(0, 0, 0, .7) 76%,
-    rgba(0, 0, 0, .28) 89%,
-    transparent 100%
-  );
-  mask-image: radial-gradient(
-    ellipse 94% 94% at center,
-    #000 48%,
-    rgba(0, 0, 0, .96) 62%,
-    rgba(0, 0, 0, .7) 76%,
-    rgba(0, 0, 0, .28) 89%,
-    transparent 100%
-  );
-}
-
-.hero-falling-photo--one {
-  left: clamp(5%, 15vw, 20%);
-}
-
-.hero-falling-photo--two {
-  right: clamp(4%, 13vw, 18%);
-  top: 23%;
-  width: clamp(100px, 12vw, 190px);
-  height: clamp(140px, 18vw, 280px);
-}
-
-@media (max-width: 600px) {
-  .hero-falling-photo {
-    width: clamp(86px, 28vw, 125px);
-    height: clamp(120px, 40vw, 180px);
-  }
-
-  .hero-falling-photo--one { left: 7%; }
-  .hero-falling-photo--two { right: 6%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-falling-photos { display: none; }
-}
-
-
 /* Unified black canvas */
 .hero,
 .selected-section,
@@ -1427,23 +1364,6 @@ body::before {
   body,
   body * {
     cursor: none !important;
-  }
-}
-
-
-/* Dense monochrome falling collage */
-.hero-falling-photo {
-  max-height: 52vh;
-}
-
-@media (max-width: 600px) {
-  .hero-falling-photo {
-    max-width: 42vw;
-    max-height: 44vh;
-  }
-
-  .hero-falling-photo:nth-child(n + 7) {
-    display: none;
   }
 }
 
