@@ -61,8 +61,8 @@ function projectCard(project, index) {
 
   const image = article.querySelector("img");
   image.src = path;
-  image.loading = project.selected && index < 2 ? "eager" : "lazy";
-  if (project.selected && index === 0) image.fetchPriority = "high";
+  image.loading = "lazy";
+  image.fetchPriority = "low";
   if (dimensions) {
     image.width = dimensions.width;
     image.height = dimensions.height;
